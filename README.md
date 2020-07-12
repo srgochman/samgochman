@@ -1,5 +1,9 @@
 # samgochman
 
+Note: this portfolio is MVP and I'm continuously working on code revisions and optimizations.
+
+Built with [Vue](https://vuejs.org/).
+
 ## Project setup
 ```
 npm install

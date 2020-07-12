@@ -6,7 +6,6 @@
 </template>
 
 <script>
-// @ is an alias to /src
 import HelloWorld from "@/components/HelloWorld.vue";
 
 export default {
@@ -16,3 +15,13 @@ export default {
   }
 };
 </script>
+
+<style lang="scss">
+.home {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  width: 1024px;
+}
+</style>

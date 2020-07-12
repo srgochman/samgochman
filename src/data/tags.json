@@ -1,0 +1,32 @@
+{
+    "results": [
+        {
+            "category": "physical",
+            "color": "var(--purple)",
+            "backgroundColor": "var(--purple-transparent)",
+            "words": [
+                "fabrication",
+                "exhibition design"
+            ]
+        },
+        {
+            "category": "development",
+            "color": "var(--blue)",
+            "backgroundColor": "var(--blue-transparent)",
+            "words": [
+                "D3",
+                "Vue",
+                "speech"
+            ]
+        },
+        {
+            "category": "digital tech",
+            "color": "var(--green)",
+            "backgroundColor": "var(--green-transparent)",
+            "words": [
+                "arduino",
+                "lighting"
+            ]
+        }
+    ]
+}
