@@ -51,8 +51,9 @@
       "keyword": "design",
       "color": "var(--blue)",
       "tags": [
-        "fabrication",
-        "exhibition design"
+        "D3",
+        "Vue",
+        "speech"
       ]
     },
     {
@@ -60,8 +61,8 @@
       "keyword": "develop",
       "color": "var(--green)",
       "tags": [
-        "fabrication",
-        "exhibition design"
+        "arduino",
+        "lighting"
       ]
     }
   ],

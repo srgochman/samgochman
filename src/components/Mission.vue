@@ -47,7 +47,7 @@ export default {
       if (this.idx >= this.endings.length) {
         this.idx = 0;
       }
-    }, 5000);
+    }, 4000);
   },
   beforeDestroy() {
     clearInterval(this.advanceInt);

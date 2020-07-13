@@ -1,18 +1,19 @@
 <template>
   <div class="tags-container">
-    <div v-for="tagCategory in tagCategories" :key="tagCategory.category">
-      <div class="tag" v-for="word in words" :key="word">
-        <span
-          v-if="tagCategory.words.includes(word)"
-          :style="{
-            color: tagCategory.category.color,
-            backgroundColor: tagCategory.category.backgroundColor
-          }"
-        >
-          {{ word }}
-        </span>
-      </div>
+    <!-- <div v-for="tagCategory in tagCategories" :key="tagCategory.category"> -->
+    <div
+      class="tag"
+      v-for="word in words"
+      :key="word"
+      :style="{
+        color: tagCategories[findCategory(word)].color,
+        backgroundColor: tagCategories[findCategory(word)].backgroundColor
+      }"
+    >
+      {{ word }}
     </div>
+    <!-- v-if="tagCategory.words.includes(word)" -->
+    <!-- </div> -->
   </div>
 </template>
 
@@ -29,11 +30,21 @@ export default {
       tagCategories: contents["tags"]
     };
   },
+  methods: {
+    findCategory(word) {
+      for (let i = 0; i < this.tagCategories.length; i++) {
+        if (this.tagCategories[i].words.includes(word)) {
+          return i;
+        }
+      }
+    }
+  },
   computed: {
-    // filteredWords () {
-    //   filters this.words;
-    //   return {
-    //   };
+    // tagCategory() {
+    //   const categories = contents["tags"];
+    //   for (category in categories) {
+    //   }
+    //   return {};
     // }
   },
   components: {}

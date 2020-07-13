@@ -79,6 +79,14 @@ export default {
 </script>
 
 <style lang="scss">
+.body {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  width: 1024px;
+}
+
 #diagram-container {
   width: 100%;
   display: flex;
@@ -98,10 +106,6 @@ export default {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
-}
-
-#projects {
-  width: 100%;
 }
 
 #projects-container {

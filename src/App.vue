@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link to="/" class="sam-gochman">Sam Gochman</router-link> |
+      <router-link to="/" class="sam-gochman">Sam Gochman</router-link>
       <router-link to="/juices" class="creative-container">
         <div class="creative-img"></div>
         <div class="creative-text">
@@ -37,7 +37,7 @@ export default {
 <style lang="scss">
 @import "./scss/colors.scss";
 @import "./scss/type.scss";
-@import "./scss/reset.scss";
+// @import "./scss/reset.scss";
 
 #app,
 body,
@@ -68,25 +68,10 @@ html {
   display: none;
 }
 
-a {
-  /* display: inline;
-  width: min-content;
-  margin: 0; */
-  text-decoration: none;
-  transition: var(--hover);
-  color: black;
-
-  :hover {
-    /* color: var(--gray); */
-    opacity: 0.4;
-    transition: var(--hover);
-  }
-}
-
 #nav {
   width: 100%;
   padding: 20px 0px;
-  // background-color: white;
+  background-color: white;
   /* border-bottom: lightgray 1px solid; */
   /* box-shadow: rgba(0, 0, 0, 0.15) 0 2px 5px; */
   /* box-shadow: 0 30px 20px white; */
