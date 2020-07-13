@@ -11,12 +11,15 @@
         </div>
       </router-link>
     </div>
-    <router-view />
+    <transition name="pages">
+      <router-view :key="$route.fullPath" />
+    </transition>
   </div>
 </template>
 
 <script>
 export default {
+  name: "App",
   data() {
     return {};
   },
@@ -83,7 +86,7 @@ a {
 #nav {
   width: 100%;
   padding: 20px 0px;
-  background-color: white;
+  // background-color: white;
   /* border-bottom: lightgray 1px solid; */
   /* box-shadow: rgba(0, 0, 0, 0.15) 0 2px 5px; */
   /* box-shadow: 0 30px 20px white; */
@@ -127,5 +130,19 @@ a {
     font-size: 14px;
     font-weight: 800;
   }
+}
+
+.pages-enter-active {
+  transition: opacity 250ms ease-in-out;
+  transition-delay: 250ms;
+}
+
+.pages-leave-active {
+  transition: opacity 250ms ease-in-out;
+}
+
+.pages-enter,
+.pages-leave-to /* .pages-leave-active below version 2.1.8 */ {
+  opacity: 0;
 }
 </style>

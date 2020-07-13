@@ -1,0 +1,150 @@
+{
+  "missions": [
+    "builds for and with sensory experiences.",
+    "brews beer.",
+    "designs and develops digital experiences.",
+    "makes generative art.",
+    "uses science research to inform design."
+  ],
+  "tags": [
+    {
+      "category": "physical",
+      "color": "var(--purple)",
+      "backgroundColor": "var(--purple-transparent)",
+      "words": [
+        "fabrication",
+        "exhibition design"
+      ]
+    },
+    {
+      "category": "development",
+      "color": "var(--blue)",
+      "backgroundColor": "var(--blue-transparent)",
+      "words": [
+        "D3",
+        "Vue",
+        "speech"
+      ]
+    },
+    {
+      "category": "digital tech",
+      "color": "var(--green)",
+      "backgroundColor": "var(--green-transparent)",
+      "words": [
+        "arduino",
+        "lighting"
+      ]
+    }
+  ],
+  "skills": [
+    {
+      "title": " about the unique nuances of the system at hand.",
+      "keyword": "learn",
+      "color": "var(--purple)",
+      "tags": [
+        "fabrication",
+        "exhibition design"
+      ]
+    },
+    {
+      "title": " opportunities for new interactions and perspectives.",
+      "keyword": "design",
+      "color": "var(--blue)",
+      "tags": [
+        "fabrication",
+        "exhibition design"
+      ]
+    },
+    {
+      "title": " with the most [effective] digital and physical tools for the job.",
+      "keyword": "develop",
+      "color": "var(--green)",
+      "tags": [
+        "fabrication",
+        "exhibition design"
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "title": "Phototaxis",
+      "img": "../assets/test.png",
+      "type": "study",
+      "link": "https://www.eskewdumezripple.com/phototaxis.html",
+      "description": "How might direct engagement with light change how people occupy a space?",
+      "tags": [
+        "fabrication",
+        "arduino",
+        "exhibition design",
+        "D3"
+      ]
+    },
+    {
+      "title": "Headroom",
+      "img": "../assets/test2.png",
+      "type": "product",
+      "link": "https://headroom.sosolimited.com/",
+      "description": "How might direct engagement with light change how people occupy a space?",
+      "tags": [
+        "Vue",
+        "lighting"
+      ]
+    },
+    {
+      "title": "Miraj",
+      "img": "../assets/test.png",
+      "type": "product",
+      "link": "https://miraj.sosolimited.com/",
+      "description": "How might direct engagement with light change how people occupy a space?",
+      "tags": [
+        "Vue",
+        "speech"
+      ]
+    },
+    {
+      "title": "Designing for Digital Connection",
+      "img": "../assets/test.png",
+      "type": "product",
+      "link": "https://medium.com/sosolimited/4-design-principles-for-building-connection-through-digital-experiences-f365d6e9efd1",
+      "description": "How might direct engagement with light change how people occupy a space?",
+      "tags": [
+        "Vue",
+        "speech"
+      ]
+    }
+  ],
+  "experiences": [
+    {
+      "title": "Creative Technologist",
+      "link": "https://www.sosolimited.com",
+      "firm": "Sosolimited",
+      "unlinked": ""
+    },
+    {
+      "title": "Research Fellow: Audiovisual Perception",
+      "link": "https://www.eskewdumezripple.com",
+      "firm": "EskewDumezRipple",
+      "unlinked": ""
+    },
+    {
+      "title": "Founder & Partner: Anivision",
+      "link": "https://dali.dartmouth.edu",
+      "firm": "Digital Applied Learning and Innovation Lab",
+      "unlinked": " @ Dartmouth College"
+    },
+    {
+      "title": "Biophilic Design Intern",
+      "link": "https://www.terrapinbrightgreen.com",
+      "firm": "Terrapin Bright Green",
+      "unlinked": ""
+    }
+  ],
+  "juices": [
+    {
+      "title": "",
+      "img": "../assets/test.png",
+      "description": "",
+      "tags": []
+    }
+  ]
+}

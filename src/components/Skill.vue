@@ -1,18 +1,42 @@
-import React from 'react';
-import '../css/App.css';
-// import { Controller, Scene } from 'react-scrollmagic';
-import Tags from '../components/Tags.js';
+<template>
+  <div class="skill-container">
+    <!-- had span with fontWeight: 600 -->
+    <h3 class="skill-title">
+      I <span :style="{ color: color }">{{ keyword }}</span
+      >{{ title }}
+    </h3>
+    <Tags :words="tags"></Tags>
+  </div>
+</template>
 
-const Skill = (props) => {
-  return (
-    <div className="skill-container">
-      {/* had span with fontWeight: 600 */}
-      <h3 className="skill-title">I <span style={{ color: props.color }}>{props.keyword}</span>{props.title}</h3>
-      <div className="tag-container">
-        {<Tags tags={props.tags}></Tags>}
-      </div>
-    </div>
-  );
+<script>
+import Tags from "./Tags.vue";
+// import { Controller, Scene } from 'react-scrollmagic';
+
+export default {
+  name: "Skill",
+  props: {
+    title: String,
+    keyword: String,
+    color: String,
+    tags: Array
+  },
+  components: {
+    Tags
+  }
+};
+</script>
+
+<style lang="scss">
+.skill-container {
+  width: 30%;
+  /* height: 173px; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-export default Skill;
+/* .skill-title {
+  margin-bottom: 16px;
+} */
+</style>
