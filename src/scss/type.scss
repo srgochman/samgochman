@@ -1,0 +1,56 @@
+/* section heading */
+h1 {
+  text-transform: uppercase;
+  font-size: 16px;
+  font-weight: 800;
+  margin: 0 0 70px 0;
+}
+
+/* large text */
+h2 {
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 1.3em;
+  margin: 0 0 0px 0;
+  /* display: inline; */
+}
+
+/* small text */
+h3 {
+  font-size: 22px;
+  font-weight: 200;
+  line-height: 36px;
+  margin: 0 0 30px 0;
+  /* display: inline; */
+}
+
+p {
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.5em;
+  margin: 0 0 16px 0;
+}
+
+a {
+  /* display: inline;
+  width: min-content;
+  margin: 0; */
+  text-decoration: none;
+  transition: var(--hover);
+  color: black;
+}
+
+a:hover {
+    /* color: var(--gray); */
+    opacity: 0.4;
+    transition: var(--hover);
+  }
+
+.underline {
+  text-decoration: underline;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
