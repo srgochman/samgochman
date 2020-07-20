@@ -1,19 +1,17 @@
 <template>
   <div class="tags-container">
-    <!-- <div v-for="tagCategory in tagCategories" :key="tagCategory.category"> -->
+    <!-- borderLeftColor: categories[findCategory(word)].borderColor -->
     <div
       class="tag"
       v-for="word in words"
       :key="word"
       :style="{
-        color: tagCategories[findCategory(word)].color,
-        backgroundColor: tagCategories[findCategory(word)].backgroundColor
+        color: categories[findCategory(word)].color,
+        backgroundColor: categories[findCategory(word)].backgroundColor
       }"
     >
       {{ word }}
     </div>
-    <!-- v-if="tagCategory.words.includes(word)" -->
-    <!-- </div> -->
   </div>
 </template>
 
@@ -27,13 +25,13 @@ export default {
   },
   data() {
     return {
-      tagCategories: contents["tags"]
+      categories: contents["tags"]
     };
   },
   methods: {
     findCategory(word) {
-      for (let i = 0; i < this.tagCategories.length; i++) {
-        if (this.tagCategories[i].words.includes(word)) {
+      for (let i = 0; i < this.categories.length; i++) {
+        if (this.categories[i].words.includes(word)) {
           return i;
         }
       }
@@ -60,32 +58,23 @@ export default {
   justify-content: flex-start;
 }
 
-/* .tag {
-  margin: 0 10px 10px 0;
-  border: solid 1px;
-  border-radius: 5px;
-  padding: 4px 10px;
-  font-size: 14px;
-  font-weight: 300;
-} */
-
-/* .tag {
-  margin: 0 10px 10px 0;
-  border-left: solid 3px;
-  border-radius: 2px;
-  padding: 7px 13px;
-  font-size: 14px;
-  font-weight: 600;
-} */
+// .tag {
+//   margin: 0 10px 10px 0;
+//   border: solid 2px;
+//   border-radius: 5px;
+//   padding: 4px 10px;
+//   font-size: 14px;
+//   font-weight: 600;
+// }
 
 .tag {
   margin: 0 10px 10px 0;
-  border-radius: 15px;
-  /* border-radius: 5px; */
-  border-radius: 15px;
+  // border-radius: 15px;
+  border-radius: 2px;
+  border-left: solid 3px;
   /* padding: 4px 10px; */
-  padding: 7px 13px;
-  font-size: 14px;
+  padding: 6px 11px;
+  font-size: 12px;
   font-weight: 600;
 }
 </style>

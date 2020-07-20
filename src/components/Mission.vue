@@ -11,15 +11,42 @@
           :key="idx"
         >
           {{ endings[idx] }}
+          <!-- <span :style="{ color: 'black' }">.</span> -->
         </span>
       </transition>
     </div>
     <h3>
-      I come from this perspective and enjoy combining I come from this
-      perspective and enjoy combining I come from this perspective and enjoy
-      combining
+      As a developer
+      <!-- <a
+        class="underline"
+        href="https://github.com/srgochman"
+        target="_blank"
+        rel="noopener"
+        >developer</a
+      > -->
+      with roots in biology and architecture, I can appreciate the complexity of
+      people’s relationships with the world — and that opens up huge creative
+      opportunities.
     </h3>
-    <h3>I'm looking for new work and would love to connect!</h3>
+    <h3 id="connect">
+      * I'm looking for new
+      <a
+        class="underline"
+        href="https://www.linkedin.com/in/samuelrgochman/"
+        target="_blank"
+        rel="noopener"
+        >work</a
+      >
+      and would love to
+      <a
+        class="underline"
+        href="mailto:srgochman@gmail.com"
+        target="_blank"
+        rel="noopener"
+        >connect</a
+      >!
+      <!-- <div id="arrow"></div> -->
+    </h3>
   </div>
 </template>
 
@@ -43,11 +70,12 @@ export default {
   mounted() {
     this.showEndings = true;
     this.advanceInt = setInterval(() => {
+      // if page not visible then dont advance idx; Page Visibility API
       this.idx++;
       if (this.idx >= this.endings.length) {
         this.idx = 0;
       }
-    }, 4000);
+    }, 4500);
   },
   beforeDestroy() {
     clearInterval(this.advanceInt);
@@ -59,7 +87,7 @@ export default {
 .mission-container {
   width: 100%;
   margin-top: 230px;
-  font-size: 50px;
+  font-size: 55px;
   font-weight: 800;
   line-height: 1.3em;
 
@@ -70,10 +98,16 @@ export default {
 
 .mission-statement {
   height: 60px;
+  // max-width: 678px;
+  max-width: 768px;
+
+  span.ending {
+    width: 100%;
+  }
 }
 
 .mission-statement:first-child {
-  margin-bottom: 120px;
+  margin-bottom: 220px;
 }
 
 .fade-enter-active {
@@ -88,5 +122,23 @@ export default {
 .fade-enter,
 .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
   opacity: 0;
+}
+
+// #connect {
+//   margin: 0;
+//   display: inline;
+// }
+
+// #arrow {
+//   background-image: url("../assets/Asset 10.svg");
+//   background-size: cover;
+//   width: 48px;
+//   height: 15px;
+// }
+
+@media only screen and (min-width: 1025px) {
+  .mission-statement {
+    // max-width: 67%;
+  }
 }
 </style>

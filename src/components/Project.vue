@@ -84,6 +84,13 @@ export default {
   img {
     height: 20px;
     margin-top: 7px;
+    // stroke: var(--purple);
+  }
+}
+
+.project-title-container {
+  img:hover {
+    stroke: blue;
   }
 }
 

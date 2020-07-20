@@ -1,3 +1,7 @@
+:root {
+  --hover: all 0.2s ease-in-out 0s;
+}
+
 /* section heading */
 h1 {
   text-transform: uppercase;
@@ -8,7 +12,7 @@ h1 {
 
 /* large text */
 h2 {
-  font-size: 40px;
+  font-size: 36px;
   font-weight: 600;
   line-height: 1.3em;
   margin: 0 0 0px 0;
@@ -21,7 +25,7 @@ h3 {
   font-weight: 200;
   line-height: 36px;
   margin: 0 0 30px 0;
-  /* display: inline; */
+  // display: inline;
 }
 
 p {
@@ -32,22 +36,47 @@ p {
 }
 
 a {
-  /* display: inline;
-  width: min-content;
-  margin: 0; */
   text-decoration: none;
-  transition: var(--hover);
+  // text-decoration: solid underline var(--purple);
+  // text-underline-position: under;
+  transition: var(--hover); // off hover
   color: black;
+  position: relative;
 }
 
 a:hover {
-    /* color: var(--gray); */
-    opacity: 0.4;
-    transition: var(--hover);
-  }
+  color: var(--purple) !important;
+  // opacity: 0.4;
+  transition: var(--hover);
+}
 
 .underline {
-  text-decoration: underline;
+  // text-decoration: solid underline var(--purple);
+  // text-underline-position: under;
+  // text-decoration-thickness: 5px;
+  // border-bottom: solid var(--purple) 2px;
+  // color: var(--purple);
+  // font-weight: 800;
+}
+
+.underline::before {
+  content: "";
+  position: absolute;
+  width: calc(100% - 1px);
+  // width: 20px;
+  height: 2px;
+  bottom: 0;
+  left: 1px;
+  background-color: var(--purple);
+  visibility: visible;
+  transition: var(--hover);
+}
+
+.underline:hover::before {
+  visibility: hidden;
+  width: 0;
+  // width: calc(100% - 1px);
+  left: 1px;
 }
 
 code {

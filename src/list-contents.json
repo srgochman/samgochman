@@ -1,16 +1,20 @@
 {
   "missions": [
+    "talks shop with coders, artists, and scientists.",
+    "turns voices into kaleidoscopes.",
+    "transforms information into conversation.",
     "builds for and with sensory experiences.",
-    "brews beer.",
-    "designs and develops digital experiences.",
-    "makes generative art.",
-    "uses science research to inform design."
+    "parries and lunges.",
+    "makes circuits expressive.",
+    "sees through the eyes of tarsiers and honeybees.",
+    "makes over beloved landmarks."
   ],
   "tags": [
     {
       "category": "physical",
       "color": "var(--purple)",
       "backgroundColor": "var(--purple-transparent)",
+      "borderColor": "var(--purple-semi-transparent)",
       "words": [
         "fabrication",
         "exhibition design"
@@ -20,6 +24,7 @@
       "category": "development",
       "color": "var(--blue)",
       "backgroundColor": "var(--blue-transparent)",
+      "borderColor": "var(--blue-semi-transparent)",
       "words": [
         "D3",
         "Vue",
@@ -30,6 +35,7 @@
       "category": "digital tech",
       "color": "var(--green)",
       "backgroundColor": "var(--green-transparent)",
+      "borderColor": "var(--green-semi-transparent)",
       "words": [
         "arduino",
         "lighting"
@@ -39,7 +45,7 @@
   "skills": [
     {
       "title": " about the unique nuances of the system at hand.",
-      "keyword": "learn",
+      "keyword": "Tech",
       "color": "var(--purple)",
       "tags": [
         "fabrication",
@@ -48,7 +54,7 @@
     },
     {
       "title": " opportunities for new interactions and perspectives.",
-      "keyword": "design",
+      "keyword": "Art",
       "color": "var(--blue)",
       "tags": [
         "D3",
@@ -58,7 +64,7 @@
     },
     {
       "title": " with the most [effective] digital and physical tools for the job.",
-      "keyword": "develop",
+      "keyword": "Senses",
       "color": "var(--green)",
       "tags": [
         "arduino",
@@ -78,39 +84,6 @@
         "arduino",
         "exhibition design",
         "D3"
-      ]
-    },
-    {
-      "title": "Headroom",
-      "img": "../assets/test2.png",
-      "type": "product",
-      "link": "https://headroom.sosolimited.com/",
-      "description": "How might direct engagement with light change how people occupy a space?",
-      "tags": [
-        "Vue",
-        "lighting"
-      ]
-    },
-    {
-      "title": "Miraj",
-      "img": "../assets/test.png",
-      "type": "product",
-      "link": "https://miraj.sosolimited.com/",
-      "description": "How might direct engagement with light change how people occupy a space?",
-      "tags": [
-        "Vue",
-        "speech"
-      ]
-    },
-    {
-      "title": "Designing for Digital Connection",
-      "img": "../assets/test.png",
-      "type": "product",
-      "link": "https://medium.com/sosolimited/4-design-principles-for-building-connection-through-digital-experiences-f365d6e9efd1",
-      "description": "How might direct engagement with light change how people occupy a space?",
-      "tags": [
-        "Vue",
-        "speech"
       ]
     }
   ],
@@ -137,6 +110,20 @@
       "title": "Biophilic Design Intern",
       "link": "https://www.terrapinbrightgreen.com",
       "firm": "Terrapin Bright Green",
+      "unlinked": ""
+    }
+  ],
+  "education": [
+    {
+      "school": "Dartmouth College",
+      "link": "https://www.dartmouth.edu",
+      "study": "BA in Biology, Anthropology, and Human-Centered Design",
+      "unlinked": ""
+    },
+    {
+      "school": "Harvard GSD",
+      "link": "http://designdiscovery.gsd.harvard.edu",
+      "study": "Design Discovery: Architecture",
       "unlinked": ""
     }
   ],

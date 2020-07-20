@@ -1,10 +1,10 @@
 <template>
   <div class="skill-container">
-    <!-- had span with fontWeight: 600 -->
-    <h3 class="skill-title">
+    <h2 :style="{ color: color }">{{ keyword }}</h2>
+    <!-- <h3 class="skill-title">
       I <span :style="{ color: color }">{{ keyword }}</span
       >{{ title }}
-    </h3>
+    </h3> -->
     <Tags :words="tags"></Tags>
   </div>
 </template>
@@ -29,11 +29,12 @@ export default {
 
 <style lang="scss">
 .skill-container {
-  width: 30%;
+  // width: 30%;
+  width: 300px;
   /* height: 173px; */
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  // justify-content: space-between;
 }
 
 /* .skill-title {

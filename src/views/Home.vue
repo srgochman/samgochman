@@ -8,7 +8,7 @@
       <div id="diagram-container">
         <div id="diagram"></div>
       </div>
-      <h1>Skills</h1>
+      <!-- <h1>Skills</h1>
       <div class="skills-container">
         <Skill
           v-for="skill in skills"
@@ -19,7 +19,7 @@
           :tags="skill.tags"
         >
         </Skill>
-      </div>
+      </div> -->
     </div>
 
     <div id="projects" class="section">
@@ -47,10 +47,22 @@
         <h3>
           <a :href="experience.link" target="_blank" rel="noopener">{{
             experience.firm
-          }}</a>
+          }}</a
+          >{{ experience.unlinked }}
         </h3>
       </div>
     </div>
+
+    <!-- <div id="education" class="section">
+      <h1>Education</h1>
+      <div v-for="edu in education" :key="edu.school">
+        <h2>
+          <a :href="edu.link" target="_blank" rel="noopener">{{ edu.school }}</a
+          >{{ edu.unlinked }}
+        </h2>
+        <h3>{{ edu.study }}</h3>
+      </div>
+    </div> -->
   </div>
 </template>
 
@@ -67,7 +79,8 @@ export default {
     return {
       skills: contents["skills"],
       projects: contents["projects"],
-      experiences: contents["experiences"]
+      experiences: contents["experiences"],
+      education: contents["education"]
     };
   },
   components: {
@@ -79,14 +92,6 @@ export default {
 </script>
 
 <style lang="scss">
-.body {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
-  width: 1024px;
-}
-
 #diagram-container {
   width: 100%;
   display: flex;
@@ -99,9 +104,11 @@ export default {
   background-size: cover;
   width: 85%;
   height: 265px;
+  filter: contrast(3);
 }
 
 .skills-container {
+  width: 33%;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -118,8 +125,9 @@ export default {
   display: none;
 } */
 
-#experience {
-  margin-bottom: 0;
+#experience,
+#education {
+  // margin-bottom: 120px;
 
   a {
     color: black;
@@ -129,5 +137,9 @@ export default {
   div {
     margin-bottom: 70px;
   }
+}
+
+.section:last-child {
+  margin-bottom: 0;
 }
 </style>
