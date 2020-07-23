@@ -11,7 +11,6 @@
 
 <script>
 import Tags from "./Tags.vue";
-// import { Controller, Scene } from 'react-scrollmagic';
 
 export default {
   name: "Skill",

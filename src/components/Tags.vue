@@ -1,6 +1,6 @@
 <template>
   <div class="tags-container">
-    <div class="tag-category" v-for="category in words" :key="category">
+    <div class="tag-category" v-for="category in words" :key="category.color">
       <div
         class="tag"
         v-for="word in category.words"

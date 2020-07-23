@@ -52,7 +52,6 @@
 </template>
 
 <script>
-// import { Controller, Scene } from 'react-scrollmagic';
 import contents from "../list-contents.json";
 
 export default {

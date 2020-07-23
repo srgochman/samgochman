@@ -19,7 +19,6 @@
 </template>
 
 <script>
-// import { Controller, Scene } from 'react-scrollmagic';
 import arrow from "../assets/arrow.svg";
 import study from "../assets/study.svg";
 import Tags from "./Tags.vue";

@@ -106,7 +106,7 @@ body {
 
   #name-drawn {
     // padding-left: 100px;
-    width: 170px;
+    width: 130px;
     height: 20px;
     background-image: url("./assets/Asset 9.svg");
     background-repeat: no-repeat;
