@@ -3,9 +3,12 @@
     <img class="project-img" src="../assets/test.png" />
     <div class="project-text">
       <div class="project-title-container">
-        <a :href="link" target="_blank" rel="noopener">
+        <router-link v-if="type === 'study'" :to="link">
           <h3 class="project-title">{{ title }}</h3>
-          <!-- <img :src="type === 'study' ? study : arrow" :alt="type" /> -->
+          <div class="arrow"></div>
+        </router-link>
+        <a v-else :href="link" target="_blank" rel="noopener">
+          <h3 class="project-title">{{ title }}</h3>
           <div class="arrow"></div>
         </a>
       </div>

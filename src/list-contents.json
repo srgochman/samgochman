@@ -11,64 +11,53 @@
   ],
   "tags": [
     {
-      "category": "physical",
+      "category": "information",
       "color": "var(--purple)",
       "backgroundColor": "var(--purple-transparent)",
       "borderColor": "var(--purple-semi-transparent)",
       "words": [
-        "fabrication",
-        "exhibition design"
+        "concept development",
+        "data visualization",
+        "installation",
+        "curriculum design",
+        "UX research",
+        "publication"
       ]
     },
     {
-      "category": "development",
+      "category": "design",
       "color": "var(--blue)",
       "backgroundColor": "var(--blue-transparent)",
       "borderColor": "var(--blue-semi-transparent)",
       "words": [
-        "D3",
-        "Vue",
-        "speech"
+        "fabrication",
+        "environments design",
+        "Rhino3D/Grasshopper",
+        "Unity",
+        "VR",
+        "digital signage",
+        "electrical specification"
       ]
     },
     {
-      "category": "digital tech",
+      "category": "development",
       "color": "var(--green)",
       "backgroundColor": "var(--green-transparent)",
       "borderColor": "var(--green-semi-transparent)",
       "words": [
         "arduino",
-        "lighting"
-      ]
-    }
-  ],
-  "skills": [
-    {
-      "title": " about the unique nuances of the system at hand.",
-      "keyword": "Tech",
-      "color": "var(--purple)",
-      "tags": [
-        "fabrication",
-        "exhibition design"
-      ]
-    },
-    {
-      "title": " opportunities for new interactions and perspectives.",
-      "keyword": "Art",
-      "color": "var(--blue)",
-      "tags": [
-        "D3",
-        "Vue",
-        "speech"
-      ]
-    },
-    {
-      "title": " with the most [effective] digital and physical tools for the job.",
-      "keyword": "Senses",
-      "color": "var(--green)",
-      "tags": [
-        "arduino",
-        "lighting"
+        "HTML5/CSS3/JavaScript",
+        "D3.js",
+        "Vue.js",
+        "Web Audio",
+        "speech-to-text",
+        "Tone.js",
+        "Electron",
+        "AWS",
+        "rapid prototyping",
+        "OpenCV",
+        "app deployment",
+        "video.js"
       ]
     }
   ],
@@ -76,14 +65,15 @@
     {
       "title": "Phototaxis",
       "img": "../assets/test.png",
-      "type": "study",
+      "type": "product",
       "link": "https://www.eskewdumezripple.com/phototaxis.html",
       "description": "How might direct engagement with light change how people occupy a space?",
       "tags": [
         "fabrication",
         "arduino",
-        "exhibition design",
-        "D3"
+        "environments design",
+        "Rhino3D/Grasshopper",
+        "data visualization"
       ]
     }
   ],

@@ -1,0 +1,271 @@
+{
+  "missions": [
+    "talks shop with coders, artists, and scientists.",
+    "turns voices into kaleidoscopes.",
+    "transforms information into conversation.",
+    "builds for and with sensory experiences.",
+    "parries and lunges.",
+    "makes circuits expressive.",
+    "sees through the eyes of tarsiers and honeybees.",
+    "makes over beloved landmarks."
+  ],
+  "tags": [
+    {
+      "category": "information",
+      "color": "var(--purple)",
+      "backgroundColor": "var(--purple-transparent)",
+      "borderColor": "var(--purple-semi-transparent)",
+      "words": [
+        "concept development",
+        "data visualization",
+        "installation",
+        "curriculum design",
+        "UX research",
+        "publication"
+      ]
+    },
+    {
+      "category": "design",
+      "color": "var(--blue)",
+      "backgroundColor": "var(--blue-transparent)",
+      "borderColor": "var(--blue-semi-transparent)",
+      "words": [
+        "fabrication",
+        "environments design",
+        "Rhino3D/Grasshopper",
+        "Unity",
+        "VR",
+        "digital signage",
+        "electrical specification"
+      ]
+    },
+    {
+      "category": "development",
+      "color": "var(--green)",
+      "backgroundColor": "var(--green-transparent)",
+      "borderColor": "var(--green-semi-transparent)",
+      "words": [
+        "arduino",
+        "HTML5/CSS3/JavaScript",
+        "D3.js",
+        "Vue.js",
+        "Web Audio",
+        "speech-to-text",
+        "Tone.js",
+        "Electron",
+        "AWS",
+        "rapid prototyping",
+        "OpenCV",
+        "app deployment",
+        "video.js"
+      ]
+    }
+  ],
+  "skills": [
+    {
+      "title": " about the unique nuances of the system at hand.",
+      "keyword": "Tech",
+      "color": "var(--purple)",
+      "tags": [
+        "fabrication",
+        "exhibition design"
+      ]
+    },
+    {
+      "title": " opportunities for new interactions and perspectives.",
+      "keyword": "Art",
+      "color": "var(--blue)",
+      "tags": [
+        "D3",
+        "Vue",
+        "speech"
+      ]
+    },
+    {
+      "title": " with the most [effective] digital and physical tools for the job.",
+      "keyword": "Senses",
+      "color": "var(--green)",
+      "tags": [
+        "arduino",
+        "lighting"
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "title": "Phototaxis",
+      "img": "../assets/test.png",
+      "type": "product",
+      "link": "https://www.eskewdumezripple.com/phototaxis.html",
+      "description": "How might direct engagement with light change how people occupy a space?",
+      "tags": [
+        "fabrication",
+        "arduino",
+        "environments design",
+        "Rhino3D/Grasshopper",
+        "data visualization"
+      ]
+    },
+    {
+      "title": "Multilingual",
+      "img": "../assets/test.png",
+      "type": "study",
+      "link": "/multilingual",
+      "description": "How can we transform linguistic data into interactive art that celebrates a community?",
+      "tags": [
+        "data visualization",
+        "Electron",
+        "HTML5/CSS3/JavaScript",
+        "concept development",
+        "digital signage"
+      ]
+    },
+    {
+      "title": "What I Know Now",
+      "img": "../assets/test.png",
+      "type": "study",
+      "link": "/WIKN",
+      "description": "How can we honor the community’s collective voices on a generative canvas?",
+      "tags": [
+        "HTML5/CSS3/JavaScript",
+        "Vue.js",
+        "Web Audio",
+        "data visualization",
+        "concept development"
+      ]
+    },
+    {
+      "title": "Miraj",
+      "img": "../assets/test.png",
+      "type": "product",
+      "link": "https://miraj.sosolimited.com/",
+      "description": "How can we transform a voice into a kaleidoscope?",
+      "tags": [
+        "HTML5/CSS3/JavaScript",
+        "Electron",
+        "Web Audio",
+        "speech-to-text",
+        "OpenCV",
+        "installation"
+      ]
+    },
+    {
+      "title": "Together Apart",
+      "img": "../assets/test.png",
+      "type": "product",
+      "link": "https://medium.com/sosolimited/4-design-principles-for-building-connection-through-digital-experiences-f365d6e9efd1",
+      "description": "How can technology foster emotional and sensory connection across physical space?",
+      "tags": [
+        "HTML5/CSS3/JavaScript",
+        "Vue.js",
+        "Tone.js",
+        "Web Audio",
+        "AWS",
+        "rapid prototyping",
+        "UX research"
+      ]
+    },
+    {
+      "title": "Fenway Theater",
+      "img": "../assets/test.png",
+      "type": "study",
+      "link": "/fenway",
+      "description": "How can we celebrate Fenway’s tradition with today’s tech?",
+      "tags": [
+        "digital signage",
+        "environments design",
+        "electrical specification",
+        "Rhino3D/Grasshopper"
+      ]
+    },
+    {
+      "title": "athenahealth State of the Smart",
+      "img": "../assets/test.png",
+      "type": "study",
+      "link": "/athena",
+      "description": "How can we embrace an organization’s diversity with AR?",
+      "tags": [
+        "HTML5/CSS3/JavaScript",
+        "Vue.js",
+        "data visualization",
+        "app deployment"
+      ]
+    },
+    {
+      "title": "Anivision",
+      "img": "../assets/test.png",
+      "type": "study",
+      "link": "/anivision",
+      "description": "How might students learn science through the eyes of an animal?",
+      "tags": [
+        "VR",
+        "Unity",
+        "environments design",
+        "UX research",
+        "curriculum design",
+        "publication"
+      ]
+    },
+    {
+      "title": "Qualcomm Gaming Mode Boost",
+      "img": "../assets/test.png",
+      "type": "study",
+      "link": "/qualcomm",
+      "description": "How can an interface showcase the power of a next generation gaming experience?",
+      "tags": [
+        "data visualization",
+        "Vue.js",
+        "D3.js",
+        "video.js"
+      ]
+    }
+  ],
+  "experiences": [
+    {
+      "title": "Creative Technologist",
+      "link": "https://www.sosolimited.com",
+      "firm": "Sosolimited",
+      "unlinked": ""
+    },
+    {
+      "title": "Research Fellow: Audiovisual Perception",
+      "link": "https://www.eskewdumezripple.com",
+      "firm": "EskewDumezRipple",
+      "unlinked": ""
+    },
+    {
+      "title": "Founder & Partner: Anivision",
+      "link": "https://dali.dartmouth.edu",
+      "firm": "Digital Applied Learning and Innovation Lab",
+      "unlinked": " @ Dartmouth College"
+    },
+    {
+      "title": "Biophilic Design Intern",
+      "link": "https://www.terrapinbrightgreen.com",
+      "firm": "Terrapin Bright Green",
+      "unlinked": ""
+    }
+  ],
+  "education": [
+    {
+      "school": "Dartmouth College",
+      "link": "https://www.dartmouth.edu",
+      "study": "BA in Biology, Anthropology, and Human-Centered Design",
+      "unlinked": ""
+    },
+    {
+      "school": "Harvard GSD",
+      "link": "http://designdiscovery.gsd.harvard.edu",
+      "study": "Design Discovery: Architecture",
+      "unlinked": ""
+    }
+  ],
+  "juices": [
+    {
+      "title": "",
+      "img": "../assets/test.png",
+      "description": "",
+      "tags": []
+    }
+  ]
+}

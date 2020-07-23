@@ -25,6 +25,7 @@
     <div id="projects" class="section">
       <!-- <h1>Selected Work</h1> -->
       <div id="work-drawn"></div>
+      <!-- TODO: scrollbox of project images (full width to capture scroll) with absolute positioned project text -->
       <div id="projects-container">
         <!-- scroll sets project to active; if project is not active, hide -->
         <Project

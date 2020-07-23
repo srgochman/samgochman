@@ -80,7 +80,7 @@ body {
   width: 100%;
   // max-width: 1024px;
   padding: 20px 0px;
-  background-color: rgb(255, 255, 255);
+  // background-color: rgb(255, 255, 255);
   // backdrop-filter: blur(5px);
   /* border-bottom: lightgray 1px solid; */
   // box-shadow: rgba(0, 0, 0, 0.15) 0 2px 5px;
