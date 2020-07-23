@@ -1,51 +1,32 @@
 <template>
   <div class="tags-container">
-    <!-- borderLeftColor: categories[findCategory(word)].borderColor -->
-    <div
-      class="tag"
-      v-for="word in words"
-      :key="word"
-      :style="{
-        color: categories[findCategory(word)].color,
-        backgroundColor: categories[findCategory(word)].backgroundColor
-      }"
-    >
-      {{ word }}
+    <div class="tag-category" v-for="category in words" :key="category">
+      <div
+        class="tag"
+        v-for="word in category.words"
+        :key="word"
+        :style="{
+          color: category.color,
+          backgroundColor: category.backgroundColor
+        }"
+      >
+        {{ word }}
+      </div>
     </div>
   </div>
 </template>
 
 <script>
-import contents from "../list-contents.json";
-
 export default {
   name: "Tags",
   props: {
     words: Array
   },
   data() {
-    return {
-      categories: contents["tags"]
-    };
+    return {};
   },
-  methods: {
-    findCategory(word) {
-      for (let i = 0; i < this.categories.length; i++) {
-        if (this.categories[i].words.includes(word)) {
-          return i;
-        }
-      }
-    }
-  },
-  computed: {
-    // tagCategory() {
-    //   const categories = contents["tags"];
-    //   for (category in categories) {
-    //   }
-    //   return {};
-    // }
-  },
-  components: {}
+  methods: {},
+  computed: {}
 };
 </script>
 
@@ -53,19 +34,16 @@ export default {
 .tags-container {
   margin: 0 0 70px 0;
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  flex-direction: column;
+  // flex-wrap: wrap;
   justify-content: flex-start;
 }
 
-// .tag {
-//   margin: 0 10px 10px 0;
-//   border: solid 2px;
-//   border-radius: 5px;
-//   padding: 4px 10px;
-//   font-size: 14px;
-//   font-weight: 600;
-// }
+.tag-category {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
 
 .tag {
   margin: 0 10px 10px 0;

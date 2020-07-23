@@ -17,17 +17,16 @@
     </div>
     <div class="mission-description">
       <h3>
-        As a developer
-        <!-- <a
-        class="underline"
-        href="https://github.com/srgochman"
-        target="_blank"
-        rel="noopener"
-        >developer</a
-      > -->
-        with roots in biology and architecture, I can appreciate the complexity
-        of people’s relationships with the world — and that opens up huge
-        creative opportunities.
+        As a primate researcher-turned-design
+        <a
+          class="underline"
+          href="https://github.com/srgochman"
+          target="_blank"
+          rel="noopener"
+          >developer</a
+        >
+        , I appreciate the complexity of people’s relationships with the world —
+        and that opens up huge creative opportunities.
       </h3>
       <h3 id="connect">
         * I'm looking for new

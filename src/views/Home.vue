@@ -24,7 +24,7 @@
 
     <div id="projects" class="section">
       <!-- <h1>Selected Work</h1> -->
-      <div id="work-drawn"></div>
+      <div id="work-drawn" class="section-heading"></div>
       <!-- TODO: scrollbox of project images (full width to capture scroll) with absolute positioned project text -->
       <div id="projects-container">
         <!-- scroll sets project to active; if project is not active, hide -->
@@ -44,7 +44,7 @@
 
     <div id="experience" class="section">
       <!-- <h1>Experience</h1> -->
-      <div id="experience-drawn"></div>
+      <div id="experience-drawn" class="section-heading"></div>
       <div
         class="experience-item"
         v-for="experience in experiences"
@@ -59,25 +59,12 @@
         </h3>
       </div>
     </div>
-
-    <!-- <div id="education" class="section">
-      <h1>Education</h1>
-      <div v-for="edu in education" :key="edu.school">
-        <h2>
-          <a :href="edu.link" target="_blank" rel="noopener">{{ edu.school }}</a
-          >{{ edu.unlinked }}
-        </h2>
-        <h3>{{ edu.study }}</h3>
-      </div>
-    </div> -->
   </div>
 </template>
 
 <script>
 import Mission from "../components/Mission.vue";
-// import Skill from "../components/Skill.vue";
 import Project from "../components/Project.vue";
-// import { Controller, Scene } from 'react-scrollmagic';
 import contents from "../list-contents.json";
 
 export default {
@@ -92,7 +79,6 @@ export default {
   },
   components: {
     Mission,
-    // Skill,
     Project
   }
 };
@@ -115,13 +101,9 @@ export default {
   filter: contrast(3);
 }
 
-.skills-container {
-  width: 33%;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
+// .section-heading {
+//   opacity: 0.3;
+// }
 
 #work-drawn {
   background-image: url("../assets/work_drawn.svg");
