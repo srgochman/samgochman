@@ -15,38 +15,40 @@
         </span>
       </transition>
     </div>
-    <h3>
-      As a developer
-      <!-- <a
+    <div class="mission-description">
+      <h3>
+        As a developer
+        <!-- <a
         class="underline"
         href="https://github.com/srgochman"
         target="_blank"
         rel="noopener"
         >developer</a
       > -->
-      with roots in biology and architecture, I can appreciate the complexity of
-      people’s relationships with the world — and that opens up huge creative
-      opportunities.
-    </h3>
-    <h3 id="connect">
-      * I'm looking for new
-      <a
-        class="underline"
-        href="https://www.linkedin.com/in/samuelrgochman/"
-        target="_blank"
-        rel="noopener"
-        >work</a
-      >
-      and would love to
-      <a
-        class="underline"
-        href="mailto:srgochman@gmail.com"
-        target="_blank"
-        rel="noopener"
-        >connect</a
-      >!
-      <!-- <div id="arrow"></div> -->
-    </h3>
+        with roots in biology and architecture, I can appreciate the complexity
+        of people’s relationships with the world — and that opens up huge
+        creative opportunities.
+      </h3>
+      <h3 id="connect">
+        * I'm looking for new
+        <a
+          class="underline"
+          href="https://www.linkedin.com/in/samuelrgochman/"
+          target="_blank"
+          rel="noopener"
+          >work</a
+        >
+        and would love to
+        <a
+          class="underline"
+          href="mailto:srgochman@gmail.com"
+          target="_blank"
+          rel="noopener"
+          >connect</a
+        >!
+        <!-- <div id="arrow"></div> -->
+      </h3>
+    </div>
   </div>
 </template>
 
@@ -87,27 +89,46 @@ export default {
 .mission-container {
   width: 100%;
   margin-top: 230px;
-  font-size: 55px;
+  font-size: 65px;
   font-weight: 800;
   line-height: 1.3em;
-
-  h3 {
-    width: 67%;
-  }
+  display: flex;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -moz-flex;
+  display: -webkit-flex;
+  flex-flow: row wrap;
+  // justify-content: space-between;
 }
 
 .mission-statement {
-  height: 60px;
+  // font-family: Roboto Condensed;
+  height: 300px;
   // max-width: 678px;
-  max-width: 768px;
+  // max-width: calc(max(768px, 50%));
+  max-width: 900px;
+  margin-right: 17%;
+  // flex-grow: 2;
+  // flex-basis: 67%;
+  // padding-right: 80px;
 
   span.ending {
     width: 100%;
   }
 }
 
-.mission-statement:first-child {
-  margin-bottom: 220px;
+// .mission-statement:first-child {
+//   margin-bottom: 260px;
+// }
+
+.mission-description {
+  // max-width: calc(max(500px, 30%));
+  width: 600px;
+  // position: absolute;
+  // left: 67%;
+  // flex-grow: 1;
+  // flex-basis: 33%;
 }
 
 .fade-enter-active {

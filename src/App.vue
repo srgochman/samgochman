@@ -3,14 +3,14 @@
     <div id="nav">
       <router-link to="/" class="sam-gochman">
         <!-- Sam Gochman -->
-        <div id="name-handwritten"></div>
+        <div id="name-drawn"></div>
       </router-link>
       <router-link to="/juices" class="creative-container">
         <div class="creative-img"></div>
         <div class="creative-text">
-          <span style="color: var(--purple)">Latest</span>
-          <span style="color: var(--blue)">Creative</span>
-          <span style="color: var(--green)">Juices</span>
+          <span id="text-latest" style="color: var(--purple)">Latest</span>
+          <span id="text-creative" style="color: var(--blue)">Creative</span>
+          <span id="text-juices" style="color: var(--green)">Juices</span>
         </div>
       </router-link>
     </div>
@@ -60,7 +60,7 @@ body {
 }
 
 #app {
-  max-width: 1024px;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -68,7 +68,7 @@ body {
   color: black;
   background-color: white;
   font-size: 24px;
-  padding: 0 10vw;
+  padding: 0 calc(max(15vw, 50px));
   /* font-weight: 200; */
 }
 
@@ -78,18 +78,18 @@ body {
 
 #nav {
   width: 100%;
-  max-width: 1024px;
+  // max-width: 1024px;
   padding: 20px 0px;
-  background-color: rgba(255, 255, 255, 0.952);
-  backdrop-filter: blur(5px);
+  background-color: rgb(255, 255, 255);
+  // backdrop-filter: blur(5px);
   /* border-bottom: lightgray 1px solid; */
-  /* box-shadow: rgba(0, 0, 0, 0.15) 0 2px 5px; */
+  // box-shadow: rgba(0, 0, 0, 0.15) 0 2px 5px;
   /* box-shadow: 0 30px 20px white; */
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 
-  position: fixed;
+  position: absolute;
   top: 0;
   z-index: 100;
 
@@ -99,24 +99,26 @@ body {
     font-size: 24px;
     font-weight: 800;
     color: black;
-    // padding-left: 100px;
-    padding-left: 10vw;
+    margin-top: 15px;
+    padding-left: calc(min(10vw, 50px));
+    // padding-left: 13vw;
   }
 
-  #name-handwritten {
-    // padding-left: 10vw;
+  #name-drawn {
+    // padding-left: 100px;
     width: 170px;
-    height: 30px;
+    height: 20px;
     background-image: url("./assets/Asset 9.svg");
     background-repeat: no-repeat;
   }
 
   .creative-container {
+    // visibility: hidden;
     display: flex;
     flex-direction: row;
     transition: var(--hover);
-    // padding-right: 100px;
-    padding-right: 10vw;
+    padding-right: calc(min(3vw, 50px));
+    // padding-right: 15vw;
   }
 
   .creative-img {
@@ -128,7 +130,7 @@ body {
   }
 
   .creative-text {
-    margin: 0 0 0 15px;
+    margin: 0 0 0 12px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -144,6 +146,7 @@ body {
   align-items: flex-start;
   justify-content: center;
   // width: 1024px;
+  width: 100%;
 }
 
 .section {
@@ -167,17 +170,49 @@ body {
 
 @media only screen and (max-width: 425px) {
   #nav {
-    position: unset;
+    position: absolute;
+  }
+
+  .creative-text {
+    width: 10px;
+  }
+
+  #text-latest {
+    visibility: hidden;
+  }
+  #text-latest:before {
+    visibility: visible;
+    content: "L";
+  }
+  #text-creative {
+    visibility: hidden;
+  }
+  #text-creative:before {
+    visibility: visible;
+    content: "C";
+  }
+  #text-juices {
+    visibility: hidden;
+  }
+  #text-juices:before {
+    visibility: visible;
+    content: "J";
+  }
+}
+
+@media only screen and (min-width: 426px) and (max-width: 768px) {
+  #nav {
+    position: absolute;
   }
 }
 
 @media only screen and (min-width: 1025px) {
-  #nav {
-    .sam-gochman,
-    .creative-container {
-      // padding: 0 50px;
-      padding: 0;
-    }
-  }
+  // #nav {
+  //   .sam-gochman,
+  //   .creative-container {
+  //     // padding: 0 50px;
+  //     padding: 0;
+  //   }
+  // }
 }
 </style>

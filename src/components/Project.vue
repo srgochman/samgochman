@@ -1,11 +1,12 @@
 <template>
   <div class="project-container">
-    <!-- <img class="project-img" src={photo}> -->
+    <img class="project-img" src="../assets/test.png" />
     <div class="project-text">
       <div class="project-title-container">
         <a :href="link" target="_blank" rel="noopener">
           <h3 class="project-title">{{ title }}</h3>
-          <img :src="type === 'study' ? study : arrow" :alt="type" />
+          <!-- <img :src="type === 'study' ? study : arrow" :alt="type" /> -->
+          <div class="arrow"></div>
         </a>
       </div>
       <h2 class="project-desc">{{ description }}</h2>
@@ -53,8 +54,11 @@ export default {
 }
 
 .project-img {
-  width: 63%;
-  height: 500px;
+  flex-grow: 1;
+  margin-right: 50px;
+  // width: 63%;
+  // height: 500px;
+  height: 800px;
 }
 
 .project-text {
@@ -80,22 +84,37 @@ export default {
     color: black;
     display: flex;
     align-items: flex-start;
+    // img {
+    //   height: 10px;
+    //   margin-top: 13px;
+    //   // stroke: var(--purple);
+    // }
+    .arrow {
+      background-image: url("../assets/arrow_drawn.svg");
+      background-size: cover;
+      width: 32px;
+      height: 10px;
+      margin-top: 13px;
+      // transition: var(--hover);
+    }
   }
-  img {
-    height: 20px;
-    margin-top: 7px;
-    // stroke: var(--purple);
+
+  a:hover {
+    .arrow {
+      background-image: url("../assets/arrow_drawn_purple.svg");
+      // transition: var(--hover);
+    }
   }
 }
 
-.project-title-container {
-  img:hover {
-    stroke: blue;
-  }
-}
+// .project-title-container {
+//   img:hover {
+//     stroke: blue;
+//   }
+// }
 
 .project-title {
-  margin: 0 20px 0 0;
+  margin: 0 15px 0 0;
 }
 
 /* .project-title-container:hover, */

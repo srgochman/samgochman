@@ -6,7 +6,7 @@
 
     <div id="skills" class="section">
       <div id="diagram-container">
-        <div id="diagram"></div>
+        <img id="diagram" src="../assets/people-experiences_handwritten.png" />
       </div>
       <!-- <h1>Skills</h1>
       <div class="skills-container">
@@ -23,7 +23,8 @@
     </div>
 
     <div id="projects" class="section">
-      <h1>Selected Work</h1>
+      <!-- <h1>Selected Work</h1> -->
+      <div id="work-drawn"></div>
       <div id="projects-container">
         <!-- scroll sets project to active; if project is not active, hide -->
         <Project
@@ -41,8 +42,13 @@
     </div>
 
     <div id="experience" class="section">
-      <h1>Experience</h1>
-      <div v-for="experience in experiences" :key="experience.title">
+      <!-- <h1>Experience</h1> -->
+      <div id="experience-drawn"></div>
+      <div
+        class="experience-item"
+        v-for="experience in experiences"
+        :key="experience.title"
+      >
         <h2>{{ experience.title }}</h2>
         <h3>
           <a :href="experience.link" target="_blank" rel="noopener">{{
@@ -68,7 +74,7 @@
 
 <script>
 import Mission from "../components/Mission.vue";
-import Skill from "../components/Skill.vue";
+// import Skill from "../components/Skill.vue";
 import Project from "../components/Project.vue";
 // import { Controller, Scene } from 'react-scrollmagic';
 import contents from "../list-contents.json";
@@ -85,7 +91,7 @@ export default {
   },
   components: {
     Mission,
-    Skill,
+    // Skill,
     Project
   }
 };
@@ -100,10 +106,11 @@ export default {
 }
 
 #diagram {
-  background-image: url(../assets/people-experiences_handwritten.png);
-  background-size: cover;
-  width: 85%;
-  height: 265px;
+  // background-image: url(../assets/people-experiences_handwritten.png);
+  // background-size: cover;
+  // width: 85%;
+  width: calc(min(100%, 1024px));
+  // height: 265px;
   filter: contrast(3);
 }
 
@@ -113,6 +120,14 @@ export default {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
+}
+
+#work-drawn {
+  background-image: url("../assets/work_drawn.svg");
+  background-repeat: no-repeat;
+  // width: 150px;
+  height: 15px;
+  margin: 0 0 70px 0;
 }
 
 #projects-container {
@@ -125,6 +140,18 @@ export default {
   display: none;
 } */
 
+#experience-drawn {
+  background-image: url("../assets/experience_drawn.svg");
+  background-repeat: no-repeat;
+  // width: 115px;
+  height: 15px;
+  margin: 0 0 70px 0;
+}
+
+.experience-item {
+  margin-bottom: 70px;
+}
+
 #experience,
 #education {
   // margin-bottom: 120px;
@@ -133,13 +160,9 @@ export default {
     color: black;
     display: inline;
   }
-
-  div {
-    margin-bottom: 70px;
-  }
 }
 
 .section:last-child {
-  margin-bottom: 0;
+  margin-bottom: 5vh;
 }
 </style>
