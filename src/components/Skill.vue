@@ -1,42 +1,38 @@
 <template>
   <div class="skill-container">
-    <h2 :style="{ color: color }">{{ keyword }}</h2>
-    <!-- <h3 class="skill-title">
-      I <span :style="{ color: color }">{{ keyword }}</span
-      >{{ title }}
-    </h3> -->
-    <Tags :words="tags"></Tags>
+    <!-- <h2 :style="{ color: color }">{{ keyword }}</h2> -->
+    <h2 class="skill-description">
+      I <span :style="{ color: color, fontWeight: 600 }">{{ keyword }}</span
+      >{{ description }}
+    </h2>
   </div>
 </template>
 
 <script>
-import Tags from "./Tags.vue";
-
 export default {
   name: "Skill",
   props: {
-    title: String,
+    description: String,
     keyword: String,
-    color: String,
-    tags: Array
+    color: String
   },
-  components: {
-    Tags
-  }
+  components: {}
 };
 </script>
 
 <style lang="scss">
 .skill-container {
-  // width: 30%;
-  width: 300px;
+  width: 33%;
+  // width: 300px;
   /* height: 173px; */
-  display: flex;
-  flex-direction: column;
+  // display: flex;
+  // flex-direction: column;
   // justify-content: space-between;
 }
 
-/* .skill-title {
-  margin-bottom: 16px;
-} */
+.skill-description {
+  // margin-bottom: 16px;
+  width: 66%;
+  // font-weight: 600;
+}
 </style>

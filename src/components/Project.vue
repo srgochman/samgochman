@@ -1,6 +1,10 @@
 <template>
   <div class="project-container">
     <img class="project-img" src="../assets/test.png" />
+    <!-- <img class="project-img" :src="`../assets/${img}`" /> -->
+    <!-- <img class="project-img" :src="importedImg" /> -->
+    <!-- <img class="project-img" :src="`require('../assets/${img}')`" /> -->
+    <!-- <img class="project-img" :src="image" /> -->
     <div class="project-text">
       <div class="project-title-container">
         <router-link v-if="type === 'study'" :to="link">
@@ -19,17 +23,19 @@
 </template>
 
 <script>
-import arrow from "../assets/arrow.svg";
 import study from "../assets/study.svg";
 import Tags from "./Tags.vue";
+// import test from "../assets/test.png";
 // img, arrow, description, tags hidden for projects that aren't active
 
 export default {
   name: "Project",
   data() {
     return {
-      arrow: arrow,
       study: study
+      // test: test
+      // image: "../../public/" + this.img
+      // /Users/sosolimited/Desktop/samgochman/public/test2.png
     };
   },
   props: {
@@ -39,6 +45,14 @@ export default {
     tags: Array,
     link: String,
     type: String
+  },
+  // computed: {
+  //   importedImg() {
+  //     return require(this.img);
+  //   }
+  // },
+  mounted() {
+    // this.image = `"../assets/${this.img}"`;
   },
   components: {
     Tags
@@ -92,7 +106,7 @@ export default {
     //   // stroke: var(--purple);
     // }
     .arrow {
-      background-image: url("../assets/arrow_drawn.svg");
+      background-image: url("../assets/drawn/arrow_drawn2.svg");
       background-size: cover;
       width: 32px;
       height: 10px;
@@ -103,7 +117,7 @@ export default {
 
   a:hover {
     .arrow {
-      background-image: url("../assets/arrow_drawn_purple.svg");
+      background-image: url("../assets/drawn/arrow_drawn2_purple.svg");
       // transition: var(--hover);
     }
   }

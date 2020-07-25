@@ -68,7 +68,7 @@ body {
   color: black;
   background-color: white;
   font-size: 24px;
-  padding: 0 calc(max(15vw, 50px));
+  padding: 0 calc(max(20vw, 50px));
   /* font-weight: 200; */
 }
 
@@ -108,7 +108,7 @@ body {
     // padding-left: 100px;
     width: 130px;
     height: 20px;
-    background-image: url("./assets/Asset 9.svg");
+    background-image: url("./assets/drawn/name_drawn.svg");
     background-repeat: no-repeat;
   }
 

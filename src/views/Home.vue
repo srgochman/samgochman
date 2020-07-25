@@ -5,21 +5,21 @@
     </div>
 
     <div id="skills" class="section">
-      <div id="diagram-container">
+      <!-- <div id="diagram-container">
         <img id="diagram" src="../assets/people-experiences_handwritten.png" />
-      </div>
-      <!-- <h1>Skills</h1>
+      </div> -->
+      <!-- <h1>Skills</h1> -->
+      <div id="skills-drawn" class="section-heading"></div>
       <div class="skills-container">
         <Skill
           v-for="skill in skills"
           :key="skill.keyword"
-          :title="skill.title"
+          :description="skill.description"
           :keyword="skill.keyword"
           :color="skill.color"
-          :tags="skill.tags"
         >
         </Skill>
-      </div> -->
+      </div>
     </div>
 
     <div id="projects" class="section">
@@ -64,6 +64,7 @@
 
 <script>
 import Mission from "../components/Mission.vue";
+import Skill from "../components/Skill.vue";
 import Project from "../components/Project.vue";
 import contents from "../list-contents.json";
 
@@ -79,6 +80,7 @@ export default {
   },
   components: {
     Mission,
+    Skill,
     Project
   }
 };
@@ -105,8 +107,23 @@ export default {
 //   opacity: 0.3;
 // }
 
+#skills-drawn {
+  background-image: url("../assets/drawn/skills_drawn.svg");
+  background-repeat: no-repeat;
+  // width: 150px;
+  height: 15px;
+  margin: 0 0 70px 0;
+}
+
+.skills-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
 #work-drawn {
-  background-image: url("../assets/work_drawn.svg");
+  background-image: url("../assets/drawn/work_drawn.svg");
   background-repeat: no-repeat;
   // width: 150px;
   height: 15px;
@@ -124,7 +141,7 @@ export default {
 } */
 
 #experience-drawn {
-  background-image: url("../assets/experience_drawn.svg");
+  background-image: url("../assets/drawn/experience_drawn.svg");
   background-repeat: no-repeat;
   // width: 115px;
   height: 15px;

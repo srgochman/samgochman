@@ -17,33 +17,43 @@
     </div>
     <div class="mission-description">
       <h3>
-        As a primate researcher-turned-design
-        <a
+        As a developer
+        <!-- <a
           class="underline"
           href="https://github.com/srgochman"
           target="_blank"
           rel="noopener"
           >developer</a
-        >
-        , I appreciate the complexity of people’s relationships with the world —
-        and that opens up huge creative opportunities.
+        > -->
+        with roots in biology and architecture, I appreciate the complexity of
+        people’s relationships with the world — and that opens up huge creative
+        opportunities.
       </h3>
-      <h3 id="connect">
+      <h3 id="contact">
         * I'm looking for new
         <a
-          class="underline"
+          id="work"
           href="https://www.linkedin.com/in/samuelrgochman/"
           target="_blank"
           rel="noopener"
-          >work</a
-        >
+          >work
+          <img
+            class="work-underline"
+            src="../assets/drawn/line1_purple.svg"
+            height="5"
+          />
+        </a>
         and would love to
         <a
-          class="underline"
+          id="connect"
           href="mailto:srgochman@gmail.com"
           target="_blank"
           rel="noopener"
-          >connect</a
+          >connect
+          <img
+            class="connect-underline"
+            src="../assets/drawn/line2_purple.svg"
+            height="5"/></a
         >!
         <!-- <div id="arrow"></div> -->
       </h3>
@@ -53,6 +63,7 @@
 
 <script>
 import contents from "../list-contents.json";
+import $ from "jquery";
 
 export default {
   name: "Mission",
@@ -68,6 +79,13 @@ export default {
   props: {},
   components: {},
   mounted() {
+    $("#work").hover(function() {
+      $(".work-underline").toggleClass("work-underline-hover");
+    });
+    $("#connect").hover(function() {
+      $(".connect-underline").toggleClass("connect-underline-hover");
+    });
+
     this.showEndings = true;
     this.advanceInt = setInterval(() => {
       // if page not visible then dont advance idx; Page Visibility API
@@ -143,7 +161,7 @@ export default {
   opacity: 0;
 }
 
-// #connect {
+// #contact {
 //   margin: 0;
 //   display: inline;
 // }
@@ -155,9 +173,44 @@ export default {
 //   height: 15px;
 // }
 
+// .underline {
+//   text-decoration: solid underline var(--purple);
+//   text-underline-position: under;
+//   text-decoration-thickness: 5px;
+//   border-bottom: solid var(--purple) 2px;
+//   color: var(--purple);
+//   font-weight: 800;
+// }
+
+.work-underline,
+.connect-underline {
+  content: "";
+  position: absolute;
+  width: calc(100% - 5px);
+  // width: 20px;
+  transform-origin: left;
+  transform: scaleX(1);
+  transform: scaleY(1.5);
+  // height: 5px;
+  bottom: 0;
+  left: 0px;
+  // background-color: var(--purple);
+  visibility: visible;
+  transition: var(--hover);
+}
+
+.work-underline-hover,
+.connect-underline-hover {
+  visibility: hidden;
+  // width: 0;
+  // width: calc(100% - 1px);
+  transform: scaleX(0);
+  left: 0px;
+}
+
 @media only screen and (min-width: 1025px) {
-  .mission-statement {
-    // max-width: 67%;
-  }
+  // .mission-statement {
+  //   max-width: 67%;
+  // }
 }
 </style>

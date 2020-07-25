@@ -50,35 +50,6 @@ a:hover {
   transition: var(--hover);
 }
 
-.underline {
-  // text-decoration: solid underline var(--purple);
-  // text-underline-position: under;
-  // text-decoration-thickness: 5px;
-  // border-bottom: solid var(--purple) 2px;
-  // color: var(--purple);
-  // font-weight: 800;
-}
-
-.underline::before {
-  content: "";
-  position: absolute;
-  width: calc(100% - 1px);
-  // width: 20px;
-  height: 2px;
-  bottom: 0;
-  left: 1px;
-  background-color: var(--purple);
-  visibility: visible;
-  transition: var(--hover);
-}
-
-.underline:hover::before {
-  visibility: hidden;
-  width: 0;
-  // width: calc(100% - 1px);
-  left: 1px;
-}
-
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;

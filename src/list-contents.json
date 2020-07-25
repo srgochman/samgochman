@@ -4,15 +4,31 @@
     "turns voices into kaleidoscopes.",
     "transforms information into conversation.",
     "builds for and with sensory experiences.",
-    "parries and lunges.",
     "makes circuits expressive.",
     "sees through the eyes of tarsiers and honeybees.",
     "makes over beloved landmarks."
   ],
+  "skills": [
+    {
+      "description": " about the unique nuances of the system at hand.",
+      "keyword": "learn",
+      "color": "var(--purple)"
+    },
+    {
+      "description": " opportunities for new interactions and perspectives.",
+      "keyword": "design",
+      "color": "var(--blue)"
+    },
+    {
+      "description": " with the most [effective] digital and physical tools for the job.",
+      "keyword": "develop",
+      "color": "var(--green)"
+    }
+  ],
   "projects": [
     {
       "title": "Phototaxis",
-      "img": "../assets/test.png",
+      "img": "test.png",
       "type": "product",
       "link": "https://www.eskewdumezripple.com/phototaxis.html",
       "description": "How might direct engagement with light change how people occupy a space?",
@@ -21,7 +37,7 @@
           "color": "var(--purple)",
           "backgroundColor": "var(--purple-transparent)",
           "words": [
-            "arduino"
+            "data visualization"
           ]
         },
         {
@@ -37,14 +53,15 @@
           "color": "var(--green)",
           "backgroundColor": "var(--green-transparent)",
           "words": [
-            "data visualization"
+            "arduino",
+            "data analysis"
           ]
         }
       ]
     },
     {
       "title": "Multilingual",
-      "img": "../assets/test.png",
+      "img": "test.png",
       "type": "study",
       "link": "/multilingual",
       "description": "How can we transform linguistic data into interactive art that celebrates a community?",
@@ -53,8 +70,8 @@
           "color": "var(--purple)",
           "backgroundColor": "var(--purple-transparent)",
           "words": [
-            "HTML5/CSS3/JavaScript",
-            "Electron"
+            "data visualization",
+            "concept development"
           ]
         },
         {
@@ -68,8 +85,7 @@
           "color": "var(--green)",
           "backgroundColor": "var(--green-transparent)",
           "words": [
-            "data visualization",
-            "concept development"
+            "Electron"
           ]
         }
       ]

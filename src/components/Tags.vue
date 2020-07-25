@@ -52,7 +52,7 @@ export default {
   border-left: solid 3px;
   /* padding: 4px 10px; */
   padding: 6px 11px;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 600;
 }
 </style>

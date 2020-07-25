@@ -94,30 +94,66 @@
   "projects": [
     {
       "title": "Phototaxis",
-      "img": "../assets/test.png",
+      "img": "test.png",
       "type": "product",
       "link": "https://www.eskewdumezripple.com/phototaxis.html",
       "description": "How might direct engagement with light change how people occupy a space?",
       "tags": [
-        "fabrication",
-        "arduino",
-        "environments design",
-        "Rhino3D/Grasshopper",
-        "data visualization"
+        {
+          "color": "var(--purple)",
+          "backgroundColor": "var(--purple-transparent)",
+          "words": [
+            "data visualization"
+          ]
+        },
+        {
+          "color": "var(--blue)",
+          "backgroundColor": "var(--blue-transparent)",
+          "words": [
+            "fabrication",
+            "environments design",
+            "Rhino3D/Grasshopper"
+          ]
+        },
+        {
+          "color": "var(--green)",
+          "backgroundColor": "var(--green-transparent)",
+          "words": [
+            "arduino",
+            "data analysis"
+          ]
+        }
       ]
     },
     {
       "title": "Multilingual",
-      "img": "../assets/test.png",
+      "img": "test.png",
       "type": "study",
       "link": "/multilingual",
       "description": "How can we transform linguistic data into interactive art that celebrates a community?",
       "tags": [
-        "data visualization",
-        "Electron",
-        "HTML5/CSS3/JavaScript",
-        "concept development",
-        "digital signage"
+        {
+          "color": "var(--purple)",
+          "backgroundColor": "var(--purple-transparent)",
+          "words": [
+            "data visualization",
+            "concept development"
+          ]
+        },
+        {
+          "color": "var(--blue)",
+          "backgroundColor": "var(--blue-transparent)",
+          "words": [
+            "digital signage"
+          ]
+        },
+        {
+          "color": "var(--green)",
+          "backgroundColor": "var(--green-transparent)",
+          "words": [
+            "Electron"
+          ]
+        }
       ]
     },
     {
@@ -127,11 +163,24 @@
       "link": "/WIKN",
       "description": "How can we honor the community’s collective voices on a generative canvas?",
       "tags": [
-        "HTML5/CSS3/JavaScript",
-        "Vue.js",
-        "Web Audio",
-        "data visualization",
-        "concept development"
+        {
+          "color": "var(--purple)",
+          "backgroundColor": "var(--purple-transparent)",
+          "words": [
+            "data visualization",
+            "concept development"
+          ]
+        },
+        {
+          "color": "var(--green)",
+          "backgroundColor": "var(--green-transparent)",
+          "words": [
+            "Vue.js",
+            "Web Audio",
+            "WebRTC",
+            "Google Speech-to-Text"
+          ]
+        }
       ]
     },
     {
@@ -141,12 +190,30 @@
       "link": "https://miraj.sosolimited.com/",
       "description": "How can we transform a voice into a kaleidoscope?",
       "tags": [
-        "HTML5/CSS3/JavaScript",
-        "Electron",
-        "Web Audio",
-        "speech-to-text",
-        "OpenCV",
-        "installation"
+        {
+          "color": "var(--purple)",
+          "backgroundColor": "var(--purple-transparent)",
+          "words": [
+            "data visualization"
+          ]
+        },
+        {
+          "color": "var(--blue)",
+          "backgroundColor": "var(--blue-transparent)",
+          "words": [
+            "digital signage"
+          ]
+        },
+        {
+          "color": "var(--green)",
+          "backgroundColor": "var(--green-transparent)",
+          "words": [
+            "Electron",
+            "Web Audio",
+            "OpenCV",
+            "app optimization"
+          ]
+        }
       ]
     },
     {
@@ -156,13 +223,25 @@
       "link": "https://medium.com/sosolimited/4-design-principles-for-building-connection-through-digital-experiences-f365d6e9efd1",
       "description": "How can technology foster emotional and sensory connection across physical space?",
       "tags": [
-        "HTML5/CSS3/JavaScript",
-        "Vue.js",
-        "Tone.js",
-        "Web Audio",
-        "AWS",
-        "rapid prototyping",
-        "UX research"
+        {
+          "color": "var(--purple)",
+          "backgroundColor": "var(--purple-transparent)",
+          "words": [
+            "UX research",
+            "concept development"
+          ]
+        },
+        {
+          "color": "var(--green)",
+          "backgroundColor": "var(--green-transparent)",
+          "words": [
+            "Vue.js",
+            "Tone.js",
+            "Web Audio",
+            "AWS",
+            "rapid prototyping"
+          ]
+        }
       ]
     },
     {
@@ -170,25 +249,24 @@
       "img": "../assets/test.png",
       "type": "study",
       "link": "/fenway",
-      "description": "How can we celebrate Fenway’s tradition with today’s tech?",
+      "description": "Celebrating Fenway’s tradition with today’s tech",
       "tags": [
-        "digital signage",
-        "environments design",
-        "electrical specification",
-        "Rhino3D/Grasshopper"
-      ]
-    },
-    {
-      "title": "athenahealth State of the Smart",
-      "img": "../assets/test.png",
-      "type": "study",
-      "link": "/athena",
-      "description": "How can we embrace an organization’s diversity with AR?",
-      "tags": [
-        "HTML5/CSS3/JavaScript",
-        "Vue.js",
-        "data visualization",
-        "app deployment"
+        {
+          "color": "var(--blue)",
+          "backgroundColor": "var(--blue-transparent)",
+          "words": [
+            "Rhino3D/Grasshopper",
+            "digital signage",
+            "environments design"
+          ]
+        },
+        {
+          "color": "var(--green)",
+          "backgroundColor": "var(--green-transparent)",
+          "words": [
+            "electrical specification"
+          ]
+        }
       ]
     },
     {
@@ -198,25 +276,24 @@
       "link": "/anivision",
       "description": "How might students learn science through the eyes of an animal?",
       "tags": [
-        "VR",
-        "Unity",
-        "environments design",
-        "UX research",
-        "curriculum design",
-        "publication"
-      ]
-    },
-    {
-      "title": "Qualcomm Gaming Mode Boost",
-      "img": "../assets/test.png",
-      "type": "study",
-      "link": "/qualcomm",
-      "description": "How can an interface showcase the power of a next generation gaming experience?",
-      "tags": [
-        "data visualization",
-        "Vue.js",
-        "D3.js",
-        "video.js"
+        {
+          "color": "var(--purple)",
+          "backgroundColor": "var(--purple-transparent)",
+          "words": [
+            "UX research",
+            "curriculum design",
+            "publication"
+          ]
+        },
+        {
+          "color": "var(--blue)",
+          "backgroundColor": "var(--blue-transparent)",
+          "words": [
+            "VR",
+            "environments design",
+            "Unity"
+          ]
+        }
       ]
     }
   ],
