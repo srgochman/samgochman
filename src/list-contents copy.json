@@ -97,7 +97,7 @@
       "img": "test.png",
       "type": "product",
       "link": "https://www.eskewdumezripple.com/phototaxis.html",
-      "description": "How might direct engagement with light change how people occupy a space?",
+      "description": "Merging digital and physical spaces for an experimental interaction with light",
       "tags": [
         {
           "color": "var(--purple)",
@@ -130,7 +130,7 @@
       "img": "test.png",
       "type": "study",
       "link": "/multilingual",
-      "description": "How can we transform linguistic data into interactive art that celebrates a community?",
+      "description": "Transforming linguistic data into interactive art that celebrates a community",
       "tags": [
         {
           "color": "var(--purple)",
@@ -157,38 +157,11 @@
       ]
     },
     {
-      "title": "What I Know Now",
-      "img": "../assets/test.png",
-      "type": "study",
-      "link": "/WIKN",
-      "description": "How can we honor the community’s collective voices on a generative canvas?",
-      "tags": [
-        {
-          "color": "var(--purple)",
-          "backgroundColor": "var(--purple-transparent)",
-          "words": [
-            "data visualization",
-            "concept development"
-          ]
-        },
-        {
-          "color": "var(--green)",
-          "backgroundColor": "var(--green-transparent)",
-          "words": [
-            "Vue.js",
-            "Web Audio",
-            "WebRTC",
-            "Google Speech-to-Text"
-          ]
-        }
-      ]
-    },
-    {
       "title": "Miraj",
       "img": "../assets/test.png",
       "type": "product",
       "link": "https://miraj.sosolimited.com/",
-      "description": "How can we transform a voice into a kaleidoscope?",
+      "description": "Controlling digital art with your voice",
       "tags": [
         {
           "color": "var(--purple)",
@@ -217,11 +190,38 @@
       ]
     },
     {
+      "title": "What I Know Now",
+      "img": "../assets/test.png",
+      "type": "study",
+      "link": "/WIKN",
+      "description": "Translating personal stories into generative artwork to help communities listen",
+      "tags": [
+        {
+          "color": "var(--purple)",
+          "backgroundColor": "var(--purple-transparent)",
+          "words": [
+            "data visualization",
+            "concept development"
+          ]
+        },
+        {
+          "color": "var(--green)",
+          "backgroundColor": "var(--green-transparent)",
+          "words": [
+            "Vue.js",
+            "Google Speech-to-Text",
+            "Web Audio",
+            "WebRTC"
+          ]
+        }
+      ]
+    },
+    {
       "title": "Together Apart",
       "img": "../assets/test.png",
       "type": "product",
       "link": "https://medium.com/sosolimited/4-design-principles-for-building-connection-through-digital-experiences-f365d6e9efd1",
-      "description": "How can technology foster emotional and sensory connection across physical space?",
+      "description": "Building richer connections through digital experiences",
       "tags": [
         {
           "color": "var(--purple)",
@@ -237,7 +237,7 @@
           "words": [
             "Vue.js",
             "Tone.js",
-            "Web Audio",
+            "WebRTC",
             "AWS",
             "rapid prototyping"
           ]
@@ -249,14 +249,14 @@
       "img": "../assets/test.png",
       "type": "study",
       "link": "/fenway",
-      "description": "Celebrating Fenway’s tradition with today’s tech",
+      "description": "Empowering Fenway’s brand with today’s digital tech",
       "tags": [
         {
           "color": "var(--blue)",
           "backgroundColor": "var(--blue-transparent)",
           "words": [
-            "Rhino3D/Grasshopper",
             "digital signage",
+            "Rhino3D/Grasshopper",
             "environments design"
           ]
         },
@@ -274,7 +274,7 @@
       "img": "../assets/test.png",
       "type": "study",
       "link": "/anivision",
-      "description": "How might students learn science through the eyes of an animal?",
+      "description": "Helping students intuit complex concepts through the eyes of animals",
       "tags": [
         {
           "color": "var(--purple)",

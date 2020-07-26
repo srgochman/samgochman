@@ -196,7 +196,7 @@ export default {
   left: 0px;
   // background-color: var(--purple);
   visibility: visible;
-  transition: var(--hover);
+  transition: all 0.2s ease-in 0s;
 }
 
 .work-underline-hover,

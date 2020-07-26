@@ -1,10 +1,6 @@
 <template>
   <div class="project-container">
-    <img class="project-img" src="../assets/test.png" />
-    <!-- <img class="project-img" :src="`../assets/${img}`" /> -->
-    <!-- <img class="project-img" :src="importedImg" /> -->
-    <!-- <img class="project-img" :src="`require('../assets/${img}')`" /> -->
-    <!-- <img class="project-img" :src="image" /> -->
+    <img class="project-img" :src="image" />
     <div class="project-text">
       <div class="project-title-container">
         <router-link v-if="type === 'study'" :to="link">
@@ -25,7 +21,7 @@
 <script>
 import study from "../assets/study.svg";
 import Tags from "./Tags.vue";
-// import test from "../assets/test.png";
+// import test from "../assets/photos/test.png";
 // img, arrow, description, tags hidden for projects that aren't active
 
 export default {
@@ -33,9 +29,6 @@ export default {
   data() {
     return {
       study: study
-      // test: test
-      // image: "../../public/" + this.img
-      // /Users/sosolimited/Desktop/samgochman/public/test2.png
     };
   },
   props: {
@@ -46,14 +39,13 @@ export default {
     link: String,
     type: String
   },
-  // computed: {
-  //   importedImg() {
-  //     return require(this.img);
-  //   }
-  // },
-  mounted() {
-    // this.image = `"../assets/${this.img}"`;
+  computed: {
+    image() {
+      var images = require.context("../assets/photos/", false, /\.png$/);
+      return images("./" + this.img);
+    }
   },
+  mounted() {},
   components: {
     Tags
   }
@@ -72,9 +64,10 @@ export default {
 .project-img {
   flex-grow: 1;
   margin-right: 50px;
-  // width: 63%;
-  // height: 500px;
+  width: 63%;
+  // height: 100vh;
   height: 800px;
+  object-fit: cover;
 }
 
 .project-text {

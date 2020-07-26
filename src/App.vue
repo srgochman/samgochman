@@ -124,7 +124,7 @@ body {
   .creative-img {
     width: 55px;
     height: 55px;
-    background-image: url("./assets/test2.png");
+    background-image: url("./assets/photos/test2.png");
     background-size: 250%;
     background-position: 15%;
   }
