@@ -2,7 +2,6 @@
   <div id="app">
     <div id="nav">
       <router-link to="/" class="sam-gochman">
-        <!-- Sam Gochman -->
         <div id="name-drawn"></div>
       </router-link>
       <router-link to="/juices" class="creative-container">
@@ -42,33 +41,39 @@ export default {
 @import "./scss/type.scss";
 // @import "./scss/reset.scss";
 
-#app,
-body,
 html {
   font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-size: 1rem; // 16px
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   scroll-behavior: smooth;
   width: 100vw;
   margin: 0;
+  background-color: white;
+  overflow-x: hidden;
 }
 
 body {
   display: flex;
   flex-direction: row;
   justify-content: center;
+  margin: 0;
+  padding: 0 7vw;
+  overflow-x: hidden;
 }
 
 #app {
   width: 100%;
+  max-width: 1024px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   color: black;
-  background-color: white;
-  font-size: 24px;
-  padding: 0 calc(max(20vw, 50px));
+  // font-size: 24px;
+  // padding: 0 calc(max(20vw, 50px));
+  // padding: 0 calc(min(10vw, 50px));
+  // padding: 0 10vw;
   /* font-weight: 200; */
 }
 
@@ -80,7 +85,7 @@ body {
   width: 100%;
   // max-width: 1024px;
   padding: 20px 0px;
-  background-color: rgb(255, 255, 255);
+  // background-color: rgb(255, 255, 255);
   // backdrop-filter: blur(5px);
   /* border-bottom: lightgray 1px solid; */
   // box-shadow: rgba(0, 0, 0, 0.15) 0 2px 5px;
@@ -100,8 +105,7 @@ body {
     font-weight: 800;
     color: black;
     margin-top: 15px;
-    padding-left: calc(min(10vw, 50px));
-    // padding-left: 13vw;
+    padding-left: calc(min(7vw, 50px));
   }
 
   #name-drawn {
@@ -117,7 +121,7 @@ body {
     display: flex;
     flex-direction: row;
     transition: var(--hover);
-    padding-right: calc(min(3vw, 50px));
+    padding-right: calc(min(5vw, 50px));
     // padding-right: 15vw;
   }
 
@@ -151,7 +155,8 @@ body {
 
 .section {
   width: 100%;
-  margin-bottom: 500px;
+  // margin-bottom: 500px;
+  margin-bottom: 50vh;
 }
 
 .pages-enter-active {
@@ -168,9 +173,14 @@ body {
   opacity: 0;
 }
 
-@media only screen and (max-width: 425px) {
+@media only screen and (max-width: 1024px) {
+  // html {
+  //   font-size: 0.8em;
+  // }
+
   #nav {
     position: absolute;
+    overflow: hidden;
   }
 
   .creative-text {
@@ -198,21 +208,9 @@ body {
     visibility: visible;
     content: "J";
   }
-}
 
-@media only screen and (min-width: 426px) and (max-width: 768px) {
-  #nav {
-    position: absolute;
+  .section {
+    margin-bottom: 40vh;
   }
-}
-
-@media only screen and (min-width: 1025px) {
-  // #nav {
-  //   .sam-gochman,
-  //   .creative-container {
-  //     // padding: 0 50px;
-  //     padding: 0;
-  //   }
-  // }
 }
 </style>

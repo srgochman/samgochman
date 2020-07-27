@@ -4,6 +4,49 @@
       <Mission></Mission>
     </div>
 
+    <div class="mission-description">
+      <h3>
+        As a developer
+        <!-- <a
+          class="underline"
+          href="https://github.com/srgochman"
+          target="_blank"
+          rel="noopener"
+          >developer</a
+        > -->
+        with roots in biology and architecture, I appreciate the complexity of
+        people’s relationships with the world — and that opens up huge creative
+        opportunities.
+      </h3>
+      <h3 id="contact">
+        * I'm looking for new
+        <a
+          id="work"
+          href="https://www.linkedin.com/in/samuelrgochman/"
+          target="_blank"
+          rel="noopener"
+          >work<img
+            class="work-underline"
+            src="../assets/drawn/line1_purple.svg"
+            height="5"
+          />
+        </a>
+        and would love to
+        <span style="white-space: nowrap">
+          <a
+            id="connect"
+            href="mailto:srgochman@gmail.com"
+            target="_blank"
+            rel="noopener"
+            >connect<img
+              class="connect-underline"
+              src="../assets/drawn/line2_purple.svg"
+              height="5"/></a
+          >!<!-- <div id="arrow"></div> -->
+        </span>
+      </h3>
+    </div>
+
     <div id="skills" class="section">
       <!-- <div id="diagram-container">
         <img id="diagram" src="../assets/people-experiences_handwritten.png" />
@@ -34,7 +77,7 @@
           :key="project.img"
           :src="image(project.img)"
         /> -->
-        <!-- <Project
+        <Project
           v-for="project in projects"
           :key="project.title"
           :title="project.title"
@@ -44,8 +87,8 @@
           :description="project.description"
           :tags="project.tags"
         >
-        </Project> -->
-        <h2 id="tester-0" class="tester">0</h2>
+        </Project>
+        <!-- <h2 id="tester-0" class="tester">0</h2>
         <h2 id="tester-1" class="tester">1</h2>
         <h2 id="tester-2" class="tester">2</h2>
         <Project
@@ -54,7 +97,7 @@
           :key="project.title"
           :img="project.img"
         >
-        </Project>
+        </Project> -->
         <!-- <Project
           id="project-0"
           class="project"
@@ -159,6 +202,58 @@ export default {
 </script>
 
 <style lang="scss">
+.mission-description {
+  // max-width: calc(max(500px, 30%));
+  max-width: 60%;
+  margin-bottom: 200px;
+  // position: absolute;
+  // left: 67%;
+  // flex-grow: 1;
+  // flex-basis: 33%;
+
+  h3 {
+    margin-bottom: 30px;
+  }
+}
+
+.work-underline,
+.connect-underline {
+  content: "";
+  position: absolute;
+  width: 100%;
+  // width: 20px;
+  opacity: 1;
+  // transform-origin: left;
+  // transform: scaleX(1);
+  transform: scaleY(1.5);
+  // height: 5px;
+  bottom: 0;
+  left: 0px;
+  // background-color: var(--purple);
+  visibility: visible;
+  // transition: all 0.2s ease-in 0s;
+  transition: var(--hover);
+}
+
+.work-underline-hover,
+.connect-underline-hover {
+  visibility: hidden;
+  // width: 0;
+  // width: calc(100% - 1px);
+  opacity: 0;
+  // transform: scaleX(0);
+  left: 0px;
+}
+
+// .underline {
+//   text-decoration: solid underline var(--purple);
+//   text-underline-position: under;
+//   text-decoration-thickness: 5px;
+//   border-bottom: solid var(--purple) 2px;
+//   color: var(--purple);
+//   font-weight: 800;
+// }
+
 // #diagram-container {
 //   width: 100%;
 //   display: flex;
@@ -175,16 +270,16 @@ export default {
 //   filter: contrast(3);
 // }
 
-// .section-heading {
-//   opacity: 0.3;
-// }
+.section-heading {
+  margin: 0 0 70px 0;
+  // opacity: 0.3;
+}
 
 #skills-drawn {
   background-image: url("../assets/drawn/skills_drawn.svg");
   background-repeat: no-repeat;
   // width: 150px;
   height: 15px;
-  margin: 0 0 70px 0;
 }
 
 .skills-container {
@@ -199,7 +294,6 @@ export default {
   background-repeat: no-repeat;
   // width: 150px;
   height: 15px;
-  margin: 0 0 70px 0;
 }
 
 #projects-container {
@@ -230,17 +324,14 @@ export default {
   background-repeat: no-repeat;
   // width: 115px;
   height: 15px;
-  margin: 0 0 70px 0;
 }
 
 .experience-item {
-  margin-bottom: 70px;
+  margin-bottom: 40px;
 }
 
 #experience,
 #education {
-  // margin-bottom: 120px;
-
   a {
     color: black;
     display: inline;
@@ -248,6 +339,33 @@ export default {
 }
 
 .section:last-child {
-  margin-bottom: 5vh;
+  margin-bottom: 2vh;
 }
+
+@media only screen and (max-width: 425px) {
+  .mission-description {
+    max-width: 100%;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .mission-description {
+    // max-width: 100%;
+    margin-bottom: 120px;
+  }
+
+  .section-heading {
+    transform-origin: left;
+    transform: scale(0.8);
+    margin: 0 0 50px 0;
+    // opacity: 0.4;
+  }
+
+  .experience-item {
+    margin-bottom: 50px;
+  }
+}
+
+// @media only screen and (min-width: 426px) and (max-width: 768px) {
+// }
 </style>

@@ -15,49 +15,6 @@
         </span>
       </transition>
     </div>
-    <div class="mission-description">
-      <h3>
-        As a developer
-        <!-- <a
-          class="underline"
-          href="https://github.com/srgochman"
-          target="_blank"
-          rel="noopener"
-          >developer</a
-        > -->
-        with roots in biology and architecture, I appreciate the complexity of
-        people’s relationships with the world — and that opens up huge creative
-        opportunities.
-      </h3>
-      <h3 id="contact">
-        * I'm looking for new
-        <a
-          id="work"
-          href="https://www.linkedin.com/in/samuelrgochman/"
-          target="_blank"
-          rel="noopener"
-          >work
-          <img
-            class="work-underline"
-            src="../assets/drawn/line1_purple.svg"
-            height="5"
-          />
-        </a>
-        and would love to
-        <a
-          id="connect"
-          href="mailto:srgochman@gmail.com"
-          target="_blank"
-          rel="noopener"
-          >connect
-          <img
-            class="connect-underline"
-            src="../assets/drawn/line2_purple.svg"
-            height="5"/></a
-        >!
-        <!-- <div id="arrow"></div> -->
-      </h3>
-    </div>
   </div>
 </template>
 
@@ -104,8 +61,9 @@ export default {
 <style lang="scss">
 .mission-container {
   width: 100%;
-  margin-top: 230px;
-  font-size: 65px;
+  margin-top: 50vh;
+  transform: translateY(-50%);
+  font-size: 4em;
   font-weight: 800;
   line-height: 1.3em;
   display: flex;
@@ -121,31 +79,23 @@ export default {
 .mission-statement {
   // font-family: Roboto Condensed;
   height: 300px;
+  width: 100%;
   // max-width: 678px;
   // max-width: calc(max(768px, 50%));
   max-width: 900px;
-  margin-right: 17%;
+  // margin-right: 17%;
   // flex-grow: 2;
   // flex-basis: 67%;
   // padding-right: 80px;
+}
 
-  span.ending {
-    width: 100%;
-  }
+span.ending {
+  width: 200px;
 }
 
 // .mission-statement:first-child {
 //   margin-bottom: 260px;
 // }
-
-.mission-description {
-  // max-width: calc(max(500px, 30%));
-  width: 600px;
-  // position: absolute;
-  // left: 67%;
-  // flex-grow: 1;
-  // flex-basis: 33%;
-}
 
 .fade-enter-active {
   transition: opacity 750ms ease-in-out;
@@ -161,11 +111,6 @@ export default {
   opacity: 0;
 }
 
-// #contact {
-//   margin: 0;
-//   display: inline;
-// }
-
 // #arrow {
 //   background-image: url("../assets/Asset 10.svg");
 //   background-size: cover;
@@ -173,44 +118,17 @@ export default {
 //   height: 15px;
 // }
 
-// .underline {
-//   text-decoration: solid underline var(--purple);
-//   text-underline-position: under;
-//   text-decoration-thickness: 5px;
-//   border-bottom: solid var(--purple) 2px;
-//   color: var(--purple);
-//   font-weight: 800;
+@media only screen and (max-width: 1024px) {
+  .mission-container {
+    // font-size: 2em;
+    font-size: calc(min(11vw, 60px));
+    line-height: 1.4em;
+  }
+}
+
+// @media only screen and (min-width: 1025px) {
+//   .mission-statement {
+//     max-width: 67%;
+//   }
 // }
-
-.work-underline,
-.connect-underline {
-  content: "";
-  position: absolute;
-  width: calc(100% - 5px);
-  // width: 20px;
-  transform-origin: left;
-  transform: scaleX(1);
-  transform: scaleY(1.5);
-  // height: 5px;
-  bottom: 0;
-  left: 0px;
-  // background-color: var(--purple);
-  visibility: visible;
-  transition: all 0.2s ease-in 0s;
-}
-
-.work-underline-hover,
-.connect-underline-hover {
-  visibility: hidden;
-  // width: 0;
-  // width: calc(100% - 1px);
-  transform: scaleX(0);
-  left: 0px;
-}
-
-@media only screen and (min-width: 1025px) {
-  // .mission-statement {
-  //   max-width: 67%;
-  // }
-}
 </style>

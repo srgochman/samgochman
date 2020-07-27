@@ -1,7 +1,7 @@
 <template>
   <div class="project-container">
     <img class="project-img" :src="image" />
-    <!-- <div class="project-text">
+    <div class="project-text">
       <div class="project-title-container">
         <router-link v-if="type === 'study'" :to="link">
           <h3 class="project-title">{{ title }}</h3>
@@ -14,7 +14,7 @@
       </div>
       <h2 class="project-desc">{{ description }}</h2>
       <Tags :words="tags"></Tags>
-    </div> -->
+    </div>
   </div>
 </template>
 
@@ -58,15 +58,17 @@ export default {
   width: 100%;
   display: flex;
   flex-direction: row;
-  justify-content: flex-end;
+  // flex-wrap: wrap;
+  // justify-content: flex-end;
 }
 
 .project-img {
   // flex-grow: 1;
-  margin-right: 50px;
+  // margin-right: calc(min(10vw, 50px));
+  margin-right: 4%;
   width: 63%;
-  // height: 100vh;
-  height: 800px;
+  height: 50vh;
+  // height: 800px;
   object-fit: cover;
 }
 
@@ -80,12 +82,6 @@ export default {
 .project-text > * {
   margin-bottom: 36px;
 }
-
-/* .project-title-container {
-  display: flex;
-  flex-direction: row;
-  transition: all 0.2s ease-in-out;
-} */
 
 .project-title-container {
   a {
@@ -116,12 +112,6 @@ export default {
   }
 }
 
-// .project-title-container {
-//   img:hover {
-//     stroke: blue;
-//   }
-// }
-
 .project-title {
   margin: 0 15px 0 0;
 }
@@ -130,5 +120,39 @@ export default {
 .project-title.inactive {
   /* color: var(--gray); */
   opacity: 0.3;
+}
+
+@media only screen and (max-width: 1024px) {
+  .project-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  .project-img {
+    margin: 0 0 20px 0;
+    width: 100%;
+    height: 40vh;
+  }
+
+  .project-text {
+    width: 100%;
+    max-height: 60vh;
+  }
+
+  .project-text > * {
+    margin-bottom: 20px;
+  }
+}
+
+// Tablets (subset of above)
+@media only screen and (min-width: 426px) and (max-width: 1024px) {
+  .project-img {
+    height: 60vh;
+  }
+
+  .project-text {
+    max-height: 40vh;
+  }
 }
 </style>
