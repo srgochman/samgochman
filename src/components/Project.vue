@@ -1,7 +1,7 @@
 <template>
   <div class="project-container">
     <img class="project-img" :src="image" />
-    <div class="project-text">
+    <!-- <div class="project-text">
       <div class="project-title-container">
         <router-link v-if="type === 'study'" :to="link">
           <h3 class="project-title">{{ title }}</h3>
@@ -14,7 +14,7 @@
       </div>
       <h2 class="project-desc">{{ description }}</h2>
       <Tags :words="tags"></Tags>
-    </div>
+    </div> -->
   </div>
 </template>
 
@@ -62,7 +62,7 @@ export default {
 }
 
 .project-img {
-  flex-grow: 1;
+  // flex-grow: 1;
   margin-right: 50px;
   width: 63%;
   // height: 100vh;
