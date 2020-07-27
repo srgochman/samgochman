@@ -179,31 +179,6 @@
       ]
     },
     {
-      "title": "Fenway Theater",
-      "img": "fenway_render.png",
-      "type": "study",
-      "link": "/fenway",
-      "description": "Empowering Fenway’s brand with today’s digital tech",
-      "tags": [
-        {
-          "color": "var(--blue)",
-          "backgroundColor": "var(--blue-transparent)",
-          "words": [
-            "digital signage",
-            "Rhino3D/Grasshopper",
-            "environments design"
-          ]
-        },
-        {
-          "color": "var(--green)",
-          "backgroundColor": "var(--green-transparent)",
-          "words": [
-            "electrical specification"
-          ]
-        }
-      ]
-    },
-    {
       "title": "Anivision",
       "img": "anivision_calltolead_flipped.png",
       "type": "study",

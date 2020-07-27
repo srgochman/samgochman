@@ -1,10 +1,10 @@
 <template>
   <div class="skill-container">
     <!-- <h2 :style="{ color: color }">{{ keyword }}</h2> -->
-    <h2 class="skill-description">
+    <h3 class="skill-description">
       I <span :style="{ color: color, fontWeight: 600 }">{{ keyword }}</span
       >{{ description }}
-    </h2>
+    </h3>
   </div>
 </template>
 
@@ -23,6 +23,8 @@ export default {
 <style lang="scss">
 .skill-container {
   width: 33%;
+  // min-width: 200px;
+  margin-bottom: 80px;
   // width: 300px;
   /* height: 173px; */
   // display: flex;
@@ -31,8 +33,25 @@ export default {
 }
 
 .skill-description {
+  width: 80%;
   // margin-bottom: 16px;
-  width: 66%;
-  // font-weight: 600;
+  font-weight: 600;
+}
+
+@media only screen and (max-width: 425px) {
+  .skill-container,
+  .skill-description {
+    width: 100%;
+  }
+}
+
+@media only screen and (min-width: 426px) and (max-width: 1024px) {
+  .skill-container {
+    width: 100%;
+  }
+
+  .skill-description {
+    width: 66%;
+  }
 }
 </style>

@@ -51,8 +51,15 @@ export default {
   border-radius: 2px;
   border-left: solid 3px;
   /* padding: 4px 10px; */
-  padding: 6px 11px;
-  font-size: 14px;
+  padding: 6px 11px 6px 9px;
+  font-size: 0.875em;
   font-weight: 600;
+}
+
+@media only screen and (max-width: 768px) {
+  .tag {
+    font-size: 0.8em;
+    padding: 3px 7px 3px 6px;
+  }
 }
 </style>
