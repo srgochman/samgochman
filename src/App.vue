@@ -101,6 +101,7 @@ body {
     height: 20px;
     background-image: url("./assets/drawn/name_drawn.svg");
     background-repeat: no-repeat;
+    transform: scaleY(0.8);
   }
 }
 
@@ -153,8 +154,8 @@ body {
     overflow: hidden;
   }
 
-  .section {
-    margin-bottom: 40vh;
-  }
+  // .section {
+  //   margin-bottom: 40vh;
+  // }
 }
 </style>

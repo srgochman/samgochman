@@ -76,7 +76,7 @@ export default {
 
 .mission-statement {
   // font-family: Roboto Condensed;
-  height: 400px;
+  height: 350px;
   width: 100%;
   // max-width: 678px;
   // max-width: calc(max(768px, 50%));
