@@ -69,6 +69,7 @@ export default {
   height: 60vh;
   // height: 800px;
   object-fit: cover;
+  border-radius: 2px;
 }
 
 .project-text {

@@ -51,41 +51,13 @@
       <!-- <h1>Skills</h1> -->
       <div id="skills-drawn" class="section-heading"></div>
       <div class="skills-container">
-        <!-- <Skill
+        <Skill
           v-for="skill in skills"
-          ref="skillItem"
           :key="skill.keyword"
           :description="skill.description"
           :keyword="skill.keyword"
           :color="skill.color"
           :delay="skill.delay"
-        >
-        </Skill> -->
-        <Skill
-          id="skill-0"
-          :key="skills[0].keyword"
-          :description="skills[0].description"
-          :keyword="skills[0].keyword"
-          :color="skills[0].color"
-          :delay="skills[0].delay"
-        >
-        </Skill>
-        <Skill
-          id="skill-1"
-          :key="skills[1].keyword"
-          :description="skills[1].description"
-          :keyword="skills[1].keyword"
-          :color="skills[1].color"
-          :delay="skills[1].delay"
-        >
-        </Skill>
-        <Skill
-          id="skill-2"
-          :key="skills[2].keyword"
-          :description="skills[2].description"
-          :keyword="skills[2].keyword"
-          :color="skills[2].color"
-          :delay="skills[2].delay"
         >
         </Skill>
       </div>
@@ -159,6 +131,7 @@
       </div>
     </div>
 
+    <div id="juices-drawn" class="section-heading"></div>
     <router-link to="/juices" id="creative-container" class="section">
       <div id="creative-img"></div>
       <!-- <div id="creative-text">
@@ -176,7 +149,9 @@ import Skill from "../components/Skill.vue";
 import Project from "../components/Project.vue";
 import contents from "../list-contents.json";
 // import { gsap } from "gsap";
+// import { ScrollTrigger } from "gsap/ScrollTrigger.js";
 import ScrollMagic from "scrollmagic";
+// gsap.registerPlugin(ScrollTrigger);
 
 export default {
   name: "Home",
@@ -189,110 +164,74 @@ export default {
     };
   },
   computed: {
-    // image(url) {
-    //   var images = require.context("../assets/photos/", false, /\.png$/);
-    //   console.log(url);
-    //   return images("./" + url);
-    // }
+    image() {
+      // To browser, starting root is public. Only works if serving website from base URL
+      return "/photos/" + this.img;
+    }
   },
   mounted() {
-    var projectController = new ScrollMagic.Controller();
-    this.projectScroll(projectController);
+    // var projectController = new ScrollMagic.Controller();
+    // this.projectScroll(projectController);
 
     var homeController = new ScrollMagic.Controller();
     this.homeScroll(homeController);
 
-    // var skillController = new ScrollMagic.Controller();
-    // this.skillAnim(skillController);
+    // $(".section.appear").each(function() {
+    //   gsap.from(this, {
+    //     scrollTrigger: {
+    //       trigger: this,
+    //       // for seamless resets, make top bottom (start) and reset (4th toggleAction)
+    //       // for no resets but appearances mid page, make top 75% and no toggleActions
+    //       start: "top 75%", // [trigger] [scroller] positions
+    //       // end: "-300px bottom", // [trigger] [scroller] positions
+    //       // toggleActions: "restart none none reset",
+    //       // toggleClass: "visible",
+    //       markers: true
+    //     },
+    //     autoAlpha: 0,
+    //     duration: 0.5,
+    //     ease: "power1.inOut"
+    //   });
+    // });
   },
   methods: {
-    projectScroll(controller) {
-      // var scene = new ScrollMagic.Scene({
-      //   triggerElement: "#projects-container"
-      //   // offset: -1 * $("#projects-container").height(),
-      //   // duration: $("#projects-container").height()
-      // });
-      // scene
-      //   .setPin("#tester-0")
-      //   .setClassToggle("#tester-0", "visible")
-      //   // .addIndicators()
-      //   .addTo(controller);
-      // // this.projectIdx++;
-
-      $(".tester").each(function() {
-        // Create a scene for each project
-        var scene = new ScrollMagic.Scene({
-          triggerElement: this,
-          duration: 300
-        });
-        scene
-          .setPin(this)
-          .setClassToggle(this, "visible")
-          .addTo(controller);
-      });
-    },
+    // projectScroll(controller) {
+    //   // var scene = new ScrollMagic.Scene({
+    //   //   triggerElement: "#projects-container"
+    //   //   // offset: -1 * $("#projects-container").height(),
+    //   //   // duration: $("#projects-container").height()
+    //   // });
+    //   // scene
+    //   //   .setPin("#tester-0")
+    //   //   .setClassToggle("#tester-0", "visible")
+    //   //   // .addIndicators()
+    //   //   .addTo(controller);
+    //   // // this.projectIdx++;
+    //   $(".tester").each(function() {
+    //     // Create a scene for each project
+    //     var scene = new ScrollMagic.Scene({
+    //       triggerElement: this,
+    //       duration: 300
+    //     });
+    //     scene
+    //       .setPin(this)
+    //       .setClassToggle(this, "visible")
+    //       .addTo(controller);
+    //   });
+    // }
     homeScroll(controller) {
       $(".section.appear").each(function() {
         // Create a scene for each scene
         var scene = new ScrollMagic.Scene({
-          triggerElement: this
-          // make elements disappear when moved past (using duration of the height of each section)
-          // duration: this.offsetHeight * 1.3
-          // or prevent disappearing when scrolling up
+          triggerElement: this,
+          // can make elements disappear when moved past (using duration of the height of each section, below)
+          // duration: this.offsetHeight * 1.3,
+          // offset: -200
+          triggerHook: 0.75 // 75% down page, alternative for pixel offset
         });
         scene.setClassToggle(this, "visible").addTo(controller);
       });
     }
-    // skillAnim() {
-    //   // var scene = new ScrollMagic.Scene({
-    //   //   triggerElement: ".skills-container"
-    //   // });
-    //   gsap
-    //     .timeline()
-    //     // for (let i = 0; i < this.skills.length; i++) {
-    //     //   const { skillItem } = $(".skills-container").$refs;
-    //     //   skillTL.fromTo(
-    //     //     skillItem,
-    //     //     { autoAlpha: 0 },
-    //     //     {
-    //     //       autoAlpha: 1,
-    //     //       duration: 0.75,
-    //     //       ease: "power1.inOut",
-    //     //       delay: this.delay
-    //     //     }
-    //     //   );
-    //     // }
-    //     .fromTo(
-    //       "#skill-0",
-    //       { autoAlpha: 0 },
-    //       {
-    //         autoAlpha: 1,
-    //         duration: 0.75,
-    //         ease: "power1.inOut",
-    //         delay: 1
-    //       }
-    //     )
-    //     .fromTo(
-    //       "#skill-1",
-    //       { autoAlpha: 0 },
-    //       {
-    //         autoAlpha: 1,
-    //         duration: 0.75,
-    //         ease: "power1.inOut",
-    //         delay: 1
-    //       }
-    //     )
-    //     .fromTo(
-    //       "#skill-2",
-    //       { autoAlpha: 0 },
-    //       {
-    //         autoAlpha: 1,
-    //         duration: 0.75,
-    //         ease: "power1.inOut",
-    //         delay: 1
-    //       }
-    //     );
-    //   // scene.setTween(skillTL).addTo(controller);
   },
   components: {
     Mission,
@@ -396,11 +335,6 @@ export default {
   opacity: 0;
 }
 
-.visible {
-  opacity: 1;
-  transition: opacity 400ms ease-in-out;
-}
-
 /* #projects-container::-webkit-scrollbar{
   display: none;
 } */
@@ -424,6 +358,13 @@ export default {
   }
 }
 
+#juices-drawn {
+  background-image: url("../assets/drawn/LCJ_drawn.svg");
+  background-repeat: no-repeat;
+  width: 233px;
+  height: 15px;
+}
+
 #creative-container {
   // visibility: hidden;
   display: flex;
@@ -431,14 +372,18 @@ export default {
   transition: var(--hover);
   padding-right: calc(min(5vw, 50px));
   // padding-right: 15vw;
+  // position: fixed;
+  // bottom: 50px;
+  // left: 50px;
 }
 
 #creative-img {
-  width: 200px;
-  height: 200px;
+  width: 233px;
+  height: 233px;
   background-image: url("../assets/photos/test2.png");
   background-size: 250%;
   background-position: 15%;
+  border-radius: 2px;
 }
 
 #creative-text {
@@ -456,7 +401,7 @@ export default {
 }
 
 @media only screen and (max-width: 425px) {
-  .mission-description {
+  #mission-description {
     max-width: 100%;
   }
 
@@ -466,7 +411,8 @@ export default {
 
   #creative-container {
     width: 86vw;
-    margin: 13vh 0 7vw 0;
+    // margin: 13vh 0 7vw 0;
+    margin: 0 0 7vw 0;
   }
 
   #creative-img {
@@ -486,7 +432,7 @@ export default {
 }
 
 @media only screen and (max-width: 1024px) {
-  .mission-description {
+  #mission-description {
     // max-width: 100%;
     margin-bottom: 120px;
   }

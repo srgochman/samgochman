@@ -97,7 +97,7 @@ body {
 
   #name-drawn {
     // padding-left: 100px;
-    width: 130px;
+    width: 140px;
     height: 20px;
     background-image: url("./assets/drawn/name_drawn.svg");
     background-repeat: no-repeat;
@@ -121,7 +121,12 @@ body {
 
 .appear {
   opacity: 0;
-  transition: opacity 400ms ease-in-out;
+  transition: opacity 300ms ease-in-out;
+}
+
+.visible {
+  opacity: 1;
+  transition: opacity 300ms ease-in-out;
 }
 
 .pages-enter-active {

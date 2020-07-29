@@ -19,13 +19,13 @@
       "description": " opportunities for new interactions and perspectives.",
       "keyword": "design",
       "color": "var(--blue)",
-      "delay": 0.3
+      "delay": 0.25
     },
     {
       "description": " with the most [effective] digital and physical tools for the job.",
       "keyword": "develop",
       "color": "var(--green)",
-      "delay": 0.6
+      "delay": 0.5
     }
   ],
   "projects": [

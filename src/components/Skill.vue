@@ -29,7 +29,7 @@ export default {
       .timeline({
         scrollTrigger: {
           trigger: ".skills-container",
-          start: "top 59%",
+          start: "top 82%",
           end: "bottom top",
           toggleActions: "restart none none none"
           // markers: true
@@ -37,7 +37,7 @@ export default {
       })
       .from(skill, {
         autoAlpha: 0,
-        duration: 0.75,
+        duration: 0.5,
         ease: "power1.inOut",
         delay: this.delay
       });
@@ -50,7 +50,7 @@ export default {
 .skill-container {
   width: 100%;
   // min-width: 200px;
-  margin-bottom: 80px;
+  margin-bottom: 70px;
   // opacity: 0;
   // width: 300px;
   /* height: 173px; */
