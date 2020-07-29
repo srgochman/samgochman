@@ -4,7 +4,7 @@
       <Mission></Mission>
     </div>
 
-    <div class="mission-description">
+    <div id="mission-description" class="section appear">
       <h3>
         As a developer
         <!-- <a
@@ -47,25 +47,51 @@
       </h3>
     </div>
 
-    <div id="skills" class="section">
-      <!-- <div id="diagram-container">
-        <img id="diagram" src="../assets/people-experiences_handwritten.png" />
-      </div> -->
+    <div id="skills" class="section appear">
       <!-- <h1>Skills</h1> -->
       <div id="skills-drawn" class="section-heading"></div>
       <div class="skills-container">
-        <Skill
+        <!-- <Skill
           v-for="skill in skills"
+          ref="skillItem"
           :key="skill.keyword"
           :description="skill.description"
           :keyword="skill.keyword"
           :color="skill.color"
+          :delay="skill.delay"
+        >
+        </Skill> -->
+        <Skill
+          id="skill-0"
+          :key="skills[0].keyword"
+          :description="skills[0].description"
+          :keyword="skills[0].keyword"
+          :color="skills[0].color"
+          :delay="skills[0].delay"
+        >
+        </Skill>
+        <Skill
+          id="skill-1"
+          :key="skills[1].keyword"
+          :description="skills[1].description"
+          :keyword="skills[1].keyword"
+          :color="skills[1].color"
+          :delay="skills[1].delay"
+        >
+        </Skill>
+        <Skill
+          id="skill-2"
+          :key="skills[2].keyword"
+          :description="skills[2].description"
+          :keyword="skills[2].keyword"
+          :color="skills[2].color"
+          :delay="skills[2].delay"
         >
         </Skill>
       </div>
     </div>
 
-    <div id="projects" class="section">
+    <div id="projects" class="section appear">
       <!-- <h1>Selected Work</h1> -->
       <div id="work-drawn" class="section-heading"></div>
       <!-- TODO: scrollbox of project images (full width to capture scroll) with absolute positioned project text -->
@@ -115,7 +141,7 @@
       </div>
     </div>
 
-    <div id="experience" class="section">
+    <div id="experience" class="section appear">
       <!-- <h1>Experience</h1> -->
       <div id="experience-drawn" class="section-heading"></div>
       <div
@@ -132,6 +158,15 @@
         </h3>
       </div>
     </div>
+
+    <router-link to="/juices" id="creative-container" class="section">
+      <div id="creative-img"></div>
+      <!-- <div id="creative-text">
+        <span id="text-latest" style="color: var(--purple)">Latest</span>
+        <span id="text-creative" style="color: var(--blue)">Creative</span>
+        <span id="text-juices" style="color: var(--green)">Juices</span>
+      </div> -->
+    </router-link>
   </div>
 </template>
 
@@ -140,9 +175,8 @@ import Mission from "../components/Mission.vue";
 import Skill from "../components/Skill.vue";
 import Project from "../components/Project.vue";
 import contents from "../list-contents.json";
+// import { gsap } from "gsap";
 import ScrollMagic from "scrollmagic";
-// import "scrollmagic/scrollmagic/minified/plugins/debug.addIndicators.min.js";
-import $ from "jquery";
 
 export default {
   name: "Home",
@@ -162,9 +196,14 @@ export default {
     // }
   },
   mounted() {
-    var scrollMagicController = new ScrollMagic.Controller();
-    this.projectScroll(scrollMagicController);
-    console.log("projectScroll init");
+    var projectController = new ScrollMagic.Controller();
+    this.projectScroll(projectController);
+
+    var homeController = new ScrollMagic.Controller();
+    this.homeScroll(homeController);
+
+    // var skillController = new ScrollMagic.Controller();
+    // this.skillAnim(skillController);
   },
   methods: {
     projectScroll(controller) {
@@ -182,16 +221,78 @@ export default {
 
       $(".tester").each(function() {
         // Create a scene for each project
-        var myScene = new ScrollMagic.Scene({
+        var scene = new ScrollMagic.Scene({
           triggerElement: this,
           duration: 300
         });
-        myScene
+        scene
           .setPin(this)
           .setClassToggle(this, "visible")
           .addTo(controller);
       });
+    },
+    homeScroll(controller) {
+      $(".section.appear").each(function() {
+        // Create a scene for each scene
+        var scene = new ScrollMagic.Scene({
+          triggerElement: this
+          // make elements disappear when moved past (using duration of the height of each section)
+          // duration: this.offsetHeight * 1.3
+          // or prevent disappearing when scrolling up
+        });
+        scene.setClassToggle(this, "visible").addTo(controller);
+      });
     }
+    // skillAnim() {
+    //   // var scene = new ScrollMagic.Scene({
+    //   //   triggerElement: ".skills-container"
+    //   // });
+    //   gsap
+    //     .timeline()
+    //     // for (let i = 0; i < this.skills.length; i++) {
+    //     //   const { skillItem } = $(".skills-container").$refs;
+    //     //   skillTL.fromTo(
+    //     //     skillItem,
+    //     //     { autoAlpha: 0 },
+    //     //     {
+    //     //       autoAlpha: 1,
+    //     //       duration: 0.75,
+    //     //       ease: "power1.inOut",
+    //     //       delay: this.delay
+    //     //     }
+    //     //   );
+    //     // }
+    //     .fromTo(
+    //       "#skill-0",
+    //       { autoAlpha: 0 },
+    //       {
+    //         autoAlpha: 1,
+    //         duration: 0.75,
+    //         ease: "power1.inOut",
+    //         delay: 1
+    //       }
+    //     )
+    //     .fromTo(
+    //       "#skill-1",
+    //       { autoAlpha: 0 },
+    //       {
+    //         autoAlpha: 1,
+    //         duration: 0.75,
+    //         ease: "power1.inOut",
+    //         delay: 1
+    //       }
+    //     )
+    //     .fromTo(
+    //       "#skill-2",
+    //       { autoAlpha: 0 },
+    //       {
+    //         autoAlpha: 1,
+    //         duration: 0.75,
+    //         ease: "power1.inOut",
+    //         delay: 1
+    //       }
+    //     );
+    //   // scene.setTween(skillTL).addTo(controller);
   },
   components: {
     Mission,
@@ -202,7 +303,7 @@ export default {
 </script>
 
 <style lang="scss">
-.mission-description {
+#mission-description {
   // max-width: calc(max(500px, 30%));
   max-width: 60%;
   margin-bottom: 200px;
@@ -254,22 +355,6 @@ export default {
 //   font-weight: 800;
 // }
 
-// #diagram-container {
-//   width: 100%;
-//   display: flex;
-//   justify-content: center;
-//   margin-bottom: 200px;
-// }
-
-// #diagram {
-//   // background-image: url(../assets/people-experiences_handwritten.png);
-//   // background-size: cover;
-//   // width: 85%;
-//   width: calc(min(100%, 1024px));
-//   // height: 265px;
-//   filter: contrast(3);
-// }
-
 .section-heading {
   margin: 0 0 70px 0;
   // opacity: 0.3;
@@ -313,6 +398,7 @@ export default {
 
 .visible {
   opacity: 1;
+  transition: opacity 400ms ease-in-out;
 }
 
 /* #projects-container::-webkit-scrollbar{
@@ -338,14 +424,65 @@ export default {
   }
 }
 
+#creative-container {
+  // visibility: hidden;
+  display: flex;
+  flex-direction: row;
+  transition: var(--hover);
+  padding-right: calc(min(5vw, 50px));
+  // padding-right: 15vw;
+}
+
+#creative-img {
+  width: 200px;
+  height: 200px;
+  background-image: url("../assets/photos/test2.png");
+  background-size: 250%;
+  background-position: 15%;
+}
+
+#creative-text {
+  margin: 0 0 0 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 800;
+}
+
 .section:last-child {
-  margin-bottom: 2vh;
+  margin-bottom: 7vh;
 }
 
 @media only screen and (max-width: 425px) {
   .mission-description {
     max-width: 100%;
   }
+
+  .section:nth-last-child(-n + 2) {
+    margin-bottom: 0;
+  }
+
+  #creative-container {
+    width: 86vw;
+    margin: 13vh 0 7vw 0;
+  }
+
+  #creative-img {
+    width: 86vw;
+    height: 86vw;
+  }
+
+  // #creative-text {
+  //   margin: 0 0 0 12px;
+  //   display: flex;
+  //   flex-direction: column;
+  //   justify-content: space-between;
+  //   text-transform: uppercase;
+  //   font-size: 14px;
+  //   font-weight: 800;
+  // }
 }
 
 @media only screen and (max-width: 1024px) {

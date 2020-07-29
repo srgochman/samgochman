@@ -1,30 +1,57 @@
 <template>
-  <div class="skill-container">
+  <div class="skill-container" ref="skill">
     <!-- <h2 :style="{ color: color }">{{ keyword }}</h2> -->
-    <h3 class="skill-description">
+    <h2 class="skill-description">
       I <span :style="{ color: color, fontWeight: 600 }">{{ keyword }}</span
       >{{ description }}
-    </h3>
+    </h2>
   </div>
 </template>
 
 <script>
+// import ScrollMagic from "scrollmagic";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger.js";
+gsap.registerPlugin(ScrollTrigger);
+
 export default {
   name: "Skill",
   props: {
     description: String,
     keyword: String,
-    color: String
+    color: String,
+    delay: Number
   },
-  components: {}
+  components: {},
+  mounted() {
+    const { skill } = this.$refs;
+    gsap
+      .timeline({
+        scrollTrigger: {
+          trigger: ".skills-container",
+          start: "top 59%",
+          end: "bottom top",
+          toggleActions: "restart none none none"
+          // markers: true
+        }
+      })
+      .from(skill, {
+        autoAlpha: 0,
+        duration: 0.75,
+        ease: "power1.inOut",
+        delay: this.delay
+      });
+  },
+  methods: {}
 };
 </script>
 
 <style lang="scss">
 .skill-container {
-  width: 33%;
+  width: 100%;
   // min-width: 200px;
   margin-bottom: 80px;
+  // opacity: 0;
   // width: 300px;
   /* height: 173px; */
   // display: flex;
@@ -33,7 +60,7 @@ export default {
 }
 
 .skill-description {
-  width: 80%;
+  width: 50%;
   // margin-bottom: 16px;
   font-weight: 600;
 }

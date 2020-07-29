@@ -12,17 +12,20 @@
     {
       "description": " about the unique nuances of the system at hand.",
       "keyword": "learn",
-      "color": "var(--purple)"
+      "color": "var(--purple)",
+      "delay": 0
     },
     {
       "description": " opportunities for new interactions and perspectives.",
       "keyword": "design",
-      "color": "var(--blue)"
+      "color": "var(--blue)",
+      "delay": 0.3
     },
     {
       "description": " with the most [effective] digital and physical tools for the job.",
       "keyword": "develop",
-      "color": "var(--green)"
+      "color": "var(--green)",
+      "delay": 0.6
     }
   ],
   "projects": [

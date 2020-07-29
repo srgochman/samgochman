@@ -47,9 +47,7 @@ export default {
     this.advanceInt = setInterval(() => {
       // if page not visible then dont advance idx; Page Visibility API
       this.idx++;
-      if (this.idx >= this.endings.length) {
-        this.idx = 0;
-      }
+      this.idx = (this.idx + 1) % this.endings.length;
     }, 4500);
   },
   beforeDestroy() {
@@ -78,7 +76,7 @@ export default {
 
 .mission-statement {
   // font-family: Roboto Condensed;
-  height: 300px;
+  height: 400px;
   width: 100%;
   // max-width: 678px;
   // max-width: calc(max(768px, 50%));
@@ -121,7 +119,7 @@ span.ending {
 @media only screen and (max-width: 1024px) {
   .mission-container {
     // font-size: 2em;
-    font-size: calc(min(11vw, 60px));
+    font-size: calc(min(11vw, 3.75em));
     line-height: 1.4em;
   }
 }

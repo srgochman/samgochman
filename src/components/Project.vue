@@ -21,7 +21,6 @@
 <script>
 import study from "../assets/study.svg";
 import Tags from "./Tags.vue";
-// import test from "../assets/photos/test.png";
 // img, arrow, description, tags hidden for projects that aren't active
 
 export default {
@@ -41,8 +40,8 @@ export default {
   },
   computed: {
     image() {
-      var images = require.context("../assets/photos/", false, /\.png$/);
-      return images("./" + this.img);
+      // To browser, starting root is public. Only works if serving website from base URL
+      return "/photos/" + this.img;
     }
   },
   mounted() {},
@@ -67,7 +66,7 @@ export default {
   // margin-right: calc(min(10vw, 50px));
   margin-right: 4%;
   width: 63%;
-  height: 50vh;
+  height: 60vh;
   // height: 800px;
   object-fit: cover;
 }

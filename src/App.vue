@@ -4,14 +4,6 @@
       <router-link to="/" class="sam-gochman">
         <div id="name-drawn"></div>
       </router-link>
-      <router-link to="/juices" class="creative-container">
-        <div class="creative-img"></div>
-        <div class="creative-text">
-          <span id="text-latest" style="color: var(--purple)">Latest</span>
-          <span id="text-creative" style="color: var(--blue)">Creative</span>
-          <span id="text-juices" style="color: var(--green)">Juices</span>
-        </div>
-      </router-link>
     </div>
     <transition name="pages">
       <router-view :key="$route.fullPath" />
@@ -64,17 +56,12 @@ body {
 
 #app {
   width: 100%;
-  max-width: 1024px;
+  max-width: 1440px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   color: black;
-  // font-size: 24px;
-  // padding: 0 calc(max(20vw, 50px));
-  // padding: 0 calc(min(10vw, 50px));
-  // padding: 0 10vw;
-  /* font-weight: 200; */
 }
 
 .hidden {
@@ -115,33 +102,6 @@ body {
     background-image: url("./assets/drawn/name_drawn.svg");
     background-repeat: no-repeat;
   }
-
-  .creative-container {
-    // visibility: hidden;
-    display: flex;
-    flex-direction: row;
-    transition: var(--hover);
-    padding-right: calc(min(5vw, 50px));
-    // padding-right: 15vw;
-  }
-
-  .creative-img {
-    width: 55px;
-    height: 55px;
-    background-image: url("./assets/photos/test2.png");
-    background-size: 250%;
-    background-position: 15%;
-  }
-
-  .creative-text {
-    margin: 0 0 0 12px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    text-transform: uppercase;
-    font-size: 14px;
-    font-weight: 800;
-  }
 }
 
 .body {
@@ -156,7 +116,12 @@ body {
 .section {
   width: 100%;
   // margin-bottom: 500px;
-  margin-bottom: 50vh;
+  margin-bottom: 30vh;
+}
+
+.appear {
+  opacity: 0;
+  transition: opacity 400ms ease-in-out;
 }
 
 .pages-enter-active {
@@ -173,7 +138,7 @@ body {
   opacity: 0;
 }
 
-@media only screen and (max-width: 1024px) {
+@media only screen and (max-width: 1850px) {
   // html {
   //   font-size: 0.8em;
   // }
@@ -181,32 +146,6 @@ body {
   #nav {
     position: absolute;
     overflow: hidden;
-  }
-
-  .creative-text {
-    width: 10px;
-  }
-
-  #text-latest {
-    visibility: hidden;
-  }
-  #text-latest:before {
-    visibility: visible;
-    content: "L";
-  }
-  #text-creative {
-    visibility: hidden;
-  }
-  #text-creative:before {
-    visibility: visible;
-    content: "C";
-  }
-  #text-juices {
-    visibility: hidden;
-  }
-  #text-juices:before {
-    visibility: visible;
-    content: "J";
   }
 
   .section {
