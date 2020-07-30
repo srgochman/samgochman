@@ -20,7 +20,6 @@
 
 <script>
 import contents from "../list-contents.json";
-import $ from "jquery";
 
 export default {
   name: "Mission",
@@ -36,13 +35,6 @@ export default {
   props: {},
   components: {},
   mounted() {
-    $("#work").hover(function() {
-      $(".work-underline").toggleClass("work-underline-hover");
-    });
-    $("#connect").hover(function() {
-      $(".connect-underline").toggleClass("connect-underline-hover");
-    });
-
     this.showEndings = true;
     this.advanceInt = setInterval(() => {
       // if page not visible then dont advance idx; Page Visibility API

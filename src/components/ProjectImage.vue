@@ -1,0 +1,115 @@
+<template>
+  <div class="project-container">
+    <img class="project-img" :src="image" ref="projectImage" />
+  </div>
+</template>
+
+<script>
+// import study from "../assets/study.svg";
+// import Tags from "./Tags.vue";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger.js";
+gsap.registerPlugin(ScrollTrigger);
+
+export default {
+  name: "ProjectImage",
+  data() {
+    return {
+      // study: study
+    };
+  },
+  props: {
+    title: String,
+    description: String,
+    img: String,
+    tags: Array,
+    link: String,
+    type: String
+  },
+  computed: {
+    image() {
+      // To browser, starting root is public. Only works if serving website from base URL
+      return "/photos/" + this.img;
+    }
+  },
+  mounted() {
+    // const { projectImage } = this.$refs.projectImage;
+    // gsap.timeline({
+    //   scrollTrigger: {
+    //     trigger: projectImage,
+    //     start: "top 82%",
+    //     end: "bottom top",
+    //     // toggleActions: "restart none none none"
+    //     markers: true,
+    //     onEnter: () => this.sendParams()
+    //   }
+    // });
+    const projectImage = this.$refs.projectImage;
+    ScrollTrigger.create({
+      trigger: projectImage,
+      start: "top 50%", // [trigger] [scroller] positions,
+      end: "bottom 50%", // [trigger] [scroller] positions
+      // end: "bottom 50%+=100px",
+      // markers: true,
+      onEnter: () => this.updateParams(),
+      onEnterBack: () => this.updateParams()
+    });
+  },
+  methods: {
+    // updates store values with this project's props
+    updateParams() {
+      this.$store.commit("set_project_params", {
+        title: this.title,
+        description: this.description,
+        tags: this.tags,
+        link: this.link,
+        type: this.type
+      });
+      console.log("ProjectImage: sent parameters to store");
+    }
+  }
+};
+</script>
+
+<style lang="scss">
+.project-container {
+  margin-bottom: 30px;
+  width: 100%;
+  // display: flex;
+  // flex-direction: row;
+  // flex-wrap: wrap;
+  // justify-content: flex-end;
+}
+
+.project-img {
+  // flex-grow: 1;
+  // margin-right: calc(min(10vw, 50px));
+  margin-right: 4%;
+  width: 100%;
+  height: 60vh;
+  // height: 800px;
+  object-fit: cover;
+  border-radius: 2px;
+}
+
+@media only screen and (max-width: 1024px) {
+  .project-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  .project-img {
+    margin: 0 0 20px 0;
+    width: 100%;
+    height: 40vh;
+  }
+}
+
+// Tablets (subset of above)
+@media only screen and (min-width: 426px) and (max-width: 1024px) {
+  .project-img {
+    height: 60vh;
+  }
+}
+</style>
