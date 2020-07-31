@@ -123,21 +123,21 @@ body {
 
 .appear {
   opacity: 0;
-  transition: opacity 300ms ease-in-out;
+  transition: opacity 200ms ease-in-out;
 }
 
 .visible {
   opacity: 1;
-  transition: opacity 300ms ease-in-out;
+  transition: opacity 200ms ease-in-out;
 }
 
 .pages-enter-active {
-  transition: opacity 250ms ease-in-out;
-  transition-delay: 250ms;
+  transition: opacity 200ms ease-in-out;
+  transition-delay: 200ms;
 }
 
 .pages-leave-active {
-  transition: opacity 250ms ease-in-out;
+  transition: opacity 200ms ease-in-out;
 }
 
 .pages-enter,

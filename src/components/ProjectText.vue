@@ -1,7 +1,6 @@
 <template>
   <div class="project-text" v-if="showDiv">
-    <!-- <transition-group name="fade"> -->
-    <div class="project-title-container" key="1">
+    <div class="project-title-container">
       <router-link v-if="type === 'study'" :to="link">
         <h3 class="project-title">{{ title }}</h3>
         <div class="arrow"></div>
@@ -11,9 +10,8 @@
         <div class="arrow"></div>
       </a>
     </div>
-    <h2 class="project-desc" key="2">{{ description }}</h2>
-    <Tags :words="tags" key="3"></Tags>
-    <!-- </transition-group> -->
+    <h2 class="project-desc">{{ description }}</h2>
+    <Tags :words="tags"></Tags>
   </div>
 </template>
 

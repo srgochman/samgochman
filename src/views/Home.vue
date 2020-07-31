@@ -163,6 +163,7 @@ export default {
           // offset: -200
           triggerHook: 0.75 // 75% down page, alternative for pixel offset
         });
+        scene.reverse(false); // prevent sections from disappearing on scrollback
         scene.setClassToggle(this, "visible").addTo(controller);
       });
     },

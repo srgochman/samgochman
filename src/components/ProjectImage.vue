@@ -1,6 +1,11 @@
 <template>
-  <div class="project-container">
-    <img class="project-img" :src="image" ref="projectImage" />
+  <div class="project-container" ref="projectContainer">
+    <router-link v-if="type === 'study'" :to="link">
+      <img class="project-img dull" :src="image" ref="projectImage" />
+    </router-link>
+    <a v-else :href="link" target="_blank" rel="noopener">
+      <img class="project-img dull" :src="image" ref="projectImage" />
+    </a>
   </div>
 </template>
 
@@ -34,6 +39,11 @@ export default {
   },
   mounted() {
     const projectImage = this.$refs.projectImage;
+    const projectContainer = this.$refs.projectContainer;
+
+    if (projectContainer == projectContainer.parentNode.firstChild)
+      projectImage.classList.remove("dull");
+
     ScrollTrigger.create({
       trigger: projectImage,
       start: "top+=50px 50%", // [trigger] [scroller] positions,
@@ -42,23 +52,32 @@ export default {
       onEnter: () => {
         $(".project-text").removeClass("fade-out");
         $(".project-text").addClass("fade-in");
+        projectImage.classList.remove("dull");
         this.updateParams();
       },
       onEnterBack: () => {
         $(".project-text").removeClass("fade-out");
         $(".project-text").addClass("fade-in");
+        projectImage.classList.remove("dull");
         this.updateParams();
       },
       onLeave: () => {
-        $(".project-text").removeClass("fade-in");
-        $(".project-text").addClass("fade-out");
+        // Don't fade out last project when scrolling past it
+        if (projectContainer !== projectContainer.parentNode.lastChild) {
+          $(".project-text").removeClass("fade-in");
+          $(".project-text").addClass("fade-out");
+          projectImage.classList.add("dull");
+        }
       },
       onLeaveBack: () => {
         // if ($(this).not(":first-child")) {
         //  if ($(this).slice(1)) {
-        $(".project-text").removeClass("fade-in");
-        $(".project-text").addClass("fade-out");
-        // }
+        // Don't fade out first project when scrolling back past it
+        if (projectContainer !== projectContainer.parentNode.firstChild) {
+          $(".project-text").removeClass("fade-in");
+          $(".project-text").addClass("fade-out");
+          projectImage.classList.add("dull");
+        }
       }
     });
   },
@@ -103,6 +122,12 @@ export default {
   // height: 800px;
   object-fit: cover;
   border-radius: 2px;
+  transition: opacity 200ms ease-out;
+}
+
+.dull {
+  opacity: 0.5;
+  transition: opacity 200ms ease-out;
 }
 
 @media only screen and (max-width: 1024px) {

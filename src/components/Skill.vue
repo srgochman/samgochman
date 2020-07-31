@@ -30,8 +30,8 @@ export default {
         scrollTrigger: {
           trigger: ".skills-container",
           start: "top 83%",
-          end: "bottom top",
-          toggleActions: "restart none none none"
+          end: "bottom top"
+          // toggleActions: "restart none none none"
           // markers: true
         }
       })
