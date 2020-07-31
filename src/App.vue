@@ -52,6 +52,7 @@ body {
   margin: 0;
   padding: 0 7vw;
   overflow-x: hidden;
+  overflow-y: hidden;
 }
 
 #app {

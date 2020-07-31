@@ -75,10 +75,6 @@ export default {
 .project-container {
   margin-bottom: 30px;
   width: 100%;
-  // display: flex;
-  // flex-direction: row;
-  // flex-wrap: wrap;
-  // justify-content: flex-end;
 }
 
 .project-img {
@@ -86,7 +82,7 @@ export default {
   // margin-right: calc(min(10vw, 50px));
   margin-right: 4%;
   width: 100%;
-  height: 60vh;
+  height: 65vh;
   // height: 800px;
   object-fit: cover;
   border-radius: 2px;

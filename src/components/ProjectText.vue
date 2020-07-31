@@ -18,6 +18,7 @@
 <script>
 import study from "../assets/study.svg";
 import Tags from "./Tags.vue";
+// import contents from "../list-contents.json";
 import { mapState } from "vuex";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger.js";
@@ -28,51 +29,39 @@ export default {
   data() {
     return {
       study: study
-      // title: null,
-      // description: null,
-      // tags: null,
-      // link: null,
-      // type: null
     };
   },
-  mounted() {},
+  mounted() {
+    // const pinHeight =
+    //   (contents["projects"].length - 1) * window.innerHeight * 0.65;
+    // gsap.timeline({
+    //   scrollTrigger: {
+    //     trigger: ".project-text",
+    //     start: "top 33%"
+    //     // end: "bottom bottom",
+    //     // pin: true,
+    //     // // toggleActions: "restart none none none",
+    //     // markers: true
+    //   }
+    // });
+    ScrollTrigger.create({
+      trigger: ".project-text",
+      start: "top 33%", // [trigger] [scroller] positions,
+      end: "bottom bottom", // [trigger] [scroller] positions
+      markers: true,
+      pin: true
+    });
+  },
   methods: {},
   // retrieve store values
   computed: {
     ...mapState(["title", "description", "tags", "link", "type"])
-    // title() {
-    //   console.log("ProjectText: computed", this.$store.state.title);
-    //   return this.$store.state.title;
-    // },
-    // description() {
-    //   console.log("ProjectText: computed", this.$store.state.description);
-    //   return this.$store.state.description;
-    // }
   },
   //updates project's description data
-  watch: {
-    // title() {
-    //   console.log("ProjectText: watch", this.title);
-    // }
-    //   activeProject() {
-    //     // this.title = this.activeProject.title;
-    //     // this.description = this.activeProject.description;
-    //     // this.tags = this.activeProject.tags;
-    //     // this.link = this.activeProject.link;
-    //     // this.type = this.activeProject.type;
-    //     console.log("ProjectText: updated project text with", this.activeProject);
-    //   }
-  },
+  watch: {},
   components: {
     Tags
   }
-  // props: {
-  //   title: String,
-  //   description: String,
-  //   tags: Array,
-  //   link: String,
-  //   type: String
-  // }
 };
 </script>
 

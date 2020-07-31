@@ -68,13 +68,6 @@
       <div id="work-drawn" class="section-heading"></div>
       <div id="projects-container">
         <div id="project-images-container">
-          <!-- scroll sets project to active; if project is not active, hide -->
-          <!-- `../assets/photos/${project.img}` -->
-          <!-- <img
-          v-for="project in projects"
-          :key="project.img"
-          :src="image(project.img)"
-        /> -->
           <ProjectImage
             v-for="project in projects"
             ref="project"
@@ -90,30 +83,6 @@
         </div>
         <ProjectText> </ProjectText>
       </div>
-      <!-- <h2 id="tester-0" class="tester">0</h2>
-        <h2 id="tester-1" class="tester">1</h2>
-        <h2 id="tester-2" class="tester">2</h2>
-        <Project
-          v-for="project in projects"
-          class="project"
-          :key="project.title"
-          :img="project.img"
-        >
-        </Project> -->
-      <!-- <Project
-          id="project-0"
-          class="project"
-          :key="projects[0].title"
-          :img="projects[0].img"
-        >
-        </Project>
-        <Project
-          id="project-1"
-          class="project"
-          :key="projects[1].title"
-          :img="projects[1].img"
-        >
-        </Project> -->
     </div>
 
     <div id="experience" class="section appear">
@@ -163,17 +132,7 @@ export default {
     return {
       skills: contents["skills"],
       projects: contents["projects"],
-      experiences: contents["experiences"],
-      // activeProjectIdx: 0,
-      activeProject: contents["projects"][0]
-      // projectIdx: 0
-      // activeProject: {
-      //   title: null,
-      //   description: null,
-      //   tags: null,
-      //   link: null,
-      //   type: null
-      // }
+      experiences: contents["experiences"]
     };
   },
   computed: {
@@ -190,32 +149,8 @@ export default {
       $(".connect-underline").toggleClass("connect-underline-hover");
     });
 
-    // var projectController = new ScrollMagic.Controller();
-    // this.projectScroll(projectController);
-
     var homeController = new ScrollMagic.Controller();
     this.homeScroll(homeController);
-
-    // const project = this.$refs.project;
-    // console.log("project:", project);
-    // let projectIdx = 0;
-    // $(".project").each(function() {
-    //   ScrollTrigger.create({
-    //     trigger: this,
-    //     start: "top 25%", // [trigger] [scroller] positions,
-    //     end: "bottom 75%", // [trigger] [scroller] positions
-    //     // end: "bottom 50%+=100px",
-    //     markers: true,
-    //     // onEnter: () => this.sendParams()
-    //     onEnter: () => {
-    //       // this.activeProject.title = projects[idx].title;
-    //       // console.log(this.activeProject.title);
-    //       // this.activeProject = contents["projects"][projectIdx];
-    //       console.log("activeProject:", this);
-    //     }
-    //   });
-    //   // projectIdx++;
-    // });
   },
   methods: {
     homeScroll(controller) {
@@ -241,30 +176,6 @@ export default {
       });
       console.log("ProjectImage: sent parameters to store");
     }
-    // projectScroll(controller) {
-    //   // var scene = new ScrollMagic.Scene({
-    //   //   triggerElement: "#projects-container"
-    //   //   // offset: -1 * $("#projects-container").height(),
-    //   //   // duration: $("#projects-container").height()
-    //   // });
-    //   // scene
-    //   //   .setPin("#tester-0")
-    //   //   .setClassToggle("#tester-0", "visible")
-    //   //   // .addIndicators()
-    //   //   .addTo(controller);
-    //   // // this.projectIdx++;
-    //   $(".tester").each(function() {
-    //     // Create a scene for each project
-    //     var scene = new ScrollMagic.Scene({
-    //       triggerElement: this,
-    //       duration: 300
-    //     });
-    //     scene
-    //       .setPin(this)
-    //       .setClassToggle(this, "visible")
-    //       .addTo(controller);
-    //   });
-    // }
   },
   components: {
     Mission,
@@ -365,19 +276,6 @@ export default {
   /* height: 500px; */
   width: 63%;
 }
-
-#tester-0 {
-  // position: relative;
-  // left: 67%;
-}
-
-.tester {
-  opacity: 0;
-}
-
-/* #projects-container::-webkit-scrollbar{
-  display: none;
-} */
 
 #experience-drawn {
   background-image: url("../assets/drawn/experience_drawn.svg");
