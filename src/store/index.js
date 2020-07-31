@@ -20,7 +20,7 @@ export default new Vuex.Store({
       state.tags = params.tags;
       state.link = params.link;
       state.type = params.type;
-      console.log("store: accessed", state.title);
+      // console.log("store: accessed", state.title);
     }
   },
   getters: {},

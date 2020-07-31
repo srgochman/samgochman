@@ -33,26 +33,33 @@ export default {
     }
   },
   mounted() {
-    // const { projectImage } = this.$refs.projectImage;
-    // gsap.timeline({
-    //   scrollTrigger: {
-    //     trigger: projectImage,
-    //     start: "top 82%",
-    //     end: "bottom top",
-    //     // toggleActions: "restart none none none"
-    //     markers: true,
-    //     onEnter: () => this.sendParams()
-    //   }
-    // });
     const projectImage = this.$refs.projectImage;
     ScrollTrigger.create({
       trigger: projectImage,
-      start: "top 50%", // [trigger] [scroller] positions,
-      end: "bottom 50%", // [trigger] [scroller] positions
-      // end: "bottom 50%+=100px",
+      start: "top+=50px 50%", // [trigger] [scroller] positions,
+      end: "bottom-=50px 50%", // [trigger] [scroller] positions
       // markers: true,
-      onEnter: () => this.updateParams(),
-      onEnterBack: () => this.updateParams()
+      onEnter: () => {
+        $(".project-text").removeClass("fade-out");
+        $(".project-text").addClass("fade-in");
+        this.updateParams();
+      },
+      onEnterBack: () => {
+        $(".project-text").removeClass("fade-out");
+        $(".project-text").addClass("fade-in");
+        this.updateParams();
+      },
+      onLeave: () => {
+        $(".project-text").removeClass("fade-in");
+        $(".project-text").addClass("fade-out");
+      },
+      onLeaveBack: () => {
+        // if ($(this).not(":first-child")) {
+        //  if ($(this).slice(1)) {
+        $(".project-text").removeClass("fade-in");
+        $(".project-text").addClass("fade-out");
+        // }
+      }
     });
   },
   methods: {
@@ -65,13 +72,23 @@ export default {
         link: this.link,
         type: this.type
       });
-      console.log("ProjectImage: sent parameters to store");
+      // console.log("ProjectImage: sent parameters to store");
     }
   }
 };
 </script>
 
 <style lang="scss">
+.fade-out {
+  opacity: 0;
+  transition: opacity 200ms ease-out;
+}
+
+.fade-in {
+  opacity: 1;
+  transition: opacity 200ms ease-in;
+}
+
 .project-container {
   margin-bottom: 30px;
   width: 100%;

@@ -1,6 +1,7 @@
 <template>
-  <div class="project-text">
-    <div class="project-title-container">
+  <div class="project-text" v-if="showDiv">
+    <!-- <transition-group name="fade"> -->
+    <div class="project-title-container" key="1">
       <router-link v-if="type === 'study'" :to="link">
         <h3 class="project-title">{{ title }}</h3>
         <div class="arrow"></div>
@@ -10,8 +11,9 @@
         <div class="arrow"></div>
       </a>
     </div>
-    <h2 class="project-desc">{{ description }}</h2>
-    <Tags :words="tags"></Tags>
+    <h2 class="project-desc" key="2">{{ description }}</h2>
+    <Tags :words="tags" key="3"></Tags>
+    <!-- </transition-group> -->
   </div>
 </template>
 
@@ -28,27 +30,16 @@ export default {
   name: "ProjectDescription",
   data() {
     return {
-      study: study
+      study: study,
+      showDiv: true
     };
   },
   mounted() {
-    // const pinHeight =
-    //   (contents["projects"].length - 1) * window.innerHeight * 0.65;
-    // gsap.timeline({
-    //   scrollTrigger: {
-    //     trigger: ".project-text",
-    //     start: "top 33%"
-    //     // end: "bottom bottom",
-    //     // pin: true,
-    //     // // toggleActions: "restart none none none",
-    //     // markers: true
-    //   }
-    // });
     ScrollTrigger.create({
       trigger: ".project-text",
       start: "top 33%", // [trigger] [scroller] positions,
       end: "bottom bottom", // [trigger] [scroller] positions
-      markers: true,
+      // markers: true,
       pin: true
     });
   },
@@ -57,7 +48,6 @@ export default {
   computed: {
     ...mapState(["title", "description", "tags", "link", "type"])
   },
-  //updates project's description data
   watch: {},
   components: {
     Tags
