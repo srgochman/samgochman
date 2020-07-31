@@ -42,7 +42,7 @@
               class="connect-underline"
               src="../assets/drawn/line2_purple.svg"
               height="5"/></a
-          >!<!-- <div id="arrow"></div> -->
+          >!
         </span>
       </h3>
     </div>
@@ -66,50 +66,22 @@
     <div id="projects" class="section appear">
       <!-- <h1>Selected Work</h1> -->
       <div id="work-drawn" class="section-heading"></div>
-      <!-- TODO: scrollbox of project images (full width to capture scroll) with absolute positioned project text -->
       <div id="projects-container">
-        <!-- scroll sets project to active; if project is not active, hide -->
-        <!-- `../assets/photos/${project.img}` -->
-        <!-- <img
-          v-for="project in projects"
-          :key="project.img"
-          :src="image(project.img)"
-        /> -->
-        <Project
-          v-for="project in projects"
-          :key="project.title"
-          :title="project.title"
-          :img="project.img"
-          :type="project.type"
-          :link="project.link"
-          :description="project.description"
-          :tags="project.tags"
-        >
-        </Project>
-        <!-- <h2 id="tester-0" class="tester">0</h2>
-        <h2 id="tester-1" class="tester">1</h2>
-        <h2 id="tester-2" class="tester">2</h2>
-        <Project
-          v-for="project in projects"
-          class="project"
-          :key="project.title"
-          :img="project.img"
-        >
-        </Project> -->
-        <!-- <Project
-          id="project-0"
-          class="project"
-          :key="projects[0].title"
-          :img="projects[0].img"
-        >
-        </Project>
-        <Project
-          id="project-1"
-          class="project"
-          :key="projects[1].title"
-          :img="projects[1].img"
-        >
-        </Project> -->
+        <div id="project-images-container">
+          <ProjectImage
+            v-for="project in projects"
+            ref="project"
+            :key="project.title"
+            :title="project.title"
+            :img="project.img"
+            :type="project.type"
+            :link="project.link"
+            :description="project.description"
+            :tags="project.tags"
+          >
+          </ProjectImage>
+        </div>
+        <ProjectText> </ProjectText>
       </div>
     </div>
 
@@ -146,12 +118,13 @@
 <script>
 import Mission from "../components/Mission.vue";
 import Skill from "../components/Skill.vue";
-import Project from "../components/Project.vue";
+import ProjectImage from "../components/ProjectImage.vue";
+import ProjectText from "../components/ProjectText.vue";
 import contents from "../list-contents.json";
-// import { gsap } from "gsap";
-// import { ScrollTrigger } from "gsap/ScrollTrigger.js";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger.js";
 import ScrollMagic from "scrollmagic";
-// gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger);
 
 export default {
   name: "Home",
@@ -159,8 +132,7 @@ export default {
     return {
       skills: contents["skills"],
       projects: contents["projects"],
-      experiences: contents["experiences"],
-      projectIdx: 0
+      experiences: contents["experiences"]
     };
   },
   computed: {
@@ -170,55 +142,17 @@ export default {
     }
   },
   mounted() {
-    // var projectController = new ScrollMagic.Controller();
-    // this.projectScroll(projectController);
+    $("#work").hover(function() {
+      $(".work-underline").toggleClass("work-underline-hover");
+    });
+    $("#connect").hover(function() {
+      $(".connect-underline").toggleClass("connect-underline-hover");
+    });
 
     var homeController = new ScrollMagic.Controller();
     this.homeScroll(homeController);
-
-    // $(".section.appear").each(function() {
-    //   gsap.from(this, {
-    //     scrollTrigger: {
-    //       trigger: this,
-    //       // for seamless resets, make top bottom (start) and reset (4th toggleAction)
-    //       // for no resets but appearances mid page, make top 75% and no toggleActions
-    //       start: "top 75%", // [trigger] [scroller] positions
-    //       // end: "-300px bottom", // [trigger] [scroller] positions
-    //       // toggleActions: "restart none none reset",
-    //       // toggleClass: "visible",
-    //       markers: true
-    //     },
-    //     autoAlpha: 0,
-    //     duration: 0.5,
-    //     ease: "power1.inOut"
-    //   });
-    // });
   },
   methods: {
-    // projectScroll(controller) {
-    //   // var scene = new ScrollMagic.Scene({
-    //   //   triggerElement: "#projects-container"
-    //   //   // offset: -1 * $("#projects-container").height(),
-    //   //   // duration: $("#projects-container").height()
-    //   // });
-    //   // scene
-    //   //   .setPin("#tester-0")
-    //   //   .setClassToggle("#tester-0", "visible")
-    //   //   // .addIndicators()
-    //   //   .addTo(controller);
-    //   // // this.projectIdx++;
-    //   $(".tester").each(function() {
-    //     // Create a scene for each project
-    //     var scene = new ScrollMagic.Scene({
-    //       triggerElement: this,
-    //       duration: 300
-    //     });
-    //     scene
-    //       .setPin(this)
-    //       .setClassToggle(this, "visible")
-    //       .addTo(controller);
-    //   });
-    // }
     homeScroll(controller) {
       $(".section.appear").each(function() {
         // Create a scene for each scene
@@ -231,12 +165,23 @@ export default {
         });
         scene.setClassToggle(this, "visible").addTo(controller);
       });
+    },
+    sendParams() {
+      this.$store.commit("set_project_params", {
+        title: this.title,
+        description: this.description,
+        tags: this.tags,
+        link: this.link,
+        type: this.type
+      });
+      console.log("ProjectImage: sent parameters to store");
     }
   },
   components: {
     Mission,
     Skill,
-    Project
+    ProjectImage,
+    ProjectText
   }
 };
 </script>
@@ -321,23 +266,16 @@ export default {
 }
 
 #projects-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#project-images-container {
   overflow: scroll;
   /* height: 500px; */
-  width: 100%;
+  width: 63%;
 }
-
-#tester-0 {
-  // position: relative;
-  // left: 67%;
-}
-
-.tester {
-  opacity: 0;
-}
-
-/* #projects-container::-webkit-scrollbar{
-  display: none;
-} */
 
 #experience-drawn {
   background-image: url("../assets/drawn/experience_drawn.svg");

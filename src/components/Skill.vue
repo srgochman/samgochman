@@ -29,7 +29,7 @@ export default {
       .timeline({
         scrollTrigger: {
           trigger: ".skills-container",
-          start: "top 82%",
+          start: "top 83%",
           end: "bottom top",
           toggleActions: "restart none none none"
           // markers: true

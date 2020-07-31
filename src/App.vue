@@ -52,6 +52,7 @@ body {
   margin: 0;
   padding: 0 7vw;
   overflow-x: hidden;
+  overflow-y: hidden;
 }
 
 #app {
@@ -101,7 +102,7 @@ body {
     height: 20px;
     background-image: url("./assets/drawn/name_drawn.svg");
     background-repeat: no-repeat;
-    transform: scaleY(0.8);
+    transform: scaleY(0.9);
   }
 }
 
