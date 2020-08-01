@@ -1,9 +1,13 @@
 <template>
   <div class="skill-container" ref="skill">
     <!-- <h2 :style="{ color: color }">{{ keyword }}</h2> -->
-    <h2 class="skill-description">
-      I <span :style="{ color: color, fontWeight: 600 }">{{ keyword }}</span
-      >{{ description }}
+    <h2 class="skill-description" v-html="adjDescription">
+      <!-- <h2 class="skill-description"> -->
+      <!-- <span v-for="word in wordList" :key="word">
+        <span v-if="matches(word)" :style="{ color: color }">{{ word }}</span>
+        <span v-else>{{ word }}</span>
+      </span> -->
+      <!-- {{ adjDescription }} -->
     </h2>
   </div>
 </template>
@@ -18,12 +22,23 @@ export default {
   name: "Skill",
   props: {
     description: String,
-    keyword: String,
+    keywords: Array,
     color: String,
     delay: Number
   },
-  components: {},
+  data() {
+    return {
+      adjDescription: "",
+      wordList: []
+    };
+  },
   mounted() {
+    // this.wordList = this.description.split(" ");
+    this.adjDescription = this.description;
+    for (var i = 0; i < this.keywords.length; i++) {
+      this.colorize(this.keywords[i]);
+    }
+
     const { skill } = this.$refs;
     gsap
       .timeline({
@@ -42,7 +57,29 @@ export default {
         delay: this.delay
       });
   },
-  methods: {}
+  methods: {
+    // matches(word) {
+    //   console.log("match");
+    //   return word === this.keyword;
+    // },
+    colorize(keyword) {
+      this.adjDescription = this.adjDescription.replace(
+        keyword,
+        `<span style="color: ${this.color}"> ${keyword} </span>`
+      );
+      // const words = this.description.split(" ");
+      // console.log(words);
+      // for (var i = 0; i < words.length; i++) {
+      //   if (words[i] === keywords) {
+      //     // words[i].style;
+      //     console.log("match:", words[i]);
+      //     words[i] = "<span :style='{ color: color }'>" + words[i] + "</span>";
+      //   }
+      // }
+      // this.adjDescription = words.join(" ");
+      // console.log(keyword, "colored:", this.adjDescription);
+    }
+  }
 };
 </script>
 

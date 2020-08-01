@@ -53,9 +53,9 @@
       <div class="skills-container">
         <Skill
           v-for="skill in skills"
-          :key="skill.keyword"
+          :key="skill.keywords[0]"
           :description="skill.description"
-          :keyword="skill.keyword"
+          :keywords="skill.keywords"
           :color="skill.color"
           :delay="skill.delay"
         >
