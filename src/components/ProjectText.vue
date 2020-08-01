@@ -109,12 +109,6 @@ export default {
   margin: 0 15px 0 0;
 }
 
-/* .project-title-container:hover, */
-.project-title.inactive {
-  /* color: var(--gray); */
-  opacity: 0.3;
-}
-
 @media only screen and (max-width: 1024px) {
   .text-bg {
     display: none;
@@ -135,7 +129,7 @@ export default {
 
   .project-desc {
     margin-top: 10px;
-    margin-bottom: 50px;
+    margin-bottom: 60px;
     // max-width: 60%;
   }
 
