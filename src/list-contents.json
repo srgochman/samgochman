@@ -4,31 +4,57 @@
     "turns voices into kaleidoscopes.",
     "transforms information into conversation.",
     "builds for and with sensory experiences.",
-    "parries and lunges.",
     "makes circuits expressive.",
     "sees through the eyes of tarsiers and honeybees.",
     "makes over beloved landmarks."
   ],
+  "skills": [
+    {
+      "description": "I see information with one eye on rigorous analysis, the other on creative potential.",
+      "keywords": [
+        "information"
+      ],
+      "color": "var(--purple)",
+      "delay": 0
+    },
+    {
+      "description": "I design interfaces and environments that balance functionality with exploration.",
+      "keywords": [
+        "interfaces",
+        "environments"
+      ],
+      "color": "var(--blue)",
+      "delay": 0.25
+    },
+    {
+      "description": "I build with interactive tech across digital and physical platforms.",
+      "keywords": [
+        "interactive",
+        "tech"
+      ],
+      "color": "var(--green)",
+      "delay": 0.5
+    }
+  ],
   "projects": [
     {
       "title": "Phototaxis",
-      "img": "../assets/test.png",
+      "img": "phototaxis_silhouette.png",
       "type": "product",
       "link": "https://www.eskewdumezripple.com/phototaxis.html",
-      "description": "How might direct engagement with light change how people occupy a space?",
+      "description": "Merging digital and physical spaces for an experimental interaction with light",
       "tags": [
         {
           "color": "var(--purple)",
           "backgroundColor": "var(--purple-transparent)",
           "words": [
-            "arduino"
+            "data viz"
           ]
         },
         {
           "color": "var(--blue)",
           "backgroundColor": "var(--blue-transparent)",
           "words": [
-            "fabrication",
             "environments design",
             "Rhino3D/Grasshopper"
           ]
@@ -37,24 +63,56 @@
           "color": "var(--green)",
           "backgroundColor": "var(--green-transparent)",
           "words": [
-            "data visualization"
+            "arduino",
+            "fabrication"
           ]
         }
       ]
     },
     {
       "title": "Multilingual",
-      "img": "../assets/test.png",
+      "img": "multilingual_patch.png",
       "type": "study",
       "link": "/multilingual",
-      "description": "How can we transform linguistic data into interactive art that celebrates a community?",
+      "description": "Transforming linguistic data into interactive art that celebrates a community",
       "tags": [
         {
           "color": "var(--purple)",
           "backgroundColor": "var(--purple-transparent)",
           "words": [
-            "HTML5/CSS3/JavaScript",
+            "domain research",
+            "data analysis"
+          ]
+        },
+        {
+          "color": "var(--blue)",
+          "backgroundColor": "var(--blue-transparent)",
+          "words": [
+            "digital signage",
+            "concept development"
+          ]
+        },
+        {
+          "color": "var(--green)",
+          "backgroundColor": "var(--green-transparent)",
+          "words": [
             "Electron"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Miraj",
+      "img": "miraj_space.png",
+      "type": "product",
+      "link": "https://miraj.sosolimited.com/",
+      "description": "Bringing voice-controlled digital art to a new platform",
+      "tags": [
+        {
+          "color": "var(--purple)",
+          "backgroundColor": "var(--purple-transparent)",
+          "words": [
+            "data viz"
           ]
         },
         {
@@ -68,8 +126,103 @@
           "color": "var(--green)",
           "backgroundColor": "var(--green-transparent)",
           "words": [
-            "data visualization",
+            "Web Audio",
+            "OpenCV",
+            "Electron",
+            "app optimization"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "What I Know Now",
+      "img": "WIKN_mural.png",
+      "type": "study",
+      "link": "/WIKN",
+      "description": "Translating personal stories into generative artwork to help communities listen",
+      "tags": [
+        {
+          "color": "var(--purple)",
+          "backgroundColor": "var(--purple-transparent)",
+          "words": [
+            "data analysis"
+          ]
+        },
+        {
+          "color": "var(--blue)",
+          "backgroundColor": "var(--blue-transparent)",
+          "words": [
             "concept development"
+          ]
+        },
+        {
+          "color": "var(--green)",
+          "backgroundColor": "var(--green-transparent)",
+          "words": [
+            "Web Audio",
+            "Google Speech-to-Text",
+            "WebRTC",
+            "Vue.js"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Together Apart",
+      "img": "blendchat_eyes.png",
+      "type": "product",
+      "link": "https://medium.com/sosolimited/4-design-principles-for-building-connection-through-digital-experiences-f365d6e9efd1",
+      "description": "Refocusing technology on human connection",
+      "tags": [
+        {
+          "color": "var(--purple)",
+          "backgroundColor": "var(--purple-transparent)",
+          "words": [
+            "UX research"
+          ]
+        },
+        {
+          "color": "var(--blue)",
+          "backgroundColor": "var(--blue-transparent)",
+          "words": [
+            "concept development"
+          ]
+        },
+        {
+          "color": "var(--green)",
+          "backgroundColor": "var(--green-transparent)",
+          "words": [
+            "Tone.js",
+            "WebRTC",
+            "AWS",
+            "Vue.js"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Anivision",
+      "img": "anivision_calltolead_flipped.png",
+      "type": "study",
+      "link": "/anivision",
+      "description": "Helping students intuit complex concepts through the eyes of animals",
+      "tags": [
+        {
+          "color": "var(--purple)",
+          "backgroundColor": "var(--purple-transparent)",
+          "words": [
+            "UX research",
+            "curriculum design",
+            "publication"
+          ]
+        },
+        {
+          "color": "var(--blue)",
+          "backgroundColor": "var(--blue-transparent)",
+          "words": [
+            "VR",
+            "environments design",
+            "Unity"
           ]
         }
       ]

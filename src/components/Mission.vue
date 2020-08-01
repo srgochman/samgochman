@@ -15,39 +15,6 @@
         </span>
       </transition>
     </div>
-    <div class="mission-description">
-      <h3>
-        As a primate researcher-turned-design
-        <a
-          class="underline"
-          href="https://github.com/srgochman"
-          target="_blank"
-          rel="noopener"
-          >developer</a
-        >
-        , I appreciate the complexity of people’s relationships with the world —
-        and that opens up huge creative opportunities.
-      </h3>
-      <h3 id="connect">
-        * I'm looking for new
-        <a
-          class="underline"
-          href="https://www.linkedin.com/in/samuelrgochman/"
-          target="_blank"
-          rel="noopener"
-          >work</a
-        >
-        and would love to
-        <a
-          class="underline"
-          href="mailto:srgochman@gmail.com"
-          target="_blank"
-          rel="noopener"
-          >connect</a
-        >!
-        <!-- <div id="arrow"></div> -->
-      </h3>
-    </div>
   </div>
 </template>
 
@@ -72,9 +39,7 @@ export default {
     this.advanceInt = setInterval(() => {
       // if page not visible then dont advance idx; Page Visibility API
       this.idx++;
-      if (this.idx >= this.endings.length) {
-        this.idx = 0;
-      }
+      this.idx = (this.idx + 1) % this.endings.length;
     }, 4500);
   },
   beforeDestroy() {
@@ -86,8 +51,9 @@ export default {
 <style lang="scss">
 .mission-container {
   width: 100%;
-  margin-top: 230px;
-  font-size: 65px;
+  margin-top: 50vh;
+  transform: translateY(-50%);
+  font-size: 4em;
   font-weight: 800;
   line-height: 1.3em;
   display: flex;
@@ -102,32 +68,24 @@ export default {
 
 .mission-statement {
   // font-family: Roboto Condensed;
-  height: 300px;
+  height: 350px;
+  width: 100%;
   // max-width: 678px;
   // max-width: calc(max(768px, 50%));
   max-width: 900px;
-  margin-right: 17%;
+  // margin-right: 17%;
   // flex-grow: 2;
   // flex-basis: 67%;
   // padding-right: 80px;
+}
 
-  span.ending {
-    width: 100%;
-  }
+span.ending {
+  width: 200px;
 }
 
 // .mission-statement:first-child {
 //   margin-bottom: 260px;
 // }
-
-.mission-description {
-  // max-width: calc(max(500px, 30%));
-  width: 600px;
-  // position: absolute;
-  // left: 67%;
-  // flex-grow: 1;
-  // flex-basis: 33%;
-}
 
 .fade-enter-active {
   transition: opacity 750ms ease-in-out;
@@ -143,21 +101,17 @@ export default {
   opacity: 0;
 }
 
-// #connect {
-//   margin: 0;
-//   display: inline;
-// }
+@media only screen and (max-width: 1024px) {
+  .mission-container {
+    // font-size: 2em;
+    font-size: calc(min(11vw, 3.75em));
+    line-height: 1.4em;
+  }
+}
 
-// #arrow {
-//   background-image: url("../assets/Asset 10.svg");
-//   background-size: cover;
-//   width: 48px;
-//   height: 15px;
-// }
-
-@media only screen and (min-width: 1025px) {
-  .mission-statement {
-    // max-width: 67%;
+@media only screen and (max-width: 1024px) and (max-height: 426px) {
+  .mission-container {
+    margin-top: calc(50vh + 75px);
   }
 }
 </style>

@@ -1,42 +1,121 @@
 <template>
-  <div class="skill-container">
-    <h2 :style="{ color: color }">{{ keyword }}</h2>
-    <!-- <h3 class="skill-title">
-      I <span :style="{ color: color }">{{ keyword }}</span
-      >{{ title }}
-    </h3> -->
-    <Tags :words="tags"></Tags>
+  <div class="skill-container" ref="skill">
+    <!-- <h2 :style="{ color: color }">{{ keyword }}</h2> -->
+    <h2 class="skill-description" v-html="adjDescription">
+      <!-- <h2 class="skill-description"> -->
+      <!-- <span v-for="word in wordList" :key="word">
+        <span v-if="matches(word)" :style="{ color: color }">{{ word }}</span>
+        <span v-else>{{ word }}</span>
+      </span> -->
+      <!-- {{ adjDescription }} -->
+    </h2>
   </div>
 </template>
 
 <script>
-import Tags from "./Tags.vue";
+// import ScrollMagic from "scrollmagic";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger.js";
+gsap.registerPlugin(ScrollTrigger);
 
 export default {
   name: "Skill",
   props: {
-    title: String,
-    keyword: String,
+    description: String,
+    keywords: Array,
     color: String,
-    tags: Array
+    delay: Number
   },
-  components: {
-    Tags
+  data() {
+    return {
+      adjDescription: "",
+      wordList: []
+    };
+  },
+  mounted() {
+    // this.wordList = this.description.split(" ");
+    this.adjDescription = this.description;
+    for (var i = 0; i < this.keywords.length; i++) {
+      this.colorize(this.keywords[i]);
+    }
+
+    const { skill } = this.$refs;
+    gsap
+      .timeline({
+        scrollTrigger: {
+          trigger: ".skills-container",
+          start: "top 83%",
+          end: "bottom top"
+          // toggleActions: "restart none none none"
+          // markers: true
+        }
+      })
+      .from(skill, {
+        autoAlpha: 0,
+        duration: 0.5,
+        ease: "power1.inOut",
+        delay: this.delay
+      });
+  },
+  methods: {
+    // matches(word) {
+    //   console.log("match");
+    //   return word === this.keyword;
+    // },
+    colorize(keyword) {
+      this.adjDescription = this.adjDescription.replace(
+        keyword,
+        `<span style="color: ${this.color}"> ${keyword} </span>`
+      );
+      // const words = this.description.split(" ");
+      // console.log(words);
+      // for (var i = 0; i < words.length; i++) {
+      //   if (words[i] === keywords) {
+      //     // words[i].style;
+      //     console.log("match:", words[i]);
+      //     words[i] = "<span :style='{ color: color }'>" + words[i] + "</span>";
+      //   }
+      // }
+      // this.adjDescription = words.join(" ");
+      // console.log(keyword, "colored:", this.adjDescription);
+    }
   }
 };
 </script>
 
 <style lang="scss">
 .skill-container {
-  // width: 30%;
-  width: 300px;
+  width: 100%;
+  // min-width: 200px;
+  margin-bottom: 70px;
+  // opacity: 0;
+  // width: 300px;
   /* height: 173px; */
-  display: flex;
-  flex-direction: column;
+  // display: flex;
+  // flex-direction: column;
   // justify-content: space-between;
 }
 
-/* .skill-title {
-  margin-bottom: 16px;
-} */
+.skill-description {
+  width: 50%;
+  // margin-bottom: 16px;
+  font-weight: 600;
+}
+
+@media only screen and (max-width: 425px) {
+  .skill-container,
+  .skill-description {
+    width: 100%;
+  }
+}
+
+@media only screen and (min-width: 426px) and (max-width: 1024px) {
+  .skill-container {
+    width: 100%;
+  }
+
+  .skill-description {
+    width: 66%;
+  }
+}
 </style>

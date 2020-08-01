@@ -1,3 +1,5 @@
+window.$ = require("jquery");
+window.JQuery = require("jquery");
 import Vue from "vue";
 import App from "./App.vue";
 import router from "./router";

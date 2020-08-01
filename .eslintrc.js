@@ -3,6 +3,10 @@ module.exports = {
   env: {
     node: true
   },
+  globals: {
+    "$": "readonly",
+    "jQuery": "readonly"
+  },
   extends: ["plugin:vue/essential", "eslint:recommended", "@vue/prettier"],
   parserOptions: {
     parser: "babel-eslint"
