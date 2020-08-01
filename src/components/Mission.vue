@@ -101,13 +101,6 @@ span.ending {
   opacity: 0;
 }
 
-// #arrow {
-//   background-image: url("../assets/Asset 10.svg");
-//   background-size: cover;
-//   width: 48px;
-//   height: 15px;
-// }
-
 @media only screen and (max-width: 1024px) {
   .mission-container {
     // font-size: 2em;
@@ -116,9 +109,9 @@ span.ending {
   }
 }
 
-// @media only screen and (min-width: 1025px) {
-//   .mission-statement {
-//     max-width: 67%;
-//   }
-// }
+@media only screen and (max-width: 1024px) and (max-height: 426px) {
+  .mission-container {
+    margin-top: calc(50vh + 75px);
+  }
+}
 </style>
