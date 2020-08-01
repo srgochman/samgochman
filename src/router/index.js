@@ -2,12 +2,10 @@ import Vue from "vue";
 import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
 import Juices from "../views/Juices.vue";
+import Phototaxis from "../views/Phototaxis.vue";
 import Multilingual from "../views/Multilingual.vue";
 import WIKN from "../views/WIKN.vue";
-import Fenway from "../views/Fenway.vue";
-import SOTS from "../views/SOTS.vue";
 import Anivision from "../views/Anivision.vue";
-import GMB from "../views/GMB.vue";
 
 Vue.use(VueRouter);
 
@@ -26,6 +24,11 @@ const router = new VueRouter({
       component: Juices
     },
     {
+      path: "/phototaxis",
+      name: "Phototaxis",
+      component: Phototaxis
+    },
+    {
       path: "/multilingual",
       name: "Multilingual",
       component: Multilingual
@@ -36,24 +39,9 @@ const router = new VueRouter({
       component: WIKN
     },
     {
-      path: "/fenway",
-      name: "Fenway",
-      component: Fenway
-    },
-    {
-      path: "/athena",
-      name: "SOTS",
-      component: SOTS
-    },
-    {
       path: "/anivision",
       name: "Anivision",
       component: Anivision
-    },
-    {
-      path: "/qualcomm",
-      name: "GMB",
-      component: GMB
     }
   ]
 });

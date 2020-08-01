@@ -1,12 +1,12 @@
 <template>
   <div>
-    <h2>Fenway</h2>
+    <h2>Phototaxis</h2>
   </div>
 </template>
 
 <script>
 export default {
-  name: "Fenway",
+  name: "Phototaxis",
   components: {}
 };
 </script>

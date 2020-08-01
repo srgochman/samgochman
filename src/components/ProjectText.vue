@@ -36,8 +36,8 @@ export default {
   mounted() {
     ScrollTrigger.create({
       trigger: ".text-bg",
-      start: "top 33%", // [trigger] [scroller] positions,
-      end: "bottom bottom", // [trigger] [scroller] positions
+      start: "top 25%", // [trigger] [scroller] positions,
+      end: "bottom bottom-=7%", // [trigger] [scroller] positions
       // markers: true,
       pin: true,
       onEnter: () => {
@@ -109,21 +109,9 @@ export default {
   margin: 0 15px 0 0;
 }
 
-/* .project-title-container:hover, */
-.project-title.inactive {
-  /* color: var(--gray); */
-  opacity: 0.3;
-}
-
 @media only screen and (max-width: 1024px) {
   .text-bg {
-    width: 86%;
-    // max-height: 60vh;
-    position: fixed;
-    bottom: 0 !important;
-    top: unset !important;
-    padding: 7vw 7vw 0 7vw;
-    background-color: white;
+    display: none;
   }
 
   .project-text {
@@ -133,6 +121,20 @@ export default {
 
   .project-text > * {
     margin-bottom: 20px;
+  }
+
+  .project-title-container {
+    margin-top: 10px;
+  }
+
+  .project-desc {
+    margin-top: 10px;
+    margin-bottom: 60px;
+    // max-width: 60%;
+  }
+
+  .arrow {
+    margin-top: 8px !important;
   }
 
   .tags-container {

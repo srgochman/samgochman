@@ -190,7 +190,7 @@ export default {
 <style lang="scss">
 #mission-description {
   // max-width: calc(max(500px, 30%));
-  max-width: 60%;
+  width: 50%;
   margin-bottom: 200px;
   // position: absolute;
   // left: 67%;
@@ -372,6 +372,7 @@ export default {
 
 @media only screen and (max-width: 1024px) {
   #mission-description {
+    width: 66%;
     // max-width: 100%;
     margin-bottom: 120px;
   }
