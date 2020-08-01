@@ -383,6 +383,14 @@ export default {
     // opacity: 0.4;
   }
 
+  #projects-container {
+    flex-direction: column;
+  }
+
+  #project-images-container {
+    width: 100%;
+  }
+
   .experience-item {
     margin-bottom: 50px;
   }

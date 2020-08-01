@@ -1,17 +1,19 @@
 <template>
-  <div class="project-text" v-if="showDiv">
-    <div class="project-title-container">
-      <router-link v-if="type === 'study'" :to="link">
-        <h3 class="project-title">{{ title }}</h3>
-        <div class="arrow"></div>
-      </router-link>
-      <a v-else :href="link" target="_blank" rel="noopener">
-        <h3 class="project-title">{{ title }}</h3>
-        <div class="arrow"></div>
-      </a>
+  <div class="text-bg">
+    <div class="project-text">
+      <div class="project-title-container">
+        <router-link v-if="type === 'study'" :to="link">
+          <h3 class="project-title">{{ title }}</h3>
+          <div class="arrow"></div>
+        </router-link>
+        <a v-else :href="link" target="_blank" rel="noopener">
+          <h3 class="project-title">{{ title }}</h3>
+          <div class="arrow"></div>
+        </a>
+      </div>
+      <h2 class="project-desc">{{ description }}</h2>
+      <Tags :words="tags"></Tags>
     </div>
-    <h2 class="project-desc">{{ description }}</h2>
-    <Tags :words="tags"></Tags>
   </div>
 </template>
 
@@ -28,17 +30,21 @@ export default {
   name: "ProjectDescription",
   data() {
     return {
-      study: study,
-      showDiv: true
+      study: study
     };
   },
   mounted() {
     ScrollTrigger.create({
-      trigger: ".project-text",
+      trigger: ".text-bg",
       start: "top 33%", // [trigger] [scroller] positions,
       end: "bottom bottom", // [trigger] [scroller] positions
       // markers: true,
-      pin: true
+      pin: true,
+      onEnter: () => {
+        // text-bg normally vibility: hidden
+        // if window width <= 1024px:
+        // $(".text-bg").css("visibility", "visible");
+      }
     });
   },
   methods: {},
@@ -54,8 +60,12 @@ export default {
 </script>
 
 <style lang="scss">
-.project-text {
+.text-bg {
   width: 33%;
+  position: unset;
+}
+
+.project-text {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -71,11 +81,7 @@ export default {
     color: black;
     display: flex;
     align-items: flex-start;
-    // img {
-    //   height: 10px;
-    //   margin-top: 13px;
-    //   // stroke: var(--purple);
-    // }
+
     .arrow {
       background-image: url("../assets/drawn/arrow_drawn2.svg");
       background-size: cover;
@@ -94,6 +100,11 @@ export default {
   }
 }
 
+.purple-arrow {
+  background-image: url("../assets/drawn/arrow_drawn2_purple.svg") !important;
+  // transition: var(--hover);
+}
+
 .project-title {
   margin: 0 15px 0 0;
 }
@@ -105,13 +116,27 @@ export default {
 }
 
 @media only screen and (max-width: 1024px) {
+  .text-bg {
+    width: 86%;
+    // max-height: 60vh;
+    position: fixed;
+    bottom: 0 !important;
+    top: unset !important;
+    padding: 7vw 7vw 0 7vw;
+    background-color: white;
+  }
+
   .project-text {
+    // padding: 0 7vw;
     width: 100%;
-    max-height: 60vh;
   }
 
   .project-text > * {
     margin-bottom: 20px;
+  }
+
+  .tags-container {
+    display: none;
   }
 }
 
