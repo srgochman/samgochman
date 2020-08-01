@@ -6,10 +6,27 @@
     <a v-else :href="link" target="_blank" rel="noopener">
       <img class="project-img dull" :src="image" ref="projectImage" />
     </a>
+    <div class="project-text-below">
+      <div>
+        <div class="project-title-container">
+          <router-link v-if="type === 'study'" :to="link">
+            <h3 class="project-title">{{ title }}</h3>
+            <div class="arrow"></div>
+          </router-link>
+          <a v-else :href="link" target="_blank" rel="noopener">
+            <h3 class="project-title">{{ title }}</h3>
+            <div class="arrow"></div>
+          </a>
+        </div>
+        <h2 class="project-desc">{{ description }}</h2>
+      </div>
+      <Tags :words="tags"></Tags>
+    </div>
   </div>
 </template>
 
 <script>
+import Tags from "./Tags.vue";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger.js";
 gsap.registerPlugin(ScrollTrigger);
@@ -113,7 +130,8 @@ export default {
       });
       // console.log("ProjectImage: sent parameters to store");
     }
-  }
+  },
+  components: { Tags }
 };
 </script>
 
@@ -167,6 +185,30 @@ export default {
 @media only screen and (min-width: 426px) and (max-width: 1024px) {
   .project-img {
     height: 60vh;
+  }
+}
+</style>
+
+<style lang="scss" scoped>
+.project-text-below {
+  display: none;
+}
+
+.project-desc {
+  margin-right: 0;
+}
+
+@media only screen and (max-width: 1024px) {
+  .project-text-below {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .tags-container {
+    display: unset;
+    width: 40%;
+    margin-top: 10px;
+    margin-left: 20px;
   }
 }
 </style>

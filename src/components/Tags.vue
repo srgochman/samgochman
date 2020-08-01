@@ -56,7 +56,7 @@ export default {
   font-weight: 600;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 1024px) {
   .tag {
     font-size: 0.8em;
     padding: 3px 7px 3px 6px;
