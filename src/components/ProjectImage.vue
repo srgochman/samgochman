@@ -7,13 +7,13 @@
       <img class="project-img dull" :src="image" ref="projectImage" />
     </a>
     <div class="project-text-below" ref="projectTextBelow">
-      <div class="project-title-container">
+      <div class="project-title-container" ref="projectTitle">
         <router-link v-if="type === 'study'" :to="link">
-          <h3 class="project-title" ref="projectTitle">{{ title }}</h3>
+          <h3 class="project-title">{{ title }}</h3>
           <div class="arrow" ref="arrow"></div>
         </router-link>
         <a v-else :href="link" target="_blank" rel="noopener">
-          <h3 class="project-title" ref="projectTitle">{{ title }}</h3>
+          <h3 class="project-title">{{ title }}</h3>
           <div class="arrow" ref="arrow"></div>
         </a>
       </div>
@@ -58,15 +58,19 @@ export default {
 
     projectImage.addEventListener("mouseover", function() {
       if (instance.isActive) {
-        projectTitle.style.color = "var(--purple)";
+        projectTitle.childNodes[0].style.color = "var(--purple)";
         arrow.classList.add("purple-arrow");
+        // also do this for the title and arrow in ProjectText
+        $(".project-text a").css("color", "var(--purple)");
+        $(".project-text .arrow").addClass("purple-arrow");
       }
     });
     projectImage.addEventListener("mouseout", function() {
       if (instance.isActive) {
-        // copy to onLeave and onLeaveBack
-        projectTitle.style.color = "black";
+        projectTitle.childNodes[0].style.color = "black";
         arrow.classList.remove("purple-arrow");
+        $(".project-text a").css("color", "black");
+        $(".project-text .arrow").removeClass("purple-arrow");
       }
     });
 
@@ -101,6 +105,8 @@ export default {
           $(".project-text").addClass("fade-out");
           projectImage.classList.add("dull");
           projectTextBelow.classList.add("dull");
+          projectTitle.childNodes[0].style.color = "black";
+          arrow.classList.remove("purple-arrow");
           // projectTextBelow.style.visibility = "hidden";
           instance.isActive = false;
         }
@@ -112,6 +118,8 @@ export default {
           $(".project-text").addClass("fade-out");
           projectImage.classList.add("dull");
           projectTextBelow.classList.add("dull");
+          projectTitle.childNodes[0].style.color = "black";
+          arrow.classList.remove("purple-arrow");
           instance.isActive = false;
         }
       }

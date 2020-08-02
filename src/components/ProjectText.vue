@@ -102,13 +102,13 @@ export default {
 
 .project-title {
   margin: 0 15px 0 0;
-  transition: var(--hover);
+  // transition: var(--hover);
 }
 
-.project-title:hover {
-  color: var(--purple) !important;
-  transition: var(--hover);
-}
+// .project-title:hover {
+//   color: var(--purple) !important;
+//   transition: var(--hover);
+// }
 
 @media only screen and (max-width: 1024px) {
   .text-bg {
