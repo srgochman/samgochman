@@ -9,12 +9,12 @@
     <div class="project-text-below" ref="projectTextBelow">
       <div class="project-title-container">
         <router-link v-if="type === 'study'" :to="link">
-          <h3 class="project-title">{{ title }}</h3>
-          <div class="arrow"></div>
+          <h3 class="project-title" ref="projectTitle">{{ title }}</h3>
+          <div class="arrow" ref="arrow"></div>
         </router-link>
         <a v-else :href="link" target="_blank" rel="noopener">
-          <h3 class="project-title">{{ title }}</h3>
-          <div class="arrow"></div>
+          <h3 class="project-title" ref="projectTitle">{{ title }}</h3>
+          <div class="arrow" ref="arrow"></div>
         </a>
       </div>
       <h2 class="project-desc">{{ description }}</h2>
@@ -53,20 +53,20 @@ export default {
     const projectImage = this.$refs.projectImage;
     const projectContainer = this.$refs.projectContainer;
     const projectTextBelow = this.$refs.projectTextBelow;
+    const projectTitle = this.$refs.projectTitle;
+    const arrow = this.$refs.arrow;
 
     projectImage.addEventListener("mouseover", function() {
       if (instance.isActive) {
-        $(".project-title-container>a").css("color", "var(--purple)");
-        $(".project-title-container>a>.arrow").addClass("purple-arrow");
-        // projectImage.style.opacity = 0.1;
-        // document.getElementsByClassName("arrow")[0].style.backgroundImage =
-        //   "url('../assets/drawn/arrow_drawn2_purple.svg')";
+        projectTitle.style.color = "var(--purple)";
+        arrow.classList.add("purple-arrow");
       }
     });
     projectImage.addEventListener("mouseout", function() {
       if (instance.isActive) {
-        $(".project-title-container>a").css("color", "black");
-        $(".project-title-container>a>.arrow").removeClass("purple-arrow");
+        // copy to onLeave and onLeaveBack
+        projectTitle.style.color = "black";
+        arrow.classList.remove("purple-arrow");
       }
     });
 
@@ -101,6 +101,7 @@ export default {
           $(".project-text").addClass("fade-out");
           projectImage.classList.add("dull");
           projectTextBelow.classList.add("dull");
+          // projectTextBelow.style.visibility = "hidden";
           instance.isActive = false;
         }
       },

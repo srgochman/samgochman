@@ -319,7 +319,7 @@ export default {
 #creative-img {
   width: 233px;
   height: 233px;
-  background-image: url("../assets/photos/test2.png");
+  background-image: url("/photos/test2.png");
   background-size: 250%;
   background-position: 15%;
   border-radius: 2px;

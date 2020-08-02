@@ -39,12 +39,7 @@ export default {
       start: "top 25%", // [trigger] [scroller] positions,
       end: "bottom bottom-=7%", // [trigger] [scroller] positions
       // markers: true,
-      pin: true,
-      onEnter: () => {
-        // text-bg normally vibility: hidden
-        // if window width <= 1024px:
-        // $(".text-bg").css("visibility", "visible");
-      }
+      pin: true
     });
   },
   methods: {},
@@ -107,6 +102,12 @@ export default {
 
 .project-title {
   margin: 0 15px 0 0;
+  transition: var(--hover);
+}
+
+.project-title:hover {
+  color: var(--purple) !important;
+  transition: var(--hover);
 }
 
 @media only screen and (max-width: 1024px) {
