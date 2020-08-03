@@ -54,7 +54,6 @@ img {
   width: 100vw;
   height: 100vh;
   position: relative;
-  padding: 0 7vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -72,20 +71,22 @@ img {
 
 .banner-text {
   // width: 800px;
-  width: var(--main-width);
-  // position: absolute;
+  max-width: var(--main-width);
+  width: 100%;
+  margin-left: 7vw;
+  position: fixed;
   // top: 50vh;
   // transform: translateY(-50%);
   color: white;
   // text-shadow: 0px 0px 10px #00000075;
   z-index: 1;
 
-  h3 {
-    margin-bottom: 20px;
+  h2 {
     width: 800px;
   }
 
-  h2 {
+  h3 {
+    margin-bottom: 20px;
     width: 800px;
   }
 }
@@ -117,8 +118,13 @@ img {
   }
 
   .banner-text {
-    width: calc(min(80%, 500px));
-    top: 20vh;
+    // top: 20vh;
+    width: 100%;
+    padding: 0 7vw;
+
+    h2, h3 {
+      width: calc(min(80%, 500px));
+    }
   }
 
   .oversized {
@@ -151,7 +157,7 @@ img {
 
   .banner-text {
     width: 85%;
-    top: 15vh;
+    // top: 15vh;
   }
 
   .oversized {

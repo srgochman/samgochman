@@ -55,10 +55,10 @@ export default {
     }
   },
   mounted() {
-    const bannerController = new ScrollMagic.Controller();
-    new ScrollMagic.Scene({ triggerHook: 0 })
-      .setPin(".banner-text")
-      .addTo(bannerController);
+    // const bannerController = new ScrollMagic.Controller();
+    // new ScrollMagic.Scene({ triggerHook: 0 })
+    //   .setPin(".banner-text")
+    //   .addTo(bannerController);
 
     const sectionController = new ScrollMagic.Controller();
     $(".section.appear").each(function() {
