@@ -33,6 +33,10 @@ export default {
 @import "./scss/type.scss";
 // @import "./scss/reset.scss";
 
+:root {
+  --main-width: 1440px;
+}
+
 html {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   font-size: 1rem; // 16px
@@ -55,9 +59,10 @@ body {
   overflow-y: hidden;
 }
 
-#app {
+#app,
+.study-page {
   width: 100%;
-  max-width: 1440px;
+  max-width: var(--main-width);
   display: flex;
   flex-direction: column;
   align-items: center;

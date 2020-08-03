@@ -138,9 +138,9 @@ export default {
     margin-top: 8px !important;
   }
 
-  .tags-container {
-    display: none;
-  }
+  // .tags-container {
+  //   display: none;
+  // }
 }
 
 // Tablets (subset of above)

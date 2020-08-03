@@ -166,6 +166,7 @@ export default {
   margin-right: 4%;
   width: 100%;
   height: 65vh;
+  // max-height:
   // height: 800px;
   object-fit: cover;
   border-radius: 2px;

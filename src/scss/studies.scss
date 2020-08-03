@@ -1,0 +1,148 @@
+// LAYOUT
+
+.section {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  >:nth-child(1) {
+    margin-bottom: calc(var(--main-width) * 0.05);
+  }
+}
+
+.stacked {
+  flex-direction: column;
+}
+
+.one-third-width {
+  width: 33%
+}
+
+.two-thirds-width {
+  width: 63%
+}
+
+.reverse {
+  :nth-child(1) {
+    order: 2;
+  }
+  :nth-child(2) {
+    order: 1;
+  }
+}
+
+img {
+  height: auto;
+}
+
+.image-bg {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+
+// INFO
+
+.banner {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  padding: 0 7vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 7vh;
+}
+.banner::before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+}
+
+.banner-text {
+  width: 800px;
+  position: absolute;
+  top: 50vh;
+  transform: translateY(-50%);
+  color: white;
+  text-shadow: 0px 0px 10px #00000075;
+
+  h3 {
+    margin-bottom: 20px;
+  }
+}
+
+.info {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  .tags-container {
+    margin-top: 10px;
+  }
+}
+
+
+// CONTENT
+
+.caption {
+  h2 {
+    margin-bottom: 20px;
+  }
+}
+
+
+@media only screen and (min-width: 426px) and (max-width: 1024px) {
+  .banner {
+    height: 40vh;
+  }
+
+  .banner-text {
+    width: calc(min(80%, 500px));
+    top: 20vh;
+  }
+
+  .oversized {
+    font-size: calc(min(10vw, 2.3em));
+    line-height: 1.4em;
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  .section {
+    margin-bottom: 10vh;
+  }
+  
+  .one-third-width,.two-thirds-width {
+    width: 100%
+  }
+
+  .reverse {
+    :nth-child(1) {
+      order: 1;
+    }
+    :nth-child(2) {
+      order: 2;
+    }
+  }
+  
+  .banner {
+    height: 30vh;
+  }
+
+  .banner-text {
+    width: 85%;
+    top: 15vh;
+  }
+
+  .oversized {
+    font-size: calc(min(5vw, 2.3em));
+    line-height: 1.4em;
+  }
+}

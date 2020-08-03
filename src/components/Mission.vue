@@ -1,5 +1,5 @@
 <template>
-  <div class="mission-container">
+  <div class="mission-container oversized">
     <div class="mission-statement">
       <span>I’m a creative technologist who </span>
       <transition name="fade">
@@ -53,9 +53,9 @@ export default {
   width: 100%;
   margin-top: 50vh;
   transform: translateY(-50%);
-  font-size: 4em;
-  font-weight: 800;
-  line-height: 1.3em;
+  // font-size: 4em;
+  // font-weight: 800;
+  // line-height: 1.3em;
   display: flex;
   display: -webkit-box;
   display: -moz-box;
@@ -88,12 +88,12 @@ span.ending {
 // }
 
 .fade-enter-active {
-  transition: opacity 750ms ease-in-out;
-  transition-delay: 1000ms;
+  transition: opacity 700ms ease-in-out;
+  transition-delay: 800ms;
 }
 
 .fade-leave-active {
-  transition: opacity 750ms ease-in-out;
+  transition: opacity 700ms ease-in-out;
 }
 
 .fade-enter,
@@ -104,8 +104,8 @@ span.ending {
 @media only screen and (max-width: 1024px) {
   .mission-container {
     // font-size: 2em;
-    font-size: calc(min(11vw, 3.75em));
-    line-height: 1.4em;
+    // font-size: calc(min(10vw, 2.3em));
+    // line-height: 1.4em;
   }
 }
 

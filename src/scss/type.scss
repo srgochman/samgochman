@@ -9,6 +9,12 @@ h1 {
   font-weight: 800;
 }
 
+.oversized {
+  font-size: 4em;
+  font-weight: 800;
+  line-height: 1.3em;
+}
+
 /* large text */
 h2 {
   font-size: 2.25em;
@@ -56,6 +62,11 @@ code {
 }
 
 @media only screen and (max-width: 1024px) {
+  .oversized {
+    font-size: calc(min(10vw, 2.3em));
+    line-height: 1.4em;
+  }
+  
   h2 {
     font-size: 1.3em;
     line-height: 1.5em;

@@ -85,9 +85,10 @@ export default {
 
 <style lang="scss">
 .skill-container {
-  width: 100%;
+  // width: 100%;
+  width: 33%;
   // min-width: 200px;
-  margin-bottom: 70px;
+  margin-bottom: 120px;
   // opacity: 0;
   // width: 300px;
   /* height: 173px; */
@@ -97,9 +98,10 @@ export default {
 }
 
 .skill-description {
-  width: 50%;
-  // margin-bottom: 16px;
-  font-weight: 600;
+  // width: 63%;
+  width: 80%;
+  // font-weight: 600;
+  // font-size: 2em;
 }
 
 @media only screen and (max-width: 425px) {

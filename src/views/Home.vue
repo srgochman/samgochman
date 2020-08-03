@@ -142,6 +142,13 @@ export default {
     }
   },
   mounted() {
+    gsap.timeline().from("#mission", {
+      autoAlpha: 0,
+      duration: 0.8,
+      ease: "power1.inOut",
+      delay: 1.3
+    });
+
     $("#work").hover(function() {
       $(".work-underline").toggleClass("work-underline-hover");
     });
@@ -149,7 +156,7 @@ export default {
       $(".connect-underline").toggleClass("connect-underline-hover");
     });
 
-    var homeController = new ScrollMagic.Controller();
+    const homeController = new ScrollMagic.Controller();
     this.homeScroll(homeController);
   },
   methods: {
@@ -341,11 +348,30 @@ export default {
 
 @media only screen and (max-width: 425px) {
   #mission-description {
-    max-width: 100%;
+    width: 100%;
   }
 
-  .section:nth-last-child(-n + 2) {
-    margin-bottom: 0;
+  // .section:nth-last-child(-n + 2) {
+  //   margin-bottom: 0;
+  // }
+
+  .section-heading {
+    transform-origin: left;
+    transform: scale(0.8);
+    margin: 0 0 50px 0;
+    // opacity: 0.4;
+  }
+
+  #projects-container {
+    flex-direction: column;
+  }
+
+  #project-images-container {
+    width: 100%;
+  }
+
+  .experience-item {
+    margin-bottom: 50px;
   }
 
   #creative-container {
@@ -370,7 +396,7 @@ export default {
   // }
 }
 
-@media only screen and (max-width: 1024px) {
+@media only screen and (min-width: 426px) and (max-width: 1024px) {
   #mission-description {
     width: 66%;
     // max-width: 100%;
