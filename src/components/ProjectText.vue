@@ -4,10 +4,12 @@
       <div class="project-title-container">
         <router-link v-if="type === 'study'" :to="link">
           <h3 class="project-title">{{ title }}</h3>
+          <div v-if="locked" class="lock"></div>
           <div class="arrow"></div>
         </router-link>
         <a v-else :href="link" target="_blank" rel="noopener">
           <h3 class="project-title">{{ title }}</h3>
+          <div v-if="locked" class="lock"></div>
           <div class="arrow"></div>
         </a>
       </div>
@@ -18,7 +20,7 @@
 </template>
 
 <script>
-import study from "../assets/study.svg";
+import lock from "../assets/unlocked.svg";
 import Tags from "./Tags.vue";
 // import contents from "../list-contents.json";
 import { mapState } from "vuex";
@@ -30,7 +32,7 @@ export default {
   name: "ProjectDescription",
   data() {
     return {
-      study: study
+      lock: lock
     };
   },
   mounted() {
@@ -45,7 +47,7 @@ export default {
   methods: {},
   // retrieve store values
   computed: {
-    ...mapState(["title", "description", "tags", "link", "type"])
+    ...mapState(["title", "description", "tags", "link", "type", "locked"])
   },
   watch: {},
   components: {
@@ -85,6 +87,14 @@ export default {
       margin-top: 13px;
       // transition: var(--hover);
     }
+
+    .lock {
+      background-image: url("../assets/unlocked.svg");
+      background-size: cover;
+      width: 7px;
+      height: 10px;
+      margin: 13px 15px 0 0;
+    }
   }
 
   a:hover {
@@ -92,11 +102,19 @@ export default {
       background-image: url("../assets/drawn/arrow_drawn2_purple.svg");
       // transition: var(--hover);
     }
+    .lock {
+      background-image: url("../assets/unlocked_purple.svg");
+    }
   }
 }
 
 .purple-arrow {
   background-image: url("../assets/drawn/arrow_drawn2_purple.svg") !important;
+  // transition: var(--hover);
+}
+
+.purple-lock {
+  background-image: url("../assets/unlocked_purple.svg") !important;
   // transition: var(--hover);
 }
 
@@ -136,6 +154,10 @@ export default {
 
   .arrow {
     margin-top: 8px !important;
+  }
+
+  .lock {
+    margin-top: 7px !important;
   }
 
   // .tags-container {

@@ -10,10 +10,12 @@
       <div class="project-title-container" ref="projectTitle">
         <router-link v-if="type === 'study'" :to="link">
           <h3 class="project-title">{{ title }}</h3>
+          <div v-if="locked" class="lock" ref="lock"></div>
           <div class="arrow" ref="arrow"></div>
         </router-link>
         <a v-else :href="link" target="_blank" rel="noopener">
           <h3 class="project-title">{{ title }}</h3>
+          <div v-if="locked" class="lock" ref="lock"></div>
           <div class="arrow" ref="arrow"></div>
         </a>
       </div>
@@ -40,7 +42,8 @@ export default {
     img: String,
     tags: Array,
     link: String,
-    type: String
+    type: String,
+    locked: Boolean
   },
   computed: {
     image() {
@@ -55,22 +58,28 @@ export default {
     const projectTextBelow = this.$refs.projectTextBelow;
     const projectTitle = this.$refs.projectTitle;
     const arrow = this.$refs.arrow;
+    const lock = this.$refs.lock;
 
     projectImage.addEventListener("mouseover", function() {
       if (instance.isActive) {
         projectTitle.childNodes[0].style.color = "var(--purple)";
         arrow.classList.add("purple-arrow");
+        console.log(instance.locked);
+        if (instance.locked) lock.classList.add("purple-lock");
         // also do this for the title and arrow in ProjectText
         $(".project-text a").css("color", "var(--purple)");
         $(".project-text .arrow").addClass("purple-arrow");
+        $(".project-text .lock").addClass("purple-lock");
       }
     });
     projectImage.addEventListener("mouseout", function() {
       if (instance.isActive) {
         projectTitle.childNodes[0].style.color = "black";
         arrow.classList.remove("purple-arrow");
+        if (instance.locked) lock.classList.remove("purple-lock");
         $(".project-text a").css("color", "black");
         $(".project-text .arrow").removeClass("purple-arrow");
+        $(".project-text .lock").removeClass("purple-lock");
       }
     });
 
@@ -107,6 +116,7 @@ export default {
           projectTextBelow.classList.add("dull");
           projectTitle.childNodes[0].style.color = "black";
           arrow.classList.remove("purple-arrow");
+          if (instance.locked) lock.classList.remove("purple-lock");
           // projectTextBelow.style.visibility = "hidden";
           instance.isActive = false;
         }
@@ -120,6 +130,7 @@ export default {
           projectTextBelow.classList.add("dull");
           projectTitle.childNodes[0].style.color = "black";
           arrow.classList.remove("purple-arrow");
+          if (instance.locked) lock.classList.remove("purple-lock");
           instance.isActive = false;
         }
       }
@@ -136,7 +147,8 @@ export default {
         description: this.description,
         tags: this.tags,
         link: this.link,
-        type: this.type
+        type: this.type,
+        locked: this.locked
       });
       // console.log("ProjectImage: sent parameters to store");
     }

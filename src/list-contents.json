@@ -68,7 +68,8 @@
             "app optimization"
           ]
         }
-      ]
+      ],
+      "locked": false
     },
     {
       "title": "Multilingual",
@@ -100,7 +101,8 @@
             "Electron"
           ]
         }
-      ]
+      ],
+      "locked": true
     },
     {
       "title": "Phototaxis",
@@ -132,7 +134,8 @@
             "fabrication"
           ]
         }
-      ]
+      ],
+      "locked": false
     },
     {
       "title": "What I Know Now",
@@ -165,7 +168,8 @@
             "Vue.js"
           ]
         }
-      ]
+      ],
+      "locked": true
     },
     {
       "title": "Together Apart",
@@ -198,7 +202,8 @@
             "Vue.js"
           ]
         }
-      ]
+      ],
+      "locked": false
     },
     {
       "title": "Anivision",
@@ -225,7 +230,8 @@
             "Unity"
           ]
         }
-      ]
+      ],
+      "locked": false
     }
   ],
   "experiences": [

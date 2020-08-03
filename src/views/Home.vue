@@ -78,6 +78,7 @@
             :link="project.link"
             :description="project.description"
             :tags="project.tags"
+            :locked="project.locked"
           >
           </ProjectImage>
         </div>

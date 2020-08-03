@@ -11,7 +11,8 @@ export default new Vuex.Store({
     description: contents["projects"][0].description,
     tags: contents["projects"][0].tags,
     link: contents["projects"][0].link,
-    type: contents["projects"][0].type
+    type: contents["projects"][0].type,
+    locked: contents["projects"][0].locked
   },
   mutations: {
     set_project_params(state, params) {
@@ -20,6 +21,7 @@ export default new Vuex.Store({
       state.tags = params.tags;
       state.link = params.link;
       state.type = params.type;
+      state.locked = params.locked;
       // console.log("store: accessed", state.title);
     }
   },
