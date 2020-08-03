@@ -1,14 +1,13 @@
 <template>
   <div class="study-page">
-    <div class="banner image-bg">
+    <div class="banner image-bg"></div>
+    <div class="body">
       <div class="banner-text">
         <h3>Multilingual</h3>
         <h2 class="oversized">
           Bringing voice-controlled digital art to an accessable platform
         </h2>
       </div>
-    </div>
-    <div class="body">
       <div class="info section">
         <h3 class="two-thirds-width">Multilingual</h3>
         <Tags :words="tags" class="one-third-width" />
@@ -55,11 +54,6 @@ export default {
     }
   },
   mounted() {
-    // const bannerController = new ScrollMagic.Controller();
-    // new ScrollMagic.Scene({ triggerHook: 0 })
-    //   .setPin(".banner-text")
-    //   .addTo(bannerController);
-
     const sectionController = new ScrollMagic.Controller();
     $(".section.appear").each(function() {
       var scene = new ScrollMagic.Scene({
