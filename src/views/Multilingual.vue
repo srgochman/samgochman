@@ -5,7 +5,8 @@
       <div class="banner-text">
         <h3>Multilingual</h3>
         <h2 class="oversized">
-          Bringing voice-controlled digital art to an accessable platform
+          Transforming linguistic data into interactive art that celebrates a
+          community
         </h2>
       </div>
       <div class="info section">
