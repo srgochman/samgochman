@@ -1,9 +1,6 @@
 <template>
   <div class="study-page">
-    <div class="banner img-bg">
-      <!-- <div class="banner-text-gradient"></div> -->
-    </div>
-    <!-- <div class="body-bg"> -->
+    <div class="banner img-bg"></div>
     <div class="body">
       <div class="banner-text">
         <h3>Multilingual</h3>
@@ -46,7 +43,6 @@
             clarity.
           </h3>
         </div>
-        <!-- <div id="data-cloud" class="img-bg one-third-width"></div> -->
         <div class="across">
           <img
             id="data-cloud"
