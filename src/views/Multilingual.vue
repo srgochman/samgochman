@@ -1,6 +1,9 @@
 <template>
   <div class="study-page">
-    <div class="banner image-bg"></div>
+    <div class="banner img-bg">
+      <!-- <div class="banner-text-gradient"></div> -->
+    </div>
+    <!-- <div class="body-bg"> -->
     <div class="body">
       <div class="banner-text">
         <h3>Multilingual</h3>
@@ -10,33 +13,78 @@
         </h2>
       </div>
       <div class="info section">
-        <h3 class="two-thirds-width">Multilingual</h3>
-        <Tags :words="tags" class="one-third-width" />
-      </div>
-      <div class="section appear reverse">
-        <div class="caption one-third-width">
-          <h2>Heading</h2>
-          <h3>Description...</h3>
-        </div>
-        <!-- <div id="idle-screen" class="image-bg two-thirds-width first"></div> -->
-        <img
-          id="idle-screen"
-          class="two-thirds-width"
-          src="/photos/multilingual/pw_02.jpg"
-        />
+        <h3 class="half-width">
+          Developed for Planet Word, a museum of language in Washington, DC,
+          Multilingual gives visitors a chance to appreciate the diversity of
+          languages spoken by other visitors through time. Each contribution to
+          the visualization is a unique experience focused on one user in the
+          context of a connected community. With color representing a visitor’s
+          language and size showing its rarity, everyone can track themselves in
+          an artwork that enhances the museum whether or not it’s in use.
+          <br />
+          <br />
+          Sosolimited, 2020
+        </h3>
+        <Tags :words="tags" class="half-width" />
       </div>
       <div class="section appear">
+        <video muted autoplay loop>
+          <source
+            src="/photos/multilingual/2 Animation-Sequence_edit_trimmed.mp4"
+            type="video/mp4"
+          />
+        </video>
+      </div>
+      <div class="section writing appear stacked">
+        <div class="caption">
+          <h2 class="one-third-width">Data Visualization</h2>
+          <h3 class="one-third-width">
+            I used a database of over 6,000 languages and dialects to capture
+            the diversity of visitors for the visualization. Meeting with a
+            linguist helped me develop a data model that illustrated historical
+            relatedness with a balance of informational richness and aesthetic
+            clarity.
+          </h3>
+        </div>
+        <!-- <div id="data-cloud" class="img-bg one-third-width"></div> -->
+        <div class="across">
+          <img
+            id="data-cloud"
+            class="one-third-width"
+            src="/photos/multilingual/data_cloud.png"
+          />
+          <div class="arrow"></div>
+          <img
+            id="map"
+            class="one-third-width"
+            src="/photos/multilingual/map.png"
+          />
+          <div class="arrow"></div>
+          <img
+            id="field"
+            class="one-third-width"
+            src="/photos/multilingual/field.png"
+          />
+        </div>
+      </div>
+      <div class="section writing appear reverse">
         <div class="caption one-third-width">
-          <h2>Heading</h2>
-          <h3>Description...</h3>
+          <h2>User Interaction</h2>
+          <h3>
+            A goal of high turnover meant that user input had to be fast, yet
+            inclusive and accurate. I developed a touch interface that hooks
+            into the database to quickly narrow down searches, letting visitors
+            focus instead on the visualization itself.
+          </h3>
         </div>
         <img
-          id="idle-screen"
+          id="keyboard"
           class="two-thirds-width"
-          src="/photos/multilingual/pw_02.jpg"
+          src="/photos/multilingual/keyboard_cropped.png"
         />
       </div>
     </div>
+    <!-- </div> -->
   </div>
 </template>
 
@@ -74,11 +122,25 @@ export default {
 @import "../scss/studies.scss";
 
 .banner {
-  background-image: url("/photos/multilingual/multilingual_patch.png");
+  background-image: url("/photos/multilingual/pw_00_no text.jpg");
 }
 
 .banner::before {
   background-color: rgba(0, 0, 0, 0.5);
+}
+
+.across {
+  justify-content: space-between;
+  align-items: center;
+}
+
+.arrow {
+  background-image: url("../assets/drawn/arrow_drawn2.svg");
+  background-size: cover;
+  width: 28px;
+  height: 8px;
+  // margin-top: 12px;
+  // transition: var(--hover);
 }
 
 // #idle-screen {

@@ -118,12 +118,13 @@ body {
   justify-content: center;
   // width: 1024px;
   width: 100%;
+  max-width: var(--main-width);
 }
 
 .section {
   width: 100%;
-  // margin-bottom: 500px;
-  margin-bottom: 30vh;
+  margin-bottom: 300px;
+  // margin-bottom: 30vh;
 }
 
 .appear {

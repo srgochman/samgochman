@@ -82,9 +82,9 @@ export default {
     .arrow {
       background-image: url("../assets/drawn/arrow_drawn2.svg");
       background-size: cover;
-      width: 32px;
-      height: 10px;
-      margin-top: 13px;
+      width: 28px;
+      height: 8px;
+      margin-top: 12px;
       // transition: var(--hover);
     }
 
@@ -93,7 +93,7 @@ export default {
       background-size: cover;
       width: 7px;
       height: 10px;
-      margin: 13px 15px 0 0;
+      margin: 11px 13px 0 0;
     }
   }
 
