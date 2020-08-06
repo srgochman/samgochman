@@ -7,11 +7,9 @@
     </div>
     <div class="body">
       <div class="banner-text">
-        <h3>Phototaxis</h3>
-        <h2 class="oversized">
-          Merging digital and physical spaces to experience a raw interaction
-          with light
-        </h2>
+        <h1>Phototaxis</h1>
+        <h2 class="oversized">{{ tagline }}</h2>
+        <h3>EskewDumezRipple, 2019</h3>
       </div>
       <div class="info section">
         <h3 class="half-width">
@@ -20,9 +18,6 @@
           perception, I created a space for interaction, experimentation, and
           play. The responsive installation allowed people to experience
           firsthand the feedback loop between light, environments, and behavior.
-          <br />
-          <br />
-          EskewDumezRipple, 2019
         </h3>
         <Tags :words="tags" class="half-width" />
       </div>
@@ -33,7 +28,7 @@
             Almost all organisms move in response to light. Part exhibition,
             part experiment, Phototaxis explored its namesake by letting people
             understand their own relationships with light, other people, and the
-            space they are in.
+            space they occupy.
           </h3>
         </div>
         <img
@@ -62,7 +57,7 @@
         <div class="caption one-third-width">
           <h2>Installation</h2>
           <h3>
-            I, with the help of some recruited architects, designed and
+            I (with the help of some recruited architects) designed and
             fabricated a structure that could mediate the intersection of
             digital and physical spaces. A semitransparent veil diffused the
             light while a microcontroller affected brightness and logged data
@@ -105,6 +100,11 @@ import ScrollMagic from "scrollmagic";
 export default {
   name: "Phototaxis",
   computed: {
+    tagline() {
+      return contents["projects"].filter(project => {
+        return project.title === "Anivision";
+      })[0].description;
+    },
     tags() {
       return contents["projects"].filter(project => {
         return project.title === "Phototaxis";

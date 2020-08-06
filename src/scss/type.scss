@@ -6,7 +6,10 @@
 h1 {
   text-transform: uppercase;
   font-size: 1em; // 16px
-  font-weight: 800;
+  // font-weight: 800;
+  font-weight: 400;
+  line-height: 1.8em;
+  margin: 0;
 }
 
 .oversized {
@@ -65,6 +68,11 @@ code {
   .oversized {
     font-size: calc(min(10vw, 2.3em));
     line-height: 1.4em;
+  }
+
+  h1 {
+    font-size: 0.9em;
+    line-height: 1.5em;
   }
   
   h2 {

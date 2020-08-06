@@ -3,18 +3,17 @@
     <div class="banner img-bg"></div>
     <div class="body">
       <div class="banner-text">
-        <h3>What I Know Now</h3>
-        <h2 class="oversized">
-          Transforming personal stories into generative artwork to help
-          communities listen
-        </h2>
+        <h1>What I Know Now</h1>
+        <h2 class="oversized">{{ tagline }}</h2>
+        <h3>Sosolimited, in progress</h3>
       </div>
       <div class="info section">
         <h3 class="half-width">
-          Summary...
-          <br />
-          <br />
-          Sosolimited, in progress
+          The challenges of 2020 showed us that we need to come together with
+          empathetic ears and eyes. This project lets anyone record their own
+          personal experience and emotions and watch their voice paint a unique
+          signature that adds to a large-scale, community-wide generative
+          collage.
         </h3>
         <Tags :words="tags" class="half-width" />
       </div>
@@ -25,7 +24,7 @@
             Each user responds to a prompt, and their audio waveform gives
             feedback that their voice is being recorded and transcribed. After
             considering many options for input, I advocated for voice as an
-            expressive and widely accessible medium.
+            expressive and widely accessible medium for input.
           </h3>
         </div>
         <video id="ui-record" class="one-third-width" muted>
@@ -39,10 +38,10 @@
         <div class="caption one-third-width">
           <h2>Audio Visualization</h2>
           <h3>
-            The story is played back while a unique signature is generated in
-            real-time. I used audio parameters like pitch and volume, as well as
-            semantic parameters like number and emotion of words, to translate
-            voice into art.
+            The story is played back while a unique shareable signature is
+            generated in real-time. I used audio parameters like pitch and
+            volume, as well as semantic parameters like number and emotion of
+            words, to translate voice into art.
           </h3>
         </div>
         <video id="ui-review" class="one-third-width" muted>
@@ -50,11 +49,11 @@
         </video>
       </div>
       <div class="section writing ui appear reverse">
-        <div class="one-third-width"></div>
+        <!-- <div class="one-third-width"></div> -->
         <div class="caption one-third-width">
           <h2>Community Exploration</h2>
           <h3>
-            Once a user submits their story, they can scan through a virtual
+            Once a user contributes their story, they can scan through a virtual
             mosaic made from other submissions and hear—and see—the voices in
             their neighborhood or organization.
           </h3>
@@ -67,28 +66,24 @@
         <div class="caption one-third-width">
           <h2>Translations</h2>
           <h3>
-            In the
+            To really drive home the uniqueness of each person’s experience, we
+            needed to conceptualize a visual language that avoided
+            self-similarity. With a handle on the data, I worked with designers
+            to map legibly the data extracted from voice recordings onto a set
+            of visual parameters in p5.js.
           </h3>
         </div>
-        <img
-          id="print"
-          class="one-third-width"
-          src="/photos/WIKN/WIKN_mural_crop.png"
-        />
-        <img
-          id="print"
-          class="one-third-width"
-          src="/photos/WIKN/WIKN_mural_crop.png"
-        />
+        <img class="one-third-width" src="/photos/WIKN/doodle.jpg" />
+        <img class="one-third-width" src="/photos/WIKN/brushes.png" />
       </div>
       <div class="section writing appear reverse">
         <div class="caption one-third-width">
           <h2>Public Visibility</h2>
           <h3>
             In the future, partners can sponsor a physical version of the mural.
-            Anyone could then approach the print, scan a QR code, and hear the
-            experiences of those in the community across the different parts of
-            the artwork.
+            Anyone could then approach the print, scan a QR code, and browse
+            across the artwork to hear the experiences of those in the
+            community.
           </h3>
         </div>
         <img
@@ -112,6 +107,11 @@ gsap.registerPlugin(ScrollTrigger);
 export default {
   name: "WIKN",
   computed: {
+    tagline() {
+      return contents["projects"].filter(project => {
+        return project.title === "Anivision";
+      })[0].description;
+    },
     tags() {
       return contents["projects"].filter(project => {
         return project.title === "What I Know Now";

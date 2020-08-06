@@ -3,11 +3,9 @@
     <div class="banner img-bg"></div>
     <div class="body">
       <div class="banner-text">
-        <h3>Multilingual</h3>
-        <h2 class="oversized">
-          Transforming linguistic data into interactive art that celebrates a
-          community
-        </h2>
+        <h1>Multilingual</h1>
+        <h2 class="oversized">{{ tagline }}</h2>
+        <h3>Sosolimited, 2020</h3>
       </div>
       <div class="info section">
         <h3 class="half-width">
@@ -15,12 +13,8 @@
           Multilingual gives visitors a chance to appreciate the diversity of
           languages spoken by other visitors through time. Each contribution to
           the visualization is a unique experience focused on one user in the
-          context of a connected community. With color representing a visitor’s
-          language and size showing its rarity, everyone can track themselves in
-          an artwork that enhances the museum whether or not it’s in use.
-          <br />
-          <br />
-          Sosolimited, 2020
+          context of a connected community. Everyone can track themselves in an
+          artwork that enhances the museum whether or not it’s in use.
         </h3>
         <Tags :words="tags" class="half-width" />
       </div>
@@ -34,13 +28,14 @@
       </div>
       <div class="section writing appear stacked">
         <div class="caption">
-          <h2 class="one-third-width">Data Visualization</h2>
+          <h2 class="one-third-width">Data Modeling</h2>
           <h3 class="one-third-width">
             I used a database of over 6,000 languages and dialects to capture
             the diversity of visitors for the visualization. Meeting with a
-            linguist helped me develop a data model that illustrated historical
-            relatedness with a balance of informational richness and aesthetic
-            clarity.
+            linguist helped me iterate a data model that balanced informational
+            richness and aesthetic clarity. Across the landscape of linguistic
+            relatedness, color represents a visitor’s language and size shows
+            its rarity, letting the museum celebrate underrepresented groups.
           </h3>
         </div>
         <div class="across">
@@ -91,6 +86,11 @@ import ScrollMagic from "scrollmagic";
 export default {
   name: "Multilingual",
   computed: {
+    tagline() {
+      return contents["projects"].filter(project => {
+        return project.title === "Anivision";
+      })[0].description;
+    },
     tags() {
       return contents["projects"].filter(project => {
         return project.title === "Multilingual";

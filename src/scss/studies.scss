@@ -79,7 +79,7 @@ img {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-bottom: 7vh;
+  margin-bottom: 75px;
   z-index: -2;
 
   // for fixed background:
@@ -111,12 +111,7 @@ img {
   // for fixed background:
   // position: absolute;
 
-
-  // h2 {
-  //   width: 800px;
-  // }
-
-  h3 {
+  h1, h2 {
     margin-bottom: 20px;
     // width: 800px;
   }

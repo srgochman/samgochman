@@ -9,12 +9,12 @@
     <div class="project-text-below" ref="projectTextBelow">
       <div class="project-title-container" ref="projectTitle">
         <router-link v-if="type === 'study'" :to="link">
-          <h3 class="project-title">{{ title }}</h3>
+          <h1 class="project-title">{{ title }}</h1>
           <div v-if="locked" class="lock" ref="lock"></div>
           <div class="arrow" ref="arrow"></div>
         </router-link>
         <a v-else :href="link" target="_blank" rel="noopener">
-          <h3 class="project-title">{{ title }}</h3>
+          <h1 class="project-title">{{ title }}</h1>
           <div v-if="locked" class="lock" ref="lock"></div>
           <div class="arrow" ref="arrow"></div>
         </a>

@@ -3,12 +3,12 @@
     <div class="project-text">
       <div class="project-title-container">
         <router-link v-if="type === 'study'" :to="link">
-          <h3 class="project-title">{{ title }}</h3>
+          <h1 class="project-title">{{ title }}</h1>
           <div v-if="locked" class="lock"></div>
           <div class="arrow"></div>
         </router-link>
         <a v-else :href="link" target="_blank" rel="noopener">
-          <h3 class="project-title">{{ title }}</h3>
+          <h1 class="project-title">{{ title }}</h1>
           <div v-if="locked" class="lock"></div>
           <div class="arrow"></div>
         </a>
@@ -84,7 +84,7 @@ export default {
       background-size: cover;
       width: 28px;
       height: 8px;
-      margin-top: 12px;
+      margin-top: 9px;
       // transition: var(--hover);
     }
 
@@ -93,7 +93,7 @@ export default {
       background-size: cover;
       width: 7px;
       height: 10px;
-      margin: 11px 13px 0 0;
+      margin: 8px 13px 0 0;
     }
   }
 
@@ -153,11 +153,11 @@ export default {
   }
 
   .arrow {
-    margin-top: 8px !important;
+    margin-top: 6px !important;
   }
 
   .lock {
-    margin-top: 7px !important;
+    margin-top: 5px !important;
   }
 
   // .tags-container {
