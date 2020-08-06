@@ -1,19 +1,12 @@
 <template>
   <div class="skill-container" ref="skill">
-    <!-- <h2 :style="{ color: color }">{{ keyword }}</h2> -->
     <h2 class="skill-description" v-html="adjDescription">
       <!-- <h2 class="skill-description"> -->
-      <!-- <span v-for="word in wordList" :key="word">
-        <span v-if="matches(word)" :style="{ color: color }">{{ word }}</span>
-        <span v-else>{{ word }}</span>
-      </span> -->
-      <!-- {{ adjDescription }} -->
     </h2>
   </div>
 </template>
 
 <script>
-// import ScrollMagic from "scrollmagic";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger.js";
 gsap.registerPlugin(ScrollTrigger);
@@ -33,7 +26,8 @@ export default {
     };
   },
   mounted() {
-    // this.wordList = this.description.split(" ");
+    // ScrollTrigger.refresh();
+
     this.adjDescription = this.description;
     for (var i = 0; i < this.keywords.length; i++) {
       this.colorize(this.keywords[i]);
@@ -58,27 +52,15 @@ export default {
       });
   },
   methods: {
-    // matches(word) {
-    //   console.log("match");
-    //   return word === this.keyword;
-    // },
     colorize(keyword) {
       this.adjDescription = this.adjDescription.replace(
         keyword,
         `<span style="color: ${this.color}"> ${keyword} </span>`
       );
-      // const words = this.description.split(" ");
-      // console.log(words);
-      // for (var i = 0; i < words.length; i++) {
-      //   if (words[i] === keywords) {
-      //     // words[i].style;
-      //     console.log("match:", words[i]);
-      //     words[i] = "<span :style='{ color: color }'>" + words[i] + "</span>";
-      //   }
-      // }
-      // this.adjDescription = words.join(" ");
-      // console.log(keyword, "colored:", this.adjDescription);
     }
+    // },
+    // beforeDestroy() {
+    //   ScrollTrigger.kill();
   }
 };
 </script>

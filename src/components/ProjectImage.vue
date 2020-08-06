@@ -33,7 +33,8 @@ export default {
   name: "ProjectImage",
   data() {
     return {
-      isActive: false
+      isActive: false,
+      trig: null
     };
   },
   props: {
@@ -49,9 +50,15 @@ export default {
     image() {
       // To browser, starting root is public. Only works if serving website from base URL
       return "/photos/" + this.img;
+      // },
+      // activeProject() {
+      //   return this.$store.state.activeProject;
     }
   },
   mounted() {
+    // console.log(this.title, this.isActive);
+    // console.log(this.activeProject);
+
     var instance = this;
     const projectImage = this.$refs.projectImage;
     const projectContainer = this.$refs.projectContainer;
@@ -59,6 +66,10 @@ export default {
     const projectTitle = this.$refs.projectTitle;
     const arrow = this.$refs.arrow;
     const lock = this.$refs.lock;
+
+    // if (this.title === this.activeProject) {
+    //   projectImage.classList.remove("dull");
+    // }
 
     projectImage.addEventListener("mouseover", function() {
       if (instance.isActive) {
@@ -92,20 +103,21 @@ export default {
       end: "bottom-=5% 50%", // [trigger] [scroller] positions
       // markers: true,
       onEnter: () => {
+        console.log("hit", projectImage);
         $(".project-text").removeClass("fade-out");
         $(".project-text").addClass("fade-in");
         projectImage.classList.remove("dull");
         projectTextBelow.classList.remove("dull");
-        this.updateParams();
         instance.isActive = true;
+        this.updateParams();
       },
       onEnterBack: () => {
         $(".project-text").removeClass("fade-out");
         $(".project-text").addClass("fade-in");
         projectImage.classList.remove("dull");
         projectTextBelow.classList.remove("dull");
-        this.updateParams();
         instance.isActive = true;
+        this.updateParams();
       },
       onLeave: () => {
         // Don't fade out last project when scrolling past it
@@ -137,9 +149,6 @@ export default {
     });
   },
   methods: {
-    test() {
-      console.log(this.isActive);
-    },
     // updates store values with this project's props
     updateParams() {
       this.$store.commit("set_project_params", {
@@ -148,9 +157,16 @@ export default {
         tags: this.tags,
         link: this.link,
         type: this.type,
-        locked: this.locked
+        locked: this.locked,
+
+        activeProject: this.title
       });
       // console.log("ProjectImage: sent parameters to store");
+      // },
+      // initTrigger() {
+      //   if (this.trig.ScrollTrigger) {
+      //     this.trig.ScrollTrigger.kill();
+      //   }
     }
   }
 };

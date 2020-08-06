@@ -13,6 +13,8 @@ export default new Vuex.Store({
     link: contents["projects"][0].link,
     type: contents["projects"][0].type,
     locked: contents["projects"][0].locked
+
+    // activeProject: ""
   },
   mutations: {
     set_project_params(state, params) {
@@ -23,6 +25,7 @@ export default new Vuex.Store({
       state.type = params.type;
       state.locked = params.locked;
       // console.log("store: accessed", state.title);
+      // state.activeProject = params.activeProject;
     }
   },
   getters: {},

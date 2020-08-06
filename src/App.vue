@@ -123,7 +123,7 @@ body {
 
 .section {
   width: 100%;
-  margin-bottom: 300px;
+  margin-bottom: 400px;
   // margin-bottom: 30vh;
 }
 

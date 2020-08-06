@@ -25,7 +25,7 @@
         <Tags :words="tags" class="half-width" />
       </div>
       <div class="section appear">
-        <video muted autoplay loop>
+        <video muted autoplay loop class="full-width">
           <source
             src="/photos/multilingual/2 Animation-Sequence_edit_trimmed.mp4"
             type="video/mp4"
@@ -80,7 +80,6 @@
         />
       </div>
     </div>
-    <!-- </div> -->
   </div>
 </template>
 

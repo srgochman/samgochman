@@ -130,8 +130,9 @@
           "color": "var(--green)",
           "backgroundColor": "var(--green-transparent)",
           "words": [
-            "arduino",
-            "fabrication"
+            "interaction development",
+            "Arduino",
+            "Python"
           ]
         }
       ],
@@ -142,7 +143,7 @@
       "img": "WIKN/WIKN_mural.png",
       "type": "study",
       "link": "/WIKN",
-      "description": "Translating personal stories into generative artwork to help communities listen",
+      "description": "Transforming personal stories into generative artwork to help communities listen",
       "tags": [
         {
           "color": "var(--purple)",
