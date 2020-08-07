@@ -31,7 +31,7 @@
             students appreciate classroom concepts through intuition.
           </h3>
         </div>
-        <video class="two-thirds-width" muted autoplay loop>
+        <video class="two-thirds-width" controls>
           <source src="/photos/anivision/anivision.mp4" type="video/mp4" />
         </video>
       </div>
