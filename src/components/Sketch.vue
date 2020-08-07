@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import VizObject from "../sketch.js";
+import VizObject from "../headshotSketch.js";
 const P5 = require("p5");
 
 export default {

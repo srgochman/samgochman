@@ -1,7 +1,7 @@
 <template>
   <div class="body">
     <div id="mission" class="section">
-      <Sketch></Sketch>
+      <!-- <Sketch></Sketch> -->
       <Mission></Mission>
     </div>
     <div id="mission-description" class="section appear">
@@ -121,7 +121,7 @@ import Mission from "../components/Mission.vue";
 import Skill from "../components/Skill.vue";
 import ProjectImage from "../components/ProjectImage.vue";
 import ProjectText from "../components/ProjectText.vue";
-import Sketch from "../components/Sketch.vue";
+// import Sketch from "../components/Sketch.vue";
 import contents from "../list-contents.json";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger.js";
@@ -191,8 +191,8 @@ export default {
     Mission,
     Skill,
     ProjectImage,
-    ProjectText,
-    Sketch
+    ProjectText
+    // Sketch
   }
 };
 </script>
