@@ -27,9 +27,9 @@
         </video>
       </div>
       <div class="section writing appear stacked">
-        <div class="caption">
-          <h2 class="one-third-width">Data Modeling</h2>
-          <h3 class="one-third-width">
+        <div class="caption two-thirds-width">
+          <h2 class="">Data Modeling</h2>
+          <h3 class="">
             I used a database of over 6,000 languages and dialects to capture
             the diversity of visitors for the visualization. Meeting with a
             linguist helped me iterate a data model that balanced informational
@@ -141,4 +141,15 @@ export default {
 // #idle-screen {
 //   background-image: url("/photos/multilingual/pw_02.jpg");
 // }
+
+@media only screen and (max-width: 1024px) {
+  .across {
+    justify-content: center;
+  }
+  .arrow {
+    transform: rotate(90deg);
+    transform-origin: center;
+    display: none;
+  }
+}
 </style>

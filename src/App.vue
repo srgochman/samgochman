@@ -127,6 +127,10 @@ body {
   // margin-bottom: 30vh;
 }
 
+.section:last-child {
+  margin-bottom: 7vh !important;
+}
+
 .appear {
   opacity: 0;
   transition: opacity 200ms ease-in-out;

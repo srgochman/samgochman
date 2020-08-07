@@ -89,7 +89,7 @@ span.ending {
 
 .fade-enter-active {
   transition: opacity 700ms ease-in-out;
-  transition-delay: 800ms;
+  transition-delay: 1000ms;
 }
 
 .fade-leave-active {

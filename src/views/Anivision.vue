@@ -19,10 +19,7 @@
         <Tags :words="tags" class="half-width" />
       </div>
       <!-- <div id="vid-section" class="section appear"></div> -->
-      <div id="vid-section" class="section writing appear">
-        <video class="half-width" muted autoplay loop>
-          <source src="/photos/anivision/anivision.mp4" type="video/mp4" />
-        </video>
+      <div id="vid-section" class="section writing appear reverse">
         <div class="caption one-third-width">
           <h2 class="">Immersive Education</h2>
           <h3 class="">
@@ -34,6 +31,9 @@
             students appreciate classroom concepts through intuition.
           </h3>
         </div>
+        <video class="two-thirds-width" muted autoplay loop>
+          <source src="/photos/anivision/anivision.mp4" type="video/mp4" />
+        </video>
       </div>
       <div class="section across appear">
         <img
@@ -63,10 +63,10 @@
         </div>
       </div>
       <div id="results" class="section writing appear reverse">
-        <div class="spacer one-third-width"></div>
-        <div class="caption one-third-width">
-          <h2>Enhanced Learning</h2>
-          <h3>
+        <!-- <div class="spacer one-third-width"></div> -->
+        <div class="caption two-thirds-width">
+          <h2 class="half-width">Enhanced Learning</h2>
+          <h3 class="half-width">
             Throughout development, we’ve tested the platform with students from
             middle school through college. With more formal testing, we
             published in an open access educational journal to communicate how
@@ -151,12 +151,14 @@ export default {
   background-color: rgba(0, 0, 0, 0.5);
 }
 
-#vid-section {
-  justify-content: start;
-}
+// #vid-section {
+//   justify-content: start;
+// }
 
 video {
-  margin-right: calc(var(--main-width) * 0.05);
+  // margin-right: calc(var(--main-width) * 0.05);
+  height: 600px;
+  object-fit: cover;
 }
 
 .across {
@@ -180,5 +182,16 @@ video {
 #paper {
   object-fit: scale-down;
   width: 100%;
+}
+
+@media only screen and (max-width: 425px) {
+  video {
+    height: 300px;
+  }
+
+  .across img {
+    height: unset;
+    object-fit: unset;
+  }
 }
 </style>

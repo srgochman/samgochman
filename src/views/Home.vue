@@ -1,9 +1,9 @@
 <template>
   <div class="body">
     <div id="mission" class="section">
+      <Sketch></Sketch>
       <Mission></Mission>
     </div>
-
     <div id="mission-description" class="section appear">
       <h3>
         As a developer
@@ -121,6 +121,7 @@ import Mission from "../components/Mission.vue";
 import Skill from "../components/Skill.vue";
 import ProjectImage from "../components/ProjectImage.vue";
 import ProjectText from "../components/ProjectText.vue";
+import Sketch from "../components/Sketch.vue";
 import contents from "../list-contents.json";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger.js";
@@ -190,12 +191,20 @@ export default {
     Mission,
     Skill,
     ProjectImage,
-    ProjectText
+    ProjectText,
+    Sketch
   }
 };
 </script>
 
 <style lang="scss">
+#mission {
+  position: relative;
+  height: 100vh;
+  // display: flex;
+  // align-items: center;
+}
+
 #mission-description {
   // max-width: calc(max(500px, 30%));
   width: 50%;
@@ -341,10 +350,6 @@ export default {
   text-transform: uppercase;
   font-size: 14px;
   font-weight: 800;
-}
-
-.section:last-child {
-  margin-bottom: 7vh;
 }
 
 @media only screen and (max-width: 425px) {

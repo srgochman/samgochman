@@ -102,7 +102,7 @@ export default {
   computed: {
     tagline() {
       return contents["projects"].filter(project => {
-        return project.title === "Anivision";
+        return project.title === "Phototaxis";
       })[0].description;
     },
     tags() {
@@ -142,7 +142,7 @@ export default {
 video {
   background-color: black;
   width: 100vw;
-  height: 100vh;
+  // height: 100vh;
   object-fit: cover;
 }
 

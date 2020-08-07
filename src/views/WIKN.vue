@@ -54,8 +54,8 @@
           <h2>Community Exploration</h2>
           <h3>
             Once a user contributes their story, they can scan through a virtual
-            mosaic made from other submissions and hear—and see—the voices in
-            their neighborhood or organization.
+            mosaic made from other submissions and select to hear—and see—the
+            voices in their neighborhood or organization.
           </h3>
         </div>
         <video id="ui-macro" class="one-third-width" muted>
@@ -196,6 +196,7 @@ export default {
 
 .ui {
   justify-content: center;
+  // margin-bottom: 0;
 }
 
 #ui-record,
@@ -203,12 +204,46 @@ export default {
 #ui-macro {
   object-fit: unset;
   border-radius: 55px;
-  transform: scale(0.7);
-  transform-origin: top center;
+  // transform: scale(0.7);
+  // transform-origin: top center;
   box-shadow: 0 15px 25px rgba(0, 0, 0, 0.25);
 }
 
 // #print {
 //   padding-right: calc(var(--main-width) * 0.05);
 // }
+
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+  .ui {
+    // justify-content: flex-start;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  #ui-record,
+  #ui-review,
+  #ui-macro {
+    // transform: scale(0.4);
+    width: 251px;
+    height: 550px;
+    border-radius: 35px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .ui {
+    // justify-content: flex-start;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  #ui-record,
+  #ui-review,
+  #ui-macro {
+    // transform: scale(0.5);
+    width: 180px;
+    height: 394px;
+    border-radius: 25px;
+  }
+}
 </style>
