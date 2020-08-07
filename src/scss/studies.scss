@@ -1,0 +1,278 @@
+// LAYOUT
+
+.section {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  position: relative;
+}
+
+.across {
+  display: flex;
+  flex-direction: row;
+}
+
+.stacked {
+  display: flex;
+  flex-direction: column;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.two-thirds-width {
+  width: calc(66% - 2% / 3 * 2);
+}
+
+.half-width {
+  width: calc(50% - 2%);
+}
+
+.one-third-width {
+  width: calc(33% - 2% / 2 * 3);
+}
+
+.reverse {
+  :nth-child(1) {
+    order: 2;
+  }
+  :nth-child(2) {
+    order: 1;
+  }
+}
+
+video {
+  width: 100%;
+  // max-width: 100vw;
+  height: auto;
+  // max-height: 100vh;
+  overflow: hidden;
+}
+
+img {
+  height: auto;
+  object-fit: scale-down;
+  object-position: top left;
+  // min-width
+}
+
+.img-bg {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+
+// INFO
+
+.banner {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: calc(min(7vw, calc(var(--main-width) * 0.05)));
+  z-index: -2;
+
+  // for fixed background:
+  // position: fixed;
+  // top: 0;
+  // left: 0;
+
+  video {
+    height: 100%;
+  }
+}
+.banner::before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+}
+
+.banner-text {
+  width: 800px;
+  // max-width: var(--main-width);
+  // width: 100%;
+  // margin-left: 7vw;
+  position: fixed;
+  top: 50vh;
+  transform: translateY(-50%);
+  color: white;
+  // text-shadow: 0px 0px 10px #00000075;
+  z-index: -1;
+
+  // for fixed background:
+  // position: absolute;
+
+  h1, h2 {
+    margin-bottom: 20px;
+    // width: 800px;
+  }
+}
+
+// .body-bg {
+//   background-color: white;
+//   z-index: 0;
+//   width: 100vw;
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+
+//   // for fixed background:
+//   // justify-content: center;
+//   // margin-top: 100vh;
+//   // padding-top: 80px;
+// }
+
+.body::before {
+  content: "";
+  width: 100%;
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 100vh;
+  transform: translateY(-100%);
+  z-index: 1;
+  height: 20vh;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.6) 0%,
+    rgba(0, 0, 0, 0) 100%
+  );
+}
+
+.info.section {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 300px;
+
+  .tags-container {
+    margin: 10px 0 0 0;
+  }
+}
+
+
+// CONTENT
+
+// .section.writing>:nth-child(1) {
+//   // margin-bottom: calc(var(--main-width) * 0.05);
+//   margin-bottom: 72px;
+// }
+
+.caption {
+  height: min-content;
+  margin-bottom: 72px;
+
+  h2 {
+    margin-bottom: 20px;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .reverse {
+    :nth-child(1) {
+      order: 1;
+    }
+    :nth-child(2) {
+      order: 2;
+    }
+  }
+  
+  .section, .info.section {
+    // margin-bottom: 150px;
+    margin-bottom: calc(min(30vw, 300px));
+  }
+
+  .across {
+    flex-direction: column;
+    align-items: flex-start !important;
+
+    >* {
+      margin-bottom: 30px;
+    }
+  }
+
+  .tags-container {
+    // margin: 30px 0 0 0 !important;
+    margin-top: calc(min(7vw, calc(var(--main-width) * 0.03))) !important;
+  }
+}
+
+@media only screen and (min-width: 426px) and (max-width: 1024px) {
+  .one-third-width, .half-width, .two-thirds-width {
+    width: 66%
+  }
+  
+  .banner {
+    height: 50vh;
+  }
+
+  .banner-text {
+    top: 25vh;
+    width: 100%;
+    // padding: 0 7vw;
+
+    h2, h3 {
+      width: calc(min(80%, 500px));
+    }
+  }
+
+  .oversized {
+    font-size: calc(min(10vw, 2.3em));
+    line-height: 1.4em;
+  }
+
+  .body::before {
+    top: 50vh;
+  }
+
+  .section {
+    margin-bottom: 300px;
+  }
+
+  // .section.writing>:nth-child(1) {
+  //   // margin-bottom: calc(var(--main-width) * 0.05);
+  //   margin-bottom: 65px;
+  // }
+
+  .caption {
+    margin-bottom: 65px;
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  .one-third-width, .half-width, .two-thirds-width {
+    width: 100%
+  }
+  
+  .banner {
+    height: 40vh;
+  }
+
+  .banner-text {
+    width: 85%;
+    top: 20vh;
+  }
+
+  .oversized {
+    font-size: calc(min(5vw, 2.3em));
+    line-height: 1.4em;
+  }
+
+  .body::before {
+    top: 40vh;
+  }
+
+  .caption {
+    margin-bottom: 50px;
+  }
+}

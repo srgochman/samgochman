@@ -1,117 +1,238 @@
 {
   "missions": [
+    "talks shop with coders, artists, and scientists.",
+    "turns voices into kaleidoscopes.",
+    "transforms information into conversation.",
     "builds for and with sensory experiences.",
-    "brews beer.",
-    "designs and develops digital experiences.",
-    "makes generative art.",
-    "uses science research to inform design."
-  ],
-  "tags": [
-    {
-      "category": "physical",
-      "color": "var(--purple)",
-      "backgroundColor": "var(--purple-transparent)",
-      "words": [
-        "fabrication",
-        "exhibition design"
-      ]
-    },
-    {
-      "category": "development",
-      "color": "var(--blue)",
-      "backgroundColor": "var(--blue-transparent)",
-      "words": [
-        "D3",
-        "Vue",
-        "speech"
-      ]
-    },
-    {
-      "category": "digital tech",
-      "color": "var(--green)",
-      "backgroundColor": "var(--green-transparent)",
-      "words": [
-        "arduino",
-        "lighting"
-      ]
-    }
+    "makes circuits expressive.",
+    "sees through the eyes of tarsiers and honeybees.",
+    "makes over landmarks."
   ],
   "skills": [
     {
-      "title": " about the unique nuances of the system at hand.",
-      "keyword": "learn",
+      "description": "I see information with one eye on rigorous analysis, the other on creative potential.",
+      "keywords": [
+        "information"
+      ],
       "color": "var(--purple)",
-      "tags": [
-        "fabrication",
-        "exhibition design"
-      ]
+      "delay": 0
     },
     {
-      "title": " opportunities for new interactions and perspectives.",
-      "keyword": "design",
+      "description": "I design interfaces and environments that balance functionality with exploration.",
+      "keywords": [
+        "interfaces",
+        "environments"
+      ],
       "color": "var(--blue)",
-      "tags": [
-        "D3",
-        "Vue",
-        "speech"
-      ]
+      "delay": 0.25
     },
     {
-      "title": " with the most [effective] digital and physical tools for the job.",
-      "keyword": "develop",
+      "description": "I build with interactive tech across digital and physical platforms.",
+      "keywords": [
+        "interactive",
+        "tech"
+      ],
       "color": "var(--green)",
-      "tags": [
-        "arduino",
-        "lighting"
-      ]
+      "delay": 0.5
     }
   ],
   "projects": [
     {
-      "title": "Phototaxis",
-      "img": "../assets/test.png",
-      "type": "study",
-      "link": "https://www.eskewdumezripple.com/phototaxis.html",
-      "description": "How might direct engagement with light change how people occupy a space?",
-      "tags": [
-        "fabrication",
-        "arduino",
-        "exhibition design",
-        "D3"
-      ]
-    },
-    {
-      "title": "Headroom",
-      "img": "../assets/test2.png",
-      "type": "product",
-      "link": "https://headroom.sosolimited.com/",
-      "description": "How might direct engagement with light change how people occupy a space?",
-      "tags": [
-        "Vue",
-        "lighting"
-      ]
-    },
-    {
       "title": "Miraj",
-      "img": "../assets/test.png",
+      "img": "miraj/miraj_space.png",
       "type": "product",
       "link": "https://miraj.sosolimited.com/",
-      "description": "How might direct engagement with light change how people occupy a space?",
+      "description": "Bringing voice-controlled digital art to an accessible platform",
       "tags": [
-        "Vue",
-        "speech"
-      ]
+        {
+          "color": "var(--purple)",
+          "backgroundColor": "var(--purple-transparent)",
+          "words": [
+            "data viz"
+          ]
+        },
+        {
+          "color": "var(--blue)",
+          "backgroundColor": "var(--blue-transparent)",
+          "words": [
+            "digital signage"
+          ]
+        },
+        {
+          "color": "var(--green)",
+          "backgroundColor": "var(--green-transparent)",
+          "words": [
+            "Web Audio",
+            "OpenCV",
+            "Electron",
+            "app optimization"
+          ]
+        }
+      ],
+      "locked": false
     },
     {
-      "title": "Designing for Digital Connection",
-      "img": "../assets/test.png",
+      "title": "Multilingual",
+      "img": "multilingual/pw_08a_patch.jpg",
+      "type": "study",
+      "link": "/multilingual",
+      "description": "Transforming linguistic data into interactive art that celebrates a community",
+      "tags": [
+        {
+          "color": "var(--purple)",
+          "backgroundColor": "var(--purple-transparent)",
+          "words": [
+            "domain research",
+            "data analysis"
+          ]
+        },
+        {
+          "color": "var(--blue)",
+          "backgroundColor": "var(--blue-transparent)",
+          "words": [
+            "digital signage",
+            "concept development"
+          ]
+        },
+        {
+          "color": "var(--green)",
+          "backgroundColor": "var(--green-transparent)",
+          "words": [
+            "Electron"
+          ]
+        }
+      ],
+      "locked": true
+    },
+    {
+      "title": "Phototaxis",
+      "img": "phototaxis/phototaxis_silhouette.png",
+      "type": "study",
+      "link": "/phototaxis",
+      "description": "Merging digital and physical spaces to experience a raw interaction with light",
+      "tags": [
+        {
+          "color": "var(--purple)",
+          "backgroundColor": "var(--purple-transparent)",
+          "words": [
+            "data viz"
+          ]
+        },
+        {
+          "color": "var(--blue)",
+          "backgroundColor": "var(--blue-transparent)",
+          "words": [
+            "environments design",
+            "Rhino3D/Grasshopper"
+          ]
+        },
+        {
+          "color": "var(--green)",
+          "backgroundColor": "var(--green-transparent)",
+          "words": [
+            "interaction development",
+            "Arduino",
+            "Python"
+          ]
+        }
+      ],
+      "locked": false
+    },
+    {
+      "title": "What I Know Now",
+      "img": "WIKN/WIKN_mural.png",
+      "type": "study",
+      "link": "/WIKN",
+      "description": "Transforming personal stories into generative artwork to help communities listen",
+      "tags": [
+        {
+          "color": "var(--purple)",
+          "backgroundColor": "var(--purple-transparent)",
+          "words": [
+            "data analysis"
+          ]
+        },
+        {
+          "color": "var(--blue)",
+          "backgroundColor": "var(--blue-transparent)",
+          "words": [
+            "concept development"
+          ]
+        },
+        {
+          "color": "var(--green)",
+          "backgroundColor": "var(--green-transparent)",
+          "words": [
+            "Web Audio",
+            "Google Speech-to-Text",
+            "WebRTC",
+            "Vue.js"
+          ]
+        }
+      ],
+      "locked": true
+    },
+    {
+      "title": "Together Apart",
+      "img": "TA/blendchat_eyes.png",
       "type": "product",
       "link": "https://medium.com/sosolimited/4-design-principles-for-building-connection-through-digital-experiences-f365d6e9efd1",
-      "description": "How might direct engagement with light change how people occupy a space?",
+      "description": "Refocusing technology on human connection",
       "tags": [
-        "Vue",
-        "speech"
-      ]
+        {
+          "color": "var(--purple)",
+          "backgroundColor": "var(--purple-transparent)",
+          "words": [
+            "UX research"
+          ]
+        },
+        {
+          "color": "var(--blue)",
+          "backgroundColor": "var(--blue-transparent)",
+          "words": [
+            "concept development"
+          ]
+        },
+        {
+          "color": "var(--green)",
+          "backgroundColor": "var(--green-transparent)",
+          "words": [
+            "Tone.js",
+            "WebRTC",
+            "AWS",
+            "Vue.js"
+          ]
+        }
+      ],
+      "locked": false
+    },
+    {
+      "title": "Anivision",
+      "img": "anivision/anivision_calltolead_flipped.png",
+      "type": "study",
+      "link": "/anivision",
+      "description": "Helping students intuit complex concepts through the eyes of animals",
+      "tags": [
+        {
+          "color": "var(--purple)",
+          "backgroundColor": "var(--purple-transparent)",
+          "words": [
+            "UX research",
+            "curriculum design",
+            "publication"
+          ]
+        },
+        {
+          "color": "var(--blue)",
+          "backgroundColor": "var(--blue-transparent)",
+          "words": [
+            "VR",
+            "environments design",
+            "Unity"
+          ]
+        }
+      ],
+      "locked": false
     }
   ],
   "experiences": [
@@ -137,6 +258,20 @@
       "title": "Biophilic Design Intern",
       "link": "https://www.terrapinbrightgreen.com",
       "firm": "Terrapin Bright Green",
+      "unlinked": ""
+    }
+  ],
+  "education": [
+    {
+      "school": "Dartmouth College",
+      "link": "https://www.dartmouth.edu",
+      "study": "BA in Biology, Anthropology, and Human-Centered Design",
+      "unlinked": ""
+    },
+    {
+      "school": "Harvard GSD",
+      "link": "http://designdiscovery.gsd.harvard.edu",
+      "study": "Design Discovery: Architecture",
       "unlinked": ""
     }
   ],

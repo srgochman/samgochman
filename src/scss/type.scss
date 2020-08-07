@@ -1,56 +1,87 @@
+:root {
+  --hover: all 0.2s ease-in-out 0s;
+}
+
 /* section heading */
 h1 {
   text-transform: uppercase;
-  font-size: 16px;
+  font-size: 1em; // 16px
+  // font-weight: 800;
+  font-weight: 400;
+  line-height: 1.8em;
+  margin: 0;
+}
+
+.oversized {
+  font-size: 4em;
   font-weight: 800;
-  margin: 0 0 70px 0;
+  line-height: 1.3em;
 }
 
 /* large text */
 h2 {
-  font-size: 40px;
+  font-size: 2.25em;
   font-weight: 600;
-  line-height: 1.3em;
+  line-height: 1.5em;
   margin: 0 0 0px 0;
   /* display: inline; */
 }
 
 /* small text */
 h3 {
-  font-size: 22px;
-  font-weight: 200;
-  line-height: 36px;
-  margin: 0 0 30px 0;
-  /* display: inline; */
+  font-size: 1.2em;
+  font-weight: 300;
+  line-height: 1.8em;
+  margin: 0 0 0px 0;
+  // display: inline;
 }
 
 p {
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 300;
   line-height: 1.5em;
   margin: 0 0 16px 0;
 }
 
 a {
-  /* display: inline;
-  width: min-content;
-  margin: 0; */
   text-decoration: none;
-  transition: var(--hover);
+  // text-decoration: solid underline var(--purple);
+  // text-underline-position: under;
+  transition: var(--hover); // off hover
   color: black;
+  position: relative;
 }
 
 a:hover {
-    /* color: var(--gray); */
-    opacity: 0.4;
-    transition: var(--hover);
-  }
-
-.underline {
-  text-decoration: underline;
+  color: var(--purple) !important;
+  // font-weight: 600 !important;
+  // opacity: 0.4;
+  transition: var(--hover);
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+@media only screen and (max-width: 1024px) {
+  .oversized {
+    font-size: calc(min(10vw, 2.3em));
+    line-height: 1.4em;
+  }
+
+  h1 {
+    font-size: 0.9em;
+    line-height: 1.5em;
+  }
+  
+  h2 {
+    font-size: 1.3em;
+    line-height: 1.5em;
+  }
+  
+  h3 {
+    font-size: 1em;
+    line-height: 1.7em;
+  }
 }
