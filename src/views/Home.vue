@@ -1,5 +1,6 @@
 <template>
   <div class="body">
+    <div id="particles-js"></div>
     <div id="mission" class="section">
       <!-- <Sketch></Sketch> -->
       <Mission></Mission>
@@ -127,6 +128,8 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger.js";
 import ScrollMagic from "scrollmagic";
 gsap.registerPlugin(ScrollTrigger);
+import "particles.js/particles";
+const particlesJS = window.particlesJS;
 
 export default {
   name: "Home",
@@ -160,6 +163,8 @@ export default {
 
     const homeController = new ScrollMagic.Controller();
     this.homeScroll(homeController);
+
+    particlesJS.load("particles-js", "particlesjs-config.json");
   },
   methods: {
     homeScroll(controller) {
@@ -203,6 +208,25 @@ export default {
   height: 100vh;
   // display: flex;
   // align-items: center;
+}
+
+canvas {
+  display: block;
+  // vertical-align: bottom;
+}
+
+// particles.js container
+#particles-js {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: #ffffff;
+  // background-image: url("");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 50%;
 }
 
 #mission-description {
