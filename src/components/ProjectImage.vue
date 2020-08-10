@@ -10,13 +10,41 @@
       <div class="project-title-container" ref="projectTitle">
         <router-link v-if="type === 'study'" :to="link">
           <h1 class="project-title">{{ title }}</h1>
-          <div v-if="locked" class="lock" ref="lock"></div>
-          <div class="arrow" ref="arrow"></div>
+          <!-- <div v-if="locked" class="lock" ref="lock"></div> -->
+          <svg class="lock-svg" v-if="locked" width="7px" height="10px">
+            <use
+              ref="lock"
+              class="lock"
+              href="../assets/unlocked.svg#Layer_1"
+            ></use>
+          </svg>
+          <!-- <div class="arrow" ref="arrow"></div> -->
+          <svg class="arrow-svg" width="28px" height="8px">
+            <use
+              class="arrow"
+              ref="arrow"
+              href="../assets/drawn/arrow_drawn2.svg#Layer_2"
+            ></use>
+          </svg>
         </router-link>
         <a v-else :href="link" target="_blank" rel="noopener">
           <h1 class="project-title">{{ title }}</h1>
-          <div v-if="locked" class="lock" ref="lock"></div>
-          <div class="arrow" ref="arrow"></div>
+          <!-- <div v-if="locked" class="lock" ref="lock"></div> -->
+          <svg class="lock-svg" v-if="locked" width="7px" height="10px">
+            <use
+              ref="lock"
+              class="lock"
+              href="../assets/unlocked.svg#Layer_1"
+            ></use>
+          </svg>
+          <!-- <div class="arrow" ref="arrow"></div> -->
+          <svg class="arrow-svg" width="28px" height="8px">
+            <use
+              class="arrow"
+              ref="arrow"
+              href="../assets/drawn/arrow_drawn2.svg#Layer_2"
+            ></use>
+          </svg>
         </a>
       </div>
       <h2 class="project-desc">{{ description }}</h2>
@@ -75,7 +103,6 @@ export default {
       if (instance.isActive) {
         projectTitle.childNodes[0].style.color = "var(--purple)";
         arrow.classList.add("purple-arrow");
-        // console.log(instance.locked);
         if (instance.locked) lock.classList.add("purple-lock");
         // also do this for the title and arrow in ProjectText
         $(".project-text a").css("color", "var(--purple)");
