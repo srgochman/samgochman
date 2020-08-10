@@ -67,7 +67,8 @@ export default {
   width: 100%;
   margin-top: 50vh;
   transform: translateY(-50%);
-  // font-size: 4em;
+  // font-size: 6em;
+  font-size: calc(min(7.4vw, 6em));
   // font-weight: 800;
   // line-height: 1.3em;
   display: flex;
@@ -114,44 +115,23 @@ export default {
     color: black;
     content: "I'm a creative technologist who";
     position: absolute;
-    max-width: 920px;
+    max-width: 1200px;
   }
 }
 
 .mission-statement {
   // font-family: Roboto Condensed;
-  height: 350px;
+  // height: 470px;
+  height: calc(min(41vw, 470px));
   width: 100%;
+  max-width: 1200px;
   // max-width: 678px;
   // max-width: calc(max(768px, 50%));
-  max-width: 920px;
   // margin-right: 17%;
   // flex-grow: 2;
   // flex-basis: 67%;
   // padding-right: 80px;
 }
-
-// span.ending {
-//   position: relative;
-//   width: 200px;
-//   // color: var(--purple);
-//   color: black;
-//   background: linear-gradient(
-//     to right,
-//     var(--green) calc(var(--scroll, 0) * 100% - 75% + var(--mouse-x, 0) * 50%),
-//     var(--blue) calc(var(--scroll, 0) * 100% - 50% + var(--mouse-x, 0) * 50%),
-//     var(--purple) calc(var(--scroll, 0) * 100% + var(--mouse-x, 0) * 50%),
-//     var(--blue) calc(var(--scroll, 0) * 100% + 50% + var(--mouse-x, 0) * 50%),
-//     var(--green) calc(var(--scroll, 0) * 100% + 100% + var(--mouse-x, 0) * 50%)
-//   );
-//   background-clip: text;
-//   -webkit-background-clip: text;
-//   -webkit-text-fill-color: transparent;
-// }
-
-// .mission-statement:first-child {
-//   margin-bottom: 260px;
-// }
 
 .fade-enter-active {
   transition: color 700ms ease-in-out;

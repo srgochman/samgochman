@@ -10,7 +10,11 @@
         name="password"
         v-model="submittedPassword"
       />
-      <img class="underline" src="../assets/drawn/line3_purple.svg" />
+      <img
+        height="5px"
+        class="underline"
+        src="../assets/drawn/line3_purple.svg"
+      />
     </label>
     <span id="message">{{ message }}</span>
     <button id="button" type="button" @click="login">Next</button>
@@ -71,7 +75,7 @@ export default {
 // }
 
 #container {
-  width: 350px;
+  // width: 350px;
   // width: 300px;
   display: flex;
   flex-direction: column;
@@ -89,6 +93,7 @@ label {
   flex-direction: column;
   margin-bottom: 5px;
   position: relative;
+  width: 250px;
 }
 
 input,
@@ -111,7 +116,8 @@ input {
   outline: inherit;
   font-size: 1.2em;
   font-weight: 200;
-  line-height: 1.8em;
+  line-height: 1.2em;
+  margin-bottom: 5px;
 }
 
 input:-webkit-autofill,
@@ -131,12 +137,12 @@ select:-webkit-autofill:focus {
 }
 
 .underline {
-  content: "";
+  // content: "";
   position: absolute;
   // width: 100%;
   // transform: scaleY(1.5);
   // height: 5px;
-  bottom: 0;
+  bottom: 0px;
   left: 0px;
 }
 
