@@ -75,7 +75,7 @@ export default {
   // width: 300px;
   display: flex;
   flex-direction: column;
-  font-family: Avenir;
+  font-family: "Avenir";
   margin-top: 50vh;
   transform: translateY(-50%);
 }

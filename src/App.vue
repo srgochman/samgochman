@@ -31,6 +31,7 @@ export default {
 <style lang="scss">
 @import "./scss/colors.scss";
 @import "./scss/type.scss";
+@import "./scss/fonts.scss";
 // @import "./scss/reset.scss";
 
 :root {
@@ -38,7 +39,7 @@ export default {
 }
 
 html {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: "Avenir", Helvetica, Arial, sans-serif;
   font-size: 1rem; // 16px
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

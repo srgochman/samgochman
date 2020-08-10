@@ -2,6 +2,12 @@
   --hover: all 0.2s ease-in-out 0s;
 }
 
+* {
+  -webkit-font-smoothing: subpixel-antialiased;
+  // text-rendering: optimizeLegibility !important;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 /* section heading */
 h1 {
   text-transform: uppercase;
@@ -15,7 +21,7 @@ h1 {
 .oversized {
   font-size: 4.5em;
   font-weight: 800;
-  line-height: 1.3em;
+  // line-height: 1.3em;
 }
 
 /* large text */

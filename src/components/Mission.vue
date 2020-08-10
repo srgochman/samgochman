@@ -38,12 +38,12 @@ export default {
 
     const root = document.documentElement;
     document.addEventListener("mousemove", evt => {
-      let x = evt.clientX / innerWidth;
+      let x = (evt.clientX / innerWidth) * 2;
       root.style.setProperty("--mouse-x", x);
     });
     document.addEventListener("scroll", () => {
       let z = (window.scrollY / innerHeight) * 1.5;
-      root.style.setProperty("--dist", z);
+      root.style.setProperty("--scroll", z);
     });
 
     // let btn = document.querySelector("span.ending");
@@ -86,7 +86,7 @@ export default {
   width: 100%;
   // max-width: 678px;
   // max-width: calc(max(768px, 50%));
-  max-width: 900px;
+  max-width: 920px;
   // margin-right: 17%;
   // flex-grow: 2;
   // flex-basis: 67%;
@@ -99,11 +99,11 @@ span.ending {
   // color: var(--purple);
   background: linear-gradient(
     to right,
-    var(--green) calc(var(--dist, 0) * 100% - 50% + var(--mouse-x, 0) * 50%),
-    var(--blue) calc(var(--dist, 0) * 100% - 25% + var(--mouse-x, 0) * 50%),
-    var(--purple) calc(var(--dist, 0) * 100% + var(--mouse-x, 0) * 50%),
-    var(--blue) calc(var(--dist, 0) * 100% + 50% + var(--mouse-x, 0) * 50%),
-    var(--green) calc(var(--dist, 0) * 100% + 100% + var(--mouse-x, 0) * 50%)
+    var(--green) calc(var(--scroll, 0) * 100% - 50% + var(--mouse-x, 0) * 50%),
+    var(--blue) calc(var(--scroll, 0) * 100% - 25% + var(--mouse-x, 0) * 50%),
+    var(--purple) calc(var(--scroll, 0) * 100% + var(--mouse-x, 0) * 50%),
+    var(--blue) calc(var(--scroll, 0) * 100% + 50% + var(--mouse-x, 0) * 50%),
+    var(--green) calc(var(--scroll, 0) * 100% + 100% + var(--mouse-x, 0) * 50%)
   );
   // background: transparent
   //   radial-gradient(
