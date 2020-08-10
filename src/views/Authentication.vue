@@ -8,7 +8,9 @@
         type="text"
         name="password"
         v-model="submittedPassword"
-    /></label>
+      />
+      <img class="underline" src="../assets/drawn/line3_purple.svg" />
+    </label>
     <span id="message">{{ message }}</span>
     <button id="button" type="button" @click="login">Next</button>
   </div>
@@ -84,6 +86,7 @@ label {
   display: flex;
   flex-direction: column;
   margin-bottom: 5px;
+  position: relative;
 }
 
 input {
@@ -93,14 +96,23 @@ input {
   // border: solid 1px gray;
   // border-radius: 2px;
   border: none;
-  border-bottom: solid 1px gray;
+  // border-bottom: solid 1px gray;
   // padding: 0;
   font: inherit;
-  // cursor: pointer;
   outline: inherit;
   font-size: 1.2em;
   font-weight: 300;
   line-height: 1.8em;
+}
+
+.underline {
+  content: "";
+  position: absolute;
+  width: 100%;
+  // transform: scaleY(1.5);
+  // height: 5px;
+  bottom: 0;
+  left: 0px;
 }
 
 #message {
