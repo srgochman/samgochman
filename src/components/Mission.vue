@@ -1,7 +1,7 @@
 <template>
   <div class="mission-container oversized">
     <div class="mission-statement">
-      <span>I’m a creative technologist who </span>
+      <span id="beginning">I’m a creative technologist who </span>
       <transition name="fade">
         <span v-if="showEndings" ref="ending" class="ending" :key="idx">
           {{ endings[idx] }}
@@ -31,7 +31,7 @@ export default {
   mounted() {
     this.showEndings = true;
     this.advanceInt = setInterval(() => {
-      // if page not visible then dont advance idx; Page Visibility API
+      // TODO: if page not visible then dont advance idx; Page Visibility API
       this.idx++;
       this.idx = (this.idx + 1) % this.endings.length;
     }, 4500);
@@ -78,6 +78,44 @@ export default {
   display: -webkit-flex;
   flex-flow: row wrap;
   // justify-content: space-between;
+
+  // color: var(--purple);
+  background: white;
+
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    mix-blend-mode: screen;
+
+    background: linear-gradient(
+      120deg,
+      var(--green)
+        calc(var(--scroll, 0) * 100% - 100% + var(--mouse-x, 0) * 50%),
+      var(--blue) calc(var(--scroll, 0) * 100% - 50% + var(--mouse-x, 0) * 50%),
+      var(--purple) calc(var(--scroll, 0) * 100% + var(--mouse-x, 0) * 50%),
+      var(--blue) calc(var(--scroll, 0) * 100% + 50% + var(--mouse-x, 0) * 50%),
+      var(--green)
+        calc(var(--scroll, 0) * 100% + 100% + var(--mouse-x, 0) * 50%)
+    );
+  }
+}
+
+#beginning {
+  // masking makes it invisible
+  color: white !important;
+
+  // duplicate text as black on top
+  &::before {
+    color: black;
+    content: "I'm a creative technologist who";
+    position: absolute;
+    max-width: 920px;
+  }
 }
 
 .mission-statement {
@@ -93,46 +131,22 @@ export default {
   // padding-right: 80px;
 }
 
-span.ending {
-  position: relative;
-  width: 200px;
-  // color: var(--purple);
-  background: linear-gradient(
-    to right,
-    var(--green) calc(var(--scroll, 0) * 100% - 75% + var(--mouse-x, 0) * 50%),
-    var(--blue) calc(var(--scroll, 0) * 100% - 50% + var(--mouse-x, 0) * 50%),
-    var(--purple) calc(var(--scroll, 0) * 100% + var(--mouse-x, 0) * 50%),
-    var(--blue) calc(var(--scroll, 0) * 100% + 50% + var(--mouse-x, 0) * 50%),
-    var(--green) calc(var(--scroll, 0) * 100% + 100% + var(--mouse-x, 0) * 50%)
-  );
-  // background: transparent
-  //   radial-gradient(
-  //     at calc(var(--mouse-x, 0) * 100%) calc(var(--mouse-y, 0) * 100%),
-  //     var(--green),
-  //     var(--blue),
-  //     var(--purple)
-  //   )
-  //   no-repeat 0 0;
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-// span.ending:before {
-//   --size: 0;
-//   content: "";
-//   position: absolute;
-//   left: var(--x);
-//   top: var(--y);
-//   width: var(--size);
-//   height: var(--size);
-//   background: radial-gradient(circle closest-side, pink, transparent);
-//   transform: translate(-50%, -50%);
-//   transition: width 0.2s ease, height 0.2s ease;
-// }
-
-// span.ending:hover:before {
-//   --size: 200px;
+// span.ending {
+//   position: relative;
+//   width: 200px;
+//   // color: var(--purple);
+//   color: black;
+//   background: linear-gradient(
+//     to right,
+//     var(--green) calc(var(--scroll, 0) * 100% - 75% + var(--mouse-x, 0) * 50%),
+//     var(--blue) calc(var(--scroll, 0) * 100% - 50% + var(--mouse-x, 0) * 50%),
+//     var(--purple) calc(var(--scroll, 0) * 100% + var(--mouse-x, 0) * 50%),
+//     var(--blue) calc(var(--scroll, 0) * 100% + 50% + var(--mouse-x, 0) * 50%),
+//     var(--green) calc(var(--scroll, 0) * 100% + 100% + var(--mouse-x, 0) * 50%)
+//   );
+//   background-clip: text;
+//   -webkit-background-clip: text;
+//   -webkit-text-fill-color: transparent;
 // }
 
 // .mission-statement:first-child {
@@ -140,25 +154,26 @@ span.ending {
 // }
 
 .fade-enter-active {
-  transition: opacity 700ms ease-in-out;
+  transition: color 700ms ease-in-out;
   transition-delay: 1000ms;
 }
 
 .fade-leave-active {
-  transition: opacity 700ms ease-in-out;
+  transition: color 700ms ease-in-out;
+  color: transparent;
 }
 
 .fade-enter,
 .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
-  opacity: 0;
+  color: transparent;
 }
 
 @media only screen and (max-width: 1024px) {
-  .mission-container {
-    // font-size: 2em;
-    // font-size: calc(min(10vw, 2.3em));
-    // line-height: 1.4em;
-  }
+  // .mission-container {
+  //   font-size: 2em;
+  //   font-size: calc(min(10vw, 2.3em));
+  //   line-height: 1.4em;
+  // }
 }
 
 @media only screen and (max-width: 1024px) and (max-height: 426px) {
