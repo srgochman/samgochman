@@ -1,8 +1,8 @@
 <template>
   <div class="body">
-    <button @click="clearPass" style="margin-top: 10vh">
+    <!-- <button @click="clearPass" style="margin-top: 10vh">
       Clear passCorrect
-    </button>
+    </button> -->
     <!-- <div id="particles-js"></div> -->
     <div id="mission" class="section">
       <!-- <Sketch></Sketch> -->

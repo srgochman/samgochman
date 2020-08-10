@@ -39,11 +39,11 @@ export default {
     const root = document.documentElement;
     document.addEventListener("mousemove", evt => {
       let x = evt.clientX / innerWidth;
-      let y = evt.clientY / innerHeight;
-      // let x = evt.pageX - this.offsetLeft;
-      // let y = evt.pageY - this.offsetTop;
       root.style.setProperty("--mouse-x", x);
-      root.style.setProperty("--mouse-y", y);
+    });
+    document.addEventListener("scroll", () => {
+      let z = (window.scrollY / innerHeight) * 1.5;
+      root.style.setProperty("--dist", z);
     });
 
     // let btn = document.querySelector("span.ending");
@@ -97,11 +97,13 @@ span.ending {
   position: relative;
   width: 200px;
   // color: var(--purple);
-  background: -webkit-linear-gradient(
-    left,
-    var(--purple),
-    var(--blue),
-    var(--green)
+  background: linear-gradient(
+    to right,
+    var(--green) calc(var(--dist, 0) * 100% - 50% + var(--mouse-x, 0) * 50%),
+    var(--blue) calc(var(--dist, 0) * 100% - 25% + var(--mouse-x, 0) * 50%),
+    var(--purple) calc(var(--dist, 0) * 100% + var(--mouse-x, 0) * 50%),
+    var(--blue) calc(var(--dist, 0) * 100% + 50% + var(--mouse-x, 0) * 50%),
+    var(--green) calc(var(--dist, 0) * 100% + 100% + var(--mouse-x, 0) * 50%)
   );
   // background: transparent
   //   radial-gradient(

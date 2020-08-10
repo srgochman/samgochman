@@ -1,8 +1,9 @@
 <template>
   <!-- <div id="page"> -->
   <div id="container">
-    <label for="password"
-      ><h2>Password</h2>
+    <label for="password">
+      <!-- <h2>Enter password to see project.</h2> -->
+      <h2>Password</h2>
       <input
         id="password"
         type="text"
@@ -70,7 +71,8 @@ export default {
 // }
 
 #container {
-  width: 250px;
+  width: 350px;
+  // width: 300px;
   display: flex;
   flex-direction: column;
   font-family: Avenir;
@@ -89,6 +91,13 @@ label {
   position: relative;
 }
 
+input,
+.underline,
+#message,
+button {
+  width: 250px;
+}
+
 input {
   // width: 100%;
   background: none;
@@ -105,10 +114,26 @@ input {
   line-height: 1.8em;
 }
 
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  // border: 1px solid green;
+  // -webkit-text-fill-color: green;
+  box-shadow: 0 0 0px 1000px var(--purple-transparent) inset;
+  -webkit-box-shadow: 0 0 0px 1000px var(--purple-transparent) inset;
+  // transition: background-color 5000s ease-in-out 0s;
+}
+
 .underline {
   content: "";
   position: absolute;
-  width: 100%;
+  // width: 100%;
   // transform: scaleY(1.5);
   // height: 5px;
   bottom: 0;
@@ -125,8 +150,8 @@ input {
 
 button {
   // width: 100%;
-  background-color: var(--purple-transparent);
-  color: var(--purple);
+  background-color: var(--purple);
+  color: white;
   border: none;
   border-radius: 2px;
   // padding: 6px 11px 6px 9px;
