@@ -8,7 +8,6 @@
     <transition name="pages">
       <router-view :key="$route.fullPath" />
     </transition>
-    <!-- <router-view @authenticated="setAuthenticated" /> -->
   </div>
 </template>
 
@@ -16,16 +15,10 @@
 export default {
   name: "App",
   data() {
-    return {
-      // authenticated: false
-    };
+    return {};
   },
   computed: {},
-  methods: {
-    // setAuthenticated(status) {
-    //   this.authenticated = status;
-    // }
-  },
+  methods: {},
   created() {
     // window.onload = window.onresize = function() {
     //   document.getElementById("app").style.height = window.innerHeight + "px";

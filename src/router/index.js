@@ -40,22 +40,6 @@ const router = new VueRouter({
       component: Multilingual,
       meta: {
         title: "Multilingual | Sam Gochman"
-        // requiresAuth: true
-        // beforeEnter: (to, from, next) => {
-        //   let isAuthenticated = false;
-        //   console.log("beforeEnter");
-        //   if (localStorage.getItem("passCorrect") == true) {
-        //     isAuthenticated = true;
-        //   } else {
-        //     isAuthenticated = false;
-        //   }
-
-        //   if (to.name !== "Authentication" && !isAuthenticated) {
-        //     next({ name: "Authentication" });
-        //   } else {
-        //     next();
-        //   }
-        // }
       }
     },
     {
@@ -64,7 +48,6 @@ const router = new VueRouter({
       component: WIKN,
       meta: {
         title: "What I Know Now | Sam Gochman"
-        // requiresAuth: true
       }
     },
     {

@@ -107,24 +107,12 @@ gsap.registerPlugin(ScrollTrigger);
 export default {
   name: "WIKN",
   beforeRouteEnter(to, from, next) {
-    // set tryRoute in store to this path
-    // this.$store.commit("set_target_route", "Multilingual");
+    // set targetRoute in localStorage to this path name
     localStorage.setItem("targetRoute", "WIKN");
 
-    let isAuthenticated = false;
-    console.log("beforeEnter");
-    console.log("passCorrect:", localStorage.getItem("passCorrect"));
-    if (localStorage.getItem("passCorrect") == "true") {
-      isAuthenticated = true;
-    } else {
-      isAuthenticated = false;
-    }
-    console.log("isAuthenticated:", isAuthenticated);
-    if (!isAuthenticated) {
-      next({ name: "Authentication" });
-    } else {
-      next();
-    }
+    localStorage.getItem("passCorrect") == "true"
+      ? next()
+      : next({ name: "Authentication" });
   },
   computed: {
     tagline() {

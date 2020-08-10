@@ -1,67 +1,131 @@
 <template>
-  <div id="page">
-    <!-- Password: -->
-    <input
-      type="text"
-      name="username"
-      v-model="submittedPassword"
-      placeholder="Password"
-    />
-    <button type="button" @click="login">Next</button>
-    <h3>{{ message }}</h3>
+  <!-- <div id="page"> -->
+  <div id="container">
+    <label for="password"
+      ><h2>Password</h2>
+      <input
+        id="password"
+        type="text"
+        name="password"
+        v-model="submittedPassword"
+    /></label>
+    <span id="message">{{ message }}</span>
+    <button id="button" type="button" @click="login">Next</button>
   </div>
+  <!-- </div> -->
 </template>
 
 <script>
-// import router from "../router/index.js";
-
 export default {
   name: "Authentication",
   data() {
-    return { requiredPassword: "the", submittedPassword: "", message: "" };
+    return {
+      requiredPassword: ["testing", "localprojects"],
+      submittedPassword: "",
+      message: " "
+    };
   },
-  // mounted() {
-  //   if (localStorage.password) {
-  //     this.submittedPassword = localStorage.submittedPassword;
-  //   }
-  // },
-  computed: {
-    targetRoute() {
-      return this.$store.state.targetRoute;
-    }
-  },
+  computed: {},
   methods: {
     login() {
       // localStorage.submittedPassword = this.submittedPassword;
       if (this.submittedPassword != "") {
-        if (this.submittedPassword == this.requiredPassword) {
-          // this.$emit("authenticated", true);
-          // this.$router.replace({ name: "secure" });
+        // if (this.submittedPassword == this.requiredPassword) {
+        if (this.requiredPassword.indexOf(this.submittedPassword) > -1) {
           localStorage.setItem("passCorrect", true);
-          this.message = "Password is correct.";
 
-          // go to stored targetRoute
-          // this.$router.replace({ name: `"${this.targetRoute}"` });
+          // go to targetRoute stored in localStorage
           this.$router.replace({
             name: localStorage.getItem("targetRoute")
           });
         } else {
           localStorage.setItem("passCorrect", false);
-          this.message = "Password is incorrect.";
+          this.message = "Wrong password, try again.";
         }
       } else {
-        this.message = "A password must be present.";
+        this.message = "Password is blank!";
       }
     }
+  },
+  mounted() {
+    $("#password").on("keyup", function(event) {
+      if (event.keyCode === 13) {
+        event.preventDefault();
+        $("#button").click();
+      }
+    });
+    $("#password").focus();
   },
   components: {}
 };
 </script>
 
-<style lang="scss">
-#page {
-  width: 100%;
-  align-items: flex-start;
-  margin-top: 10vh;
+<style lang="scss" scoped>
+// #page {
+//   width: 100%;
+//   // flex-direction: row;
+//   // justify-content: center;
+// }
+
+#container {
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+  font-family: Avenir;
+  margin-top: 50vh;
+  transform: translateY(-50%);
+}
+
+h2 {
+  margin-bottom: 30px;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 5px;
+}
+
+input {
+  // width: 100%;
+  background: none;
+  color: inherit;
+  // border: solid 1px gray;
+  // border-radius: 2px;
+  border: none;
+  border-bottom: solid 1px gray;
+  // padding: 0;
+  font: inherit;
+  // cursor: pointer;
+  outline: inherit;
+  font-size: 1.2em;
+  font-weight: 300;
+  line-height: 1.8em;
+}
+
+#message {
+  font-size: 1em;
+  font-weight: 300;
+  height: 1.8em;
+  margin-bottom: 10px;
+  color: gray;
+}
+
+button {
+  // width: 100%;
+  background-color: var(--purple-transparent);
+  color: var(--purple);
+  border: none;
+  border-radius: 2px;
+  // padding: 6px 11px 6px 9px;
+  height: 3em;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  outline: none;
+}
+
+button:active {
+  background-color: var(--purple-semi-transparent);
 }
 </style>
