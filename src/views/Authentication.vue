@@ -110,7 +110,7 @@ input {
   font: inherit;
   outline: inherit;
   font-size: 1.2em;
-  font-weight: 300;
+  font-weight: 200;
   line-height: 1.8em;
 }
 
@@ -142,7 +142,7 @@ select:-webkit-autofill:focus {
 
 #message {
   font-size: 1em;
-  font-weight: 300;
+  font-weight: 200;
   height: 1.8em;
   margin-bottom: 10px;
   color: gray;

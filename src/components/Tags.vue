@@ -53,7 +53,7 @@ export default {
   /* padding: 4px 10px; */
   padding: 6px 11px 6px 9px;
   font-size: 0.875em;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 @media only screen and (max-width: 1024px) {

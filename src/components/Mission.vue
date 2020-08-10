@@ -99,8 +99,8 @@ span.ending {
   // color: var(--purple);
   background: linear-gradient(
     to right,
-    var(--green) calc(var(--scroll, 0) * 100% - 50% + var(--mouse-x, 0) * 50%),
-    var(--blue) calc(var(--scroll, 0) * 100% - 25% + var(--mouse-x, 0) * 50%),
+    var(--green) calc(var(--scroll, 0) * 100% - 75% + var(--mouse-x, 0) * 50%),
+    var(--blue) calc(var(--scroll, 0) * 100% - 50% + var(--mouse-x, 0) * 50%),
     var(--purple) calc(var(--scroll, 0) * 100% + var(--mouse-x, 0) * 50%),
     var(--blue) calc(var(--scroll, 0) * 100% + 50% + var(--mouse-x, 0) * 50%),
     var(--green) calc(var(--scroll, 0) * 100% + 100% + var(--mouse-x, 0) * 50%)

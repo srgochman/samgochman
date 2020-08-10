@@ -380,7 +380,7 @@ canvas {
   justify-content: space-between;
   text-transform: uppercase;
   font-size: 14px;
-  font-weight: 800;
+  font-weight: 700;
 }
 
 @media only screen and (max-width: 425px) {

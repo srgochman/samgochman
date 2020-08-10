@@ -3,7 +3,7 @@
 }
 
 * {
-  -webkit-font-smoothing: subpixel-antialiased;
+  -webkit-font-smoothing: subpixel-antialiased !important;
   // text-rendering: optimizeLegibility !important;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -13,21 +13,21 @@ h1 {
   text-transform: uppercase;
   font-size: 1em; // 16px
   // font-weight: 800;
-  font-weight: 400;
+  font-weight: 200;
   line-height: 1.8em;
   margin: 0;
 }
 
 .oversized {
   font-size: 4.5em;
-  font-weight: 800;
+  font-weight: 700;
   // line-height: 1.3em;
 }
 
 /* large text */
 h2 {
   font-size: 2.25em;
-  font-weight: 600;
+  font-weight: 700;
   line-height: 1.5em;
   margin: 0 0 0px 0;
   /* display: inline; */
@@ -36,7 +36,7 @@ h2 {
 /* small text */
 h3 {
   font-size: 1.2em;
-  font-weight: 300;
+  font-weight: 200;
   line-height: 1.8em;
   margin: 0 0 0px 0;
   // display: inline;

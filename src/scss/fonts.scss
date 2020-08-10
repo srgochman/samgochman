@@ -1,5 +1,21 @@
 @font-face {
     font-family: "Avenir";
+    src: url("/fonts/AvenirNext-Thin.eot")format("embedded-opentype"),
+            url("/fonts/AvenirNext-Thin.woff")format("woff");
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Avenir";
+    src: url("/fonts/AvenirNext-ThinItalic.eot")format("embedded-opentype"),
+            url("/fonts/AvenirNext-ThinItalic.woff")format("woff");
+    font-weight: 100;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "Avenir";
     src: url("/fonts/Avenir-Light.eot")format("embedded-opentype"),
             url("/fonts/Avenir-Light.woff")format("woff");
     font-weight: 200;
@@ -64,7 +80,8 @@
 
 @font-face {
     font-family: "Avenir";
-    src: url("/fonts/Avenir-Heavy.eot")format("embedded-opentype");
+    src: url("/fonts/Avenir-Heavy.eot")format("embedded-opentype"),
+            url("/fonts/Avenir-Heavy.woff")format("woff");
     font-weight: 700;
     font-style: normal;
 }
