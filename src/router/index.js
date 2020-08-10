@@ -7,6 +7,7 @@ import Multilingual from "../views/Multilingual.vue";
 import WIKN from "../views/WIKN.vue";
 import Anivision from "../views/Anivision.vue";
 import NotFound from "../views/NotFound.vue";
+import Authentication from "../views/Authentication.vue";
 
 Vue.use(VueRouter);
 
@@ -26,14 +27,6 @@ const router = new VueRouter({
       }
     },
     {
-      path: "/juices",
-      name: "Latest Creative Juices",
-      component: Juices,
-      meta: {
-        title: "Latest Creative Juices | Sam Gochman"
-      }
-    },
-    {
       path: "/phototaxis",
       name: "Phototaxis",
       component: Phototaxis,
@@ -47,6 +40,22 @@ const router = new VueRouter({
       component: Multilingual,
       meta: {
         title: "Multilingual | Sam Gochman"
+        // requiresAuth: true
+        // beforeEnter: (to, from, next) => {
+        //   let isAuthenticated = false;
+        //   console.log("beforeEnter");
+        //   if (localStorage.getItem("passCorrect") == true) {
+        //     isAuthenticated = true;
+        //   } else {
+        //     isAuthenticated = false;
+        //   }
+
+        //   if (to.name !== "Authentication" && !isAuthenticated) {
+        //     next({ name: "Authentication" });
+        //   } else {
+        //     next();
+        //   }
+        // }
       }
     },
     {
@@ -55,6 +64,7 @@ const router = new VueRouter({
       component: WIKN,
       meta: {
         title: "What I Know Now | Sam Gochman"
+        // requiresAuth: true
       }
     },
     {
@@ -66,16 +76,33 @@ const router = new VueRouter({
       }
     },
     {
+      path: "/juices",
+      name: "Latest Creative Juices",
+      component: Juices,
+      meta: {
+        title: "Latest Creative Juices | Sam Gochman"
+      }
+    },
+    {
       path: "*",
       name: "Not Found",
       component: NotFound,
       meta: {
         title: "Page Not Found"
       }
+    },
+    {
+      path: "/authentication",
+      name: "Authentication",
+      component: Authentication,
+      meta: {
+        title: "Authentication"
+      }
     }
   ]
 });
 
+// Set each page's title
 router.afterEach(to => {
   if (to.meta && to.meta.title) {
     document.title = to.meta.title;

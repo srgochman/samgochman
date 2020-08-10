@@ -1,6 +1,9 @@
 <template>
   <div class="body">
-    <div id="particles-js"></div>
+    <button @click="clearPass" style="margin-top: 10vh">
+      Clear passCorrect
+    </button>
+    <!-- <div id="particles-js"></div> -->
     <div id="mission" class="section">
       <!-- <Sketch></Sketch> -->
       <Mission></Mission>
@@ -129,7 +132,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger.js";
 import ScrollMagic from "scrollmagic";
 gsap.registerPlugin(ScrollTrigger);
 import "particles.js/particles";
-const particlesJS = window.particlesJS;
+// const particlesJS = window.particlesJS;
 
 export default {
   name: "Home",
@@ -164,9 +167,12 @@ export default {
     const homeController = new ScrollMagic.Controller();
     this.homeScroll(homeController);
 
-    particlesJS.load("particles-js", "particlesjs-config.json");
+    // particlesJS.load("particles-js", "particlesjs-config.json");
   },
   methods: {
+    clearPass() {
+      localStorage.setItem("passCorrect", false);
+    },
     homeScroll(controller) {
       $(".section.appear").each(function() {
         // Create a scene for each scene
@@ -222,11 +228,12 @@ canvas {
   height: 100%;
   top: 0;
   left: 0;
-  background-color: #ffffff;
+  // background-color: #ffffff;
   // background-image: url("");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 50% 50%;
+  z-index: 1;
 }
 
 #mission-description {

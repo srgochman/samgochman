@@ -75,7 +75,7 @@ export default {
       if (instance.isActive) {
         projectTitle.childNodes[0].style.color = "var(--purple)";
         arrow.classList.add("purple-arrow");
-        console.log(instance.locked);
+        // console.log(instance.locked);
         if (instance.locked) lock.classList.add("purple-lock");
         // also do this for the title and arrow in ProjectText
         $(".project-text a").css("color", "var(--purple)");
@@ -103,7 +103,7 @@ export default {
       end: "bottom-=5% 50%", // [trigger] [scroller] positions
       // markers: true,
       onEnter: () => {
-        console.log("hit", projectImage);
+        // console.log("hit", projectImage);
         $(".project-text").removeClass("fade-out");
         $(".project-text").addClass("fade-in");
         projectImage.classList.remove("dull");

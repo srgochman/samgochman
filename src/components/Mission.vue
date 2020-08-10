@@ -3,13 +3,7 @@
     <div class="mission-statement">
       <span>I’m a creative technologist who </span>
       <transition name="fade">
-        <span
-          v-if="showEndings"
-          ref="ending"
-          class="ending"
-          :style="{ color: 'var(--purple)' }"
-          :key="idx"
-        >
+        <span v-if="showEndings" ref="ending" class="ending" :key="idx">
           {{ endings[idx] }}
           <!-- <span :style="{ color: 'black' }">.</span> -->
         </span>
@@ -41,6 +35,26 @@ export default {
       this.idx++;
       this.idx = (this.idx + 1) % this.endings.length;
     }, 4500);
+
+    const root = document.documentElement;
+    document.addEventListener("mousemove", evt => {
+      let x = evt.clientX / innerWidth;
+      let y = evt.clientY / innerHeight;
+      // let x = evt.pageX - this.offsetLeft;
+      // let y = evt.pageY - this.offsetTop;
+      root.style.setProperty("--mouse-x", x);
+      root.style.setProperty("--mouse-y", y);
+    });
+
+    // let btn = document.querySelector("span.ending");
+    // const root = document.documentElement;
+    // document.addEventListener("mousemove", e => {
+    //   let rect = e.target.getBoundingClientRect();
+    //   let x = e.clientX - rect.left;
+    //   let y = e.clientY - rect.top;
+    //   root.style.setProperty("--x", x + "px");
+    //   root.style.setProperty("--y", y + "px");
+    // });
   },
   beforeDestroy() {
     clearInterval(this.advanceInt);
@@ -80,8 +94,44 @@ export default {
 }
 
 span.ending {
+  position: relative;
   width: 200px;
+  // color: var(--purple);
+  background: -webkit-linear-gradient(
+    left,
+    var(--purple),
+    var(--blue),
+    var(--green)
+  );
+  // background: transparent
+  //   radial-gradient(
+  //     at calc(var(--mouse-x, 0) * 100%) calc(var(--mouse-y, 0) * 100%),
+  //     var(--green),
+  //     var(--blue),
+  //     var(--purple)
+  //   )
+  //   no-repeat 0 0;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
+
+// span.ending:before {
+//   --size: 0;
+//   content: "";
+//   position: absolute;
+//   left: var(--x);
+//   top: var(--y);
+//   width: var(--size);
+//   height: var(--size);
+//   background: radial-gradient(circle closest-side, pink, transparent);
+//   transform: translate(-50%, -50%);
+//   transition: width 0.2s ease, height 0.2s ease;
+// }
+
+// span.ending:hover:before {
+//   --size: 200px;
+// }
 
 // .mission-statement:first-child {
 //   margin-bottom: 260px;
