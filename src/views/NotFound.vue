@@ -25,7 +25,7 @@ export default {
 #page {
   width: 100%;
   align-items: flex-start;
-  margin-top: 10vh;
+  margin-top: 20vh;
 
   img {
     margin-bottom: 100px;

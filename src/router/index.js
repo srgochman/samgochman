@@ -14,9 +14,14 @@ Vue.use(VueRouter);
 const router = new VueRouter({
   mode: "history",
   base: process.env.BASE_URL,
-  scrollBehavior(to, from, savedPosition) {
-    return savedPosition ? savedPosition : { x: 0, y: 0 };
-  },
+  scrollBehavior: (to, from, savedPosition) =>
+    new Promise(resolve => {
+      let position = savedPosition ? savedPosition : { x: 0, y: 0 };
+      router.app.$root.$once("transitionScroll", () => {
+        router.app.$nextTick(() => resolve(position));
+      });
+      // return savedPosition ? savedPosition : { x: 0, y: 0 };
+    }),
   routes: [
     {
       path: "/",

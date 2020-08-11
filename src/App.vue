@@ -5,7 +5,7 @@
         <div id="name-drawn"></div>
       </router-link>
     </div>
-    <transition name="pages">
+    <transition name="pages" @after-leave="$root.$emit('transitionScroll')">
       <router-view :key="$route.fullPath" />
     </transition>
   </div>
@@ -43,7 +43,7 @@ html {
   font-size: 1rem; // 16px
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  scroll-behavior: smooth;
+  // scroll-behavior: smooth;
   width: 100vw;
   margin: 0;
   background-color: white;
