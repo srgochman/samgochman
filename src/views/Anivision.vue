@@ -163,16 +163,16 @@ video {
 
 .across {
   justify-content: space-between;
-  align-items: center;
+  // align-items: center;
 
   a {
     height: 100%;
   }
 
-  img {
-    height: 100%;
-    object-fit: cover;
-  }
+  // img {
+  //   height: 100%;
+  //   object-fit: cover;
+  // }
 }
 
 // #results {

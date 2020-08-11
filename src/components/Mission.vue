@@ -38,12 +38,17 @@ export default {
 
     const root = document.documentElement;
     document.addEventListener("mousemove", evt => {
-      let x = (evt.clientX / innerWidth) * 2;
-      root.style.setProperty("--mouse-x", x);
+      // check if in view so vars arent updated unnecessarily
+      if (window.scrollY <= innerHeight) {
+        let x = (evt.clientX / innerWidth) * 2;
+        root.style.setProperty("--mouse-x", x);
+      }
     });
     document.addEventListener("scroll", () => {
-      let z = (window.scrollY / innerHeight) * 1.5;
-      root.style.setProperty("--scroll", z);
+      if (window.scrollY <= innerHeight) {
+        let z = (window.scrollY / innerHeight) * 1.5;
+        root.style.setProperty("--scroll", z);
+      }
     });
 
     // let btn = document.querySelector("span.ending");
@@ -65,6 +70,9 @@ export default {
 <style lang="scss">
 .mission-container {
   width: 100%;
+  // height: calc(min(50vw, 470px));
+  height: 50vw;
+  max-height: 495px; // half of widest window before left/right margins just grow
   margin-top: 50vh;
   transform: translateY(-50%);
   // font-size: 6em;
@@ -86,8 +94,11 @@ export default {
   &::before {
     content: "";
     display: block;
+    // height: calc(min(40vw, 466px));
+    height: 40vw;
+    max-height: 490px;
     position: absolute;
-    top: 0;
+    top: 3px;
     right: 0;
     bottom: 0;
     left: 0;
@@ -95,8 +106,7 @@ export default {
 
     background: linear-gradient(
       120deg,
-      var(--green)
-        calc(var(--scroll, 0) * 100% - 100% + var(--mouse-x, 0) * 50%),
+      var(--green) calc(var(--scroll, 0) * 100% - 75% + var(--mouse-x, 0) * 50%),
       var(--blue) calc(var(--scroll, 0) * 100% - 50% + var(--mouse-x, 0) * 50%),
       var(--purple) calc(var(--scroll, 0) * 100% + var(--mouse-x, 0) * 50%),
       var(--blue) calc(var(--scroll, 0) * 100% + 50% + var(--mouse-x, 0) * 50%),
@@ -122,7 +132,7 @@ export default {
 .mission-statement {
   // font-family: Roboto Condensed;
   // height: 470px;
-  height: calc(min(41vw, 470px));
+  // height: calc(min(50vw, 470px));
   width: 100%;
   max-width: 1200px;
   // max-width: 678px;

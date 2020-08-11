@@ -3,7 +3,7 @@
     <div class="project-text">
       <div class="project-title-container">
         <router-link v-if="type === 'study'" :to="link">
-          <h1 class="project-title">{{ title }}</h1>
+          <h3 class="project-title">{{ title }}</h3>
           <svg class="lock-svg" v-if="locked" width="7px" height="10px">
             <use class="lock" href="../assets/unlocked.svg#Layer_1"></use>
           </svg>
@@ -15,7 +15,7 @@
           </svg>
         </router-link>
         <a v-else :href="link" target="_blank" rel="noopener">
-          <h1 class="project-title">{{ title }}</h1>
+          <h3 class="project-title">{{ title }}</h3>
           <div v-if="locked" class="lock"></div>
           <svg class="arrow-svg" width="28px" height="8px">
             <use
@@ -92,7 +92,7 @@ export default {
     align-items: flex-start;
 
     .arrow-svg {
-      margin-top: 9px;
+      margin-top: 12px;
     }
 
     .arrow {
@@ -105,7 +105,7 @@ export default {
     }
 
     .lock-svg {
-      margin: 8px 13px 0 0;
+      margin: 11px 13px 0 0;
     }
 
     .lock {
@@ -176,11 +176,11 @@ export default {
   }
 
   .arrow-svg {
-    margin-top: 6px !important;
+    margin-top: 8px !important;
   }
 
   .lock-svg {
-    margin-top: 5px !important;
+    margin-top: 7px !important;
   }
 
   // .tags-container {

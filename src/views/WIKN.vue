@@ -74,7 +74,9 @@
           </h3>
         </div>
         <img class="one-third-width" src="/photos/WIKN/doodle.jpg" />
+        <!-- <div id="sketch" class="one-third-width img-bg"></div> -->
         <img class="one-third-width" src="/photos/WIKN/brushes.png" />
+        <!-- <div id="brushes" class="one-third-width img-bg"></div> -->
       </div>
       <div class="section writing appear reverse">
         <div class="caption one-third-width">
@@ -91,6 +93,7 @@
           class="two-thirds-width"
           src="/photos/WIKN/WIKN_mural_crop_landscape.png"
         />
+        <!-- <div id="print" class="two-thirds-width img-bg"></div> -->
       </div>
     </div>
   </div>
@@ -117,7 +120,7 @@ export default {
   computed: {
     tagline() {
       return contents["projects"].filter(project => {
-        return project.title === "Anivision";
+        return project.title === "What I Know Now";
       })[0].description;
     },
     tags() {
@@ -211,14 +214,38 @@ export default {
 #ui-review,
 #ui-macro {
   object-fit: unset;
-  border-radius: 55px;
+  width: 270px;
+  height: 590px;
+  border-radius: 45px;
   // transform: scale(0.7);
   // transform-origin: top center;
   box-shadow: 0 15px 25px rgba(0, 0, 0, 0.25);
+  margin-right: calc(min(7vw, calc(var(--main-width) * 0.05)));
 }
 
+#ui-review {
+  margin-left: calc(min(7vw, calc(var(--main-width) * 0.05)));
+}
+
+// #sketch {
+//   background-image: url("/photos/WIKN/doodle.jpg");
+//   height: auto;
+//   // height: 33.3vw;
+//   // max-height: 550px;
+// }
+
+// #brushes {
+//   background-image: url("/photos/WIKN/brushes.png");
+//   height: auto;
+//   // height: 33.3vw;
+//   // max-height: 550px;
+// }
+
 // #print {
-//   padding-right: calc(var(--main-width) * 0.05);
+//   // padding-right: calc(var(--main-width) * 0.05);
+//   background-image: url("/photos/WIKN/WIKN_mural_crop_landscape.png");
+//   height: 53vw;
+//   max-height: 650px;
 // }
 
 @media only screen and (min-width: 769px) and (max-width: 1024px) {

@@ -52,8 +52,10 @@ video {
 }
 
 img {
-  height: auto;
-  object-fit: scale-down;
+  // height: auto;
+  // max-height: 73vh;
+  max-height: 700px;
+  object-fit: contain;
   object-position: top left;
   // min-width
 }

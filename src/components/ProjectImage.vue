@@ -9,7 +9,7 @@
     <div class="project-text-below" ref="projectTextBelow">
       <div class="project-title-container" ref="projectTitle">
         <router-link v-if="type === 'study'" :to="link">
-          <h1 class="project-title">{{ title }}</h1>
+          <h3 class="project-title">{{ title }}</h3>
           <!-- <div v-if="locked" class="lock" ref="lock"></div> -->
           <svg class="lock-svg" v-if="locked" width="7px" height="10px">
             <use
@@ -28,7 +28,7 @@
           </svg>
         </router-link>
         <a v-else :href="link" target="_blank" rel="noopener">
-          <h1 class="project-title">{{ title }}</h1>
+          <h3 class="project-title">{{ title }}</h3>
           <!-- <div v-if="locked" class="lock" ref="lock"></div> -->
           <svg class="lock-svg" v-if="locked" width="7px" height="10px">
             <use

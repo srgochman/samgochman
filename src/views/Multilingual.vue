@@ -96,7 +96,7 @@ export default {
   computed: {
     tagline() {
       return contents["projects"].filter(project => {
-        return project.title === "Anivision";
+        return project.title === "Multilingual";
       })[0].description;
     },
     tags() {
