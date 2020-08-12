@@ -85,17 +85,14 @@ import ScrollMagic from "scrollmagic";
 
 export default {
   name: "Multilingual",
-  computed: {
-    tagline() {
-      return contents["projects"].filter(project => {
-        return project.title === "Anivision";
-      })[0].description;
-    },
-    tags() {
-      return contents["projects"].filter(project => {
-        return project.title === "Multilingual";
-      })[0].tags;
-    }
+  beforeRouteEnter(to, from, next) {
+    // set targetRoute in localStorage to this path name
+    localStorage.setItem("targetRoute", "Multilingual");
+
+    // go to authentication page unless password has already been entered
+    localStorage.getItem("passCorrect") == "true"
+      ? next()
+      : next({ name: "Authentication" });
   },
   mounted() {
     const sectionController = new ScrollMagic.Controller();
@@ -108,7 +105,18 @@ export default {
       scene.setClassToggle(this, "visible").addTo(sectionController);
     });
   },
-  methods: {},
+  computed: {
+    tagline() {
+      return contents["projects"].filter(project => {
+        return project.title === "Multilingual";
+      })[0].description;
+    },
+    tags() {
+      return contents["projects"].filter(project => {
+        return project.title === "Multilingual";
+      })[0].tags;
+    }
+  },
   components: { Tags }
 };
 </script>
@@ -134,13 +142,7 @@ export default {
   background-size: cover;
   width: 28px;
   height: 8px;
-  // margin-top: 12px;
-  // transition: var(--hover);
 }
-
-// #idle-screen {
-//   background-image: url("/photos/multilingual/pw_02.jpg");
-// }
 
 @media only screen and (max-width: 1024px) {
   .across {

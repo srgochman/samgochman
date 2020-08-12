@@ -1,16 +1,32 @@
 <template>
-  <div class="text-bg">
+  <div id="text-bg">
     <div class="project-text">
       <div class="project-title-container">
+        <!-- router-link keeps user on same window -->
         <router-link v-if="type === 'study'" :to="link">
-          <h1 class="project-title">{{ title }}</h1>
-          <div v-if="locked" class="lock"></div>
-          <div class="arrow"></div>
+          <h3 class="project-title">{{ title }}</h3>
+          <svg class="lock-svg" v-if="locked" width="7px" height="10px">
+            <use class="lock" href="../assets/unlocked.svg#Layer_1"></use>
+          </svg>
+          <svg class="arrow-svg" width="28px" height="8px">
+            <use
+              class="arrow"
+              href="../assets/drawn/arrow_drawn2.svg#Layer_2"
+            ></use>
+          </svg>
         </router-link>
+        <!-- <a> opens new window -->
         <a v-else :href="link" target="_blank" rel="noopener">
-          <h1 class="project-title">{{ title }}</h1>
-          <div v-if="locked" class="lock"></div>
-          <div class="arrow"></div>
+          <h3 class="project-title">{{ title }}</h3>
+          <svg class="lock-svg" v-if="locked" width="7px" height="10px">
+            <use class="lock" href="../assets/unlocked.svg#Layer_1"></use>
+          </svg>
+          <svg class="arrow-svg" width="28px" height="8px">
+            <use
+              class="arrow"
+              href="../assets/drawn/arrow_drawn2.svg#Layer_2"
+            ></use>
+          </svg>
         </a>
       </div>
       <h2 class="project-desc">{{ description }}</h2>
@@ -20,9 +36,7 @@
 </template>
 
 <script>
-import lock from "../assets/unlocked.svg";
 import Tags from "./Tags.vue";
-// import contents from "../list-contents.json";
 import { mapState } from "vuex";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger.js";
@@ -32,24 +46,27 @@ export default {
   name: "ProjectDescription",
   data() {
     return {
-      lock: lock
+      trig: null
     };
   },
   mounted() {
-    ScrollTrigger.create({
-      trigger: ".text-bg",
-      start: "top 25%", // [trigger] [scroller] positions,
-      end: "bottom bottom-=7%", // [trigger] [scroller] positions
-      // markers: true,
-      pin: true
-    });
+    setTimeout(() => {
+      this.trig = ScrollTrigger.create({
+        trigger: "#text-bg",
+        start: "top 25%", // [trigger] [scroller] positions,
+        end: "bottom bottom-=7%", // [trigger] [scroller] positions
+        // markers: true,
+        pin: true
+      });
+    }, 500);
   },
-  methods: {},
-  // retrieve store values
   computed: {
+    // retrieve store values
     ...mapState(["title", "description", "tags", "link", "type", "locked"])
   },
-  watch: {},
+  beforeDestroy() {
+    this.trig.kill();
+  },
   components: {
     Tags
   }
@@ -57,7 +74,7 @@ export default {
 </script>
 
 <style lang="scss">
-.text-bg {
+#text-bg {
   width: 33%;
   position: unset;
 }
@@ -74,67 +91,71 @@ export default {
 
 .project-title-container {
   a {
-    width: fit-content;
-    color: black;
     display: flex;
     align-items: flex-start;
+    width: fit-content;
+    color: black;
+
+    .arrow-svg {
+      margin-top: 12px;
+    }
 
     .arrow {
-      background-image: url("../assets/drawn/arrow_drawn2.svg");
       background-size: cover;
-      width: 28px;
-      height: 8px;
-      margin-top: 9px;
-      // transition: var(--hover);
+      transform-origin: top left;
+      transform: scale(0.2);
+      fill: var(--purple);
+      opacity: 0;
+      transition: opacity 0.2s ease-in-out;
+    }
+
+    .lock-svg {
+      margin: 11px 13px 0 0;
     }
 
     .lock {
-      background-image: url("../assets/unlocked.svg");
       background-size: cover;
-      width: 7px;
-      height: 10px;
-      margin: 8px 13px 0 0;
+      transform-origin: top left;
+      transform: scale(0.1);
+      fill: black;
+      transition: fill 0.2s ease-in-out;
     }
-  }
 
-  a:hover {
-    .arrow {
-      background-image: url("../assets/drawn/arrow_drawn2_purple.svg");
-      // transition: var(--hover);
-    }
-    .lock {
-      background-image: url("../assets/unlocked_purple.svg");
+    &:hover {
+      .arrow {
+        fill: var(--purple);
+        opacity: 1;
+        transition: opacity 0.2s ease-in-out;
+      }
+      .lock {
+        fill: var(--purple);
+        transition: fill 0.2s ease-in-out;
+      }
     }
   }
 }
 
 .purple-arrow {
-  background-image: url("../assets/drawn/arrow_drawn2_purple.svg") !important;
-  // transition: var(--hover);
+  fill: var(--purple);
+  opacity: 1 !important;
+  transition: opacity 0.2s ease-in-out;
 }
 
 .purple-lock {
-  background-image: url("../assets/unlocked_purple.svg") !important;
-  // transition: var(--hover);
+  fill: var(--purple) !important;
+  transition: fill 0.2s ease-in-out;
 }
 
 .project-title {
   margin: 0 15px 0 0;
-  // transition: var(--hover);
 }
 
-// .project-title:hover {
-//   color: var(--purple) !important;
-//   transition: var(--hover);
-// }
-
 @media only screen and (max-width: 1024px) {
-  .text-bg {
+  #text-bg {
     display: none;
   }
 
   .project-text {
-    // padding: 0 7vw;
     width: 100%;
   }
 
@@ -149,23 +170,17 @@ export default {
   .project-desc {
     margin-top: 10px;
     margin-bottom: 60px;
-    // max-width: 60%;
   }
 
-  .arrow {
-    margin-top: 6px !important;
+  .arrow-svg {
+    margin-top: 8px !important;
   }
 
-  .lock {
-    margin-top: 5px !important;
+  .lock-svg {
+    margin-top: 7px !important;
   }
-
-  // .tags-container {
-  //   display: none;
-  // }
 }
 
-// Tablets (subset of above)
 @media only screen and (min-width: 426px) and (max-width: 1024px) {
   .project-text {
     max-height: 40vh;

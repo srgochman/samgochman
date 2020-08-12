@@ -1,8 +1,8 @@
-# samgochman
+# Portfolio
 
-Note: this portfolio is MVP and I'm continuously working on code revisions and optimizations.
+*This portfolio is an MVP and I'm continuously working on code revisions and optimizations.*
 
-Built with [Vue](https://vuejs.org/).
+Built with [Vue](https://vuejs.org/), [GSAP](https://greensock.com/), [ScrollMagic](https://scrollmagic.io/), and [spa-github-pages](https://github.com/rafgraph/spa-github-pages).
 
 ## Project setup
 ```
@@ -13,16 +13,3 @@ npm install
 ```
 npm run serve
 ```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).

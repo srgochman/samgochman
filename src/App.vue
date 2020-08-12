@@ -5,7 +5,7 @@
         <div id="name-drawn"></div>
       </router-link>
     </div>
-    <transition name="pages">
+    <transition name="pages" @after-leave="$root.$emit('transitionScroll')">
       <router-view :key="$route.fullPath" />
     </transition>
   </div>
@@ -14,23 +14,18 @@
 <script>
 export default {
   name: "App",
-  data() {
-    return {};
-  },
-  computed: {},
-  methods: {},
   created() {
     // window.onload = window.onresize = function() {
     //   document.getElementById("app").style.height = window.innerHeight + "px";
     // };
-  },
-  components: {}
+  }
 };
 </script>
 
 <style lang="scss">
 @import "./scss/colors.scss";
 @import "./scss/type.scss";
+@import "./scss/fonts.scss";
 // @import "./scss/reset.scss";
 
 :root {
@@ -38,14 +33,14 @@ export default {
 }
 
 html {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  font-size: 1rem; // 16px
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  scroll-behavior: smooth;
   width: 100vw;
   margin: 0;
   background-color: white;
+  font-family: "Avenir", Helvetica, Arial, sans-serif;
+  font-size: 1rem; // 16px
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  // scroll-behavior: smooth;
   overflow-x: hidden;
 }
 
@@ -54,55 +49,44 @@ body {
   flex-direction: row;
   justify-content: center;
   margin: 0;
-  padding: 0 7vw;
+  padding: 0 7vw; // left/right padding for narrow window
   overflow-x: hidden;
   overflow-y: hidden;
 }
 
 #app,
 .study-page {
-  width: 100%;
-  max-width: var(--main-width);
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
+  align-items: center; // centers content container on page
+  width: 100%;
+  // keeps content width constrained for wide windows
+  max-width: var(--main-width);
   color: black;
 }
 
-.hidden {
-  display: none;
-}
-
 #nav {
-  width: 100%;
-  // max-width: 1024px;
-  padding: 20px 0px;
-  // background-color: rgb(255, 255, 255);
-  // backdrop-filter: blur(5px);
-  /* border-bottom: lightgray 1px solid; */
-  // box-shadow: rgba(0, 0, 0, 0.15) 0 2px 5px;
-  /* box-shadow: 0 30px 20px white; */
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-
+  width: 100%;
+  padding: 20px 0px;
   position: fixed;
   top: 0;
   z-index: 100;
 
   .sam-gochman {
     height: min-content;
-    text-transform: uppercase;
-    font-size: 24px;
-    font-weight: 800;
-    color: black;
+    // text-transform: uppercase;
+    // font-size: 24px;
+    // font-weight: 800;
+    // color: black;
     margin-top: 15px;
     padding-left: calc(min(7vw, 50px));
   }
 
   #name-drawn {
-    // padding-left: 100px;
     width: 140px;
     height: 20px;
     background-image: url("./assets/drawn/name_drawn.svg");
@@ -111,26 +95,31 @@ body {
   }
 }
 
+// page content
 .body {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
   justify-content: center;
-  // width: 1024px;
+  align-items: flex-start; // left-aligns content
   width: 100%;
-  max-width: var(--main-width);
+  // max-width: var(--main-width);
 }
 
 .section {
   width: 100%;
   margin-bottom: 400px;
   // margin-bottom: 30vh;
+
+  &:last-child {
+    margin-bottom: 7vh !important;
+  }
 }
 
-.section:last-child {
-  margin-bottom: 7vh !important;
+.hidden {
+  display: none;
 }
 
+// designates scrollmagic fade in
 .appear {
   opacity: 0;
   transition: opacity 200ms ease-in-out;
@@ -141,6 +130,7 @@ body {
   transition: opacity 200ms ease-in-out;
 }
 
+// page Vue transition
 .pages-enter-active {
   transition: opacity 200ms ease-in-out;
   transition-delay: 200ms;
@@ -156,17 +146,15 @@ body {
 }
 
 @media only screen and (max-width: 1850px) {
-  // html {
-  //   font-size: 0.8em;
-  // }
-
   #nav {
     position: absolute;
     overflow: hidden;
   }
+}
 
-  // .section {
-  //   margin-bottom: 40vh;
-  // }
+@media only screen and (max-width: 1024px) {
+  .section {
+    margin-bottom: 250px;
+  }
 }
 </style>

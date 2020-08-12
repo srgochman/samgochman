@@ -106,17 +106,19 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default {
   name: "WIKN",
-  computed: {
-    tagline() {
-      return contents["projects"].filter(project => {
-        return project.title === "Anivision";
-      })[0].description;
-    },
-    tags() {
-      return contents["projects"].filter(project => {
-        return project.title === "What I Know Now";
-      })[0].tags;
-    }
+  data() {
+    return {
+      trig: []
+    };
+  },
+  beforeRouteEnter(to, from, next) {
+    // set targetRoute in localStorage to this path name
+    localStorage.setItem("targetRoute", "WIKN");
+
+    // go to authentication page unless password has already been entered
+    localStorage.getItem("passCorrect") == "true"
+      ? next()
+      : next({ name: "Authentication" });
   },
   mounted() {
     const sectionController = new ScrollMagic.Controller();
@@ -129,56 +131,51 @@ export default {
       scene.setClassToggle(this, "visible").addTo(sectionController);
     });
 
-    $("video").each(function() {
+    setTimeout(() => {
       const instance = this;
-      ScrollTrigger.create({
-        trigger: instance,
-        start: "top 100%", // [trigger] [scroller] positions,
-        end: "bottom 0%", // [trigger] [scroller] positions
-        // markers: true,
-        onEnter: () => {
-          // console.log("enter");
-          instance.play();
-        },
-        onEnterBack: () => {
-          // console.log("enterBack");
-          instance.play();
-        },
-        onLeave: () => {
-          // console.log("leave");
-          instance.pause();
-          instance.currentTime = 0;
-        },
-        onLeaveBack: () => {
-          // console.log("leaveBack");
-          instance.pause();
-          instance.currentTime = 0;
-        }
+      $("video").each(function() {
+        const videoInstance = this;
+        const videoTrig = ScrollTrigger.create({
+          trigger: videoInstance,
+          start: "top 100%", // [trigger] [scroller] positions,
+          end: "bottom 0%", // [trigger] [scroller] positions
+          // markers: true,
+          onEnter: () => {
+            videoInstance.play();
+          },
+          onEnterBack: () => {
+            videoInstance.play();
+          },
+          onLeave: () => {
+            videoInstance.pause();
+            videoInstance.currentTime = 0;
+          },
+          onLeaveBack: () => {
+            videoInstance.pause();
+            videoInstance.currentTime = 0;
+          }
+        });
+        instance.trig.push(videoTrig);
       });
-    });
-
-    // const vidPlayer = new ScrollMagic.Controller();
-    // $("video").each(function() {
-    //   const instance = this;
-    //   var scene = new ScrollMagic.Scene({
-    //     triggerElement: instance,
-    //     triggerHook: 1
-    //   });
-    //   // scene.reverse(false);
-    //   scene
-    //     .on("enter", function() {
-    //       instance.play();
-    //       console.log("entered");
-    //     })
-    //     .on("leave", function() {
-    //       console.log("left");
-    //       instance.pause();
-    //       instance.currentTime = 0;
-    //     })
-    //     .addTo(vidPlayer);
-    // });
+    }, 300);
   },
-  methods: {},
+  computed: {
+    tagline() {
+      return contents["projects"].filter(project => {
+        return project.title === "What I Know Now";
+      })[0].description;
+    },
+    tags() {
+      return contents["projects"].filter(project => {
+        return project.title === "What I Know Now";
+      })[0].tags;
+    }
+  },
+  beforeDestroy() {
+    for (let i = 0; i < this.trig.length; i++) {
+      this.trig[i].kill();
+    }
+  },
   components: { Tags }
 };
 </script>
@@ -203,15 +200,18 @@ export default {
 #ui-review,
 #ui-macro {
   object-fit: unset;
-  border-radius: 55px;
+  width: 270px;
+  height: 590px;
+  border-radius: 45px;
   // transform: scale(0.7);
   // transform-origin: top center;
   box-shadow: 0 15px 25px rgba(0, 0, 0, 0.25);
+  margin-right: calc(min(7vw, calc(var(--main-width) * 0.05)));
 }
 
-// #print {
-//   padding-right: calc(var(--main-width) * 0.05);
-// }
+#ui-review {
+  margin-left: calc(min(7vw, calc(var(--main-width) * 0.05)));
+}
 
 @media only screen and (min-width: 769px) and (max-width: 1024px) {
   .ui {
@@ -223,7 +223,6 @@ export default {
   #ui-record,
   #ui-review,
   #ui-macro {
-    // transform: scale(0.4);
     width: 251px;
     height: 550px;
     border-radius: 35px;
@@ -240,7 +239,6 @@ export default {
   #ui-record,
   #ui-review,
   #ui-macro {
-    // transform: scale(0.5);
     width: 180px;
     height: 394px;
     border-radius: 25px;

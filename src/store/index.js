@@ -6,14 +6,13 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
-    // default content for project description, empty values would be "" or []
+    // default content for ProjectText, empty values would be "" or []
     title: contents["projects"][0].title,
     description: contents["projects"][0].description,
     tags: contents["projects"][0].tags,
     link: contents["projects"][0].link,
     type: contents["projects"][0].type,
     locked: contents["projects"][0].locked
-
     // activeProject: ""
   },
   mutations: {
@@ -24,7 +23,6 @@ export default new Vuex.Store({
       state.link = params.link;
       state.type = params.type;
       state.locked = params.locked;
-      // console.log("store: accessed", state.title);
       // state.activeProject = params.activeProject;
     }
   },

@@ -151,10 +151,6 @@ export default {
   background-color: rgba(0, 0, 0, 0.5);
 }
 
-// #vid-section {
-//   justify-content: start;
-// }
-
 video {
   // margin-right: calc(var(--main-width) * 0.05);
   height: 600px;
@@ -163,21 +159,17 @@ video {
 
 .across {
   justify-content: space-between;
-  align-items: center;
+  // align-items: center;
 
   a {
     height: 100%;
   }
 
-  img {
-    height: 100%;
-    object-fit: cover;
-  }
+  // img {
+  //   height: 100%;
+  //   object-fit: cover;
+  // }
 }
-
-// #results {
-//   justify-content: start;
-// }
 
 #paper {
   object-fit: scale-down;

@@ -7,15 +7,23 @@ import Multilingual from "../views/Multilingual.vue";
 import WIKN from "../views/WIKN.vue";
 import Anivision from "../views/Anivision.vue";
 import NotFound from "../views/NotFound.vue";
+import Authentication from "../views/Authentication.vue";
 
 Vue.use(VueRouter);
 
 const router = new VueRouter({
   mode: "history",
   base: process.env.BASE_URL,
-  scrollBehavior(to, from, savedPosition) {
-    return savedPosition ? savedPosition : { x: 0, y: 0 };
-  },
+
+  // remembers scroll position if the page was visited, otherwise goes to the top of the page
+  scrollBehavior: (to, from, savedPosition) =>
+    new Promise(resolve => {
+      let position = savedPosition ? savedPosition : { x: 0, y: 0 }; // is this 0 a value relative to the starting position or absolute to the top of the page? seems to be an offset
+      router.app.$root.$once("transitionScroll", () => {
+        router.app.$nextTick(() => resolve(position));
+      });
+      // return savedPosition ? savedPosition : { x: 0, y: 0 };
+    }),
   routes: [
     {
       path: "/",
@@ -23,14 +31,6 @@ const router = new VueRouter({
       component: Home,
       meta: {
         title: "Sam Gochman"
-      }
-    },
-    {
-      path: "/juices",
-      name: "Latest Creative Juices",
-      component: Juices,
-      meta: {
-        title: "Latest Creative Juices | Sam Gochman"
       }
     },
     {
@@ -66,16 +66,33 @@ const router = new VueRouter({
       }
     },
     {
+      path: "/juices",
+      name: "Latest Creative Juices",
+      component: Juices,
+      meta: {
+        title: "Latest Creative Juices | Sam Gochman"
+      }
+    },
+    {
       path: "*",
       name: "Not Found",
       component: NotFound,
       meta: {
         title: "Page Not Found"
       }
+    },
+    {
+      path: "/authentication",
+      name: "Authentication",
+      component: Authentication,
+      meta: {
+        title: "Authentication"
+      }
     }
   ]
 });
 
+// set each page's title
 router.afterEach(to => {
   if (to.meta && to.meta.title) {
     document.title = to.meta.title;

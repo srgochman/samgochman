@@ -99,6 +99,17 @@ import ScrollMagic from "scrollmagic";
 
 export default {
   name: "Phototaxis",
+  mounted() {
+    const sectionController = new ScrollMagic.Controller();
+    $(".section.appear").each(function() {
+      var scene = new ScrollMagic.Scene({
+        triggerElement: this,
+        triggerHook: 0.75 // 75% down page, alternative for pixel offset
+      });
+      scene.reverse(false); // prevent sections from disappearing on scrollback
+      scene.setClassToggle(this, "visible").addTo(sectionController);
+    });
+  },
   computed: {
     tagline() {
       return contents["projects"].filter(project => {
@@ -111,28 +122,12 @@ export default {
       })[0].tags;
     }
   },
-  mounted() {
-    const sectionController = new ScrollMagic.Controller();
-    $(".section.appear").each(function() {
-      var scene = new ScrollMagic.Scene({
-        triggerElement: this,
-        triggerHook: 0.75 // 75% down page, alternative for pixel offset
-      });
-      scene.reverse(false); // prevent sections from disappearing on scrollback
-      scene.setClassToggle(this, "visible").addTo(sectionController);
-    });
-  },
-  methods: {},
   components: { Tags }
 };
 </script>
 
 <style lang="scss" scoped>
 @import "../scss/studies.scss";
-
-// .banner {
-//   background-image: url("/photos/multilingual/pw_00_no text.jpg");
-// }
 
 .banner::before {
   background-color: rgba(0, 0, 0, 0.1);
@@ -145,8 +140,4 @@ video {
   // height: 100vh;
   object-fit: cover;
 }
-
-// #diagram {
-//   min-width: 600px;
-// }
 </style>
