@@ -1,9 +1,12 @@
 <template>
   <div class="body">
-    <!-- <button @click="clearPass" style="margin-top: 10vh">
+    <!-- <router-link to="/anivision" style="z-index: 10000"
+      ><button>test</button></router-link
+    >
+    <button @click="clearPass" style="margin-top: 10vh; z-index: 10000">
       Clear passCorrect
     </button> -->
-    <!-- <div id="particles-js"></div> -->
+    <div id="particles-js"></div>
     <div id="mission" class="section">
       <!-- <Sketch></Sketch> -->
       <Mission></Mission>
@@ -108,15 +111,15 @@
       </div>
     </div>
 
-    <div id="juices-drawn" class="section-heading"></div>
+    <!-- <div id="juices-drawn" class="section-heading"></div>
     <router-link to="/juices" id="creative-container" class="section">
       <div id="creative-img"></div>
-      <!-- <div id="creative-text">
+      <div id="creative-text">
         <span id="text-latest" style="color: var(--purple)">Latest</span>
         <span id="text-creative" style="color: var(--blue)">Creative</span>
         <span id="text-juices" style="color: var(--green)">Juices</span>
-      </div> -->
-    </router-link>
+      </div>
+    </router-link> -->
   </div>
 </template>
 
@@ -132,7 +135,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger.js";
 import ScrollMagic from "scrollmagic";
 gsap.registerPlugin(ScrollTrigger);
 import "particles.js/particles";
-// const particlesJS = window.particlesJS;
+const particlesJS = window.particlesJS;
 
 export default {
   name: "Home",
@@ -157,6 +160,10 @@ export default {
       delay: 1.3
     });
 
+    // console.log("return to home", window.scrollY);
+    // window.scrollBy(0, 500);
+    // console.log("scroll to 0", window.scrollY);
+
     $("#work").hover(function() {
       $(".work-underline").toggleClass("work-underline-hover");
     });
@@ -167,7 +174,7 @@ export default {
     const homeController = new ScrollMagic.Controller();
     this.homeScroll(homeController);
 
-    // particlesJS.load("particles-js", "particlesjs-config.json");
+    particlesJS.load("particles-js", "particlesjs-config.json");
   },
   methods: {
     clearPass() {
@@ -186,16 +193,16 @@ export default {
         scene.reverse(false); // prevent sections from disappearing on scrollback
         scene.setClassToggle(this, "visible").addTo(controller);
       });
-    },
-    sendParams() {
-      this.$store.commit("set_project_params", {
-        title: this.title,
-        description: this.description,
-        tags: this.tags,
-        link: this.link,
-        type: this.type
-      });
-      console.log("ProjectImage: sent parameters to store");
+      // },
+      // sendParams() {
+      //   this.$store.commit("set_project_params", {
+      //     title: this.title,
+      //     description: this.description,
+      //     tags: this.tags,
+      //     link: this.link,
+      //     type: this.type
+      //   });
+      //   console.log("ProjectImage: sent parameters to store");
     }
   },
   components: {

@@ -22,7 +22,8 @@ export default {
   data() {
     return {
       adjDescription: "",
-      wordList: []
+      wordList: [],
+      tl: null
     };
   },
   mounted() {
@@ -33,23 +34,29 @@ export default {
       this.colorize(this.keywords[i]);
     }
 
+    // console.log(this.tl);
+    // if (this.tl == null) {
+    // console.log("mounted skill");
     const { skill } = this.$refs;
-    gsap
-      .timeline({
-        scrollTrigger: {
-          trigger: ".skills-container",
-          start: "top 83%",
-          end: "bottom top"
-          // toggleActions: "restart none none none"
-          // markers: true
-        }
-      })
-      .from(skill, {
-        autoAlpha: 0,
-        duration: 0.5,
-        ease: "power1.inOut",
-        delay: this.delay
-      });
+
+    setTimeout(() => {
+      this.tl = gsap
+        .timeline({
+          scrollTrigger: {
+            trigger: ".skills-container",
+            start: "top 83%",
+            end: "bottom top"
+            // toggleActions: "restart none none none"
+            // markers: true
+          }
+        })
+        .from(skill, {
+          autoAlpha: 0,
+          duration: 0.5,
+          ease: "power1.inOut",
+          delay: this.delay
+        });
+    }, 500);
   },
   methods: {
     colorize(keyword) {
@@ -58,9 +65,12 @@ export default {
         `<span style="color: ${this.color}"> ${keyword} </span>`
       );
     }
-    // },
-    // beforeDestroy() {
-    //   ScrollTrigger.kill();
+  },
+  beforeDestroy() {
+    console.log(window.scrollY);
+    // this.tl.scrollTrigger.refresh();
+    this.tl.scrollTrigger.kill();
+    // this.tl = null;
   }
 };
 </script>
