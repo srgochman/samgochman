@@ -1,5 +1,4 @@
 <template>
-  <!-- <div id="page"> -->
   <div id="container">
     <label for="password">
       <!-- <h2>Enter password to see project.</h2> -->
@@ -19,7 +18,6 @@
     <span id="message">{{ message }}</span>
     <button id="button" type="button" @click="login">Next</button>
   </div>
-  <!-- </div> -->
 </template>
 
 <script>
@@ -32,16 +30,15 @@ export default {
       message: " "
     };
   },
-  computed: {},
   methods: {
     login() {
-      // localStorage.submittedPassword = this.submittedPassword;
       if (this.submittedPassword != "") {
-        // if (this.submittedPassword == this.requiredPassword) {
+        // if the submitted password is one of the required passwords
         if (this.requiredPassword.indexOf(this.submittedPassword) > -1) {
+          // remember that they've logged in
           localStorage.setItem("passCorrect", true);
 
-          // go to targetRoute stored in localStorage
+          // and then go to targetRoute stored in localStorage
           this.$router.replace({
             name: localStorage.getItem("targetRoute")
           });
@@ -55,6 +52,7 @@ export default {
     }
   },
   mounted() {
+    // can submit with enter key
     $("#password").on("keyup", function(event) {
       if (event.keyCode === 13) {
         event.preventDefault();
@@ -62,26 +60,19 @@ export default {
       }
     });
     $("#password").focus();
-  },
-  components: {}
+  }
 };
 </script>
 
 <style lang="scss" scoped>
-// #page {
-//   width: 100%;
-//   // flex-direction: row;
-//   // justify-content: center;
-// }
-
 #container {
   // width: 350px;
   // width: 300px;
   display: flex;
   flex-direction: column;
-  font-family: "Avenir";
-  margin-top: 50vh;
+  margin-top: 30vh;
   transform: translateY(-50%);
+  font-family: "Avenir";
 }
 
 h2 {
@@ -106,14 +97,14 @@ button {
 input {
   // width: 100%;
   background: none;
-  color: inherit;
+  outline: inherit;
   // border: solid 1px gray;
   // border-radius: 2px;
   border: none;
   // border-bottom: solid 1px gray;
+  color: inherit;
   // padding: 0;
   font: inherit;
-  outline: inherit;
   font-size: 1.2em;
   font-weight: 200;
   line-height: 1.2em;
@@ -129,39 +120,35 @@ textarea:-webkit-autofill:focus,
 select:-webkit-autofill,
 select:-webkit-autofill:hover,
 select:-webkit-autofill:focus {
-  // border: 1px solid green;
-  // -webkit-text-fill-color: green;
   box-shadow: 0 0 0px 1000px var(--purple-transparent) inset;
   -webkit-box-shadow: 0 0 0px 1000px var(--purple-transparent) inset;
-  // transition: background-color 5000s ease-in-out 0s;
 }
 
 .underline {
-  // content: "";
   position: absolute;
+  bottom: 0px;
+  left: 0px;
   // width: 100%;
   // transform: scaleY(1.5);
   // height: 5px;
-  bottom: 0px;
-  left: 0px;
 }
 
 #message {
+  height: 1.8em;
+  color: gray;
   font-size: 1em;
   font-weight: 200;
-  height: 1.8em;
   margin-bottom: 10px;
-  color: gray;
 }
 
 button {
+  height: 3em;
   // width: 100%;
+  // padding: 6px 11px 6px 9px;
   background-color: var(--purple);
   color: white;
   border: none;
   border-radius: 2px;
-  // padding: 6px 11px 6px 9px;
-  height: 3em;
   font: inherit;
   font-weight: 600;
   cursor: pointer;

@@ -74,9 +74,7 @@
           </h3>
         </div>
         <img class="one-third-width" src="/photos/WIKN/doodle.jpg" />
-        <!-- <div id="sketch" class="one-third-width img-bg"></div> -->
         <img class="one-third-width" src="/photos/WIKN/brushes.png" />
-        <!-- <div id="brushes" class="one-third-width img-bg"></div> -->
       </div>
       <div class="section writing appear reverse">
         <div class="caption one-third-width">
@@ -93,7 +91,6 @@
           class="two-thirds-width"
           src="/photos/WIKN/WIKN_mural_crop_landscape.png"
         />
-        <!-- <div id="print" class="two-thirds-width img-bg"></div> -->
       </div>
     </div>
   </div>
@@ -109,13 +106,58 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default {
   name: "WIKN",
+  data() {
+    return {
+      trig: []
+    };
+  },
   beforeRouteEnter(to, from, next) {
     // set targetRoute in localStorage to this path name
     localStorage.setItem("targetRoute", "WIKN");
 
+    // go to authentication page unless password has already been entered
     localStorage.getItem("passCorrect") == "true"
       ? next()
       : next({ name: "Authentication" });
+  },
+  mounted() {
+    const sectionController = new ScrollMagic.Controller();
+    $(".section.appear").each(function() {
+      var scene = new ScrollMagic.Scene({
+        triggerElement: this,
+        triggerHook: 0.75 // 75% down page, alternative for pixel offset
+      });
+      scene.reverse(false); // prevent sections from disappearing on scrollback
+      scene.setClassToggle(this, "visible").addTo(sectionController);
+    });
+
+    setTimeout(() => {
+      const instance = this;
+      $("video").each(function() {
+        const videoInstance = this;
+        const videoTrig = ScrollTrigger.create({
+          trigger: videoInstance,
+          start: "top 100%", // [trigger] [scroller] positions,
+          end: "bottom 0%", // [trigger] [scroller] positions
+          // markers: true,
+          onEnter: () => {
+            videoInstance.play();
+          },
+          onEnterBack: () => {
+            videoInstance.play();
+          },
+          onLeave: () => {
+            videoInstance.pause();
+            videoInstance.currentTime = 0;
+          },
+          onLeaveBack: () => {
+            videoInstance.pause();
+            videoInstance.currentTime = 0;
+          }
+        });
+        instance.trig.push(videoTrig);
+      });
+    }, 300);
   },
   computed: {
     tagline() {
@@ -129,67 +171,11 @@ export default {
       })[0].tags;
     }
   },
-  mounted() {
-    const sectionController = new ScrollMagic.Controller();
-    $(".section.appear").each(function() {
-      var scene = new ScrollMagic.Scene({
-        triggerElement: this,
-        triggerHook: 0.75 // 75% down page, alternative for pixel offset
-      });
-      scene.reverse(false); // prevent sections from disappearing on scrollback
-      scene.setClassToggle(this, "visible").addTo(sectionController);
-    });
-
-    $("video").each(function() {
-      const instance = this;
-      ScrollTrigger.create({
-        trigger: instance,
-        start: "top 100%", // [trigger] [scroller] positions,
-        end: "bottom 0%", // [trigger] [scroller] positions
-        // markers: true,
-        onEnter: () => {
-          // console.log("enter");
-          instance.play();
-        },
-        onEnterBack: () => {
-          // console.log("enterBack");
-          instance.play();
-        },
-        onLeave: () => {
-          // console.log("leave");
-          instance.pause();
-          instance.currentTime = 0;
-        },
-        onLeaveBack: () => {
-          // console.log("leaveBack");
-          instance.pause();
-          instance.currentTime = 0;
-        }
-      });
-    });
-
-    // const vidPlayer = new ScrollMagic.Controller();
-    // $("video").each(function() {
-    //   const instance = this;
-    //   var scene = new ScrollMagic.Scene({
-    //     triggerElement: instance,
-    //     triggerHook: 1
-    //   });
-    //   // scene.reverse(false);
-    //   scene
-    //     .on("enter", function() {
-    //       instance.play();
-    //       console.log("entered");
-    //     })
-    //     .on("leave", function() {
-    //       console.log("left");
-    //       instance.pause();
-    //       instance.currentTime = 0;
-    //     })
-    //     .addTo(vidPlayer);
-    // });
+  beforeDestroy() {
+    for (let i = 0; i < this.trig.length; i++) {
+      this.trig[i].kill();
+    }
   },
-  methods: {},
   components: { Tags }
 };
 </script>
@@ -227,27 +213,6 @@ export default {
   margin-left: calc(min(7vw, calc(var(--main-width) * 0.05)));
 }
 
-// #sketch {
-//   background-image: url("/photos/WIKN/doodle.jpg");
-//   height: auto;
-//   // height: 33.3vw;
-//   // max-height: 550px;
-// }
-
-// #brushes {
-//   background-image: url("/photos/WIKN/brushes.png");
-//   height: auto;
-//   // height: 33.3vw;
-//   // max-height: 550px;
-// }
-
-// #print {
-//   // padding-right: calc(var(--main-width) * 0.05);
-//   background-image: url("/photos/WIKN/WIKN_mural_crop_landscape.png");
-//   height: 53vw;
-//   max-height: 650px;
-// }
-
 @media only screen and (min-width: 769px) and (max-width: 1024px) {
   .ui {
     // justify-content: flex-start;
@@ -258,7 +223,6 @@ export default {
   #ui-record,
   #ui-review,
   #ui-macro {
-    // transform: scale(0.4);
     width: 251px;
     height: 550px;
     border-radius: 35px;
@@ -275,7 +239,6 @@ export default {
   #ui-record,
   #ui-review,
   #ui-macro {
-    // transform: scale(0.5);
     width: 180px;
     height: 394px;
     border-radius: 25px;

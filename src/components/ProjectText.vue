@@ -1,5 +1,5 @@
 <template>
-  <div class="text-bg">
+  <div id="text-bg">
     <div class="project-text">
       <div class="project-title-container">
         <!-- router-link keeps user on same window -->
@@ -18,7 +18,9 @@
         <!-- <a> opens new window -->
         <a v-else :href="link" target="_blank" rel="noopener">
           <h3 class="project-title">{{ title }}</h3>
-          <div v-if="locked" class="lock"></div>
+          <svg class="lock-svg" v-if="locked" width="7px" height="10px">
+            <use class="lock" href="../assets/unlocked.svg#Layer_1"></use>
+          </svg>
           <svg class="arrow-svg" width="28px" height="8px">
             <use
               class="arrow"
@@ -34,9 +36,7 @@
 </template>
 
 <script>
-import lock from "../assets/unlocked.svg";
 import Tags from "./Tags.vue";
-// import contents from "../list-contents.json";
 import { mapState } from "vuex";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger.js";
@@ -46,13 +46,13 @@ export default {
   name: "ProjectDescription",
   data() {
     return {
-      lock: lock
+      trig: null
     };
   },
   mounted() {
     setTimeout(() => {
-      ScrollTrigger.create({
-        trigger: ".text-bg",
+      this.trig = ScrollTrigger.create({
+        trigger: "#text-bg",
         start: "top 25%", // [trigger] [scroller] positions,
         end: "bottom bottom-=7%", // [trigger] [scroller] positions
         // markers: true,
@@ -60,12 +60,13 @@ export default {
       });
     }, 500);
   },
-  methods: {},
-  // retrieve store values
   computed: {
+    // retrieve store values
     ...mapState(["title", "description", "tags", "link", "type", "locked"])
   },
-  watch: {},
+  beforeDestroy() {
+    this.trig.kill();
+  },
   components: {
     Tags
   }
@@ -73,7 +74,7 @@ export default {
 </script>
 
 <style lang="scss">
-.text-bg {
+#text-bg {
   width: 33%;
   position: unset;
 }
@@ -90,10 +91,10 @@ export default {
 
 .project-title-container {
   a {
-    width: fit-content;
-    color: black;
     display: flex;
     align-items: flex-start;
+    width: fit-content;
+    color: black;
 
     .arrow-svg {
       margin-top: 12px;
@@ -119,17 +120,17 @@ export default {
       fill: black;
       transition: fill 0.2s ease-in-out;
     }
-  }
 
-  a:hover {
-    .arrow {
-      fill: var(--purple);
-      opacity: 1;
-      transition: opacity 0.2s ease-in-out;
-    }
-    .lock {
-      fill: var(--purple);
-      transition: fill 0.2s ease-in-out;
+    &:hover {
+      .arrow {
+        fill: var(--purple);
+        opacity: 1;
+        transition: opacity 0.2s ease-in-out;
+      }
+      .lock {
+        fill: var(--purple);
+        transition: fill 0.2s ease-in-out;
+      }
     }
   }
 }
@@ -147,21 +148,14 @@ export default {
 
 .project-title {
   margin: 0 15px 0 0;
-  // transition: var(--hover);
 }
 
-// .project-title:hover {
-//   color: var(--purple) !important;
-//   transition: var(--hover);
-// }
-
 @media only screen and (max-width: 1024px) {
-  .text-bg {
+  #text-bg {
     display: none;
   }
 
   .project-text {
-    // padding: 0 7vw;
     width: 100%;
   }
 
@@ -176,7 +170,6 @@ export default {
   .project-desc {
     margin-top: 10px;
     margin-bottom: 60px;
-    // max-width: 60%;
   }
 
   .arrow-svg {
@@ -186,13 +179,8 @@ export default {
   .lock-svg {
     margin-top: 7px !important;
   }
-
-  // .tags-container {
-  //   display: none;
-  // }
 }
 
-// Tablets (subset of above)
 @media only screen and (min-width: 426px) and (max-width: 1024px) {
   .project-text {
     max-height: 40vh;

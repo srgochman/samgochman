@@ -151,10 +151,6 @@ export default {
   background-color: rgba(0, 0, 0, 0.5);
 }
 
-// #vid-section {
-//   justify-content: start;
-// }
-
 video {
   // margin-right: calc(var(--main-width) * 0.05);
   height: 600px;
@@ -174,10 +170,6 @@ video {
   //   object-fit: cover;
   // }
 }
-
-// #results {
-//   justify-content: start;
-// }
 
 #paper {
   object-fit: scale-down;
