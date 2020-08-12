@@ -6,24 +6,16 @@
     <button @click="clearPass" style="margin-top: 10vh; z-index: 10000">
       Clear passCorrect
     </button> -->
-    <div id="particles-js"></div>
+    <!-- <div id="particles-js"></div> -->
     <div id="mission" class="section">
       <!-- <Sketch></Sketch> -->
       <Mission></Mission>
     </div>
     <div id="mission-description" class="section appear">
       <h3>
-        As a developer
-        <!-- <a
-          class="underline"
-          href="https://github.com/srgochman"
-          target="_blank"
-          rel="noopener"
-          >developer</a
-        > -->
-        with roots in biology and architecture, I appreciate the complexity of
-        people’s relationships with the world — and that opens up huge creative
-        opportunities.
+        As a developer with roots in biology and architecture, I appreciate the
+        complexity of people’s relationships with the world — and that opens up
+        huge creative opportunities.
       </h3>
       <h3 id="contact">
         * I'm looking for new
@@ -57,7 +49,7 @@
     <div id="skills" class="section appear">
       <!-- <h1>Skills</h1> -->
       <div id="skills-drawn" class="section-heading"></div>
-      <div class="skills-container">
+      <div id="skills-container">
         <Skill
           v-for="skill in skills"
           :key="skill.keywords[0]"
@@ -131,11 +123,9 @@ import ProjectText from "../components/ProjectText.vue";
 // import Sketch from "../components/Sketch.vue";
 import contents from "../list-contents.json";
 import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger.js";
 import ScrollMagic from "scrollmagic";
-gsap.registerPlugin(ScrollTrigger);
-import "particles.js/particles";
-const particlesJS = window.particlesJS;
+// import "particles.js/particles";
+// const particlesJS = window.particlesJS;
 
 export default {
   name: "Home",
@@ -146,13 +136,8 @@ export default {
       experiences: contents["experiences"]
     };
   },
-  computed: {
-    image() {
-      // To browser, starting root is public. Only works if serving website from base URL
-      return "/photos/" + this.img;
-    }
-  },
   mounted() {
+    // fade in mission section
     gsap.timeline().from("#mission", {
       autoAlpha: 0,
       duration: 0.8,
@@ -160,10 +145,7 @@ export default {
       delay: 1.3
     });
 
-    // console.log("return to home", window.scrollY);
-    // window.scrollBy(0, 500);
-    // console.log("scroll to 0", window.scrollY);
-
+    // animate hover for underlines in mission description
     $("#work").hover(function() {
       $(".work-underline").toggleClass("work-underline-hover");
     });
@@ -172,37 +154,21 @@ export default {
     });
 
     const homeController = new ScrollMagic.Controller();
-    this.homeScroll(homeController);
+    $(".section.appear").each(function() {
+      // Create a scrollmagic scene for each section
+      var scene = new ScrollMagic.Scene({
+        triggerElement: this,
+        triggerHook: 0.75 // 75% down page, alternative for pixel offset
+      });
+      scene.reverse(false); // prevent sections from disappearing on scrollback
+      scene.setClassToggle(this, "visible").addTo(homeController);
+    });
 
-    particlesJS.load("particles-js", "particlesjs-config.json");
+    // particlesJS.load("particles-js", "particlesjs-config.json");
   },
   methods: {
     clearPass() {
       localStorage.setItem("passCorrect", false);
-    },
-    homeScroll(controller) {
-      $(".section.appear").each(function() {
-        // Create a scene for each scene
-        var scene = new ScrollMagic.Scene({
-          triggerElement: this,
-          // can make elements disappear when moved past (using duration of the height of each section, below)
-          // duration: this.offsetHeight * 1.3,
-          // offset: -200
-          triggerHook: 0.75 // 75% down page, alternative for pixel offset
-        });
-        scene.reverse(false); // prevent sections from disappearing on scrollback
-        scene.setClassToggle(this, "visible").addTo(controller);
-      });
-      // },
-      // sendParams() {
-      //   this.$store.commit("set_project_params", {
-      //     title: this.title,
-      //     description: this.description,
-      //     tags: this.tags,
-      //     link: this.link,
-      //     type: this.type
-      //   });
-      //   console.log("ProjectImage: sent parameters to store");
     }
   },
   components: {
@@ -219,8 +185,6 @@ export default {
 #mission {
   position: relative;
   height: 100vh;
-  // display: flex;
-  // align-items: center;
 }
 
 canvas {
@@ -231,12 +195,10 @@ canvas {
 // particles.js container
 #particles-js {
   position: absolute;
-  width: 100%;
-  height: 100%;
   top: 0;
   left: 0;
-  // background-color: #ffffff;
-  // background-image: url("");
+  width: 100%;
+  height: 100%;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 50% 50%;
@@ -244,13 +206,9 @@ canvas {
 }
 
 #mission-description {
-  // max-width: calc(max(500px, 30%));
   width: 50%;
+  // max-width: calc(max(500px, 30%));
   margin-bottom: 200px;
-  // position: absolute;
-  // left: 67%;
-  // flex-grow: 1;
-  // flex-basis: 33%;
 
   h3 {
     margin-bottom: 30px;
@@ -261,29 +219,23 @@ canvas {
 .connect-underline {
   content: "";
   position: absolute;
-  width: 100%;
-  // width: 20px;
-  opacity: 1;
-  // transform-origin: left;
-  // transform: scaleX(1);
-  transform: scaleY(1.5);
-  // height: 5px;
   bottom: 0;
   left: 0px;
-  // background-color: var(--purple);
+  width: 100%;
+  transform: scaleY(1.5);
+  opacity: 1;
   visibility: visible;
-  // transition: all 0.2s ease-in 0s;
   transition: var(--hover);
 }
 
 .work-underline-hover,
 .connect-underline-hover {
-  visibility: hidden;
+  left: 0px;
   // width: 0;
   // width: calc(100% - 1px);
-  opacity: 0;
   // transform: scaleX(0);
-  left: 0px;
+  visibility: hidden;
+  opacity: 0;
 }
 
 // .underline {
@@ -297,17 +249,16 @@ canvas {
 
 .section-heading {
   margin: 0 0 70px 0;
-  // opacity: 0.3;
 }
 
 #skills-drawn {
+  height: 15px;
+  // width: 150px;
   background-image: url("../assets/drawn/skills_drawn.svg");
   background-repeat: no-repeat;
-  // width: 150px;
-  height: 15px;
 }
 
-.skills-container {
+#skills-container {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -315,10 +266,10 @@ canvas {
 }
 
 #work-drawn {
+  height: 15px;
+  // width: 150px;
   background-image: url("../assets/drawn/work_drawn.svg");
   background-repeat: no-repeat;
-  // width: 150px;
-  height: 15px;
 }
 
 #projects-container {
@@ -328,66 +279,97 @@ canvas {
 }
 
 #project-images-container {
-  overflow: scroll;
-  /* height: 500px; */
   width: 63%;
+  // height: 500px;
+  // overflow: scroll;
 }
 
 #experience-drawn {
+  height: 15px;
+  // width: 115px;
   background-image: url("../assets/drawn/experience_drawn.svg");
   background-repeat: no-repeat;
-  // width: 115px;
-  height: 15px;
 }
 
 .experience-item {
   margin-bottom: 40px;
+
+  &:last-child {
+    margin-bottom: 0 !important;
+  }
 }
 
 #experience,
 #education {
   a {
-    color: black;
     display: inline;
+    color: black;
   }
 }
 
 #juices-drawn {
-  background-image: url("../assets/drawn/LCJ_drawn.svg");
-  background-repeat: no-repeat;
   width: 233px;
   height: 15px;
+  background-image: url("../assets/drawn/LCJ_drawn.svg");
+  background-repeat: no-repeat;
 }
 
 #creative-container {
-  // visibility: hidden;
   display: flex;
   flex-direction: row;
-  transition: var(--hover);
   padding-right: calc(min(5vw, 50px));
+  transition: var(--hover);
   // padding-right: 15vw;
   // position: fixed;
   // bottom: 50px;
   // left: 50px;
+  // visibility: hidden;
 }
 
 #creative-img {
   width: 233px;
   height: 233px;
+  border-radius: 2px;
   background-image: url("/photos/test2.png");
   background-size: 250%;
   background-position: 15%;
-  border-radius: 2px;
 }
 
 #creative-text {
-  margin: 0 0 0 12px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  margin: 0 0 0 12px;
   text-transform: uppercase;
   font-size: 14px;
   font-weight: 700;
+}
+
+@media only screen and (min-width: 426px) and (max-width: 1024px) {
+  #mission-description {
+    width: 66%;
+    // max-width: 100%;
+    margin-bottom: 120px;
+  }
+
+  .section-heading {
+    transform-origin: left;
+    transform: scale(0.8);
+    margin: 0 0 50px 0;
+    // opacity: 0.4;
+  }
+
+  #projects-container {
+    flex-direction: column;
+  }
+
+  #project-images-container {
+    width: 100%;
+  }
+
+  .experience-item {
+    margin-bottom: 50px;
+  }
 }
 
 @media only screen and (max-width: 425px) {
@@ -439,34 +421,4 @@ canvas {
   //   font-weight: 800;
   // }
 }
-
-@media only screen and (min-width: 426px) and (max-width: 1024px) {
-  #mission-description {
-    width: 66%;
-    // max-width: 100%;
-    margin-bottom: 120px;
-  }
-
-  .section-heading {
-    transform-origin: left;
-    transform: scale(0.8);
-    margin: 0 0 50px 0;
-    // opacity: 0.4;
-  }
-
-  #projects-container {
-    flex-direction: column;
-  }
-
-  #project-images-container {
-    width: 100%;
-  }
-
-  .experience-item {
-    margin-bottom: 50px;
-  }
-}
-
-// @media only screen and (min-width: 426px) and (max-width: 768px) {
-// }
 </style>

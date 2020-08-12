@@ -70,13 +70,13 @@ img {
 // INFO
 
 .banner {
-  width: 100vw;
-  height: 100vh;
-  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  position: relative;
+  width: 100vw;
+  height: 100vh;
   margin-bottom: calc(min(7vw, calc(var(--main-width) * 0.05)));
   z-index: -2;
 
@@ -88,21 +88,22 @@ img {
   video {
     height: 100%;
   }
+  
+  // transparent black banner overlay
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+  }
 }
-.banner::before {
-  content: "";
-  position: absolute;
-  top: 0px;
-  right: 0px;
-  bottom: 0px;
-  left: 0px;
-}
+
 
 .banner-text {
   width: 800px;
   // max-width: var(--main-width);
-  // width: 100%;
-  // margin-left: 7vw;
   position: fixed;
   top: 50vh;
   transform: translateY(-50%);
@@ -119,42 +120,29 @@ img {
   }
 }
 
-// .body-bg {
-//   background-color: white;
-//   z-index: 0;
-//   width: 100vw;
-//   display: flex;
-//   flex-direction: column;
-//   align-items: center;
-
-//   // for fixed background:
-//   // justify-content: center;
-//   // margin-top: 100vh;
-//   // padding-top: 80px;
-// }
-
+// gradient at bottom of banner
 .body::before {
   content: "";
-  width: 100%;
   display: block;
   position: absolute;
   left: 0;
   top: 100vh;
   transform: translateY(-100%);
-  z-index: 1;
+  width: 100%;
   height: 20vh;
   background: linear-gradient(
     to top,
     rgba(0, 0, 0, 0.6) 0%,
     rgba(0, 0, 0, 0) 100%
   );
+  z-index: 1;
 }
 
 .info.section {
-  width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  width: 100%;
   margin-bottom: 300px;
 
   .tags-container {

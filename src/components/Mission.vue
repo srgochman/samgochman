@@ -1,11 +1,10 @@
 <template>
-  <div class="mission-container oversized">
-    <div class="mission-statement">
+  <div id="mission-container" class="oversized">
+    <div id="mission-statement">
       <span id="beginning">I’m a creative technologist who </span>
       <transition name="fade">
         <span v-if="showEndings" ref="ending" class="ending" :key="idx">
           {{ endings[idx] }}
-          <!-- <span :style="{ color: 'black' }">.</span> -->
         </span>
       </transition>
     </div>
@@ -25,9 +24,6 @@ export default {
       showEndings: false
     };
   },
-  methods: {},
-  props: {},
-  components: {},
   mounted() {
     this.showEndings = true;
     this.advanceInt = setInterval(() => {
@@ -50,16 +46,6 @@ export default {
         root.style.setProperty("--scroll", z);
       }
     });
-
-    // let btn = document.querySelector("span.ending");
-    // const root = document.documentElement;
-    // document.addEventListener("mousemove", e => {
-    //   let rect = e.target.getBoundingClientRect();
-    //   let x = e.clientX - rect.left;
-    //   let y = e.clientY - rect.top;
-    //   root.style.setProperty("--x", x + "px");
-    //   root.style.setProperty("--y", y + "px");
-    // });
   },
   beforeDestroy() {
     clearInterval(this.advanceInt);
@@ -68,10 +54,13 @@ export default {
 </script>
 
 <style lang="scss">
-.mission-container {
+#mission-container {
+  display: flex;
+  flex-flow: row wrap;
+  // justify-content: space-between;
   width: 100%;
-  // height: calc(min(50vw, 470px));
   height: 50vw;
+  // height: calc(min(50vw, 470px));
   max-height: 495px; // half of widest window before left/right margins just grow
   margin-top: 50vh;
   transform: translateY(-50%);
@@ -79,23 +68,16 @@ export default {
   font-size: calc(min(7.4vw, 6em));
   // font-weight: 800;
   // line-height: 1.3em;
-  display: flex;
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: -moz-flex;
-  display: -webkit-flex;
-  flex-flow: row wrap;
-  // justify-content: space-between;
 
   // color: var(--purple);
-  background: white;
+  background: white; // masks background gradient
 
+  // background gradient behind all of mission container
   &::before {
     content: "";
     display: block;
-    // height: calc(min(40vw, 466px));
     height: 40vw;
+    // height: calc(min(40vw, 466px));
     max-height: 490px;
     position: absolute;
     top: 3px;
@@ -103,7 +85,6 @@ export default {
     bottom: 0;
     left: 0;
     mix-blend-mode: screen;
-
     background: linear-gradient(
       120deg,
       var(--green) calc(var(--scroll, 0) * 100% - 75% + var(--mouse-x, 0) * 50%),
@@ -117,7 +98,7 @@ export default {
 }
 
 #beginning {
-  // masking makes it invisible
+  // masking makes it invisible; used for spacing
   color: white !important;
 
   // duplicate text as black on top
@@ -129,20 +110,20 @@ export default {
   }
 }
 
-.mission-statement {
-  // font-family: Roboto Condensed;
-  // height: 470px;
-  // height: calc(min(50vw, 470px));
+#mission-statement {
   width: 100%;
   max-width: 1200px;
   // max-width: 678px;
   // max-width: calc(max(768px, 50%));
+  // height: 470px;
+  // height: calc(min(50vw, 470px));
   // margin-right: 17%;
   // flex-grow: 2;
   // flex-basis: 67%;
   // padding-right: 80px;
 }
 
+// ending transitions
 .fade-enter-active {
   transition: color 700ms ease-in-out;
   transition-delay: 1000ms;
@@ -158,16 +139,8 @@ export default {
   color: transparent;
 }
 
-@media only screen and (max-width: 1024px) {
-  // .mission-container {
-  //   font-size: 2em;
-  //   font-size: calc(min(10vw, 2.3em));
-  //   line-height: 1.4em;
-  // }
-}
-
 @media only screen and (max-width: 1024px) and (max-height: 426px) {
-  .mission-container {
+  #mission-container {
     margin-top: calc(50vh + 75px);
   }
 }

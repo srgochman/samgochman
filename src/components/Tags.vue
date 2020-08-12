@@ -21,22 +21,17 @@ export default {
   name: "Tags",
   props: {
     words: Array
-  },
-  data() {
-    return {};
-  },
-  methods: {},
-  computed: {}
+  }
 };
 </script>
 
 <style lang="scss">
 .tags-container {
-  margin: 0 0 70px 0;
   display: flex;
   flex-direction: column;
   // flex-wrap: wrap;
   justify-content: flex-start;
+  margin: 0 0 70px 0;
 }
 
 .tag-category {
@@ -47,10 +42,8 @@ export default {
 
 .tag {
   margin: 0 10px 10px 0;
-  // border-radius: 15px;
   border-radius: 2px;
   border-left: solid 3px;
-  /* padding: 4px 10px; */
   padding: 6px 11px 6px 9px;
   font-size: 0.875em;
   font-weight: 700;
@@ -58,8 +51,8 @@ export default {
 
 @media only screen and (max-width: 1024px) {
   .tag {
-    font-size: 0.8em;
     padding: 3px 7px 3px 6px;
+    font-size: 0.8em;
   }
 }
 </style>

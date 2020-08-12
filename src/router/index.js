@@ -14,6 +14,8 @@ Vue.use(VueRouter);
 const router = new VueRouter({
   mode: "history",
   base: process.env.BASE_URL,
+
+  // remembers scroll position if the page was visited, otherwise goes to the top of the page
   scrollBehavior: (to, from, savedPosition) =>
     new Promise(resolve => {
       let position = savedPosition ? savedPosition : { x: 0, y: 0 }; // is this 0 a value relative to the starting position or absolute to the top of the page? seems to be an offset
@@ -90,7 +92,7 @@ const router = new VueRouter({
   ]
 });
 
-// Set each page's title
+// set each page's title
 router.afterEach(to => {
   if (to.meta && to.meta.title) {
     document.title = to.meta.title;

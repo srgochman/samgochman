@@ -109,6 +109,11 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default {
   name: "WIKN",
+  data() {
+    return {
+      trig: []
+    };
+  },
   beforeRouteEnter(to, from, next) {
     // set targetRoute in localStorage to this path name
     localStorage.setItem("targetRoute", "WIKN");
@@ -141,36 +146,39 @@ export default {
     });
 
     setTimeout(() => {
+      const instance = this;
       $("video").each(function() {
-        const instance = this;
-        ScrollTrigger.create({
-          trigger: instance,
+        const videoInstance = this;
+        const videoTrig = ScrollTrigger.create({
+          trigger: videoInstance,
           start: "top 100%", // [trigger] [scroller] positions,
           end: "bottom 0%", // [trigger] [scroller] positions
           // markers: true,
           onEnter: () => {
-            // console.log("enter");
-            instance.play();
+            videoInstance.play();
           },
           onEnterBack: () => {
-            // console.log("enterBack");
-            instance.play();
+            videoInstance.play();
           },
           onLeave: () => {
-            // console.log("leave");
-            instance.pause();
-            instance.currentTime = 0;
+            videoInstance.pause();
+            videoInstance.currentTime = 0;
           },
           onLeaveBack: () => {
-            // console.log("leaveBack");
-            instance.pause();
-            instance.currentTime = 0;
+            videoInstance.pause();
+            videoInstance.currentTime = 0;
           }
         });
+        instance.trig.push(videoTrig);
       });
-    }, 500);
+    }, 300);
   },
   methods: {},
+  beforeDestroy() {
+    for (let i = 0; i < this.trig.length; i++) {
+      this.trig[i].kill();
+    }
+  },
   components: { Tags }
 };
 </script>
