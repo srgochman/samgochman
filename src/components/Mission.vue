@@ -21,20 +21,31 @@ export default {
       endings: contents["missions"],
       idx: 0,
       advanceInt: null,
-      showEndings: false
+      showEndings: false,
+      windowActive: true
     };
   },
   mounted() {
+    // detect if window is in focus
+    const vm = this;
+    window.addEventListener("focus", function() {
+      vm.windowActive = true;
+    });
+    window.addEventListener("blur", function() {
+      vm.windowActive = false;
+    });
+
     this.showEndings = true;
     this.advanceInt = setInterval(() => {
-      // TODO: if page not visible then dont advance idx; Page Visibility API
-      this.idx++;
-      this.idx = (this.idx + 1) % this.endings.length;
+      // advance ending if the window is in focus
+      if (this.windowActive) {
+        this.idx = (this.idx + 1) % this.endings.length;
+      }
     }, 4500);
 
     const root = document.documentElement;
     document.addEventListener("mousemove", evt => {
-      // check if in view so vars arent updated unnecessarily
+      // check if mission is in viewport so vars arent updated unnecessarily
       if (window.scrollY <= innerHeight) {
         let x = (evt.clientX / innerWidth) * 2;
         root.style.setProperty("--mouse-x", x);

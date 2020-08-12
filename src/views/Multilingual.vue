@@ -89,9 +89,21 @@ export default {
     // set targetRoute in localStorage to this path name
     localStorage.setItem("targetRoute", "Multilingual");
 
+    // go to authentication page unless password has already been entered
     localStorage.getItem("passCorrect") == "true"
       ? next()
       : next({ name: "Authentication" });
+  },
+  mounted() {
+    const sectionController = new ScrollMagic.Controller();
+    $(".section.appear").each(function() {
+      var scene = new ScrollMagic.Scene({
+        triggerElement: this,
+        triggerHook: 0.75 // 75% down page, alternative for pixel offset
+      });
+      scene.reverse(false); // prevent sections from disappearing on scrollback
+      scene.setClassToggle(this, "visible").addTo(sectionController);
+    });
   },
   computed: {
     tagline() {
@@ -105,18 +117,6 @@ export default {
       })[0].tags;
     }
   },
-  mounted() {
-    const sectionController = new ScrollMagic.Controller();
-    $(".section.appear").each(function() {
-      var scene = new ScrollMagic.Scene({
-        triggerElement: this,
-        triggerHook: 0.75 // 75% down page, alternative for pixel offset
-      });
-      scene.reverse(false); // prevent sections from disappearing on scrollback
-      scene.setClassToggle(this, "visible").addTo(sectionController);
-    });
-  },
-  methods: {},
   components: { Tags }
 };
 </script>
@@ -142,13 +142,7 @@ export default {
   background-size: cover;
   width: 28px;
   height: 8px;
-  // margin-top: 12px;
-  // transition: var(--hover);
 }
-
-// #idle-screen {
-//   background-image: url("/photos/multilingual/pw_02.jpg");
-// }
 
 @media only screen and (max-width: 1024px) {
   .across {

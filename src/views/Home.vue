@@ -2,8 +2,8 @@
   <div class="body">
     <!-- <router-link to="/anivision" style="z-index: 10000"
       ><button>test</button></router-link
-    >
-    <button @click="clearPass" style="margin-top: 10vh; z-index: 10000">
+    > -->
+    <!-- <button @click="clearPass" style="margin-top: 10vh; z-index: 10000">
       Clear passCorrect
     </button> -->
     <!-- <div id="particles-js"></div> -->

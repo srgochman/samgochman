@@ -74,9 +74,7 @@
           </h3>
         </div>
         <img class="one-third-width" src="/photos/WIKN/doodle.jpg" />
-        <!-- <div id="sketch" class="one-third-width img-bg"></div> -->
         <img class="one-third-width" src="/photos/WIKN/brushes.png" />
-        <!-- <div id="brushes" class="one-third-width img-bg"></div> -->
       </div>
       <div class="section writing appear reverse">
         <div class="caption one-third-width">
@@ -93,7 +91,6 @@
           class="two-thirds-width"
           src="/photos/WIKN/WIKN_mural_crop_landscape.png"
         />
-        <!-- <div id="print" class="two-thirds-width img-bg"></div> -->
       </div>
     </div>
   </div>
@@ -118,21 +115,10 @@ export default {
     // set targetRoute in localStorage to this path name
     localStorage.setItem("targetRoute", "WIKN");
 
+    // go to authentication page unless password has already been entered
     localStorage.getItem("passCorrect") == "true"
       ? next()
       : next({ name: "Authentication" });
-  },
-  computed: {
-    tagline() {
-      return contents["projects"].filter(project => {
-        return project.title === "What I Know Now";
-      })[0].description;
-    },
-    tags() {
-      return contents["projects"].filter(project => {
-        return project.title === "What I Know Now";
-      })[0].tags;
-    }
   },
   mounted() {
     const sectionController = new ScrollMagic.Controller();
@@ -173,7 +159,18 @@ export default {
       });
     }, 300);
   },
-  methods: {},
+  computed: {
+    tagline() {
+      return contents["projects"].filter(project => {
+        return project.title === "What I Know Now";
+      })[0].description;
+    },
+    tags() {
+      return contents["projects"].filter(project => {
+        return project.title === "What I Know Now";
+      })[0].tags;
+    }
+  },
   beforeDestroy() {
     for (let i = 0; i < this.trig.length; i++) {
       this.trig[i].kill();
@@ -216,27 +213,6 @@ export default {
   margin-left: calc(min(7vw, calc(var(--main-width) * 0.05)));
 }
 
-// #sketch {
-//   background-image: url("/photos/WIKN/doodle.jpg");
-//   height: auto;
-//   // height: 33.3vw;
-//   // max-height: 550px;
-// }
-
-// #brushes {
-//   background-image: url("/photos/WIKN/brushes.png");
-//   height: auto;
-//   // height: 33.3vw;
-//   // max-height: 550px;
-// }
-
-// #print {
-//   // padding-right: calc(var(--main-width) * 0.05);
-//   background-image: url("/photos/WIKN/WIKN_mural_crop_landscape.png");
-//   height: 53vw;
-//   max-height: 650px;
-// }
-
 @media only screen and (min-width: 769px) and (max-width: 1024px) {
   .ui {
     // justify-content: flex-start;
@@ -247,7 +223,6 @@ export default {
   #ui-record,
   #ui-review,
   #ui-macro {
-    // transform: scale(0.4);
     width: 251px;
     height: 550px;
     border-radius: 35px;
@@ -264,7 +239,6 @@ export default {
   #ui-record,
   #ui-review,
   #ui-macro {
-    // transform: scale(0.5);
     width: 180px;
     height: 394px;
     border-radius: 25px;
