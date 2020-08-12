@@ -10,7 +10,6 @@
       <div class="project-title-container" ref="projectTitle">
         <router-link v-if="type === 'study'" :to="link">
           <h3 class="project-title">{{ title }}</h3>
-          <!-- <div v-if="locked" class="lock" ref="lock"></div> -->
           <svg class="lock-svg" v-if="locked" width="7px" height="10px">
             <use
               ref="lock"
@@ -18,7 +17,6 @@
               href="../assets/unlocked.svg#Layer_1"
             ></use>
           </svg>
-          <!-- <div class="arrow" ref="arrow"></div> -->
           <svg class="arrow-svg" width="28px" height="8px">
             <use
               class="arrow"
@@ -29,7 +27,6 @@
         </router-link>
         <a v-else :href="link" target="_blank" rel="noopener">
           <h3 class="project-title">{{ title }}</h3>
-          <!-- <div v-if="locked" class="lock" ref="lock"></div> -->
           <svg class="lock-svg" v-if="locked" width="7px" height="10px">
             <use
               ref="lock"
@@ -37,7 +34,6 @@
               href="../assets/unlocked.svg#Layer_1"
             ></use>
           </svg>
-          <!-- <div class="arrow" ref="arrow"></div> -->
           <svg class="arrow-svg" width="28px" height="8px">
             <use
               class="arrow"
@@ -84,96 +80,98 @@ export default {
     }
   },
   mounted() {
-    // console.log(this.title, this.isActive);
-    // console.log(this.activeProject);
+    setTimeout(() => {
+      // console.log(this.title, this.isActive);
+      // console.log(this.activeProject);
 
-    var instance = this;
-    const projectImage = this.$refs.projectImage;
-    const projectContainer = this.$refs.projectContainer;
-    const projectTextBelow = this.$refs.projectTextBelow;
-    const projectTitle = this.$refs.projectTitle;
-    const arrow = this.$refs.arrow;
-    const lock = this.$refs.lock;
+      var instance = this;
+      const projectImage = this.$refs.projectImage;
+      const projectContainer = this.$refs.projectContainer;
+      const projectTextBelow = this.$refs.projectTextBelow;
+      const projectTitle = this.$refs.projectTitle;
+      const arrow = this.$refs.arrow;
+      const lock = this.$refs.lock;
 
-    // if (this.title === this.activeProject) {
-    //   projectImage.classList.remove("dull");
-    // }
+      // if (this.title === this.activeProject) {
+      //   projectImage.classList.remove("dull");
+      // }
 
-    projectImage.addEventListener("mouseover", function() {
-      if (instance.isActive) {
-        projectTitle.childNodes[0].style.color = "var(--purple)";
-        arrow.classList.add("purple-arrow");
-        if (instance.locked) lock.classList.add("purple-lock");
-        // also do this for the title and arrow in ProjectText
-        $(".project-text a").css("color", "var(--purple)");
-        $(".project-text .arrow").addClass("purple-arrow");
-        $(".project-text .lock").addClass("purple-lock");
-      }
-    });
-    projectImage.addEventListener("mouseout", function() {
-      if (instance.isActive) {
-        projectTitle.childNodes[0].style.color = "black";
-        arrow.classList.remove("purple-arrow");
-        if (instance.locked) lock.classList.remove("purple-lock");
-        $(".project-text a").css("color", "black");
-        $(".project-text .arrow").removeClass("purple-arrow");
-        $(".project-text .lock").removeClass("purple-lock");
-      }
-    });
-
-    if (projectContainer == projectContainer.parentNode.firstChild)
-      projectImage.classList.remove("dull");
-
-    ScrollTrigger.create({
-      trigger: projectContainer,
-      start: "top+=5% 50%", // [trigger] [scroller] positions,
-      end: "bottom-=5% 50%", // [trigger] [scroller] positions
-      // markers: true,
-      onEnter: () => {
-        // console.log("hit", projectImage);
-        $(".project-text").removeClass("fade-out");
-        $(".project-text").addClass("fade-in");
-        projectImage.classList.remove("dull");
-        projectTextBelow.classList.remove("dull");
-        instance.isActive = true;
-        this.updateParams();
-      },
-      onEnterBack: () => {
-        $(".project-text").removeClass("fade-out");
-        $(".project-text").addClass("fade-in");
-        projectImage.classList.remove("dull");
-        projectTextBelow.classList.remove("dull");
-        instance.isActive = true;
-        this.updateParams();
-      },
-      onLeave: () => {
-        // Don't fade out last project when scrolling past it
-        if (projectContainer !== projectContainer.parentNode.lastChild) {
-          $(".project-text").removeClass("fade-in");
-          $(".project-text").addClass("fade-out");
-          projectImage.classList.add("dull");
-          projectTextBelow.classList.add("dull");
+      projectImage.addEventListener("mouseover", function() {
+        if (instance.isActive) {
+          projectTitle.childNodes[0].style.color = "var(--purple)";
+          arrow.classList.add("purple-arrow");
+          if (instance.locked) lock.classList.add("purple-lock");
+          // also do this for the title and arrow in ProjectText
+          $(".project-text a").css("color", "var(--purple)");
+          $(".project-text .arrow").addClass("purple-arrow");
+          $(".project-text .lock").addClass("purple-lock");
+        }
+      });
+      projectImage.addEventListener("mouseout", function() {
+        if (instance.isActive) {
           projectTitle.childNodes[0].style.color = "black";
           arrow.classList.remove("purple-arrow");
           if (instance.locked) lock.classList.remove("purple-lock");
-          // projectTextBelow.style.visibility = "hidden";
-          instance.isActive = false;
+          $(".project-text a").css("color", "black");
+          $(".project-text .arrow").removeClass("purple-arrow");
+          $(".project-text .lock").removeClass("purple-lock");
         }
-      },
-      onLeaveBack: () => {
-        // Don't fade out first project when scrolling back past it
-        if (projectContainer !== projectContainer.parentNode.firstChild) {
-          $(".project-text").removeClass("fade-in");
-          $(".project-text").addClass("fade-out");
-          projectImage.classList.add("dull");
-          projectTextBelow.classList.add("dull");
-          projectTitle.childNodes[0].style.color = "black";
-          arrow.classList.remove("purple-arrow");
-          if (instance.locked) lock.classList.remove("purple-lock");
-          instance.isActive = false;
+      });
+
+      if (projectContainer == projectContainer.parentNode.firstChild)
+        projectImage.classList.remove("dull");
+
+      ScrollTrigger.create({
+        trigger: projectContainer,
+        start: "top+=5% 50%", // [trigger] [scroller] positions,
+        end: "bottom-=5% 50%", // [trigger] [scroller] positions
+        // markers: true,
+        onEnter: () => {
+          // console.log("hit", projectImage);
+          $(".project-text").removeClass("fade-out");
+          $(".project-text").addClass("fade-in");
+          projectImage.classList.remove("dull");
+          projectTextBelow.classList.remove("dull");
+          instance.isActive = true;
+          this.updateParams();
+        },
+        onEnterBack: () => {
+          $(".project-text").removeClass("fade-out");
+          $(".project-text").addClass("fade-in");
+          projectImage.classList.remove("dull");
+          projectTextBelow.classList.remove("dull");
+          instance.isActive = true;
+          this.updateParams();
+        },
+        onLeave: () => {
+          // Don't fade out last project when scrolling past it
+          if (projectContainer !== projectContainer.parentNode.lastChild) {
+            $(".project-text").removeClass("fade-in");
+            $(".project-text").addClass("fade-out");
+            projectImage.classList.add("dull");
+            projectTextBelow.classList.add("dull");
+            projectTitle.childNodes[0].style.color = "black";
+            arrow.classList.remove("purple-arrow");
+            if (instance.locked) lock.classList.remove("purple-lock");
+            // projectTextBelow.style.visibility = "hidden";
+            instance.isActive = false;
+          }
+        },
+        onLeaveBack: () => {
+          // Don't fade out first project when scrolling back past it
+          if (projectContainer !== projectContainer.parentNode.firstChild) {
+            $(".project-text").removeClass("fade-in");
+            $(".project-text").addClass("fade-out");
+            projectImage.classList.add("dull");
+            projectTextBelow.classList.add("dull");
+            projectTitle.childNodes[0].style.color = "black";
+            arrow.classList.remove("purple-arrow");
+            if (instance.locked) lock.classList.remove("purple-lock");
+            instance.isActive = false;
+          }
         }
-      }
-    });
+      });
+    }, 500);
   },
   methods: {
     // updates store values with this project's props

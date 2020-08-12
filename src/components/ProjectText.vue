@@ -2,6 +2,7 @@
   <div class="text-bg">
     <div class="project-text">
       <div class="project-title-container">
+        <!-- router-link keeps user on same window -->
         <router-link v-if="type === 'study'" :to="link">
           <h3 class="project-title">{{ title }}</h3>
           <svg class="lock-svg" v-if="locked" width="7px" height="10px">
@@ -14,6 +15,7 @@
             ></use>
           </svg>
         </router-link>
+        <!-- <a> opens new window -->
         <a v-else :href="link" target="_blank" rel="noopener">
           <h3 class="project-title">{{ title }}</h3>
           <div v-if="locked" class="lock"></div>
@@ -48,13 +50,15 @@ export default {
     };
   },
   mounted() {
-    ScrollTrigger.create({
-      trigger: ".text-bg",
-      start: "top 25%", // [trigger] [scroller] positions,
-      end: "bottom bottom-=7%", // [trigger] [scroller] positions
-      // markers: true,
-      pin: true
-    });
+    setTimeout(() => {
+      ScrollTrigger.create({
+        trigger: ".text-bg",
+        start: "top 25%", // [trigger] [scroller] positions,
+        end: "bottom bottom-=7%", // [trigger] [scroller] positions
+        // markers: true,
+        pin: true
+      });
+    }, 500);
   },
   methods: {},
   // retrieve store values

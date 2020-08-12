@@ -16,7 +16,7 @@ const router = new VueRouter({
   base: process.env.BASE_URL,
   scrollBehavior: (to, from, savedPosition) =>
     new Promise(resolve => {
-      let position = savedPosition ? savedPosition : { x: 0, y: 0 };
+      let position = savedPosition ? savedPosition : { x: 0, y: 0 }; // is this 0 a value relative to the starting position or absolute to the top of the page? seems to be an offset
       router.app.$root.$once("transitionScroll", () => {
         router.app.$nextTick(() => resolve(position));
       });
