@@ -34,12 +34,12 @@ export default {
       this.colorize(this.keywords[i]);
     }
 
-    // console.log(this.tl);
-    // if (this.tl == null) {
-    // console.log("mounted skill");
     const { skill } = this.$refs;
 
     setTimeout(() => {
+      // this.$root.$once("transitionScroll", () => {
+      //   if (this.$route.path == "/") {
+      console.log("skill arrived");
       this.tl = gsap
         .timeline({
           scrollTrigger: {
@@ -56,8 +56,41 @@ export default {
           ease: "power1.inOut",
           delay: this.delay
         });
+      // }
+      // });
     }, 500);
   },
+  // computed: {
+  //   transitionDone() {
+  //     return this.$store.state.isTransitionDone;
+  //     // },
+  //     // targetRoute() {
+  //     //   console.log(this.$store.state.targetRoute);
+  //     //   return this.$store.state.targetRoute;
+  //   }
+  // },
+  // watch: {
+  //   transitionDone() {
+  //     console.log("skill arrived");
+  //     const { skill } = this.$refs;
+  //     this.tl = gsap
+  //       .timeline({
+  //         scrollTrigger: {
+  //           trigger: ".skills-container",
+  //           start: "top 83%",
+  //           end: "bottom top"
+  //           // toggleActions: "restart none none none"
+  //           // markers: true
+  //         }
+  //       })
+  //       .from(skill, {
+  //         autoAlpha: 0,
+  //         duration: 0.5,
+  //         ease: "power1.inOut",
+  //         delay: this.delay
+  //       });
+  //   }
+  // },
   methods: {
     colorize(keyword) {
       this.adjDescription = this.adjDescription.replace(
@@ -69,7 +102,7 @@ export default {
   beforeDestroy() {
     console.log(window.scrollY);
     // this.tl.scrollTrigger.refresh();
-    this.tl.scrollTrigger.kill();
+    this.tl.scrollTrigger.kill(); // even necessary?
     // this.tl = null;
   }
 };

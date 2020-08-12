@@ -5,7 +5,12 @@
         <div id="name-drawn"></div>
       </router-link>
     </div>
-    <transition name="pages" @after-leave="$root.$emit('transitionScroll')">
+    <transition
+      name="pages"
+      @before-leave="leave"
+      @after-leave="$root.$emit('transitionScroll')"
+      @after-enter="arrive"
+    >
       <router-view :key="$route.fullPath" />
     </transition>
   </div>
@@ -18,7 +23,16 @@ export default {
     return {};
   },
   computed: {},
-  methods: {},
+  methods: {
+    leave() {
+      this.$store.commit("is_transition_done", false);
+      console.log("transition starting");
+    },
+    arrive() {
+      this.$store.commit("is_transition_done", true);
+      console.log("transition done");
+    }
+  },
   created() {
     // window.onload = window.onresize = function() {
     //   document.getElementById("app").style.height = window.innerHeight + "px";

@@ -140,54 +140,35 @@ export default {
       scene.setClassToggle(this, "visible").addTo(sectionController);
     });
 
-    $("video").each(function() {
-      const instance = this;
-      ScrollTrigger.create({
-        trigger: instance,
-        start: "top 100%", // [trigger] [scroller] positions,
-        end: "bottom 0%", // [trigger] [scroller] positions
-        // markers: true,
-        onEnter: () => {
-          // console.log("enter");
-          instance.play();
-        },
-        onEnterBack: () => {
-          // console.log("enterBack");
-          instance.play();
-        },
-        onLeave: () => {
-          // console.log("leave");
-          instance.pause();
-          instance.currentTime = 0;
-        },
-        onLeaveBack: () => {
-          // console.log("leaveBack");
-          instance.pause();
-          instance.currentTime = 0;
-        }
+    setTimeout(() => {
+      $("video").each(function() {
+        const instance = this;
+        ScrollTrigger.create({
+          trigger: instance,
+          start: "top 100%", // [trigger] [scroller] positions,
+          end: "bottom 0%", // [trigger] [scroller] positions
+          // markers: true,
+          onEnter: () => {
+            // console.log("enter");
+            instance.play();
+          },
+          onEnterBack: () => {
+            // console.log("enterBack");
+            instance.play();
+          },
+          onLeave: () => {
+            // console.log("leave");
+            instance.pause();
+            instance.currentTime = 0;
+          },
+          onLeaveBack: () => {
+            // console.log("leaveBack");
+            instance.pause();
+            instance.currentTime = 0;
+          }
+        });
       });
-    });
-
-    // const vidPlayer = new ScrollMagic.Controller();
-    // $("video").each(function() {
-    //   const instance = this;
-    //   var scene = new ScrollMagic.Scene({
-    //     triggerElement: instance,
-    //     triggerHook: 1
-    //   });
-    //   // scene.reverse(false);
-    //   scene
-    //     .on("enter", function() {
-    //       instance.play();
-    //       console.log("entered");
-    //     })
-    //     .on("leave", function() {
-    //       console.log("left");
-    //       instance.pause();
-    //       instance.currentTime = 0;
-    //     })
-    //     .addTo(vidPlayer);
-    // });
+    }, 500);
   },
   methods: {},
   components: { Tags }

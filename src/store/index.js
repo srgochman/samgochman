@@ -16,7 +16,9 @@ export default new Vuex.Store({
 
     // activeProject: ""
 
-    targetRoute: ""
+    // targetRoute: "",
+
+    isTransitionDone: false
   },
   mutations: {
     set_project_params(state, params) {
@@ -29,8 +31,11 @@ export default new Vuex.Store({
       // console.log("store: accessed", state.title);
       // state.activeProject = params.activeProject;
     },
-    set_target_route(state, route) {
-      state.targetRoute = route;
+    // set_target_route(state, route) {
+    //   state.targetRoute = route;
+    // },
+    is_transition_done(state, val) {
+      state.isTransitionDone = val;
     }
   },
   getters: {},
