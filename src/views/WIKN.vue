@@ -206,11 +206,13 @@ export default {
   // transform: scale(0.7);
   // transform-origin: top center;
   box-shadow: 0 15px 25px rgba(0, 0, 0, 0.25);
-  margin-right: calc(min(7vw, calc(var(--main-width) * 0.05)));
+  // margin-right: calc(min(7vw, calc(var(--main-width) * 0.05)));
+  margin-bottom: calc(min(7vw, 72px));
 }
 
 #ui-review {
-  margin-left: calc(min(7vw, calc(var(--main-width) * 0.05)));
+  // margin-left: calc(min(7vw, calc(var(--main-width) * 0.05)));
+  margin-bottom: calc(min(7vw, 72px));
 }
 
 @media only screen and (min-width: 769px) and (max-width: 1024px) {
