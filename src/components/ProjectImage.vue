@@ -2,14 +2,32 @@
   <div class="project-container" ref="projectContainer">
     <router-link v-if="type === 'study'" :to="link">
       <img class="project-img dull" :src="image" ref="projectImage" />
+      <div class="project-text-below" ref="projectTextBelow">
+        <div class="project-title-container">
+          <h3 class="project-title" ref="projectTitle">{{ title }}</h3>
+          <svg class="lock-svg" v-if="locked" width="7px" height="10px">
+            <use
+              ref="lock"
+              class="lock"
+              href="../assets/unlocked.svg#Layer_1"
+            ></use>
+          </svg>
+          <svg class="arrow-svg" width="28px" height="8px">
+            <use
+              class="arrow"
+              ref="arrow"
+              href="../assets/drawn/arrow_drawn2.svg#Layer_2"
+            ></use>
+          </svg>
+        </div>
+        <h2 class="project-desc">{{ description }}</h2>
+      </div>
     </router-link>
     <a v-else :href="link" target="_blank" rel="noopener">
       <img class="project-img dull" :src="image" ref="projectImage" />
-    </a>
-    <div class="project-text-below" ref="projectTextBelow">
-      <div class="project-title-container" ref="projectTitle">
-        <router-link v-if="type === 'study'" :to="link">
-          <h3 class="project-title">{{ title }}</h3>
+      <div class="project-text-below" ref="projectTextBelow">
+        <div class="project-title-container">
+          <h3 class="project-title" ref="projectTitle">{{ title }}</h3>
           <svg class="lock-svg" v-if="locked" width="7px" height="10px">
             <use
               ref="lock"
@@ -24,27 +42,10 @@
               href="../assets/drawn/arrow_drawn2.svg#Layer_2"
             ></use>
           </svg>
-        </router-link>
-        <a v-else :href="link" target="_blank" rel="noopener">
-          <h3 class="project-title">{{ title }}</h3>
-          <svg class="lock-svg" v-if="locked" width="7px" height="10px">
-            <use
-              ref="lock"
-              class="lock"
-              href="../assets/unlocked.svg#Layer_1"
-            ></use>
-          </svg>
-          <svg class="arrow-svg" width="28px" height="8px">
-            <use
-              class="arrow"
-              ref="arrow"
-              href="../assets/drawn/arrow_drawn2.svg#Layer_2"
-            ></use>
-          </svg>
-        </a>
+        </div>
+        <h2 class="project-desc">{{ description }}</h2>
       </div>
-      <h2 class="project-desc">{{ description }}</h2>
-    </div>
+    </a>
   </div>
 </template>
 
@@ -87,26 +88,34 @@ export default {
       const instance = this;
       const projectContainer = this.$refs.projectContainer;
       this.projectImage = this.$refs.projectImage;
+
+      // following 4 are for text below image, only shown on narrow screens
       this.projectTextBelow = this.$refs.projectTextBelow;
       this.projectTitle = this.$refs.projectTitle;
       this.arrow = this.$refs.arrow;
       this.lock = this.$refs.lock;
 
-      this.projectImage.addEventListener("mouseover", function() {
+      projectContainer.addEventListener("mouseover", function() {
         if (instance.isActive) {
-          instance.projectTitle.childNodes[0].style.color = "var(--purple)";
+          // text below (narrow screens)
+          instance.projectTitle.style.color = "var(--purple)";
           instance.arrow.classList.add("purple-arrow");
           if (instance.locked) instance.lock.classList.add("purple-lock");
+
+          // ProjectText (wide screens)
           $(".project-text a").css("color", "var(--purple)");
           $(".project-text .arrow").addClass("purple-arrow");
           $(".project-text .lock").addClass("purple-lock");
         }
       });
-      this.projectImage.addEventListener("mouseout", function() {
+      projectContainer.addEventListener("mouseout", function() {
         if (instance.isActive) {
-          instance.projectTitle.childNodes[0].style.color = "black";
+          // text below (narrow screens)
+          instance.projectTitle.style.color = "black";
           instance.arrow.classList.remove("purple-arrow");
           if (instance.locked) instance.lock.classList.remove("purple-lock");
+
+          // ProjectText (wide screens)
           $(".project-text a").css("color", "black");
           $(".project-text .arrow").removeClass("purple-arrow");
           $(".project-text .lock").removeClass("purple-lock");
@@ -156,22 +165,29 @@ export default {
       });
     },
     enter() {
+      // ProjectText (wide screens)
       $(".project-text").removeClass("fade-out");
       $(".project-text").addClass("fade-in");
+
+      // image (all screens) and text below (narrow screens)
       this.projectImage.classList.remove("dull");
       this.projectTextBelow.classList.remove("dull");
+
       this.isActive = true;
       this.updateParams();
     },
     leave() {
+      // ProjectText (wide screens)
       $(".project-text").removeClass("fade-in");
       $(".project-text").addClass("fade-out");
+
+      // image (all screens) and text below (narrow screens)
       this.projectImage.classList.add("dull");
       this.projectTextBelow.classList.add("dull");
-      this.projectTitle.childNodes[0].style.color = "black";
+      this.projectTitle.style.color = "black";
       this.arrow.classList.remove("purple-arrow");
       if (this.locked) this.lock.classList.remove("purple-lock");
-      // projectTextBelow.style.visibility = "hidden";
+
       this.isActive = false;
     }
   },
@@ -182,7 +198,7 @@ export default {
 </script>
 
 <style lang="scss">
-// scrolltrigger transitions for images
+// scrolltrigger transitions for ProjectText
 .fade-out {
   opacity: 0;
   transition: opacity 200ms ease-out;
@@ -234,14 +250,13 @@ export default {
   display: none;
 }
 
-.project-desc {
-  margin-right: 0;
-  margin-bottom: 80px;
-}
-
 @media only screen and (max-width: 1024px) {
   .project-text-below {
     display: block;
+  }
+
+  .project-desc {
+    margin: 10px 0 80px 0;
   }
 }
 </style>

@@ -1,6 +1,10 @@
 <template>
   <div class="skill-container" ref="skill">
-    <h2 class="skill-description" v-html="adjDescription"></h2>
+    <h2
+      class="skill-description"
+      v-html="adjDescription"
+      :style="{ borderColor: color, backgroundColor: backgroundColor }"
+    ></h2>
   </div>
 </template>
 
@@ -15,6 +19,7 @@ export default {
     description: String,
     keywords: Array,
     color: String,
+    backgroundColor: String,
     delay: Number
   },
   data() {
@@ -69,15 +74,25 @@ export default {
 
 <style lang="scss">
 .skill-container {
-  width: 33%;
+  width: 63%;
   // min-width: 200px;
-  margin-bottom: 120px;
+  margin-bottom: 50px;
   // opacity: 0;
 }
 
 .skill-description {
   // width: 63%;
-  width: 80%;
+  // width: 80%;
+  padding: 25px 45px;
+  border-radius: 2px 7px 7px 2px;
+  border-left: solid 6px;
+  // font-size: 2em;
+}
+
+@media only screen and (min-width: 1025px) {
+  .skill-description {
+    font-size: 2em;
+  }
 }
 
 @media only screen and (min-width: 426px) and (max-width: 1024px) {
@@ -86,14 +101,19 @@ export default {
   }
 
   .skill-description {
-    width: 66%;
+    padding: 20px 30px;
   }
 }
 
 @media only screen and (max-width: 425px) {
-  .skill-container,
-  .skill-description {
+  .skill-container {
     width: 100%;
+  }
+
+  .skill-description {
+    // width: 100%;
+    border-left: solid 5px;
+    padding: 15px 25px;
   }
 }
 </style>

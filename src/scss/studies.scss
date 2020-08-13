@@ -114,9 +114,15 @@ img {
   // for fixed background:
   // position: absolute;
 
-  h1, h2 {
+  h1 {
     margin-bottom: 20px;
-    // width: 800px;
+  }
+
+  h2 {
+    font-size: 4.5em;
+    font-weight: 700;
+    line-height: 1.3em;
+    margin-bottom: 20px;
   }
 }
 
@@ -211,14 +217,15 @@ img {
     width: 100%;
     // padding: 0 7vw;
 
-    h2, h3 {
+    h2 {
+      width: calc(min(80%, 500px));
+      font-size: calc(min(10vw, 2.3em));
+      line-height: 1.4em;
+    }
+    
+    h3 {
       width: calc(min(80%, 500px));
     }
-  }
-
-  .oversized {
-    font-size: calc(min(10vw, 2.3em));
-    line-height: 1.4em;
   }
 
   .body::before {
@@ -251,11 +258,11 @@ img {
   .banner-text {
     width: 85%;
     top: 20vh;
-  }
 
-  .oversized {
-    font-size: calc(min(5vw, 2.3em));
-    line-height: 1.4em;
+    h2 {
+      font-size: calc(min(6vw, 2.3em));
+      line-height: 1.4em;
+    }
   }
 
   .body::before {

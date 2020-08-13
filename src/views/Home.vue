@@ -6,7 +6,7 @@
     <!-- <button @click="clearPass" style="margin-top: 10vh; z-index: 10000">
       Clear passCorrect
     </button> -->
-    <!-- <div id="particles-js"></div> -->
+    <div id="particles-js"></div>
     <div id="mission" class="section">
       <!-- <Sketch></Sketch> -->
       <Mission></Mission>
@@ -25,9 +25,9 @@
           target="_blank"
           rel="noopener"
           >work<img
+            height="5"
             class="work-underline"
             src="../assets/drawn/line1_purple.svg"
-            height="5"
           />
         </a>
         and would love to
@@ -38,10 +38,22 @@
             target="_blank"
             rel="noopener"
             >connect<img
+              height="5"
               class="connect-underline"
-              src="../assets/drawn/line2_purple.svg"
-              height="5"/></a
+              src="../assets/drawn/line2_purple.svg"/></a
           >!
+          <!-- Here's some of my past
+          <a
+            id="test"
+            href="https://www.linkedin.com/in/samuelrgochman/"
+            target="_blank"
+            rel="noopener"
+            >work<img
+              height="5"
+              class="work-underline"
+              src="../assets/drawn/line1_purple.svg"
+            /> </a
+          >. -->
         </span>
       </h3>
     </div>
@@ -56,6 +68,7 @@
           :description="skill.description"
           :keywords="skill.keywords"
           :color="skill.color"
+          :backgroundColor="skill.backgroundColor"
           :delay="skill.delay"
         >
         </Skill>
@@ -124,8 +137,8 @@ import ProjectText from "../components/ProjectText.vue";
 import contents from "../list-contents.json";
 import { gsap } from "gsap";
 import ScrollMagic from "scrollmagic";
-// import "particles.js/particles";
-// const particlesJS = window.particlesJS;
+import "particles.js/particles";
+const particlesJS = window.particlesJS;
 
 export default {
   name: "Home",
@@ -164,7 +177,7 @@ export default {
       scene.setClassToggle(this, "visible").addTo(homeController);
     });
 
-    // particlesJS.load("particles-js", "particlesjs-config.json");
+    particlesJS.load("particles-js", "particlesjs-config.json");
   },
   methods: {
     clearPass() {
@@ -185,10 +198,12 @@ export default {
 #mission {
   position: relative;
   height: 100vh;
+  margin-bottom: 50px;
 }
 
 canvas {
   display: block;
+  object-fit: cover;
   // vertical-align: bottom;
 }
 
@@ -206,9 +221,10 @@ canvas {
 }
 
 #mission-description {
-  width: 50%;
+  // width: 33%;
+  width: 475px;
   // max-width: calc(max(500px, 30%));
-  margin-bottom: 200px;
+  // margin-bottom: 200px;
 
   h3 {
     margin-bottom: 30px;
@@ -217,9 +233,9 @@ canvas {
 
 .work-underline,
 .connect-underline {
-  content: "";
+  // content: "";
   position: absolute;
-  bottom: 0;
+  bottom: 0px;
   left: 0px;
   width: 100%;
   transform: scaleY(1.5);
@@ -248,11 +264,11 @@ canvas {
 // }
 
 .section-heading {
+  height: 13px;
   margin: 0 0 70px 0;
 }
 
 #skills-drawn {
-  height: 15px;
   // width: 150px;
   background-image: url("../assets/drawn/skills_drawn.svg");
   background-repeat: no-repeat;
@@ -260,13 +276,12 @@ canvas {
 
 #skills-container {
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  flex-direction: column;
+  // flex-wrap: wrap;
+  // justify-content: space-between;
 }
 
 #work-drawn {
-  height: 15px;
   // width: 150px;
   background-image: url("../assets/drawn/work_drawn.svg");
   background-repeat: no-repeat;
@@ -285,7 +300,6 @@ canvas {
 }
 
 #experience-drawn {
-  height: 15px;
   // width: 115px;
   background-image: url("../assets/drawn/experience_drawn.svg");
   background-repeat: no-repeat;
@@ -373,6 +387,11 @@ canvas {
 }
 
 @media only screen and (max-width: 425px) {
+  #mission,
+  #particles-js {
+    height: 70vh;
+  }
+
   #mission-description {
     width: 100%;
   }

@@ -1,5 +1,5 @@
 <template>
-  <div id="mission-container" class="oversized">
+  <div id="mission-container">
     <div id="mission-statement">
       <span id="beginning">I’m a creative technologist who </span>
       <transition name="fade">
@@ -77,13 +77,13 @@ export default {
   transform: translateY(-50%);
   // font-size: 6em;
   font-size: calc(min(7.4vw, 6em));
-  // font-weight: 800;
-  // line-height: 1.3em;
+  font-weight: 700;
+  line-height: 1.3em;
 
   // color: var(--purple);
   background: white; // masks background gradient
 
-  // background gradient behind all of mission container
+  // color gradient background behind all of mission container
   &::before {
     content: "";
     display: block;
@@ -148,6 +148,18 @@ export default {
 .fade-enter,
 .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
   color: transparent;
+}
+
+@media only screen and (max-width: 425px) {
+  #mission-container {
+    font-size: 9vw;
+    height: 60vw;
+    margin-top: 40vh;
+
+    &::before {
+      height: 56vw;
+    }
+  }
 }
 
 @media only screen and (max-width: 1024px) and (max-height: 426px) {
