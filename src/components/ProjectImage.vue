@@ -2,52 +2,50 @@
   <div class="project-container" ref="projectContainer">
     <router-link v-if="type === 'study'" :to="link">
       <img class="project-img dull" :src="image" ref="projectImage" />
+      <div class="project-text-below" ref="projectTextBelow">
+        <div class="project-title-container">
+          <h3 class="project-title" ref="projectTitle">{{ title }}</h3>
+          <svg class="lock-svg" v-if="locked" width="7px" height="10px">
+            <use
+              ref="lock"
+              class="lock"
+              href="../assets/unlocked.svg#Layer_1"
+            ></use>
+          </svg>
+          <svg class="arrow-svg" width="28px" height="8px">
+            <use
+              class="arrow"
+              ref="arrow"
+              href="../assets/drawn/arrow_drawn2.svg#Layer_2"
+            ></use>
+          </svg>
+        </div>
+        <h2 class="project-desc">{{ description }}</h2>
+      </div>
     </router-link>
     <a v-else :href="link" target="_blank" rel="noopener">
       <img class="project-img dull" :src="image" ref="projectImage" />
+      <div class="project-text-below" ref="projectTextBelow">
+        <div class="project-title-container">
+          <h3 class="project-title" ref="projectTitle">{{ title }}</h3>
+          <svg class="lock-svg" v-if="locked" width="7px" height="10px">
+            <use
+              ref="lock"
+              class="lock"
+              href="../assets/unlocked.svg#Layer_1"
+            ></use>
+          </svg>
+          <svg class="arrow-svg" width="28px" height="8px">
+            <use
+              class="arrow"
+              ref="arrow"
+              href="../assets/drawn/arrow_drawn2.svg#Layer_2"
+            ></use>
+          </svg>
+        </div>
+        <h2 class="project-desc">{{ description }}</h2>
+      </div>
     </a>
-    <div class="project-text-below" ref="projectTextBelow">
-      <router-link v-if="type === 'study'" :to="link">
-        <div class="project-title-container">
-          <h3 class="project-title" ref="projectTitle">{{ title }}</h3>
-          <svg class="lock-svg" v-if="locked" width="7px" height="10px">
-            <use
-              ref="lock"
-              class="lock"
-              href="../assets/unlocked.svg#Layer_1"
-            ></use>
-          </svg>
-          <svg class="arrow-svg" width="28px" height="8px">
-            <use
-              class="arrow"
-              ref="arrow"
-              href="../assets/drawn/arrow_drawn2.svg#Layer_2"
-            ></use>
-          </svg>
-        </div>
-        <h2 class="project-desc">{{ description }}</h2>
-      </router-link>
-      <a v-else :href="link" target="_blank" rel="noopener">
-        <div class="project-title-container">
-          <h3 class="project-title" ref="projectTitle">{{ title }}</h3>
-          <svg class="lock-svg" v-if="locked" width="7px" height="10px">
-            <use
-              ref="lock"
-              class="lock"
-              href="../assets/unlocked.svg#Layer_1"
-            ></use>
-          </svg>
-          <svg class="arrow-svg" width="28px" height="8px">
-            <use
-              class="arrow"
-              ref="arrow"
-              href="../assets/drawn/arrow_drawn2.svg#Layer_2"
-            ></use>
-          </svg>
-        </div>
-        <h2 class="project-desc">{{ description }}</h2>
-      </a>
-    </div>
   </div>
 </template>
 
@@ -124,30 +122,6 @@ export default {
         }
       });
 
-      // this.projectTextBelow.addEventListener("mouseover", function() {
-      //   if (instance.isActive) {
-      //     instance.projectTitle.childNodes[0].style.color = "var(--purple)";
-      //     instance.arrow.classList.add("purple-arrow");
-      //     if (instance.locked) instance.lock.classList.add("purple-lock");
-      //     $(".project-title-container .project-title").css(
-      //       "color",
-      //       "var(--purple)"
-      //     );
-      //     $(".project-title-container .arrow").addClass("purple-arrow");
-      //     $(".project-title-container .lock").addClass("purple-lock");
-      //   }
-      // });
-      // this.projectTextBelow.addEventListener("mouseout", function() {
-      //   if (instance.isActive) {
-      //     instance.projectTitle.childNodes[0].style.color = "black";
-      //     instance.arrow.classList.remove("purple-arrow");
-      //     if (instance.locked) instance.lock.classList.remove("purple-lock");
-      //     $(".project-text a").css("color", "black");
-      //     $(".project-text .arrow").removeClass("purple-arrow");
-      //     $(".project-text .lock").removeClass("purple-lock");
-      //   }
-      // });
-
       if (projectContainer == projectContainer.parentNode.firstChild)
         this.projectImage.classList.remove("dull");
 
@@ -191,22 +165,29 @@ export default {
       });
     },
     enter() {
+      // ProjectText (wide screens)
       $(".project-text").removeClass("fade-out");
       $(".project-text").addClass("fade-in");
+
+      // image (all screens) and text below (narrow screens)
       this.projectImage.classList.remove("dull");
       this.projectTextBelow.classList.remove("dull");
+
       this.isActive = true;
       this.updateParams();
     },
     leave() {
+      // ProjectText (wide screens)
       $(".project-text").removeClass("fade-in");
       $(".project-text").addClass("fade-out");
+
+      // image (all screens) and text below (narrow screens)
       this.projectImage.classList.add("dull");
       this.projectTextBelow.classList.add("dull");
       this.projectTitle.style.color = "black";
       this.arrow.classList.remove("purple-arrow");
       if (this.locked) this.lock.classList.remove("purple-lock");
-      // projectTextBelow.style.visibility = "hidden";
+
       this.isActive = false;
     }
   },
@@ -217,7 +198,7 @@ export default {
 </script>
 
 <style lang="scss">
-// scrolltrigger transitions for images
+// scrolltrigger transitions for ProjectText
 .fade-out {
   opacity: 0;
   transition: opacity 200ms ease-out;
