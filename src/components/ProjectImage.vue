@@ -7,9 +7,9 @@
       <img class="project-img dull" :src="image" ref="projectImage" />
     </a>
     <div class="project-text-below" ref="projectTextBelow">
-      <div class="project-title-container" ref="projectTitle">
-        <router-link v-if="type === 'study'" :to="link">
-          <h3 class="project-title">{{ title }}</h3>
+      <router-link v-if="type === 'study'" :to="link">
+        <div class="project-title-container">
+          <h3 class="project-title" ref="projectTitle">{{ title }}</h3>
           <svg class="lock-svg" v-if="locked" width="7px" height="10px">
             <use
               ref="lock"
@@ -24,9 +24,12 @@
               href="../assets/drawn/arrow_drawn2.svg#Layer_2"
             ></use>
           </svg>
-        </router-link>
-        <a v-else :href="link" target="_blank" rel="noopener">
-          <h3 class="project-title">{{ title }}</h3>
+        </div>
+        <h2 class="project-desc">{{ description }}</h2>
+      </router-link>
+      <a v-else :href="link" target="_blank" rel="noopener">
+        <div class="project-title-container">
+          <h3 class="project-title" ref="projectTitle">{{ title }}</h3>
           <svg class="lock-svg" v-if="locked" width="7px" height="10px">
             <use
               ref="lock"
@@ -41,9 +44,9 @@
               href="../assets/drawn/arrow_drawn2.svg#Layer_2"
             ></use>
           </svg>
-        </a>
-      </div>
-      <h2 class="project-desc">{{ description }}</h2>
+        </div>
+        <h2 class="project-desc">{{ description }}</h2>
+      </a>
     </div>
   </div>
 </template>
@@ -87,31 +90,63 @@ export default {
       const instance = this;
       const projectContainer = this.$refs.projectContainer;
       this.projectImage = this.$refs.projectImage;
+
+      // following 4 are for text below image, only shown on narrow screens
       this.projectTextBelow = this.$refs.projectTextBelow;
       this.projectTitle = this.$refs.projectTitle;
       this.arrow = this.$refs.arrow;
       this.lock = this.$refs.lock;
 
-      this.projectImage.addEventListener("mouseover", function() {
+      projectContainer.addEventListener("mouseover", function() {
         if (instance.isActive) {
-          instance.projectTitle.childNodes[0].style.color = "var(--purple)";
+          // text below (narrow screens)
+          instance.projectTitle.style.color = "var(--purple)";
           instance.arrow.classList.add("purple-arrow");
           if (instance.locked) instance.lock.classList.add("purple-lock");
+
+          // ProjectText (wide screens)
           $(".project-text a").css("color", "var(--purple)");
           $(".project-text .arrow").addClass("purple-arrow");
           $(".project-text .lock").addClass("purple-lock");
         }
       });
-      this.projectImage.addEventListener("mouseout", function() {
+      projectContainer.addEventListener("mouseout", function() {
         if (instance.isActive) {
-          instance.projectTitle.childNodes[0].style.color = "black";
+          // text below (narrow screens)
+          instance.projectTitle.style.color = "black";
           instance.arrow.classList.remove("purple-arrow");
           if (instance.locked) instance.lock.classList.remove("purple-lock");
+
+          // ProjectText (wide screens)
           $(".project-text a").css("color", "black");
           $(".project-text .arrow").removeClass("purple-arrow");
           $(".project-text .lock").removeClass("purple-lock");
         }
       });
+
+      // this.projectTextBelow.addEventListener("mouseover", function() {
+      //   if (instance.isActive) {
+      //     instance.projectTitle.childNodes[0].style.color = "var(--purple)";
+      //     instance.arrow.classList.add("purple-arrow");
+      //     if (instance.locked) instance.lock.classList.add("purple-lock");
+      //     $(".project-title-container .project-title").css(
+      //       "color",
+      //       "var(--purple)"
+      //     );
+      //     $(".project-title-container .arrow").addClass("purple-arrow");
+      //     $(".project-title-container .lock").addClass("purple-lock");
+      //   }
+      // });
+      // this.projectTextBelow.addEventListener("mouseout", function() {
+      //   if (instance.isActive) {
+      //     instance.projectTitle.childNodes[0].style.color = "black";
+      //     instance.arrow.classList.remove("purple-arrow");
+      //     if (instance.locked) instance.lock.classList.remove("purple-lock");
+      //     $(".project-text a").css("color", "black");
+      //     $(".project-text .arrow").removeClass("purple-arrow");
+      //     $(".project-text .lock").removeClass("purple-lock");
+      //   }
+      // });
 
       if (projectContainer == projectContainer.parentNode.firstChild)
         this.projectImage.classList.remove("dull");
@@ -168,7 +203,7 @@ export default {
       $(".project-text").addClass("fade-out");
       this.projectImage.classList.add("dull");
       this.projectTextBelow.classList.add("dull");
-      this.projectTitle.childNodes[0].style.color = "black";
+      this.projectTitle.style.color = "black";
       this.arrow.classList.remove("purple-arrow");
       if (this.locked) this.lock.classList.remove("purple-lock");
       // projectTextBelow.style.visibility = "hidden";
@@ -234,14 +269,13 @@ export default {
   display: none;
 }
 
-.project-desc {
-  margin-right: 0;
-  margin-bottom: 80px;
-}
-
 @media only screen and (max-width: 1024px) {
   .project-text-below {
     display: block;
+  }
+
+  .project-desc {
+    margin: 10px 0 80px 0;
   }
 }
 </style>

@@ -83,7 +83,7 @@ export default {
   // color: var(--purple);
   background: white; // masks background gradient
 
-  // background gradient behind all of mission container
+  // color gradient background behind all of mission container
   &::before {
     content: "";
     display: block;

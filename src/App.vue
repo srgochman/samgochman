@@ -107,7 +107,7 @@ body {
 
 .section {
   width: 100%;
-  margin-bottom: 400px;
+  margin-bottom: 300px;
   // margin-bottom: 30vh;
 
   &:last-child {
@@ -154,7 +154,7 @@ body {
 
 @media only screen and (max-width: 1024px) {
   .section {
-    margin-bottom: 250px;
+    margin-bottom: 200px;
   }
 }
 </style>
