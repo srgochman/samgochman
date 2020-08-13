@@ -86,7 +86,13 @@ export default {
   padding: 25px 45px;
   border-radius: 2px 7px 7px 2px;
   border-left: solid 6px;
-  font-size: 2em;
+  // font-size: 2em;
+}
+
+@media only screen and (min-width: 1025px) {
+  .skill-description {
+    font-size: 2em;
+  }
 }
 
 @media only screen and (min-width: 426px) and (max-width: 1024px) {
@@ -95,7 +101,7 @@ export default {
   }
 
   .skill-description {
-    border-left: solid 4px;
+    padding: 20px 30px;
   }
 }
 
@@ -105,8 +111,9 @@ export default {
   }
 
   .skill-description {
-    width: 100%;
-    border-left: solid 3px;
+    // width: 100%;
+    border-left: solid 5px;
+    padding: 15px 25px;
   }
 }
 </style>

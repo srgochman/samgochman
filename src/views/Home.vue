@@ -203,6 +203,7 @@ export default {
 
 canvas {
   display: block;
+  object-fit: cover;
   // vertical-align: bottom;
 }
 
@@ -386,6 +387,11 @@ canvas {
 }
 
 @media only screen and (max-width: 425px) {
+  #mission,
+  #particles-js {
+    height: 70vh;
+  }
+
   #mission-description {
     width: 100%;
   }

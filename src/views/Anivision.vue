@@ -4,7 +4,7 @@
     <div class="body">
       <div class="banner-text">
         <h1>Anivision</h1>
-        <h2 class="oversized">{{ tagline }}</h2>
+        <h2>{{ tagline }}</h2>
         <h3>DALI Lab @ Dartmouth College, 2017 – Present</h3>
       </div>
       <div class="info section">

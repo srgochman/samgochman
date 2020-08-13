@@ -32,6 +32,13 @@ export default {
   --main-width: 1440px;
 }
 
+::selection {
+  background: var(--purple-semi-transparent);
+}
+::-moz-selection {
+  background: var(--purple-semi-transparent);
+}
+
 html {
   width: 100vw;
   margin: 0;

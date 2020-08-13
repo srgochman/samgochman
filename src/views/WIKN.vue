@@ -4,7 +4,7 @@
     <div class="body">
       <div class="banner-text">
         <h1>What I Know Now</h1>
-        <h2 class="oversized">{{ tagline }}</h2>
+        <h2>{{ tagline }}</h2>
         <h3>Sosolimited, in progress</h3>
       </div>
       <div class="info section">
