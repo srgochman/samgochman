@@ -44,13 +44,13 @@ export default {
     }, 4500);
 
     const root = document.documentElement;
-    document.addEventListener("mousemove", evt => {
-      // check if mission is in viewport so vars arent updated unnecessarily
-      if (window.scrollY <= innerHeight) {
-        let x = (evt.clientX / innerWidth) * 2;
-        root.style.setProperty("--mouse-x", x);
-      }
-    });
+    // document.addEventListener("mousemove", evt => {
+    //   // check if mission is in viewport so vars arent updated unnecessarily
+    //   if (window.scrollY <= innerHeight) {
+    //     let x = (evt.clientX / innerWidth) * 2;
+    //     root.style.setProperty("--mouse-x", x);
+    //   }
+    // });
     document.addEventListener("scroll", () => {
       if (window.scrollY <= innerHeight) {
         let z = (window.scrollY / innerHeight) * 1.5;
@@ -98,12 +98,11 @@ export default {
     mix-blend-mode: screen;
     background: linear-gradient(
       120deg,
-      var(--green) calc(var(--scroll, 0) * 100% - 75% + var(--mouse-x, 0) * 50%),
-      var(--blue) calc(var(--scroll, 0) * 100% - 50% + var(--mouse-x, 0) * 50%),
-      var(--purple) calc(var(--scroll, 0) * 100% + var(--mouse-x, 0) * 50%),
-      var(--blue) calc(var(--scroll, 0) * 100% + 50% + var(--mouse-x, 0) * 50%),
-      var(--green)
-        calc(var(--scroll, 0) * 100% + 100% + var(--mouse-x, 0) * 50%)
+      var(--green) calc(var(--scroll, 0) * 100% - 25%),
+      var(--blue) calc(var(--scroll, 0) * 100%),
+      var(--purple) calc(var(--scroll, 0) * 100% + 50%),
+      var(--blue) calc(var(--scroll, 0) * 100% + 100%),
+      var(--green) calc(var(--scroll, 0) * 100% + 150%)
     );
   }
 }
