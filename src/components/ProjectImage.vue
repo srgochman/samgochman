@@ -127,9 +127,9 @@ export default {
 
       this.trig = ScrollTrigger.create({
         trigger: projectContainer,
-        start: "top+=5% 50%", // [trigger] [scroller] positions,
-        end: "bottom-=5% 50%", // [trigger] [scroller] positions
-        // markers: true,
+        start: "top-=15px 50%", // [trigger] [scroller] positions,
+        end: "bottom+=15px 50%", // [trigger] [scroller] positions
+        markers: true,
         onEnter: () => {
           this.enter();
         },
@@ -165,24 +165,18 @@ export default {
       });
     },
     enter() {
-      // ProjectText (wide screens)
-      $(".project-text").removeClass("fade-out");
-      $(".project-text").addClass("fade-in");
-
-      // image (all screens) and text below (narrow screens)
+      // image (all screens) 
       this.projectImage.classList.remove("dull");
+      // text below (narrow screens)
       this.projectTextBelow.classList.remove("dull");
 
       this.isActive = true;
       this.updateParams();
     },
     leave() {
-      // ProjectText (wide screens)
-      $(".project-text").removeClass("fade-in");
-      $(".project-text").addClass("fade-out");
-
-      // image (all screens) and text below (narrow screens)
+      // image (all screens)
       this.projectImage.classList.add("dull");
+      // text below (narrow screens)
       this.projectTextBelow.classList.add("dull");
       this.projectTitle.style.color = "black";
       this.arrow.classList.remove("purple-arrow");
@@ -198,17 +192,6 @@ export default {
 </script>
 
 <style lang="scss">
-// scrolltrigger transitions for ProjectText
-.fade-out {
-  opacity: 0;
-  transition: opacity 200ms ease-out;
-}
-
-.fade-in {
-  opacity: 1;
-  transition: opacity 200ms ease-in;
-}
-
 .project-container {
   margin-bottom: 30px;
   width: 100%;
@@ -222,12 +205,14 @@ export default {
   // max-height:
   object-fit: cover;
   border-radius: 2px;
-  transition: opacity 200ms ease-out;
+  transition: opacity 300ms ease-out;
+  transition-delay: 200ms;
 }
 
 .dull {
   opacity: 0.3;
-  transition: opacity 200ms ease-out;
+  transition: opacity 300ms ease-out;
+  transition-delay: 200ms;
 }
 
 @media only screen and (max-width: 1024px) {

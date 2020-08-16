@@ -1,41 +1,43 @@
 <template>
   <div id="text-bg">
-    <div class="project-text" ref="project">
-      <!-- router-link keeps user on same window for case studies -->
-      <router-link v-if="type === 'study'" :to="link">
-        <div class="project-title-container">
-          <h3 class="project-title">{{ title }}</h3>
-          <svg class="lock-svg" v-if="locked" width="7px" height="10px">
-            <use class="lock" href="../assets/unlocked.svg#Layer_1"></use>
-          </svg>
-          <svg class="arrow-svg" width="28px" height="8px">
-            <use
-              class="arrow"
-              href="../assets/drawn/arrow_drawn2.svg#Layer_2"
-            ></use>
-          </svg>
-        </div>
-        <h2 class="project-desc">{{ description }}</h2>
-        <Tags :words="tags"></Tags>
-      </router-link>
-      <!-- opens new window for external links -->
-      <a v-if="type !== 'study'" :href="link" target="_blank" rel="noopener">
-        <div class="project-title-container">
-          <h3 class="project-title">{{ title }}</h3>
-          <svg class="lock-svg" v-if="locked" width="7px" height="10px">
-            <use class="lock" href="../assets/unlocked.svg#Layer_1"></use>
-          </svg>
-          <svg class="arrow-svg" width="28px" height="8px">
-            <use
-              class="arrow"
-              href="../assets/drawn/arrow_drawn2.svg#Layer_2"
-            ></use>
-          </svg>
-        </div>
-        <h2 class="project-desc">{{ description }}</h2>
-        <Tags :words="tags"></Tags>
-      </a>
-    </div>
+    <transition name="text" mode="out-in">
+      <div class="project-text" ref="project" :key="title">
+        <!-- router-link keeps user on same window for case studies -->
+        <router-link v-if="type === 'study'" :to="link">
+          <div class="project-title-container">
+            <h3 class="project-title">{{ title }}</h3>
+            <svg class="lock-svg" v-if="locked" width="7px" height="10px">
+              <use class="lock" href="../assets/unlocked.svg#Layer_1"></use>
+            </svg>
+            <svg class="arrow-svg" width="28px" height="8px">
+              <use
+                class="arrow"
+                href="../assets/drawn/arrow_drawn2.svg#Layer_2"
+              ></use>
+            </svg>
+          </div>
+          <h2 class="project-desc">{{ description }}</h2>
+          <Tags :words="tags"></Tags>
+        </router-link>
+        <!-- opens new window for external links -->
+        <a v-if="type !== 'study'" :href="link" target="_blank" rel="noopener">
+          <div class="project-title-container">
+            <h3 class="project-title">{{ title }}</h3>
+            <svg class="lock-svg" v-if="locked" width="7px" height="10px">
+              <use class="lock" href="../assets/unlocked.svg#Layer_1"></use>
+            </svg>
+            <svg class="arrow-svg" width="28px" height="8px">
+              <use
+                class="arrow"
+                href="../assets/drawn/arrow_drawn2.svg#Layer_2"
+              ></use>
+            </svg>
+          </div>
+          <h2 class="project-desc">{{ description }}</h2>
+          <Tags :words="tags"></Tags>
+        </a>
+      </div>
+    </transition>
   </div>
 </template>
 
@@ -112,6 +114,9 @@ export default {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  position: absolute;
+  top: 0;
+  left: 0;
 
   a {
     .project-title-container {
@@ -197,6 +202,25 @@ export default {
 
 .project-desc {
   color: black !important;
+}
+
+// project-text vue transition
+.text-enter-active {
+  transition: opacity 200ms ease-out;
+}
+
+.text-leave-active {
+  transition: opacity 200ms ease-in;
+}
+
+.text-enter,
+.text-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+}
+
+.text-leave,
+.text-enter-to {
+  opacity: 1;
 }
 
 // .project-title {
