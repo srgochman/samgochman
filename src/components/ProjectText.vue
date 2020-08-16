@@ -1,7 +1,7 @@
 <template>
   <div id="text-bg">
     <transition name="text" mode="out-in">
-      <div class="project-text" ref="project" :key="title">
+      <div class="project-text" ref="project" :key="title" @mouseover="hoverOn" @mouseout="hoverOff">
         <!-- router-link keeps user on same window for case studies -->
         <router-link v-if="type === 'study'" :to="link">
           <div class="project-title-container">
@@ -57,31 +57,6 @@ export default {
   },
   mounted() {
     setTimeout(() => {
-      // const vm = this;
-      const project = this.$refs.project;
-
-      // hover for all of ProjectText div
-      project.addEventListener("mouseover", function() {
-        // if (vm.isActive) {
-        // vm.projectTitle.childNodes[0].style.color = "var(--purple)";
-        // vm.arrow.classList.add("purple-arrow");
-        // if (vm.locked) vm.lock.classList.add("purple-lock");
-        $(".project-text a").css("color", "var(--purple)");
-        $(".project-text .arrow").addClass("purple-arrow");
-        $(".project-text .lock").addClass("purple-lock");
-        // }
-      });
-      project.addEventListener("mouseout", function() {
-        // if (vm.isActive) {
-        // vm.projectTitle.childNodes[0].style.color = "black";
-        // vm.arrow.classList.remove("purple-arrow");
-        // if (vm.locked) vm.lock.classList.remove("purple-lock");
-        $(".project-text a").css("color", "black");
-        $(".project-text .arrow").removeClass("purple-arrow");
-        $(".project-text .lock").removeClass("purple-lock");
-        // }
-      });
-
       this.trig = ScrollTrigger.create({
         trigger: "#text-bg",
         start: "top 25%", // [trigger] [scroller] positions,
@@ -94,6 +69,18 @@ export default {
   computed: {
     // retrieve store values
     ...mapState(["title", "description", "tags", "link", "type", "locked"])
+  },
+  methods: {
+    hoverOn() {
+      $(".project-text a").css("color", "var(--purple)");
+      $(".project-text .arrow").addClass("purple-arrow");
+      $(".project-text .lock").addClass("purple-lock");
+    },
+    hoverOff() {
+      $(".project-text a").css("color", "black");
+      $(".project-text .arrow").removeClass("purple-arrow");
+      $(".project-text .lock").removeClass("purple-lock");
+    }
   },
   beforeDestroy() {
     this.trig.kill();

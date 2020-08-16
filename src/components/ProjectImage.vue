@@ -129,7 +129,7 @@ export default {
         trigger: projectContainer,
         start: "top-=15px 50%", // [trigger] [scroller] positions,
         end: "bottom+=15px 50%", // [trigger] [scroller] positions
-        markers: true,
+        // markers: true,
         onEnter: () => {
           this.enter();
         },

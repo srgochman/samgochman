@@ -136,7 +136,7 @@ export default {
 // ending transitions
 .fade-enter-active {
   transition: color 700ms ease-in-out;
-  // transition-delay: 1000ms;
+  transition-delay: 1000ms;
 }
 
 .fade-leave-active {
