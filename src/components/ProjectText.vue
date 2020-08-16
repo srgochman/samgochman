@@ -130,17 +130,6 @@ export default {
     margin-right: 15px;
   }
 
-  // a {
-  //   display: flex;
-  //   flex-direction: column;
-  //   justify-content: flex-start;
-  //   width: fit-content;
-  //   color: black;
-
-  // .arrow-svg {
-  //   margin-top: 12px;
-  // }
-
   .arrow {
     background-size: cover;
     transform-origin: top left;
@@ -150,10 +139,6 @@ export default {
     transition: opacity 0.2s ease-in-out;
   }
 
-  // .lock-svg {
-  //   margin: 11px 13px 0 0;
-  // }
-
   .lock {
     background-size: cover;
     transform-origin: top left;
@@ -161,20 +146,7 @@ export default {
     fill: black;
     transition: fill 0.2s ease-in-out;
   }
-
-  // &:hover {
-  //   .arrow {
-  //     fill: var(--purple);
-  //     opacity: 1;
-  //     transition: opacity 0.2s ease-in-out;
-  //   }
-  //   .lock {
-  //     fill: var(--purple);
-  //     transition: fill 0.2s ease-in-out;
-  //   }
-  // }
 }
-// }
 
 .purple-arrow {
   fill: var(--purple);
@@ -209,10 +181,6 @@ export default {
 .text-enter-to {
   opacity: 1;
 }
-
-// .project-title {
-//   margin: 0 15px 0 0;
-// }
 
 @media only screen and (max-width: 1024px) {
   #text-bg {

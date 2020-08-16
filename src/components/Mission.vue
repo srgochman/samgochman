@@ -2,7 +2,7 @@
   <div id="mission-container">
     <div id="mission-statement">
       <span id="beginning">I’m a creative technologist who </span>
-      <transition name="fade">
+      <transition name="fade" mode="out-in">
         <span v-if="showEndings" ref="ending" class="ending" :key="idx">
           {{ endings[idx] }}
         </span>
@@ -136,12 +136,10 @@ export default {
 // ending transitions
 .fade-enter-active {
   transition: color 700ms ease-in-out;
-  transition-delay: 1000ms;
 }
 
 .fade-leave-active {
   transition: color 700ms ease-in-out;
-  color: transparent;
 }
 
 .fade-enter,
