@@ -1,7 +1,13 @@
 <template>
   <div id="text-bg">
     <transition name="text" mode="out-in">
-      <div class="project-text" ref="project" :key="title" @mouseover="hoverOn" @mouseout="hoverOff">
+      <div
+        class="project-text"
+        ref="project"
+        :key="title"
+        @mouseover="hoverOn"
+        @mouseout="hoverOff"
+      >
         <!-- router-link keeps user on same window for case studies -->
         <router-link v-if="type === 'study'" :to="link">
           <div class="project-title-container">

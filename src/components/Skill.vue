@@ -39,14 +39,14 @@ export default {
 
     const { skill } = this.$refs;
 
-    setTimeout(() => {
+    // setTimeout(() => {
       this.tl = gsap
         .timeline({
           scrollTrigger: {
             trigger: "#skills-container",
             start: "top 83%",
-            end: "bottom top"
-            // markers: true
+            end: "bottom top",
+            markers: true
           }
         })
         .from(skill, {
@@ -55,7 +55,7 @@ export default {
           ease: "power1.inOut",
           delay: this.delay
         });
-    }, 300);
+    // }, 300);
   },
   methods: {
     colorize(keyword) {

@@ -165,7 +165,7 @@ export default {
       });
     },
     enter() {
-      // image (all screens) 
+      // image (all screens)
       this.projectImage.classList.remove("dull");
       // text below (narrow screens)
       this.projectTextBelow.classList.remove("dull");
