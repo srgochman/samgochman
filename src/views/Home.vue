@@ -17,6 +17,7 @@
         complexity of people’s relationships with the world — and that opens up
         huge creative opportunities.
       </h3>
+      <br />
       <h3 id="contact">
         * I'm looking for new
         <a
@@ -107,12 +108,12 @@
         :key="experience.title"
       >
         <h2>{{ experience.title }}</h2>
-        <h3>
+        <p>
           <a :href="experience.link" target="_blank" rel="noopener">{{
             experience.firm
           }}</a
           >{{ experience.unlinked }}
-        </h3>
+        </p>
       </div>
     </div>
 
@@ -222,12 +223,12 @@ canvas {
 
 #mission-description {
   // width: 33%;
-  width: 475px;
+  width: 907px;
   // max-width: calc(max(500px, 30%));
   // margin-bottom: 200px;
   // font-size: 2em;
 
-  h3 {
+  p {
     margin-bottom: 30px;
   }
 }
@@ -362,7 +363,7 @@ canvas {
 
 @media only screen and (min-width: 426px) and (max-width: 1024px) {
   #mission-description {
-    width: 66%;
+    width: 100%;
     // max-width: 100%;
     margin-bottom: 120px;
   }

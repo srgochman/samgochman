@@ -4,7 +4,7 @@
       <img class="project-img dull" :src="image" ref="projectImage" />
       <div class="project-text-below" ref="projectTextBelow">
         <div class="project-title-container">
-          <h3 class="project-title" ref="projectTitle">{{ title }}</h3>
+          <p class="project-title" ref="projectTitle">{{ title }}</p>
           <svg class="lock-svg" v-if="locked" width="7px" height="10px">
             <use
               ref="lock"
@@ -27,7 +27,7 @@
       <img class="project-img dull" :src="image" ref="projectImage" />
       <div class="project-text-below" ref="projectTextBelow">
         <div class="project-title-container">
-          <h3 class="project-title" ref="projectTitle">{{ title }}</h3>
+          <p class="project-title" ref="projectTitle">{{ title }}</p>
           <svg class="lock-svg" v-if="locked" width="7px" height="10px">
             <use
               ref="lock"

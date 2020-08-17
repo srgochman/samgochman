@@ -11,7 +11,7 @@
         <!-- router-link keeps user on same window for case studies -->
         <router-link v-if="type === 'study'" :to="link">
           <div class="project-title-container">
-            <h3 class="project-title">{{ title }}</h3>
+            <p class="project-title">{{ title }}</p>
             <svg class="lock-svg" v-if="locked" width="7px" height="10px">
               <use class="lock" href="../assets/unlocked.svg#Layer_1"></use>
             </svg>
@@ -28,7 +28,7 @@
         <!-- opens new window for external links -->
         <a v-if="type !== 'study'" :href="link" target="_blank" rel="noopener">
           <div class="project-title-container">
-            <h3 class="project-title">{{ title }}</h3>
+            <p class="project-title">{{ title }}</p>
             <svg class="lock-svg" v-if="locked" width="7px" height="10px">
               <use class="lock" href="../assets/unlocked.svg#Layer_1"></use>
             </svg>

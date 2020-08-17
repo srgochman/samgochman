@@ -1,10 +1,10 @@
 <template>
   <div class="skill-container" ref="skill">
-    <h2
+    <h3
       class="skill-description"
       v-html="adjDescription"
       :style="{ borderColor: color, backgroundColor: backgroundColor }"
-    ></h2>
+    ></h3>
   </div>
 </template>
 
