@@ -33,7 +33,7 @@
         </div>
         <img
           id="exposure"
-          class="full-width"
+          class="full-width img-bg"
           src="/photos/phototaxis/exposure.jpg"
         />
       </div>
@@ -49,7 +49,7 @@
         </div>
         <img
           id="diagram"
-          class="two-thirds-width"
+          class="two-thirds-width img-bg"
           src="/photos/phototaxis/prototype.jpg"
         />
       </div>

@@ -84,72 +84,77 @@ export default {
     }
   },
   mounted() {
-    setTimeout(() => {
-      const instance = this;
-      const projectContainer = this.$refs.projectContainer;
-      this.projectImage = this.$refs.projectImage;
+    this.$router.app.$root.$once("transitionScroll", () => {
+      this.$router.app.$nextTick(() => {
+        if (this.$router.history.current.name === "Sam Gochman") {
+          const instance = this;
+          const projectContainer = this.$refs.projectContainer;
+          this.projectImage = this.$refs.projectImage;
 
-      // following 4 are for text below image, only shown on narrow screens
-      this.projectTextBelow = this.$refs.projectTextBelow;
-      this.projectTitle = this.$refs.projectTitle;
-      this.arrow = this.$refs.arrow;
-      this.lock = this.$refs.lock;
+          // following 4 are for text below image, only shown on narrow screens
+          this.projectTextBelow = this.$refs.projectTextBelow;
+          this.projectTitle = this.$refs.projectTitle;
+          this.arrow = this.$refs.arrow;
+          this.lock = this.$refs.lock;
 
-      projectContainer.addEventListener("mouseover", function() {
-        if (instance.isActive) {
-          // text below (narrow screens)
-          instance.projectTitle.style.color = "var(--purple)";
-          instance.arrow.classList.add("purple-arrow");
-          if (instance.locked) instance.lock.classList.add("purple-lock");
+          projectContainer.addEventListener("mouseover", function() {
+            if (instance.isActive) {
+              // text below (narrow screens)
+              instance.projectTitle.style.color = "var(--purple)";
+              instance.arrow.classList.add("purple-arrow");
+              if (instance.locked) instance.lock.classList.add("purple-lock");
 
-          // ProjectText (wide screens)
-          $(".project-text a").css("color", "var(--purple)");
-          $(".project-text .arrow").addClass("purple-arrow");
-          $(".project-text .lock").addClass("purple-lock");
+              // ProjectText (wide screens)
+              $(".project-text a").css("color", "var(--purple)");
+              $(".project-text .arrow").addClass("purple-arrow");
+              $(".project-text .lock").addClass("purple-lock");
+            }
+          });
+          projectContainer.addEventListener("mouseout", function() {
+            if (instance.isActive) {
+              // text below (narrow screens)
+              instance.projectTitle.style.color = "black";
+              instance.arrow.classList.remove("purple-arrow");
+              if (instance.locked)
+                instance.lock.classList.remove("purple-lock");
+
+              // ProjectText (wide screens)
+              $(".project-text a").css("color", "black");
+              $(".project-text .arrow").removeClass("purple-arrow");
+              $(".project-text .lock").removeClass("purple-lock");
+            }
+          });
+
+          if (projectContainer == projectContainer.parentNode.firstChild)
+            this.projectImage.classList.remove("dull");
+
+          this.trig = ScrollTrigger.create({
+            trigger: projectContainer,
+            start: "top-=15px 50%", // [trigger] [scroller] positions,
+            end: "bottom+=15px 50%", // [trigger] [scroller] positions
+            // markers: true,
+            onEnter: () => {
+              this.enter();
+            },
+            onEnterBack: () => {
+              this.enter();
+            },
+            onLeave: () => {
+              // Don't fade out last project when scrolling past it
+              if (projectContainer !== projectContainer.parentNode.lastChild) {
+                this.leave();
+              }
+            },
+            onLeaveBack: () => {
+              // Don't fade out first project when scrolling back past it
+              if (projectContainer !== projectContainer.parentNode.firstChild) {
+                this.leave();
+              }
+            }
+          });
         }
       });
-      projectContainer.addEventListener("mouseout", function() {
-        if (instance.isActive) {
-          // text below (narrow screens)
-          instance.projectTitle.style.color = "black";
-          instance.arrow.classList.remove("purple-arrow");
-          if (instance.locked) instance.lock.classList.remove("purple-lock");
-
-          // ProjectText (wide screens)
-          $(".project-text a").css("color", "black");
-          $(".project-text .arrow").removeClass("purple-arrow");
-          $(".project-text .lock").removeClass("purple-lock");
-        }
-      });
-
-      if (projectContainer == projectContainer.parentNode.firstChild)
-        this.projectImage.classList.remove("dull");
-
-      this.trig = ScrollTrigger.create({
-        trigger: projectContainer,
-        start: "top+=5% 50%", // [trigger] [scroller] positions,
-        end: "bottom-=5% 50%", // [trigger] [scroller] positions
-        // markers: true,
-        onEnter: () => {
-          this.enter();
-        },
-        onEnterBack: () => {
-          this.enter();
-        },
-        onLeave: () => {
-          // Don't fade out last project when scrolling past it
-          if (projectContainer !== projectContainer.parentNode.lastChild) {
-            this.leave();
-          }
-        },
-        onLeaveBack: () => {
-          // Don't fade out first project when scrolling back past it
-          if (projectContainer !== projectContainer.parentNode.firstChild) {
-            this.leave();
-          }
-        }
-      });
-    }, 500);
+    });
   },
   methods: {
     // updates store values with this project's props
@@ -165,24 +170,18 @@ export default {
       });
     },
     enter() {
-      // ProjectText (wide screens)
-      $(".project-text").removeClass("fade-out");
-      $(".project-text").addClass("fade-in");
-
-      // image (all screens) and text below (narrow screens)
+      // image (all screens)
       this.projectImage.classList.remove("dull");
+      // text below (narrow screens)
       this.projectTextBelow.classList.remove("dull");
 
       this.isActive = true;
       this.updateParams();
     },
     leave() {
-      // ProjectText (wide screens)
-      $(".project-text").removeClass("fade-in");
-      $(".project-text").addClass("fade-out");
-
-      // image (all screens) and text below (narrow screens)
+      // image (all screens)
       this.projectImage.classList.add("dull");
+      // text below (narrow screens)
       this.projectTextBelow.classList.add("dull");
       this.projectTitle.style.color = "black";
       this.arrow.classList.remove("purple-arrow");
@@ -192,23 +191,14 @@ export default {
     }
   },
   beforeDestroy() {
-    this.trig.kill();
+    if (this.$router.history.current.name === "Sam Gochman") {
+      this.trig.kill();
+    }
   }
 };
 </script>
 
 <style lang="scss">
-// scrolltrigger transitions for ProjectText
-.fade-out {
-  opacity: 0;
-  transition: opacity 200ms ease-out;
-}
-
-.fade-in {
-  opacity: 1;
-  transition: opacity 200ms ease-in;
-}
-
 .project-container {
   margin-bottom: 30px;
   width: 100%;
@@ -222,12 +212,14 @@ export default {
   // max-height:
   object-fit: cover;
   border-radius: 2px;
-  transition: opacity 200ms ease-out;
+  transition: opacity 300ms ease-out;
+  transition-delay: 200ms;
 }
 
 .dull {
   opacity: 0.3;
-  transition: opacity 200ms ease-out;
+  transition: opacity 300ms ease-out;
+  transition-delay: 200ms;
 }
 
 @media only screen and (max-width: 1024px) {

@@ -88,7 +88,7 @@
         </div>
         <img
           id="print"
-          class="two-thirds-width"
+          class="two-thirds-width img-bg"
           src="/photos/WIKN/WIKN_mural_crop_landscape.png"
         />
       </div>
@@ -131,33 +131,37 @@ export default {
       scene.setClassToggle(this, "visible").addTo(sectionController);
     });
 
-    setTimeout(() => {
-      const instance = this;
-      $("video").each(function() {
-        const videoInstance = this;
-        const videoTrig = ScrollTrigger.create({
-          trigger: videoInstance,
-          start: "top 100%", // [trigger] [scroller] positions,
-          end: "bottom 0%", // [trigger] [scroller] positions
-          // markers: true,
-          onEnter: () => {
-            videoInstance.play();
-          },
-          onEnterBack: () => {
-            videoInstance.play();
-          },
-          onLeave: () => {
-            videoInstance.pause();
-            videoInstance.currentTime = 0;
-          },
-          onLeaveBack: () => {
-            videoInstance.pause();
-            videoInstance.currentTime = 0;
-          }
-        });
-        instance.trig.push(videoTrig);
+    this.$router.app.$root.$once("transitionScroll", () => {
+      this.$router.app.$nextTick(() => {
+        if (this.$router.history.current.name === "WIKN") {
+          const instance = this;
+          $("video").each(function() {
+            const videoInstance = this;
+            const videoTrig = ScrollTrigger.create({
+              trigger: videoInstance,
+              start: "top 100%", // [trigger] [scroller] positions,
+              end: "bottom 0%", // [trigger] [scroller] positions
+              // markers: true,
+              onEnter: () => {
+                videoInstance.play();
+              },
+              onEnterBack: () => {
+                videoInstance.play();
+              },
+              onLeave: () => {
+                videoInstance.pause();
+                videoInstance.currentTime = 0;
+              },
+              onLeaveBack: () => {
+                videoInstance.pause();
+                videoInstance.currentTime = 0;
+              }
+            });
+            instance.trig.push(videoTrig);
+          });
+        }
       });
-    }, 300);
+    });
   },
   computed: {
     tagline() {
@@ -172,8 +176,10 @@ export default {
     }
   },
   beforeDestroy() {
-    for (let i = 0; i < this.trig.length; i++) {
-      this.trig[i].kill();
+    if (this.$router.history.current.name === "WIKN") {
+      for (let i = 0; i < this.trig.length; i++) {
+        this.trig[i].kill();
+      }
     }
   },
   components: { Tags }
@@ -207,12 +213,13 @@ export default {
   // transform-origin: top center;
   box-shadow: 0 15px 25px rgba(0, 0, 0, 0.25);
   // margin-right: calc(min(7vw, calc(var(--main-width) * 0.05)));
-  margin-bottom: calc(min(7vw, 72px));
+  margin-right: calc(min(7vw, 72px));
 }
 
 #ui-review {
   // margin-left: calc(min(7vw, calc(var(--main-width) * 0.05)));
-  margin-bottom: calc(min(7vw, 72px));
+  margin-left: calc(min(7vw, 72px));
+  margin-right: 0;
 }
 
 @media only screen and (min-width: 769px) and (max-width: 1024px) {

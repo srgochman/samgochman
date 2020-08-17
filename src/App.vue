@@ -18,6 +18,9 @@ export default {
     // window.onload = window.onresize = function() {
     //   document.getElementById("app").style.height = window.innerHeight + "px";
     // };
+  },
+  mounted() {
+    this.$router.app.$emit("transitionScroll");
   }
 };
 </script>

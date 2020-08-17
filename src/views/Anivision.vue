@@ -37,10 +37,13 @@
       </div>
       <div class="section across appear">
         <img
-          class="two-thirds-width"
+          class="two-thirds-width img-bg"
           src="/photos/anivision/VINS_student.jpg"
         />
-        <img class="one-third-width" src="/photos/anivision/VINS_class.jpg" />
+        <img
+          class="one-third-width img-bg"
+          src="/photos/anivision/VINS_class.jpg"
+        />
       </div>
       <div class="section writing appear stacked">
         <div class="caption">
@@ -55,9 +58,12 @@
           </h3>
         </div>
         <div class="across">
-          <img class="one-third-width" src="/photos/anivision/honeybee.jpg" />
           <img
-            class="two-thirds-width"
+            class="one-third-width img-bg"
+            src="/photos/anivision/honeybee.jpg"
+          />
+          <img
+            class="two-thirds-width img-bg"
             src="/photos/anivision/beeComparison.png"
           />
         </div>
@@ -99,7 +105,10 @@
             educators.
           </h3>
         </div>
-        <img class="two-thirds-width" src="/photos/anivision/leakey.jpg" />
+        <img
+          class="two-thirds-width img-bg"
+          src="/photos/anivision/leakey.jpg"
+        />
       </div>
     </div>
   </div>
