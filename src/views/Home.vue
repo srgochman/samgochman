@@ -155,7 +155,7 @@ export default {
       autoAlpha: 0,
       duration: 0.8,
       ease: "power1.inOut",
-      delay: 1.3
+      delay: 0.5
     });
 
     // animate hover for underlines in mission description
@@ -195,12 +195,6 @@ export default {
 </script>
 
 <style lang="scss">
-#mission {
-  position: relative;
-  height: 100vh;
-  margin-bottom: 50px;
-}
-
 canvas {
   display: block;
   object-fit: cover;
@@ -220,11 +214,18 @@ canvas {
   z-index: 1;
 }
 
+#mission {
+  position: relative;
+  height: 100vh;
+  margin-bottom: 50px;
+}
+
 #mission-description {
   // width: 33%;
   width: 475px;
   // max-width: calc(max(500px, 30%));
   // margin-bottom: 200px;
+  font-size: 2em;
 
   h3 {
     margin-bottom: 30px;

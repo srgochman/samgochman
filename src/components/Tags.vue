@@ -46,7 +46,7 @@ export default {
   border-left: solid 3px;
   padding: 6px 11px 6px 9px;
   font-size: 0.875em;
-  font-weight: 700; // 400
+  font-weight: 500; // 700
 }
 
 @media only screen and (max-width: 1024px) {
