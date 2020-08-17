@@ -225,7 +225,7 @@ canvas {
   width: 475px;
   // max-width: calc(max(500px, 30%));
   // margin-bottom: 200px;
-  font-size: 2em;
+  // font-size: 2em;
 
   h3 {
     margin-bottom: 30px;

@@ -96,6 +96,7 @@ export default {
   padding: 25px 45px;
   border-radius: 2px 7px 7px 2px;
   border-left: solid 6px;
+  // font-weight: 200;
   // font-size: 2em;
 }
 
