@@ -100,11 +100,11 @@ export default {
   // font-size: 2em;
 }
 
-@media only screen and (min-width: 1025px) {
-  .skill-description {
-    font-size: 2em;
-  }
-}
+// @media only screen and (min-width: 1025px) {
+//   .skill-description {
+//     font-size: 2em;
+//   }
+// }
 
 @media only screen and (min-width: 426px) and (max-width: 1024px) {
   .skill-container {
