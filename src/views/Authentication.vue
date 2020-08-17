@@ -9,11 +9,6 @@
         name="password"
         v-model="submittedPassword"
       />
-      <img
-        height="5px"
-        class="underline"
-        src="../assets/drawn/line3_purple.svg"
-      />
     </label>
     <span id="message">{{ message }}</span>
     <button id="button" type="button" @click="login">Next</button>
@@ -101,9 +96,9 @@ input {
   // border: solid 1px gray;
   // border-radius: 2px;
   border: none;
-  // border-bottom: solid 1px gray;
+  border-bottom: solid 1px gray;
   color: inherit;
-  // padding: 0;
+  padding-bottom: 5px;
   font: inherit;
   font-size: 1.2em;
   font-weight: 200;
@@ -122,15 +117,6 @@ select:-webkit-autofill:hover,
 select:-webkit-autofill:focus {
   box-shadow: 0 0 0px 1000px var(--purple-transparent) inset;
   -webkit-box-shadow: 0 0 0px 1000px var(--purple-transparent) inset;
-}
-
-.underline {
-  position: absolute;
-  bottom: 0px;
-  left: 0px;
-  // width: 100%;
-  // transform: scaleY(1.5);
-  // height: 5px;
 }
 
 #message {
@@ -153,9 +139,11 @@ button {
   font-weight: 600;
   cursor: pointer;
   outline: none;
-}
+  transition: var(--hover);
 
-button:active {
-  background-color: var(--purple-semi-transparent);
+  &:hover {
+    background-color: var(--purple-semi-transparent);
+    transition: var(--hover);
+  }
 }
 </style>

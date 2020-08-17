@@ -2,7 +2,8 @@
   <div id="app">
     <div id="nav">
       <router-link to="/" class="sam-gochman">
-        <div id="name-drawn"></div>
+        <!-- <div id="name-drawn"></div> -->
+        <div>Sam Gochman</div>
       </router-link>
     </div>
     <transition name="pages" @after-leave="$root.$emit('transitionScroll')">
@@ -88,10 +89,10 @@ body {
 
   .sam-gochman {
     height: min-content;
-    // text-transform: uppercase;
-    // font-size: 24px;
-    // font-weight: 800;
-    // color: black;
+    text-transform: uppercase;
+    font-size: 24px;
+    font-weight: 700;
+    color: black;
     margin-top: 15px;
     padding-left: calc(min(7vw, 50px));
   }

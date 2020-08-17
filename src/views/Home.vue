@@ -1,8 +1,5 @@
 <template>
   <div class="body">
-    <!-- <router-link to="/anivision" style="z-index: 10000"
-      ><button>test</button></router-link
-    > -->
     <!-- <button @click="clearPass" style="margin-top: 10vh; z-index: 10000">
       Clear passCorrect
     </button> -->
@@ -25,12 +22,9 @@
           href="https://www.linkedin.com/in/samuelrgochman/"
           target="_blank"
           rel="noopener"
-          >work<img
-            height="5"
-            class="work-underline"
-            src="../assets/drawn/line1_purple.svg"
-          />
-        </a>
+          class="underline"
+          >work</a
+        >
         and would love to
         <span style="white-space: nowrap">
           <a
@@ -38,10 +32,8 @@
             href="mailto:srgochman@gmail.com"
             target="_blank"
             rel="noopener"
-            >connect<img
-              height="5"
-              class="connect-underline"
-              src="../assets/drawn/line2_purple.svg"/></a
+            class="underline"
+            >connect</a
           >!
           <!-- Here's some of my past
           <a
@@ -60,8 +52,8 @@
     </div>
 
     <div id="skills" class="section appear">
-      <!-- <h1>Skills</h1> -->
-      <div id="skills-drawn" class="section-heading"></div>
+      <h1>Skills</h1>
+      <!-- <div id="skills-drawn" class="section-heading"></div> -->
       <div id="skills-container">
         <Skill
           v-for="skill in skills"
@@ -77,8 +69,8 @@
     </div>
 
     <div id="projects" class="section appear">
-      <!-- <h1>Selected Work</h1> -->
-      <div id="work-drawn" class="section-heading"></div>
+      <h1>Selected Work</h1>
+      <!-- <div id="work-drawn" class="section-heading"></div> -->
       <div id="projects-container">
         <div id="project-images-container">
           <ProjectImage
@@ -100,8 +92,8 @@
     </div>
 
     <div id="experience" class="section appear">
-      <!-- <h1>Experience</h1> -->
-      <div id="experience-drawn" class="section-heading"></div>
+      <h1>Experience</h1>
+      <!-- <div id="experience-drawn" class="section-heading"></div> -->
       <div
         class="experience-item"
         v-for="experience in experiences"
@@ -233,28 +225,28 @@ canvas {
   }
 }
 
-.work-underline,
-.connect-underline {
-  // content: "";
-  position: absolute;
-  bottom: -3px;
-  left: 0px;
-  width: 100%;
-  transform: scaleY(1.5);
-  opacity: 1;
-  visibility: visible;
-  transition: var(--hover);
-}
+// .work-underline,
+// .connect-underline {
+//   // content: "";
+//   position: absolute;
+//   bottom: -3px;
+//   left: 0px;
+//   width: 100%;
+//   transform: scaleY(1.5);
+//   opacity: 1;
+//   visibility: visible;
+//   transition: var(--hover);
+// }
 
-.work-underline-hover,
-.connect-underline-hover {
-  left: 0px;
-  // width: 0;
-  // width: calc(100% - 1px);
-  // transform: scaleX(0);
-  visibility: hidden;
-  opacity: 0;
-}
+// .work-underline-hover,
+// .connect-underline-hover {
+//   left: 0px;
+//   // width: 0;
+//   // width: calc(100% - 1px);
+//   // transform: scaleX(0);
+//   visibility: hidden;
+//   opacity: 0;
+// }
 
 // .underline {
 //   text-decoration: solid underline var(--purple);
@@ -264,6 +256,26 @@ canvas {
 //   color: var(--purple);
 //   font-weight: 800;
 // }
+
+.underline::before {
+  content: "";
+  position: absolute;
+  width: calc(100% - 1px);
+  // width: 20px;
+  height: 3px;
+  bottom: 0;
+  left: 1px;
+  background-color: var(--purple);
+  visibility: visible;
+  transition: var(--hover);
+}
+
+.underline:hover::before {
+  visibility: hidden;
+  width: 0;
+  // width: calc(100% - 1px);
+  left: 1px;
+}
 
 .section-heading {
   height: 13px;
