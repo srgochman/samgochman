@@ -235,7 +235,7 @@ canvas {
 .connect-underline {
   // content: "";
   position: absolute;
-  bottom: 0px;
+  bottom: -3px;
   left: 0px;
   width: 100%;
   transform: scaleY(1.5);

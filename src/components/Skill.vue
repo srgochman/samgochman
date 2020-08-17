@@ -40,21 +40,30 @@ export default {
     const { skill } = this.$refs;
 
     // setTimeout(() => {
-      this.tl = gsap
-        .timeline({
-          scrollTrigger: {
-            trigger: "#skills-container",
-            start: "top 83%",
-            end: "bottom top",
-            markers: true
-          }
-        })
-        .from(skill, {
-          autoAlpha: 0,
-          duration: 0.5,
-          ease: "power1.inOut",
-          delay: this.delay
-        });
+    // this.$nextTick(function() {
+    this.$router.app.$root.$once("transitionScroll", () => {
+      this.$router.app.$nextTick(() => {
+        if (this.$router.history.current.name === "Sam Gochman") {
+          // console.log("on home page");
+          this.tl = gsap
+            .timeline({
+              scrollTrigger: {
+                trigger: "#skills-container",
+                start: "top 83%",
+                end: "bottom top"
+                // markers: true
+              }
+            })
+            .from(skill, {
+              autoAlpha: 0,
+              duration: 0.5,
+              ease: "power1.inOut",
+              delay: this.delay
+            });
+        }
+      });
+    });
+    // });
     // }, 300);
   },
   methods: {
@@ -66,8 +75,9 @@ export default {
     }
   },
   beforeDestroy() {
-    // this.tl.scrollTrigger.refresh();
-    this.tl.scrollTrigger.kill();
+    if (this.$router.history.current.name === "Sam Gochman") {
+      this.tl.scrollTrigger.kill();
+    }
   }
 };
 </script>

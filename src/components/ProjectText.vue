@@ -62,15 +62,19 @@ export default {
     };
   },
   mounted() {
-    setTimeout(() => {
-      this.trig = ScrollTrigger.create({
-        trigger: "#text-bg",
-        start: "top 25%", // [trigger] [scroller] positions,
-        end: "bottom bottom-=7%", // [trigger] [scroller] positions
-        // markers: true,
-        pin: true
+    this.$router.app.$root.$once("transitionScroll", () => {
+      this.$router.app.$nextTick(() => {
+        if (this.$router.history.current.name === "Sam Gochman") {
+          this.trig = ScrollTrigger.create({
+            trigger: "#text-bg",
+            start: "top 25%", // [trigger] [scroller] positions,
+            end: "bottom bottom-=7%", // [trigger] [scroller] positions
+            // markers: true,
+            pin: true
+          });
+        }
       });
-    }, 500);
+    });
   },
   computed: {
     // retrieve store values
@@ -89,7 +93,9 @@ export default {
     }
   },
   beforeDestroy() {
-    this.trig.kill();
+    if (this.$router.history.current.name === "Sam Gochman") {
+      this.trig.kill();
+    }
   },
   components: {
     Tags
