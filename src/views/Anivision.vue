@@ -64,7 +64,7 @@
           />
           <img
             class="two-thirds-width img-bg"
-            src="/photos/anivision/beeComparison.png"
+            src="/photos/anivision/beeComparison.jpg"
           />
         </div>
       </div>
@@ -153,7 +153,7 @@ export default {
 @import "../scss/studies.scss";
 
 .banner {
-  background-image: url("/photos/anivision/anivision_KUA.png");
+  background-image: url("/photos/anivision/anivision_KUA.jpg");
 }
 
 .banner::before {
