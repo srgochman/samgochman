@@ -3,12 +3,12 @@
     <div class="banner img-bg"></div>
     <div class="body">
       <div class="banner-text">
-        <h1>Multilingual</h1>
+        <h3>Multilingual</h3>
         <h2>{{ tagline }}</h2>
-        <h3>Sosolimited, 2020</h3>
+        <p>Sosolimited, 2020</p>
       </div>
       <div class="info section">
-        <h3 class="half-width">
+        <h3 class="two-thirds-width">
           Developed for Planet Word, a museum of language in Washington, DC,
           Multilingual gives visitors a chance to appreciate the diversity of
           languages spoken by other visitors through time. Each contribution to
@@ -16,10 +16,15 @@
           context of a connected community. Everyone can track themselves in an
           artwork that enhances the museum whether or not it’s in use.
         </h3>
-        <Tags :words="tags" class="half-width" />
+        <Tags :words="tags" class="one-third-width" />
       </div>
       <div class="section appear">
-        <video muted autoplay loop class="full-width">
+        <video
+          class="full-width"
+          controls
+          preload="metadata"
+          poster="/photos/multilingual/animation_poster.png"
+        >
           <source
             src="/photos/multilingual/2 Animation-Sequence_edit_trimmed.mp4"
             type="video/mp4"
@@ -29,14 +34,14 @@
       <div class="section writing appear stacked">
         <div class="caption two-thirds-width">
           <h2 class="">Data Modeling</h2>
-          <h3 class="">
+          <p class="">
             I used a database of over 6,000 languages and dialects to capture
             the diversity of visitors for the visualization. Meeting with a
             linguist helped me iterate a data model that balanced informational
             richness and aesthetic clarity. Across the landscape of linguistic
             relatedness, color represents a visitor’s language and size shows
             its rarity, letting the museum celebrate underrepresented groups.
-          </h3>
+          </p>
         </div>
         <div class="across">
           <img
@@ -61,12 +66,12 @@
       <div class="section writing appear reverse">
         <div class="caption one-third-width">
           <h2>User Interaction</h2>
-          <h3>
+          <p>
             A goal of high turnover meant that user input had to be fast, yet
             inclusive and accurate. I developed a touch interface that hooks
             into the database to quickly narrow down searches, letting visitors
             focus instead on the visualization itself.
-          </h3>
+          </p>
         </div>
         <img
           id="keyboard"

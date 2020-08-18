@@ -3,12 +3,12 @@
     <div class="banner img-bg"></div>
     <div class="body">
       <div class="banner-text">
-        <h1>Anivision</h1>
+        <h3>Anivision</h3>
         <h2>{{ tagline }}</h2>
-        <h3>DALI Lab @ Dartmouth College, 2017 – Present</h3>
+        <p>DALI Lab @ Dartmouth College, 2017 – Present</p>
       </div>
       <div class="info section">
-        <h3 class="half-width">
+        <h3 class="two-thirds-width">
           Merging my backgrounds in science research and human-centered design,
           I created a platform that lets students appreciate topics like
           evolution through a first-hand experience of extreme adaptations in
@@ -16,20 +16,20 @@
           professors, and local high schools has helped get the project into
           real classrooms and pushed its capabilities in every iteration.
         </h3>
-        <Tags :words="tags" class="half-width" />
+        <Tags :words="tags" class="one-third-width" />
       </div>
       <!-- <div id="vid-section" class="section appear"></div> -->
       <div id="vid-section" class="section writing appear reverse">
         <div class="caption one-third-width">
           <h2 class="">Immersive Education</h2>
-          <h3 class="">
+          <p class="">
             What if instead of just reading about nocturnal primate vision, you
             could become a tarsier with enormous eyes in virtual reality?
             Teachers can use this platform across disciplines like physiology,
             perceptual psychology, physics, and even philosophy. Whether
             learning about adaptation, eye lenses, or subjective worldviews,
             students appreciate classroom concepts through intuition.
-          </h3>
+          </p>
         </div>
         <video class="two-thirds-width" controls>
           <source src="/photos/anivision/anivision.mp4" type="video/mp4" />
@@ -48,14 +48,14 @@
       <div class="section writing appear stacked">
         <div class="caption">
           <h2 class="one-third-width">Environments Design</h2>
-          <h3 class="one-third-width">
+          <p class="one-third-width">
             Using animals with extreme adaptations like the honey bee lets
             students toggle between visual systems while exploring different
             habitats. Keeping in mind real ecology, we designed environments
             that encourage self-motivated learning. Users can see how different
             eyes either help or hinder the animal’s behavior like seeing a
             flower’s ultraviolet markings that signal where to find nectar.
-          </h3>
+          </p>
         </div>
         <div class="across">
           <img
@@ -72,7 +72,7 @@
         <!-- <div class="spacer one-third-width"></div> -->
         <div class="caption two-thirds-width">
           <h2 class="half-width">Enhanced Learning</h2>
-          <h3 class="half-width">
+          <p class="half-width">
             Throughout development, we’ve tested the platform with students from
             middle school through college. With more formal testing, we
             published in an open access educational journal to communicate how
@@ -85,7 +85,7 @@
             <br />
             <strong>92%</strong> of students understood the lesson's key
             takeaways (e.g., advantages of large eyes in dark environments).
-          </h3>
+          </p>
         </div>
         <a
           class="one-third-width"
@@ -98,12 +98,12 @@
       <div class="section writing appear">
         <div class="caption one-third-width">
           <h2>Communication</h2>
-          <h3>
+          <p>
             Beyond publication, we made the platform open source to maximize
             access. I presented at a national conference, natural history
             museum, and on campus to gain interest and partnerships with
             educators.
-          </h3>
+          </p>
         </div>
         <img
           class="two-thirds-width img-bg"

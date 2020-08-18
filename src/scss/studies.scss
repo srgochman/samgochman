@@ -105,7 +105,7 @@ img {
 
 
 .banner-text {
-  width: 800px;
+  width: 910px; // 800px;
   // max-width: var(--main-width);
   position: fixed;
   top: 50vh;
@@ -117,15 +117,11 @@ img {
   // for fixed background:
   // position: absolute;
 
-  h1 {
-    margin-bottom: 20px;
-  }
-
   h2 {
     font-size: 4.5em;
     font-weight: 700;
     line-height: 1.3em;
-    margin-bottom: 20px;
+    margin: 20px 0;
   }
 }
 
@@ -227,7 +223,7 @@ img {
       line-height: 1.4em;
     }
     
-    h3 {
+    p {
       width: calc(min(80%, 500px));
     }
   }

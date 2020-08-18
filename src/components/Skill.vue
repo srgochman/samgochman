@@ -1,10 +1,10 @@
 <template>
   <div class="skill-container" ref="skill">
-    <h2
+    <h3
       class="skill-description"
       v-html="adjDescription"
       :style="{ borderColor: color, backgroundColor: backgroundColor }"
-    ></h2>
+    ></h3>
   </div>
 </template>
 
@@ -70,7 +70,9 @@ export default {
     colorize(keyword) {
       this.adjDescription = this.adjDescription.replace(
         keyword,
-        `<span style="color: ${this.color}"> ${keyword} </span>`
+        // `<span style="color: ${this.color}"> ${keyword} </span>`
+        // `<span style="font-weight: 700"> ${keyword} </span>`
+        `<span style="color: ${this.color}; font-weight: 400"> ${keyword} </span>`
       );
     }
   },
@@ -93,18 +95,18 @@ export default {
 .skill-description {
   // width: 63%;
   // width: 80%;
-  padding: 25px 45px;
+  padding: 25px 35px;
   border-radius: 2px 7px 7px 2px;
   border-left: solid 6px;
   // font-weight: 200;
   // font-size: 2em;
 }
 
-@media only screen and (min-width: 1025px) {
-  .skill-description {
-    font-size: 2em;
-  }
-}
+// @media only screen and (min-width: 1025px) {
+//   .skill-description {
+//     font-size: 2em;
+//   }
+// }
 
 @media only screen and (min-width: 426px) and (max-width: 1024px) {
   .skill-container {
