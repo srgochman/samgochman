@@ -190,7 +190,7 @@ export default {
 @import "../scss/studies.scss";
 
 .banner {
-  background-image: url("/photos/WIKN/WIKN_mural.png");
+  background-image: url("/photos/WIKN/WIKN_mural.jpg");
 }
 
 .banner::before {

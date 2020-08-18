@@ -23,7 +23,7 @@
           class="full-width"
           controls
           preload="metadata"
-          poster="/photos/multilingual/animation_poster.png"
+          poster="/photos/multilingual/pw_08a_patch.jpg"
         >
           <source
             src="/photos/multilingual/2 Animation-Sequence_edit_trimmed.mp4"
@@ -59,7 +59,7 @@
           <img
             id="field"
             class="one-third-width"
-            src="/photos/multilingual/field.png"
+            src="/photos/multilingual/field.jpg"
           />
         </div>
       </div>

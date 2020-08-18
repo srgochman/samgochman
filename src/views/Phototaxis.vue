@@ -48,7 +48,6 @@
           </p>
         </div>
         <img
-          id="diagram"
           class="two-thirds-width img-bg"
           src="/photos/phototaxis/prototype.jpg"
         />

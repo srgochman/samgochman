@@ -5,7 +5,6 @@
     </button> -->
     <div id="particles-js"></div>
     <div id="mission" class="section">
-      <!-- <Sketch></Sketch> -->
       <Mission></Mission>
     </div>
     <div id="mission-description" class="section appear">
@@ -136,7 +135,6 @@ import Mission from "../components/Mission.vue";
 import Skill from "../components/Skill.vue";
 import ProjectImage from "../components/ProjectImage.vue";
 import ProjectText from "../components/ProjectText.vue";
-// import Sketch from "../components/Sketch.vue";
 import contents from "../list-contents.json";
 import { gsap } from "gsap";
 import ScrollMagic from "scrollmagic";
@@ -387,18 +385,19 @@ canvas {
 
   a {
     // display: inline-block;
-    display: flex;
-    flex-direction: row;
-    // justify-content: flex-start;
-    align-items: center;
+    // display: flex;
+    // flex-direction: row;
+    // // justify-content: flex-start;
+    // align-items: center;
 
     & > span {
       margin-right: 10px;
     }
 
-    // & > svg {
-    //   vertical-align: middle;
-    // }
+    & > svg {
+      // vertical-align: middle;
+      margin-bottom: 2px;
+    }
   }
 }
 
