@@ -74,7 +74,15 @@ const router = new VueRouter({
       }
     },
     {
-      path: "*",
+      path: "/authentication",
+      name: "Authentication",
+      component: Authentication,
+      meta: {
+        title: "Authentication"
+      }
+    },
+    {
+      path: "/404",
       name: "Not Found",
       component: NotFound,
       meta: {
@@ -82,12 +90,8 @@ const router = new VueRouter({
       }
     },
     {
-      path: "/authentication",
-      name: "Authentication",
-      component: Authentication,
-      meta: {
-        title: "Authentication"
-      }
+      path: "*",
+      redirect: "/404"
     }
   ]
 });
