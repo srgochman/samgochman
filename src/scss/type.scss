@@ -13,12 +13,14 @@ h1 {
   text-transform: uppercase;
   font-size: 1em; // 16px
   // font-weight: 800;
-  font-weight: 200;
+  font-weight: 700;
   line-height: 1.8em;
-  margin: 0;
+  margin: 0 0 50px 0;
+  // opacity: 0.4;
+  // color: var(--purple);
 }
 
-/* large text */
+/* large bold text */
 h2 {
   font-size: 2.25em;
   font-weight: 700;
@@ -27,20 +29,22 @@ h2 {
   /* display: inline; */
 }
 
-/* small text */
+/* non-bold text */
 h3 {
+  font-size: 1.8em;
+  font-weight: 300;
+  line-height: 1.7em;
+  margin: 0 0 0px 0;
+  /* display: inline; */
+}
+
+/* small text */
+p {
   font-size: 1.2em;
   font-weight: 200;
   line-height: 1.8em;
   margin: 0 0 0px 0;
   // display: inline;
-}
-
-p {
-  font-size: 1rem;
-  font-weight: 300;
-  line-height: 1.5em;
-  margin: 0 0 16px 0;
 }
 
 a {
@@ -74,8 +78,13 @@ code {
     font-size: 1.3em;
     line-height: 1.5em;
   }
-  
+
   h3 {
+    font-size: 1.3em;
+    line-height: 1.5em;
+  }
+  
+  p {
     font-size: 1em;
     line-height: 1.7em;
   }

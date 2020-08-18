@@ -1,8 +1,5 @@
 <template>
   <div class="body">
-    <!-- <router-link to="/anivision" style="z-index: 10000"
-      ><button>test</button></router-link
-    > -->
     <!-- <button @click="clearPass" style="margin-top: 10vh; z-index: 10000">
       Clear passCorrect
     </button> -->
@@ -13,19 +10,21 @@
     </div>
     <div id="mission-description" class="section appear">
       <h3>
-        As a developer with roots in biology and architecture, I appreciate the
-        complexity of people’s relationships with the world — and that opens up
-        huge creative opportunities.
+        As a developer with roots in biological research and architectural
+        design, I appreciate the complexity of people’s relationships with the
+        world — and that opens up huge creative opportunities.
       </h3>
+      <br />
       <h3 id="contact">
-        * I'm looking for new
+        <img height="11" id="asterisk" src="../assets/drawn/asterisk.svg" />
+        I'm looking for new
         <a
           id="work"
           href="https://www.linkedin.com/in/samuelrgochman/"
           target="_blank"
           rel="noopener"
           >work<img
-            height="5"
+            height="3"
             class="work-underline"
             src="../assets/drawn/line1_purple.svg"
           />
@@ -38,7 +37,7 @@
             target="_blank"
             rel="noopener"
             >connect<img
-              height="5"
+              height="3"
               class="connect-underline"
               src="../assets/drawn/line2_purple.svg"/></a
           >!
@@ -59,8 +58,8 @@
     </div>
 
     <div id="skills" class="section appear">
-      <!-- <h1>Skills</h1> -->
-      <div id="skills-drawn" class="section-heading"></div>
+      <h1>Skills</h1>
+      <!-- <div id="skills-drawn" class="section-heading"></div> -->
       <div id="skills-container">
         <Skill
           v-for="skill in skills"
@@ -76,8 +75,8 @@
     </div>
 
     <div id="projects" class="section appear">
-      <!-- <h1>Selected Work</h1> -->
-      <div id="work-drawn" class="section-heading"></div>
+      <h1>Selected Work</h1>
+      <!-- <div id="work-drawn" class="section-heading"></div> -->
       <div id="projects-container">
         <div id="project-images-container">
           <ProjectImage
@@ -99,20 +98,24 @@
     </div>
 
     <div id="experience" class="section appear">
-      <!-- <h1>Experience</h1> -->
-      <div id="experience-drawn" class="section-heading"></div>
+      <h1>Experience</h1>
+      <!-- <div id="experience-drawn" class="section-heading"></div> -->
       <div
         class="experience-item"
         v-for="experience in experiences"
         :key="experience.title"
       >
         <h2>{{ experience.title }}</h2>
-        <h3>
-          <a :href="experience.link" target="_blank" rel="noopener">{{
-            experience.firm
-          }}</a
-          >{{ experience.unlinked }}
-        </h3>
+        <p>
+          <a :href="experience.link" target="_blank" rel="noopener">
+            <span>{{ experience.firm }}</span>
+            <svg width="28px" height="8px">
+              <use
+                class="arrow"
+                href="../assets/drawn/arrow_drawn2.svg#Layer_2"
+              ></use></svg
+          ></a>
+        </p>
       </div>
     </div>
 
@@ -155,7 +158,7 @@ export default {
       autoAlpha: 0,
       duration: 0.8,
       ease: "power1.inOut",
-      delay: 1.3
+      delay: 0.5
     });
 
     // animate hover for underlines in mission description
@@ -164,6 +167,13 @@ export default {
     });
     $("#connect").hover(function() {
       $(".connect-underline").toggleClass("connect-underline-hover");
+    });
+
+    // animate hover for arrows in experience
+    $(".experience-item a").hover(function() {
+      $(this)
+        .find(".arrow")
+        .toggleClass("purple-arrow");
     });
 
     const homeController = new ScrollMagic.Controller();
@@ -195,12 +205,6 @@ export default {
 </script>
 
 <style lang="scss">
-#mission {
-  position: relative;
-  height: 100vh;
-  margin-bottom: 50px;
-}
-
 canvas {
   display: block;
   object-fit: cover;
@@ -220,22 +224,39 @@ canvas {
   z-index: 1;
 }
 
+#mission {
+  position: relative;
+  height: 100vh;
+  margin-bottom: 50px;
+}
+
 #mission-description {
   // width: 33%;
-  width: 475px;
+  width: 907px;
   // max-width: calc(max(500px, 30%));
   // margin-bottom: 200px;
+  // font-size: 2em;
 
-  h3 {
+  p {
     margin-bottom: 30px;
   }
+}
+
+#contact {
+  position: relative;
+}
+
+#asterisk {
+  position: absolute;
+  top: 13px;
+  left: -25px;
 }
 
 .work-underline,
 .connect-underline {
   // content: "";
   position: absolute;
-  bottom: -3px;
+  bottom: -1px;
   left: 0px;
   width: 100%;
   transform: scaleY(1.5);
@@ -260,8 +281,56 @@ canvas {
 //   text-decoration-thickness: 5px;
 //   border-bottom: solid var(--purple) 2px;
 //   color: var(--purple);
-//   font-weight: 800;
+//   font-weight: 700;
 // }
+
+// .underline::before {
+//   content: "";
+//   position: absolute;
+//   width: calc(100% - 1px);
+//   // width: 20px;
+//   height: 3px;
+//   bottom: 0;
+//   left: 1px;
+//   background-color: var(--purple);
+//   visibility: visible;
+//   transition: var(--hover);
+// }
+
+// .underline:hover::before {
+//   visibility: hidden;
+//   width: 0;
+//   // width: calc(100% - 1px);
+//   left: 1px;
+// }
+
+.arrow {
+  background-size: cover;
+  transform-origin: top left;
+  transform: scale(0.15, 0.2);
+  fill: black;
+  // opacity: 0;
+  transition: fill 0.2s ease-in-out;
+}
+
+.lock {
+  background-size: cover;
+  transform-origin: top left;
+  transform: scale(0.1);
+  fill: black;
+  transition: fill 0.2s ease-in-out;
+}
+
+.purple-arrow {
+  fill: var(--purple) !important;
+  // opacity: 1 !important;
+  transition: fill 0.2s ease-in-out;
+}
+
+.purple-lock {
+  fill: var(--purple) !important;
+  transition: fill 0.2s ease-in-out;
+}
 
 .section-heading {
   height: 13px;
@@ -311,59 +380,77 @@ canvas {
   &:last-child {
     margin-bottom: 0 !important;
   }
-}
 
-#experience,
-#education {
+  p {
+    display: inline-block;
+  }
+
   a {
-    display: inline;
-    color: black;
+    // display: inline-block;
+    display: flex;
+    flex-direction: row;
+    // justify-content: flex-start;
+    align-items: center;
+
+    & > span {
+      margin-right: 10px;
+    }
+
+    // & > svg {
+    //   vertical-align: middle;
+    // }
   }
 }
 
-#juices-drawn {
-  width: 233px;
-  height: 15px;
-  background-image: url("../assets/drawn/LCJ_drawn.svg");
-  background-repeat: no-repeat;
-}
+// #juices-drawn {
+//   width: 233px;
+//   height: 15px;
+//   background-image: url("../assets/drawn/LCJ_drawn.svg");
+//   background-repeat: no-repeat;
+// }
 
-#creative-container {
-  display: flex;
-  flex-direction: row;
-  padding-right: calc(min(5vw, 50px));
-  transition: var(--hover);
-  // padding-right: 15vw;
-  // position: fixed;
-  // bottom: 50px;
-  // left: 50px;
-  // visibility: hidden;
-}
+// #creative-container {
+//   display: flex;
+//   flex-direction: row;
+//   padding-right: calc(min(5vw, 50px));
+//   transition: var(--hover);
+//   // padding-right: 15vw;
+//   // position: fixed;
+//   // bottom: 50px;
+//   // left: 50px;
+//   // visibility: hidden;
+// }
 
-#creative-img {
-  width: 233px;
-  height: 233px;
-  border-radius: 2px;
-  background-image: url("/photos/test2.png");
-  background-size: 250%;
-  background-position: 15%;
-}
+// #creative-img {
+//   width: 233px;
+//   height: 233px;
+//   border-radius: 2px;
+//   background-image: url("/photos/test2.png");
+//   background-size: 250%;
+//   background-position: 15%;
+// }
 
-#creative-text {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  margin: 0 0 0 12px;
-  text-transform: uppercase;
-  font-size: 14px;
-  font-weight: 700;
-}
+// #creative-text {
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: space-between;
+//   margin: 0 0 0 12px;
+//   text-transform: uppercase;
+//   font-size: 14px;
+//   font-weight: 700;
+// }
 
 @media only screen and (min-width: 426px) and (max-width: 1024px) {
   #mission-description {
-    width: 66%;
+    width: 100%;
     // max-width: 100%;
     margin-bottom: 120px;
+  }
+
+  #asterisk {
+    transform: scale(0.8);
+    top: 6px;
+    left: -22px;
   }
 
   .section-heading {
@@ -396,6 +483,12 @@ canvas {
     width: 100%;
   }
 
+  #asterisk {
+    transform: scale(0.8);
+    top: 6px;
+    left: -15px;
+  }
+
   // .section:nth-last-child(-n + 2) {
   //   margin-bottom: 0;
   // }
@@ -419,16 +512,16 @@ canvas {
     margin-bottom: 50px;
   }
 
-  #creative-container {
-    width: 86vw;
-    // margin: 13vh 0 7vw 0;
-    margin: 0 0 7vw 0;
-  }
+  // #creative-container {
+  //   width: 86vw;
+  //   // margin: 13vh 0 7vw 0;
+  //   margin: 0 0 7vw 0;
+  // }
 
-  #creative-img {
-    width: 86vw;
-    height: 86vw;
-  }
+  // #creative-img {
+  //   width: 86vw;
+  //   height: 86vw;
+  // }
 
   // #creative-text {
   //   margin: 0 0 0 12px;

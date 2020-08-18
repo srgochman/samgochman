@@ -11,11 +11,11 @@
         <!-- router-link keeps user on same window for case studies -->
         <router-link v-if="type === 'study'" :to="link">
           <div class="project-title-container">
-            <h3 class="project-title">{{ title }}</h3>
-            <svg class="lock-svg" v-if="locked" width="7px" height="10px">
+            <p class="project-title">{{ title }}</p>
+            <svg v-if="locked" width="7px" height="10px">
               <use class="lock" href="../assets/unlocked.svg#Layer_1"></use>
             </svg>
-            <svg class="arrow-svg" width="28px" height="8px">
+            <svg width="28px" height="8px">
               <use
                 class="arrow"
                 href="../assets/drawn/arrow_drawn2.svg#Layer_2"
@@ -28,11 +28,11 @@
         <!-- opens new window for external links -->
         <a v-if="type !== 'study'" :href="link" target="_blank" rel="noopener">
           <div class="project-title-container">
-            <h3 class="project-title">{{ title }}</h3>
-            <svg class="lock-svg" v-if="locked" width="7px" height="10px">
+            <p class="project-title">{{ title }}</p>
+            <svg v-if="locked" width="7px" height="10px">
               <use class="lock" href="../assets/unlocked.svg#Layer_1"></use>
             </svg>
-            <svg class="arrow-svg" width="28px" height="8px">
+            <svg width="28px" height="8px">
               <use
                 class="arrow"
                 href="../assets/drawn/arrow_drawn2.svg#Layer_2"
@@ -139,37 +139,13 @@ export default {
   align-items: center;
 
   & > * {
-    margin-right: 15px;
-  }
-
-  .arrow {
-    background-size: cover;
-    transform-origin: top left;
-    transform: scale(0.2);
-    fill: var(--purple);
-    opacity: 0;
-    transition: opacity 0.2s ease-in-out;
-  }
-
-  .lock {
-    background-size: cover;
-    transform-origin: top left;
-    transform: scale(0.1);
-    fill: black;
-    transition: fill 0.2s ease-in-out;
+    margin-right: 10px;
   }
 }
 
-.purple-arrow {
-  fill: var(--purple);
-  opacity: 1 !important;
-  transition: opacity 0.2s ease-in-out;
-}
-
-.purple-lock {
-  fill: var(--purple) !important;
-  transition: fill 0.2s ease-in-out;
-}
+// .project-title {
+//   transition: var(--hover);
+// }
 
 .project-desc {
   color: black !important;
@@ -215,14 +191,6 @@ export default {
     margin-top: 10px;
     margin-bottom: 60px;
   }
-
-  // .arrow-svg {
-  //   margin-top: 8px !important;
-  // }
-
-  // .lock-svg {
-  //   margin-top: 7px !important;
-  // }
 }
 
 @media only screen and (min-width: 426px) and (max-width: 1024px) {
