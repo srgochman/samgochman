@@ -257,25 +257,29 @@ canvas {
 //   font-weight: 800;
 // }
 
-.underline::before {
-  content: "";
-  position: absolute;
-  width: calc(100% - 1px);
-  // width: 20px;
-  height: 3px;
-  bottom: 0;
-  left: 1px;
-  background-color: var(--purple);
-  visibility: visible;
-  transition: var(--hover);
+.underline {
+  font-weight: 700;
 }
 
-.underline:hover::before {
-  visibility: hidden;
-  width: 0;
-  // width: calc(100% - 1px);
-  left: 1px;
-}
+// .underline::before {
+//   content: "";
+//   position: absolute;
+//   width: calc(100% - 1px);
+//   // width: 20px;
+//   height: 3px;
+//   bottom: 0;
+//   left: 1px;
+//   background-color: var(--purple);
+//   visibility: visible;
+//   transition: var(--hover);
+// }
+
+// .underline:hover::before {
+//   visibility: hidden;
+//   width: 0;
+//   // width: calc(100% - 1px);
+//   left: 1px;
+// }
 
 .section-heading {
   height: 13px;

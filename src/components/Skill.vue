@@ -70,7 +70,9 @@ export default {
     colorize(keyword) {
       this.adjDescription = this.adjDescription.replace(
         keyword,
-        `<span style="color: ${this.color}"> ${keyword} </span>`
+        // `<span style="color: ${this.color}"> ${keyword} </span>`
+        `<span style="font-weight: 700"> ${keyword} </span>`
+        // `<span style="color: ${this.color}; font-weight: 700"> ${keyword} </span>`
       );
     }
   },
