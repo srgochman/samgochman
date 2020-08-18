@@ -19,7 +19,12 @@
         <Tags :words="tags" class="one-third-width" />
       </div>
       <div class="section appear">
-        <video muted autoplay loop class="full-width">
+        <video
+          class="full-width"
+          controls
+          preload="metadata"
+          poster="/photos/multilingual/animation_poster.png"
+        >
           <source
             src="/photos/multilingual/2 Animation-Sequence_edit_trimmed.mp4"
             type="video/mp4"

@@ -2,8 +2,8 @@
   <div id="app">
     <div id="nav">
       <router-link to="/" class="sam-gochman">
-        <!-- <div id="name-drawn"></div> -->
-        <div>Sam Gochman</div>
+        <div id="name-drawn"></div>
+        <!-- <div>Sam Gochman</div> -->
       </router-link>
     </div>
     <transition name="pages" @after-leave="$root.$emit('transitionScroll')">
@@ -98,8 +98,8 @@ body {
   }
 
   #name-drawn {
-    width: 140px;
-    height: 20px;
+    width: 154px;
+    height: 22px;
     background-image: url("./assets/drawn/name_drawn.svg");
     background-repeat: no-repeat;
     transform: scaleY(0.9);
@@ -156,7 +156,7 @@ body {
   opacity: 0;
 }
 
-@media only screen and (max-width: 1850px) {
+@media only screen and (max-width: 1900px) {
   #nav {
     position: absolute;
     overflow: hidden;

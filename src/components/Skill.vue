@@ -72,7 +72,7 @@ export default {
         keyword,
         // `<span style="color: ${this.color}"> ${keyword} </span>`
         // `<span style="font-weight: 700"> ${keyword} </span>`
-        `<span style="color: ${this.color}; font-weight: 700"> ${keyword} </span>`
+        `<span style="color: ${this.color}; font-weight: 400"> ${keyword} </span>`
       );
     }
   },
@@ -95,7 +95,7 @@ export default {
 .skill-description {
   // width: 63%;
   // width: 80%;
-  padding: 25px 45px;
+  padding: 25px 35px;
   border-radius: 2px 7px 7px 2px;
   border-left: solid 6px;
   // font-weight: 200;

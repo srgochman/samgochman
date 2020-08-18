@@ -41,7 +41,7 @@
             The story is played back while a unique shareable signature is
             generated in real-time. I used audio parameters like pitch and
             volume, as well as semantic parameters like number and emotion of
-            words, to translate voice into art.
+            words, to help translate voice into art.
           </p>
         </div>
         <video id="ui-review" class="one-third-width" muted>

@@ -216,6 +216,11 @@ export default {
   transition-delay: 200ms;
 }
 
+.project-text-below .project-title {
+  color: black;
+  transition: var(--hover);
+}
+
 .dull {
   opacity: 0.3;
   transition: opacity 300ms ease-out;
