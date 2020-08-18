@@ -387,18 +387,19 @@ canvas {
 
   a {
     // display: inline-block;
-    display: flex;
-    flex-direction: row;
-    // justify-content: flex-start;
-    align-items: center;
+    // display: flex;
+    // flex-direction: row;
+    // // justify-content: flex-start;
+    // align-items: center;
 
     & > span {
       margin-right: 10px;
     }
 
-    // & > svg {
-    //   vertical-align: middle;
-    // }
+    & > svg {
+      // vertical-align: middle;
+      margin-bottom: 2px;
+    }
   }
 }
 
