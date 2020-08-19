@@ -12,7 +12,7 @@ import Authentication from "../views/Authentication.vue";
 Vue.use(VueRouter);
 
 const router = new VueRouter({
-  mode: "history",
+  // mode: "history",
   base: process.env.BASE_URL,
 
   // remembers scroll position if the page was visited, otherwise goes to the top of the page
