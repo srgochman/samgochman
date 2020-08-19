@@ -148,7 +148,7 @@ img {
   flex-direction: row;
   justify-content: space-between;
   width: 100%;
-  margin-bottom: 300px;
+  // margin-bottom: 300px;
 
   .tags-container {
     margin: 10px 0 0 0;
@@ -165,7 +165,7 @@ img {
 
 .caption {
   height: min-content;
-  margin-bottom: 72px;
+  margin-bottom: 60px;
 
   h2 {
     margin-bottom: 20px;
@@ -184,7 +184,7 @@ img {
   
   .section, .info.section {
     // margin-bottom: 150px;
-    margin-bottom: calc(min(30vw, 300px));
+    margin-bottom: calc(min(25vw, 150px));
   }
 
   .across {
@@ -193,13 +193,22 @@ img {
 
     >* {
       margin-bottom: 30px;
+
+      &:last-child {
+        margin-bottom: 0 !important;
+      }
     }
   }
 
   .tags-container {
     // margin: 30px 0 0 0 !important;
     // margin-top: calc(min(7vw, calc(var(--main-width) * 0.03))) !important;
-    margin-bottom: calc(min(7vw, 43.2px)) !important;
+    margin-top: calc(min(7vw, 43.2px)) !important;
+  }
+
+  img.two-thirds-width,
+  video.two-thirds-width  {
+    width: 100%;
   }
 }
 
@@ -233,7 +242,7 @@ img {
   }
 
   .section {
-    margin-bottom: 300px;
+    margin-bottom: 150px;
   }
 
   // .section.writing>:nth-child(1) {
@@ -242,7 +251,15 @@ img {
   // }
 
   .caption {
-    margin-bottom: 65px;
+    margin-bottom: 40px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .info.section {
+    h3 {
+      width: 100%;
+    }
   }
 }
 
@@ -252,12 +269,12 @@ img {
   }
   
   .banner {
-    height: 40vh;
+    height: 50vh;
   }
 
   .banner-text {
     width: 85%;
-    top: 20vh;
+    top: 25vh;
 
     h2 {
       font-size: calc(min(6vw, 2.3em));
@@ -266,10 +283,10 @@ img {
   }
 
   .body::before {
-    top: 40vh;
+    top: 50vh;
   }
 
   .caption {
-    margin-bottom: 50px;
+    margin-bottom: 40px;
   }
 }

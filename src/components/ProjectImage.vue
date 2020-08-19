@@ -216,9 +216,11 @@ export default {
   transition-delay: 200ms;
 }
 
-.project-text-below .project-title {
-  color: black;
-  transition: var(--hover);
+.project-text-below {
+  .project-title {
+    color: black;
+    transition: var(--hover);
+  }
 }
 
 .dull {
@@ -250,6 +252,10 @@ export default {
 @media only screen and (max-width: 1024px) {
   .project-text-below {
     display: block;
+
+    .project-title-container svg {
+      margin-bottom: 2px;
+    }
   }
 
   .project-desc {

@@ -47,8 +47,8 @@
       </div>
       <div class="section writing appear stacked">
         <div class="caption">
-          <h2 class="one-third-width">Environments Design</h2>
-          <p class="one-third-width">
+          <h2 class="two-thirds-width">Environments Design</h2>
+          <p class="two-thirds-width">
             Using animals with extreme adaptations like the honey bee lets
             students toggle between visual systems while exploring different
             habitats. Keeping in mind real ecology, we designed environments
@@ -71,8 +71,8 @@
       <div id="results" class="section writing appear reverse">
         <!-- <div class="spacer one-third-width"></div> -->
         <div class="caption two-thirds-width">
-          <h2 class="half-width">Enhanced Learning</h2>
-          <p class="half-width">
+          <h2>Enhanced Learning</h2>
+          <p>
             Throughout development, we’ve tested the platform with students from
             middle school through college. With more formal testing, we
             published in an open access educational journal to communicate how
@@ -106,6 +106,7 @@
           </p>
         </div>
         <img
+          id="leakey"
           class="two-thirds-width img-bg"
           src="/photos/anivision/leakey.jpg"
         />
@@ -193,6 +194,10 @@ video {
   .across img {
     height: unset;
     object-fit: unset;
+  }
+
+  #leakey {
+    height: 200px;
   }
 }
 </style>

@@ -46,19 +46,19 @@
         <div class="across">
           <img
             id="data-cloud"
-            class="one-third-width"
+            class="one-third-width img-bg"
             src="/photos/multilingual/data_cloud.png"
           />
           <div class="arrow"></div>
           <img
             id="map"
-            class="one-third-width"
+            class="one-third-width img-bg"
             src="/photos/multilingual/map.png"
           />
           <div class="arrow"></div>
           <img
             id="field"
-            class="one-third-width"
+            class="one-third-width img-bg"
             src="/photos/multilingual/field.jpg"
           />
         </div>
@@ -147,6 +147,13 @@ export default {
   background-size: cover;
   width: 28px;
   height: 8px;
+  transform: scale(1);
+}
+
+video {
+  // margin-right: calc(var(--main-width) * 0.05);
+  height: 800px;
+  object-fit: cover;
 }
 
 @media only screen and (max-width: 1024px) {
@@ -157,6 +164,18 @@ export default {
     transform: rotate(90deg);
     transform-origin: center;
     display: none;
+  }
+
+  video {
+    // margin-right: calc(var(--main-width) * 0.05);
+    height: 500px;
+    object-fit: cover;
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  video {
+    height: 400px;
   }
 }
 </style>

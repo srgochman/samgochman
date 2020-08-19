@@ -31,7 +31,7 @@ h2 {
 
 /* non-bold text */
 h3 {
-  font-size: 1.8em;
+  font-size: 1.6em;
   font-weight: 300;
   line-height: 1.7em;
   margin: 0 0 0px 0;
@@ -63,6 +63,10 @@ a:hover {
   transition: var(--hover);
 }
 
+a:focus {
+  outline: none;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
@@ -72,6 +76,7 @@ code {
   h1 {
     font-size: 0.9em;
     line-height: 1.5em;
+    margin: 0 0 30px 0;
   }
   
   h2 {

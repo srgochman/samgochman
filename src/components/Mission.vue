@@ -87,6 +87,7 @@ export default {
   &::before {
     content: "";
     display: block;
+    width: calc(100% - 4px);
     height: 40vw;
     // height: calc(min(40vw, 466px));
     max-height: 490px;
@@ -94,7 +95,7 @@ export default {
     top: 3px;
     right: 0;
     bottom: 0;
-    left: 0;
+    left: 2px;
     mix-blend-mode: screen;
     background: linear-gradient(
       120deg,
@@ -161,6 +162,13 @@ export default {
     &::before {
       height: 56vw;
     }
+  }
+}
+
+// extra tall screens
+@media only screen and (min-height: 1100px) {
+  #mission-container {
+    margin-top: 40vh;
   }
 }
 

@@ -111,6 +111,7 @@ export default {
 @media only screen and (min-width: 426px) and (max-width: 1024px) {
   .skill-container {
     width: 100%;
+    margin-bottom: 40px;
   }
 
   .skill-description {
@@ -121,6 +122,7 @@ export default {
 @media only screen and (max-width: 425px) {
   .skill-container {
     width: 100%;
+    margin-bottom: 30px;
   }
 
   .skill-description {

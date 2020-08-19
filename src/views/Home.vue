@@ -532,4 +532,11 @@ canvas {
   //   font-weight: 800;
   // }
 }
+
+@media only screen and (min-height: 1100px) {
+  #mission,
+  #particles-js {
+    height: 70vh;
+  }
+}
 </style>
