@@ -22,9 +22,9 @@
         <Tags :words="tags" class="one-third-width" />
       </div>
       <div class="section writing appear stacked">
-        <div class="caption">
-          <h2 class="one-third-width">Experience Design</h2>
-          <p class="one-third-width">
+        <div class="caption two-thirds-width">
+          <h2>Experience Design</h2>
+          <p>
             Almost all organisms move in response to light. Part exhibition,
             part experiment, Phototaxis explored its namesake by letting people
             understand their own relationships with light, other people, and the

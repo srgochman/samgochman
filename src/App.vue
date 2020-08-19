@@ -93,8 +93,8 @@ body {
     font-size: 24px;
     font-weight: 700;
     color: black;
-    margin-top: 15px;
-    padding-left: calc(min(7vw, 50px));
+    margin-top: 10px;
+    padding-left: calc(min(7vw, 40px));
   }
 
   #name-drawn {

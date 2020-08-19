@@ -235,6 +235,8 @@ export default {
     width: 251px;
     height: 550px;
     border-radius: 35px;
+    margin-left: 0;
+    margin-right: 0;
   }
 }
 
@@ -242,7 +244,7 @@ export default {
   .ui {
     // justify-content: flex-start;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
   }
 
   #ui-record,
@@ -251,6 +253,8 @@ export default {
     width: 180px;
     height: 394px;
     border-radius: 25px;
+    margin-left: 0;
+    margin-right: 0;
   }
 }
 </style>
