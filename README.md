@@ -1,4 +1,4 @@
-![banner](https://github.com/srgochman/samgochman/public/banner.png)
+![banner](public/banner.png)
 
 # Portfolio
 
