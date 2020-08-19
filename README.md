@@ -1,3 +1,5 @@
+![banner](public/banner.png)
+
 # Portfolio
 
 *This portfolio is an MVP and I'm continuously working on code revisions and optimizations.*
