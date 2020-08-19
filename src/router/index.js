@@ -31,15 +31,6 @@ const router = new VueRouter({
       component: Home,
       meta: {
         title: "Sam Gochman"
-      },
-      beforeEnter: (to, from, next) => {
-        if (sessionStorage.getItem("redirect") !== null) {
-          const redirect = sessionStorage.redirect;
-          delete sessionStorage.redirect;
-          next(redirect);
-        } else {
-          next();
-        }
       }
     },
     {
