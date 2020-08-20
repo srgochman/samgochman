@@ -1,5 +1,6 @@
 <template>
   <div class="study-page">
+    <div class="banner img-bg"></div>
     <div class="banner">
       <video muted autoplay loop>
         <source src="/photos/phototaxis/Phototaxis.mp4" type="video/mp4" />
@@ -151,5 +152,25 @@ video {
   width: 100vw;
   // height: 100vh;
   object-fit: cover;
+}
+
+.banner.img-bg {
+  background-image: url("/photos/phototaxis/phototaxis_silhouette.png");
+  object-fit: cover;
+  display: none;
+}
+
+@media (hover: none) and (pointer: coarse) {
+  .banner {
+    display: none;
+  }
+
+  .banner.img-bg {
+    display: block;
+  }
+
+  .banner::before {
+    background-color: rgba(0, 0, 0, 0.3);
+  }
 }
 </style>
