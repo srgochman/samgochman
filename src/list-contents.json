@@ -84,7 +84,8 @@
           "color": "var(--blue)",
           "backgroundColor": "var(--blue-transparent)",
           "words": [
-            "concept development"
+            "concept development",
+            "data viz"
           ]
         },
         {

@@ -14,15 +14,19 @@
           Multilingual will give an expected 100,000 visitors per year a chance
           to appreciate the diversity of languages spoken by other visitors
           through time. Each contribution to the visualization is a unique
-          experience focused on one user in the context of a connected
-          community. Everyone can track themselves in an artwork that enhances
-          the museum whether or not it’s in use.
+          experience that lets a user track themself in the context of a
+          connected community.
+          <br /><br />
+          In addition to developing the interface for user interaction, I got to
+          brainstorm the concept with the team. I also handled the available
+          language data to ground the initial design in academic research and
+          realistic patterns of the population.
         </h3>
         <div class="contributions-container one-third-width">
           <p class="contributions">Contributions</p>
           <Tags :words="tags" />
           <p class="contributions">Teammates</p>
-          <p>Eric Gunther, Henrique Perigo, Vidhi Trivedi</p>
+          <p>Creative Director, UI Designer, 3D Developer</p>
         </div>
       </div>
       <div class="section appear">
@@ -37,6 +41,28 @@
             type="video/mp4"
           />
         </video>
+      </div>
+      <div class="section writing appear reverse">
+        <div class="caption one-third-width">
+          <h2>Concept Development</h2>
+          <p>
+            I thought a lot about the client's goal of telling a story about
+            inclusivity and connection. I worked with the designer and creative
+            director to iterate from a concept of emotion to an artwork that
+            enhances the museum whether or not the installation is actively in
+            use.
+          </p>
+        </div>
+        <img
+          id="mind-map"
+          class="one-third-width img-bg"
+          src="/photos/multilingual/mind_map.jpg"
+        />
+        <img
+          id="globe"
+          class="one-third-width img-bg"
+          src="/photos/multilingual/globe.jpg"
+        />
       </div>
       <div class="section writing appear stacked">
         <div class="caption two-thirds-width">
@@ -142,7 +168,7 @@ export default {
 }
 
 .banner::before {
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.4);
 }
 
 .across {
@@ -163,6 +189,14 @@ video {
   height: 800px;
   object-fit: cover;
 }
+
+// #mind-map {
+//   background-image: url("/photos/multilingual/mind_map.jpg");
+// }
+
+// #globe {
+//   background-image: url("/photos/multilingual/globe.jpg");
+// }
 
 @media only screen and (max-width: 1024px) {
   .across {

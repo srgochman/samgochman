@@ -10,19 +10,24 @@
       </div>
       <div class="info section">
         <h3 class="two-thirds-width">
-          Merging my backgrounds in science research and human-centered design,
-          I created a platform that lets students appreciate topics like
+          What if instead of just reading about nocturnal primate vision, you
+          could become a tarsier with enormous eyes in virtual reality? I merged
+          my existing research in ecology with my studies in human-centered
+          design to create a platform that lets students appreciate topics like
           evolution through a first-hand experience of extreme adaptations in
-          the animal kingdom. Partnering with Dartmouth’s design lab,
-          professors, and local high schools has helped get the virtual reality
-          platform into real classrooms and pushed its capabilities in every
-          iteration.
+          the animal kingdom. <br /><br />
+          As the founder and now advisor of the project, I've worked closely
+          with several groups of students at Dartmouth’s design lab to guide
+          strategy and design decisions that propel the learning goals.
+          Partnering with professors and local high schools and museums has also
+          helped get the VR platform into real classrooms and pushed its
+          capabilities in every iteration.
         </h3>
         <div class="contributions-container one-third-width">
           <p class="contributions">Contributions</p>
           <Tags :words="tags" />
           <p class="contributions">Teammates</p>
-          <p>DALI designers and developers, Dr. Nathaniel Dominy</p>
+          <p>DALI Designers and Developers, Dartmouth Anthropology Professor</p>
         </div>
       </div>
       <!-- <div id="vid-section" class="section appear"></div> -->
@@ -30,8 +35,14 @@
         <div class="caption one-third-width">
           <h2 class="">Immersive Education</h2>
           <p class="">
-            What if instead of just reading about nocturnal primate vision, you
-            could become a tarsier with enormous eyes in virtual reality?
+            Emerging technologies like virtual reality create new opportunities
+            to both overcome mental fatigue<a
+              href="https://www.researchgate.net/publication/323121980_Cognitive_Fatigue_and_the_Wellbeing_and_Academic_Attainment_of_University_Students#read"
+              target="_blank"
+              rel="noopener"
+              ><sup>1</sup></a
+            >
+            in the classroom and learn through curiosity and exploration.
             Teachers can use this platform across disciplines like physiology,
             perceptual psychology, physics, and even philosophy. Whether
             learning about adaptation, eye lenses, or subjective worldviews,
@@ -86,12 +97,15 @@
             this immersive system can improve the learning experience.
             <br />
             <br />
-            <strong>85%</strong> of student testers preferred this VR experience
+            <strong>85% of student testers preferred this VR experience</strong>
             over traditional classroom methods.
             <br />
             <br />
-            <strong>92%</strong> of students understood the lesson's key
-            takeaways (e.g., advantages of large eyes in dark environments).
+            <strong>
+              92% of students demonstrated an understanding of the lesson's key
+              takeaways</strong
+            >
+            (e.g., advantages of large eyes in dark environments).
           </p>
         </div>
         <a
@@ -107,8 +121,8 @@
           <h2>Communication</h2>
           <p>
             Beyond publication, we made the platform open source to maximize
-            access. I presented at a national conference, natural history
-            museum, and on campus to gain interest and partnerships with
+            access. I've presented on campus, at a national conference, and at a
+            natural history museum to gain interest and partnerships with
             educators.
           </p>
         </div>

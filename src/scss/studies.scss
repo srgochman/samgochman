@@ -35,11 +35,11 @@
 }
 
 .reverse {
-  :nth-child(1) {
-    order: 2;
-  }
-  :nth-child(2) {
-    order: 1;
+  // :nth-child(1) {
+  //   order: 2;
+  // }
+  :first-child {
+    order: 3;
   }
 }
 
@@ -66,6 +66,10 @@ img {
   background-repeat: no-repeat;
   object-fit: cover;
   object-position: center;
+}
+
+img.img-bg {
+  max-height: 500px;
 }
 
 
@@ -175,11 +179,11 @@ img {
 
 @media only screen and (max-width: 1024px) {
   .reverse {
-    :nth-child(1) {
-      order: 1;
-    }
-    :nth-child(2) {
-      order: 2;
+    // :nth-child(1) {
+    //   order: 1;
+    // }
+    :first-child {
+      order: unset;
     }
   }
   
