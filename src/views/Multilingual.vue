@@ -42,7 +42,7 @@
           />
         </video>
       </div>
-      <div class="section writing appear across reverse">
+      <div class="section writing appear reverse across">
         <div class="caption one-third-width">
           <h2>Concept Development</h2>
           <p>
@@ -66,8 +66,8 @@
       </div>
       <div class="section writing appear stacked">
         <div class="caption two-thirds-width">
-          <h2 class="">Data Modeling</h2>
-          <p class="">
+          <h2>Data Modeling</h2>
+          <p>
             I used a database of over 6,000 languages and dialects to capture
             the diversity of visitors for the visualization. Diving into
             historical linguistics and meeting with a specialist helped me
