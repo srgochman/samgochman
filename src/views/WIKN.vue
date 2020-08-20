@@ -40,7 +40,14 @@
             voice as an expressive and widely accessible medium.
           </p>
         </div>
-        <video id="ui-record" class="one-third-width" muted autoplay loop>
+        <video
+          id="ui-record"
+          class="one-third-width"
+          autoplay=""
+          muted=""
+          loop=""
+          playsinline=""
+        >
           <source
             src="/photos/WIKN/WIKN_patch_recording.mp4"
             type="video/mp4"
@@ -57,7 +64,7 @@
             words, to help translate voice into art.
           </p>
         </div>
-        <video id="ui-review" class="one-third-width" muted autoplay loop>
+        <video id="ui-review" class="one-third-width" controls>
           <source src="/photos/WIKN/WIKN_patch_review.mp4" type="video/mp4" />
         </video>
       </div>
