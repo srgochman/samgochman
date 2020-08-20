@@ -31,7 +31,7 @@ export default {
   flex-direction: column;
   // flex-wrap: wrap;
   justify-content: flex-start;
-  margin: 0 0 70px 0;
+  margin: 0 0 35px 0;
 }
 
 .tag-category {

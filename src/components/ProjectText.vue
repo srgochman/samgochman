@@ -23,6 +23,7 @@
             </svg>
           </div>
           <h2 class="project-desc">{{ description }}</h2>
+          <p class="contributions">Contributions</p>
           <Tags :words="tags"></Tags>
         </router-link>
         <!-- opens new window for external links -->
@@ -40,6 +41,7 @@
             </svg>
           </div>
           <h2 class="project-desc">{{ description }}</h2>
+          <p class="contributions">Contributions</p>
           <Tags :words="tags"></Tags>
         </a>
       </div>

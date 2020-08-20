@@ -24,7 +24,7 @@
           rel="noopener"
           >work<img
             height="3"
-            class="work-underline"
+            class="underline"
             src="../assets/drawn/line1_purple.svg"
           />
         </a>
@@ -37,21 +37,20 @@
             rel="noopener"
             >connect<img
               height="3"
-              class="connect-underline"
+              class="underline"
               src="../assets/drawn/line2_purple.svg"/></a
-          >!
-          <!-- Here's some of my past
+          >! Here's my full
           <a
-            id="test"
-            href="https://www.linkedin.com/in/samuelrgochman/"
+            id="resume"
+            href="/SGochman_Fathom_resume.pdf"
             target="_blank"
             rel="noopener"
-            >work<img
-              height="5"
-              class="work-underline"
-              src="../assets/drawn/line1_purple.svg"
+            >resume<img
+              height="3"
+              class="underline"
+              src="../assets/drawn/line4_purple.svg"
             /> </a
-          >. -->
+          >.
         </span>
       </h3>
     </div>
@@ -161,10 +160,13 @@ export default {
 
     // animate hover for underlines in mission description
     $("#work").hover(function() {
-      $(".work-underline").toggleClass("work-underline-hover");
+      $("#work .underline").toggleClass("underline-hover");
     });
     $("#connect").hover(function() {
-      $(".connect-underline").toggleClass("connect-underline-hover");
+      $("#connect .underline").toggleClass("underline-hover");
+    });
+    $("#resume").hover(function() {
+      $("#resume .underline").toggleClass("underline-hover");
     });
 
     // animate hover for arrows in experience
@@ -250,21 +252,19 @@ canvas {
   left: -25px;
 }
 
-.work-underline,
-.connect-underline {
+.underline {
   // content: "";
   position: absolute;
-  bottom: -1px;
+  bottom: 0px;
   left: 0px;
   width: 100%;
-  transform: scaleY(1.5);
+  transform: scaleY(1.2);
   opacity: 1;
   visibility: visible;
   transition: var(--hover);
 }
 
-.work-underline-hover,
-.connect-underline-hover {
+.underline-hover {
   left: 0px;
   // width: 0;
   // width: calc(100% - 1px);
@@ -485,7 +485,7 @@ canvas {
   #asterisk {
     transform: scale(0.8);
     top: 6px;
-    left: -15px;
+    left: -18px;
   }
 
   // .section:nth-last-child(-n + 2) {

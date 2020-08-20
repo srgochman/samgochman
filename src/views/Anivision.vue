@@ -5,7 +5,8 @@
       <div class="banner-text">
         <h3>Anivision</h3>
         <h2>{{ tagline }}</h2>
-        <p>DALI Lab @ Dartmouth College, 2017 – Present</p>
+        <p>2017 – Present</p>
+        <p>DALI Lab @ Dartmouth College</p>
       </div>
       <div class="info section">
         <h3 class="two-thirds-width">
@@ -13,10 +14,16 @@
           I created a platform that lets students appreciate topics like
           evolution through a first-hand experience of extreme adaptations in
           the animal kingdom. Partnering with Dartmouth’s design lab,
-          professors, and local high schools has helped get the project into
-          real classrooms and pushed its capabilities in every iteration.
+          professors, and local high schools has helped get the virtual reality
+          platform into real classrooms and pushed its capabilities in every
+          iteration.
         </h3>
-        <Tags :words="tags" class="one-third-width" />
+        <div class="contributions-container one-third-width">
+          <p class="contributions">Contributions</p>
+          <Tags :words="tags" />
+          <p class="contributions">Teammates</p>
+          <p>DALI designers and developers, Dr. Nathaniel Dominy</p>
+        </div>
       </div>
       <!-- <div id="vid-section" class="section appear"></div> -->
       <div id="vid-section" class="section writing appear reverse">

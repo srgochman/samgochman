@@ -5,7 +5,8 @@
       <div class="banner-text">
         <h3>What I Know Now</h3>
         <h2>{{ tagline }}</h2>
-        <p>Sosolimited, in progress</p>
+        <p>In Progress</p>
+        <p>Sosolimited</p>
       </div>
       <div class="info section">
         <h3 class="two-thirds-width">
@@ -15,7 +16,15 @@
           signature that adds to a large-scale, community-wide generative
           collage.
         </h3>
-        <Tags :words="tags" class="one-third-width" />
+        <div class="contributions-container one-third-width">
+          <p class="contributions">Contributions</p>
+          <Tags :words="tags" />
+          <p class="contributions">Teammates</p>
+          <p>
+            Eric Gunther, Dalma Foldesi, Deb Levison, Henrique Perigo, Jon
+            Corbett, Vidhi Trivedi, Wes Thomas
+          </p>
+        </div>
       </div>
       <div class="section writing ui appear reverse">
         <div class="caption one-third-width">
@@ -208,7 +217,7 @@ export default {
   object-fit: unset;
   width: 270px;
   height: 590px;
-  border-radius: 45px;
+  border-radius: 40px;
   // transform: scale(0.7);
   // transform-origin: top center;
   box-shadow: 0 15px 25px rgba(0, 0, 0, 0.25);

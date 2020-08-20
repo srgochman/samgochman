@@ -5,18 +5,25 @@
       <div class="banner-text">
         <h3>Multilingual</h3>
         <h2>{{ tagline }}</h2>
-        <p>Sosolimited, 2020</p>
+        <p>2020</p>
+        <p>Sosolimited</p>
       </div>
       <div class="info section">
         <h3 class="two-thirds-width">
           Developed for Planet Word, a museum of language in Washington, DC,
-          Multilingual gives visitors a chance to appreciate the diversity of
-          languages spoken by other visitors through time. Each contribution to
-          the visualization is a unique experience focused on one user in the
-          context of a connected community. Everyone can track themselves in an
-          artwork that enhances the museum whether or not it’s in use.
+          Multilingual will give an expected 100,000 visitors per year a chance
+          to appreciate the diversity of languages spoken by other visitors
+          through time. Each contribution to the visualization is a unique
+          experience focused on one user in the context of a connected
+          community. Everyone can track themselves in an artwork that enhances
+          the museum whether or not it’s in use.
         </h3>
-        <Tags :words="tags" class="one-third-width" />
+        <div class="contributions-container one-third-width">
+          <p class="contributions">Contributions</p>
+          <Tags :words="tags" />
+          <p class="contributions">Teammates</p>
+          <p>Eric Gunther, Henrique Perigo, Vidhi Trivedi</p>
+        </div>
       </div>
       <div class="section appear">
         <video
@@ -36,11 +43,12 @@
           <h2 class="">Data Modeling</h2>
           <p class="">
             I used a database of over 6,000 languages and dialects to capture
-            the diversity of visitors for the visualization. Meeting with a
-            linguist helped me iterate a data model that balanced informational
-            richness and aesthetic clarity. Across the landscape of linguistic
-            relatedness, color represents a visitor’s language and size shows
-            its rarity, letting the museum celebrate underrepresented groups.
+            the diversity of visitors for the visualization. Diving into
+            historical linguistics and meeting with a specialist helped me
+            iterate a data model that balanced informational richness with
+            aesthetic clarity. Across the landscape of linguistic relatedness,
+            color represents a visitor’s language and size shows its rarity,
+            letting the museum celebrate underrepresented groups.
           </p>
         </div>
         <div class="across">

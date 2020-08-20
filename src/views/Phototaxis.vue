@@ -9,7 +9,8 @@
       <div class="banner-text">
         <h3>Phototaxis</h3>
         <h2>{{ tagline }}</h2>
-        <p>EskewDumezRipple, 2019</p>
+        <p>2019</p>
+        <p>EskewDumezRipple</p>
       </div>
       <div class="info section">
         <h3 class="two-thirds-width">
@@ -19,7 +20,12 @@
           play. The responsive installation allowed people to experience
           firsthand the feedback loop between light, environments, and behavior.
         </h3>
-        <Tags :words="tags" class="one-third-width" />
+        <div class="contributions-container one-third-width">
+          <p class="contributions">Contributions</p>
+          <Tags :words="tags" />
+          <p class="contributions">Teammates</p>
+          <p>Ian O'Cain, Javi Marcano, Marion Forbes, Scott Brookes</p>
+        </div>
       </div>
       <div class="section writing appear stacked">
         <div class="caption two-thirds-width">
