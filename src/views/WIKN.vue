@@ -40,7 +40,7 @@
             voice as an expressive and widely accessible medium.
           </p>
         </div>
-        <video id="ui-record" class="one-third-width" muted>
+        <video id="ui-record" class="one-third-width" muted autoplay loop>
           <source
             src="/photos/WIKN/WIKN_patch_recording.mp4"
             type="video/mp4"
@@ -57,7 +57,7 @@
             words, to help translate voice into art.
           </p>
         </div>
-        <video id="ui-review" class="one-third-width" muted>
+        <video id="ui-review" class="one-third-width" muted autoplay loop>
           <source src="/photos/WIKN/WIKN_patch_review.mp4" type="video/mp4" />
         </video>
       </div>
@@ -71,7 +71,7 @@
             voices in their neighborhood or organization.
           </p>
         </div>
-        <video id="ui-macro" class="one-third-width" muted>
+        <video id="ui-macro" class="one-third-width" muted autoplay loop>
           <source src="/photos/WIKN/macro_scroll.mp4" type="video/mp4" />
         </video>
       </div>
@@ -153,22 +153,22 @@ export default {
             const videoTrig = ScrollTrigger.create({
               trigger: videoInstance,
               start: "top 100%", // [trigger] [scroller] positions,
-              end: "bottom 0%", // [trigger] [scroller] positions
+              end: "bottom 0%" // [trigger] [scroller] positions
               // markers: true,
-              onEnter: () => {
-                videoInstance.play();
-              },
-              onEnterBack: () => {
-                videoInstance.play();
-              },
-              onLeave: () => {
-                videoInstance.pause();
-                videoInstance.currentTime = 0;
-              },
-              onLeaveBack: () => {
-                videoInstance.pause();
-                videoInstance.currentTime = 0;
-              }
+              // onEnter: () => {
+              //   videoInstance.play();
+              // },
+              // onEnterBack: () => {
+              //   videoInstance.play();
+              // },
+              // onLeave: () => {
+              //   videoInstance.pause();
+              //   videoInstance.currentTime = 0;
+              // },
+              // onLeaveBack: () => {
+              //   videoInstance.pause();
+              //   videoInstance.currentTime = 0;
+              // }
             });
             instance.trig.push(videoTrig);
           });

@@ -29,29 +29,29 @@
           />
         </a>
         and would love to
-        <span style="white-space: nowrap">
-          <a
-            id="connect"
-            href="mailto:srgochman@gmail.com"
-            target="_blank"
-            rel="noopener"
-            >connect<img
-              height="3"
-              class="underline"
-              src="../assets/drawn/line2_purple.svg"/></a
-          >! Here's my full
-          <a
-            id="resume"
-            href="/SGochman_Fathom_resume.pdf"
-            target="_blank"
-            rel="noopener"
-            >resume<img
-              height="3"
-              class="underline"
-              src="../assets/drawn/line4_purple.svg"
-            /> </a
-          >.
-        </span>
+        <!-- <span style="white-space: nowrap"> -->
+        <a
+          id="connect"
+          href="mailto:srgochman@gmail.com"
+          target="_blank"
+          rel="noopener"
+          >connect<img
+            height="3"
+            class="underline"
+            src="../assets/drawn/line2_purple.svg"/></a
+        >! Here's my full
+        <a
+          id="resume"
+          href="/SGochman_Fathom_resume.pdf"
+          target="_blank"
+          rel="noopener"
+          >resume<img
+            height="3"
+            class="underline"
+            src="../assets/drawn/line4_purple.svg"
+          /> </a
+        >.
+        <!-- </span> -->
       </h3>
     </div>
 
@@ -485,7 +485,7 @@ canvas {
   #asterisk {
     transform: scale(0.8);
     top: 6px;
-    left: -18px;
+    left: -17px;
   }
 
   // .section:nth-last-child(-n + 2) {
