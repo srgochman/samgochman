@@ -9,7 +9,8 @@
       <div class="banner-text">
         <h3>Phototaxis</h3>
         <h2>{{ tagline }}</h2>
-        <p>EskewDumezRipple, 2019</p>
+        <p>2019</p>
+        <p>EskewDumezRipple</p>
       </div>
       <div class="info section">
         <h3 class="two-thirds-width">
@@ -18,8 +19,19 @@
           perception, I created a space for interaction, experimentation, and
           play. The responsive installation allowed people to experience
           firsthand the feedback loop between light, environments, and behavior.
+          <br /><br />
+          I initiated and led the project, working on perceptual research,
+          architectural and experience design, digital development, fabrication,
+          and later visualization of the experience. Along the way, I recruited
+          others in and out of the studio for feedback and help with
+          construction.
         </h3>
-        <Tags :words="tags" class="one-third-width" />
+        <div class="contributions-container one-third-width">
+          <p class="contributions">Contributions</p>
+          <Tags :words="tags" />
+          <p class="contributions">Teammates</p>
+          <p>2 Architects, Designer, Computing Consultant</p>
+        </div>
       </div>
       <div class="section writing appear stacked">
         <div class="caption two-thirds-width">
@@ -28,7 +40,9 @@
             Almost all organisms move in response to light. Part exhibition,
             part experiment, Phototaxis explored its namesake by letting people
             understand their own relationships with light, other people, and the
-            space they occupy.
+            space they occupy. I placed the installation in the center of a room
+            that could be relatively isolated from outside light to open up
+            exploration from all angles.
           </p>
         </div>
         <img
@@ -43,7 +57,7 @@
           <p>
             To let the user and environment respond to each other, I prototyped
             interactions using an Arduino and various sensors. Bouncing between
-            coding and testing movement was key for developing a legible
+            coding and physical testing was key for developing a legible
             relationship between light level and proximity.
           </p>
         </div>
@@ -56,11 +70,10 @@
         <div class="caption one-third-width">
           <h2>Installation</h2>
           <p>
-            I (with the help of some recruited architects) designed and
-            fabricated a structure that could mediate the intersection of
-            digital and physical spaces. A semitransparent veil diffused the
-            light while a microcontroller affected brightness and logged data
-            throughout the exhibition.
+            With the help of my teammates, I designed and fabricated a structure
+            that could mediate the intersection of digital and physical spaces.
+            Semitransparent veils diffused the light while the microcontroller
+            affected brightness and logged data throughout the exhibition.
           </p>
         </div>
         <img
@@ -128,9 +141,9 @@ export default {
 <style lang="scss" scoped>
 @import "../scss/studies.scss";
 
-.banner::before {
-  background-color: rgba(0, 0, 0, 0.1);
-}
+// .banner::before {
+//   background-color: rgba(0, 0, 0, 0.1);
+// }
 
 .banner,
 video {

@@ -5,7 +5,8 @@
       <div class="banner-text">
         <h3>What I Know Now</h3>
         <h2>{{ tagline }}</h2>
-        <p>Sosolimited, in progress</p>
+        <p>In Progress</p>
+        <p>Sosolimited</p>
       </div>
       <div class="info section">
         <h3 class="two-thirds-width">
@@ -14,17 +15,29 @@
           personal experience and emotions and watch their voice paint a unique
           signature that adds to a large-scale, community-wide generative
           collage.
+          <br /><br />
+          In this team-led project, I had the opportunity to influence project
+          direction and take charge of whole parts of the system like UI
+          development and audio handling.
         </h3>
-        <Tags :words="tags" class="one-third-width" />
+        <div class="contributions-container one-third-width">
+          <p class="contributions">Contributions</p>
+          <Tags :words="tags" />
+          <p class="contributions">Teammates</p>
+          <p>
+            Creative Director, 2 UI/UX Designers, 2 Creative Coders, UX
+            Developer, Backend Developer
+          </p>
+        </div>
       </div>
       <div class="section writing ui appear reverse">
         <div class="caption one-third-width">
           <h2>Capturing a Story</h2>
           <p>
-            Each user responds to a prompt, and their audio waveform gives
-            feedback that their voice is being recorded and transcribed. After
-            considering many options for input, I advocated for voice as an
-            expressive and widely accessible medium for input.
+            I developed the front-end experience and internal mechanics that
+            visualize, record, and transcribe a user's voice as they respond to
+            a prompt. After considering many options for input, I advocated for
+            voice as an expressive and widely accessible medium.
           </p>
         </div>
         <video id="ui-record" class="one-third-width" muted>
@@ -68,9 +81,9 @@
           <p>
             To really drive home the uniqueness of each person’s experience, we
             needed to conceptualize a visual language that avoided
-            self-similarity. With a handle on the data, I worked with designers
-            to map legibly the data extracted from voice recordings onto a set
-            of visual parameters in p5.js.
+            self-similarity. With a handle on the audio data, I worked with the
+            designers and a developer to legibly map the data extracted from
+            voice recordings onto a set of visual parameters in p5.js.
           </p>
         </div>
         <img class="one-third-width" src="/photos/WIKN/doodle.jpg" />
@@ -208,7 +221,7 @@ export default {
   object-fit: unset;
   width: 270px;
   height: 590px;
-  border-radius: 45px;
+  border-radius: 40px;
   // transform: scale(0.7);
   // transform-origin: top center;
   box-shadow: 0 15px 25px rgba(0, 0, 0, 0.25);
