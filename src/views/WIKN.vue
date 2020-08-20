@@ -40,19 +40,16 @@
             voice as an expressive and widely accessible medium.
           </p>
         </div>
-        <video
-          id="ui-record"
-          class="one-third-width"
-          autoplay=""
-          muted=""
-          loop=""
-          playsinline=""
-        >
+        <video class="ui-record one-third-width" muted autoplay loop>
           <source
             src="/photos/WIKN/WIKN_patch_recording.mp4"
             type="video/mp4"
           />
         </video>
+        <img
+          class="ui-record one-third-width"
+          src="/photos/WIKN/WIKN_patch_recording.jpg"
+        />
       </div>
       <div class="section writing ui appear">
         <div class="caption one-third-width">
@@ -64,9 +61,13 @@
             words, to help translate voice into art.
           </p>
         </div>
-        <video id="ui-review" class="one-third-width" controls>
+        <video class="ui-review one-third-width" muted autoplay loop>
           <source src="/photos/WIKN/WIKN_patch_review.mp4" type="video/mp4" />
         </video>
+        <img
+          class="ui-review one-third-width"
+          src="/photos/WIKN/WIKN_patch_review.jpg"
+        />
       </div>
       <div class="section writing ui appear reverse">
         <!-- <div class="one-third-width"></div> -->
@@ -78,9 +79,13 @@
             voices in their neighborhood or organization.
           </p>
         </div>
-        <video id="ui-macro" class="one-third-width" muted autoplay loop>
+        <video class="ui-macro one-third-width" muted autoplay loop>
           <source src="/photos/WIKN/macro_scroll.mp4" type="video/mp4" />
         </video>
+        <img
+          class="ui-macro one-third-width"
+          src="/photos/WIKN/macro_scroll.jpg"
+        />
       </div>
       <div class="section writing appear">
         <div class="caption one-third-width">
@@ -127,9 +132,7 @@ gsap.registerPlugin(ScrollTrigger);
 export default {
   name: "WIKN",
   data() {
-    return {
-      trig: []
-    };
+    return {};
   },
   beforeRouteEnter(to, from, next) {
     // set targetRoute in localStorage to this path name
@@ -150,38 +153,6 @@ export default {
       scene.reverse(false); // prevent sections from disappearing on scrollback
       scene.setClassToggle(this, "visible").addTo(sectionController);
     });
-
-    this.$router.app.$root.$once("transitionScroll", () => {
-      this.$router.app.$nextTick(() => {
-        if (this.$router.history.current.name === "WIKN") {
-          const instance = this;
-          $("video").each(function() {
-            const videoInstance = this;
-            const videoTrig = ScrollTrigger.create({
-              trigger: videoInstance,
-              start: "top 100%", // [trigger] [scroller] positions,
-              end: "bottom 0%" // [trigger] [scroller] positions
-              // markers: true,
-              // onEnter: () => {
-              //   videoInstance.play();
-              // },
-              // onEnterBack: () => {
-              //   videoInstance.play();
-              // },
-              // onLeave: () => {
-              //   videoInstance.pause();
-              //   videoInstance.currentTime = 0;
-              // },
-              // onLeaveBack: () => {
-              //   videoInstance.pause();
-              //   videoInstance.currentTime = 0;
-              // }
-            });
-            instance.trig.push(videoTrig);
-          });
-        }
-      });
-    });
   },
   computed: {
     tagline() {
@@ -193,13 +164,6 @@ export default {
       return contents["projects"].filter(project => {
         return project.title === "What I Know Now";
       })[0].tags;
-    }
-  },
-  beforeDestroy() {
-    if (this.$router.history.current.name === "WIKN") {
-      for (let i = 0; i < this.trig.length; i++) {
-        this.trig[i].kill();
-      }
     }
   },
   components: { Tags }
@@ -222,9 +186,9 @@ export default {
   // margin-bottom: 0;
 }
 
-#ui-record,
-#ui-review,
-#ui-macro {
+.ui-record,
+.ui-review,
+.ui-macro {
   object-fit: unset;
   width: 270px;
   height: 590px;
@@ -236,10 +200,16 @@ export default {
   margin-right: calc(min(7vw, 72px));
 }
 
-#ui-review {
+.ui-review {
   // margin-left: calc(min(7vw, calc(var(--main-width) * 0.05)));
   margin-left: calc(min(7vw, 72px));
   margin-right: 0;
+}
+
+img.ui-record,
+img.ui-review,
+img.ui-macro {
+  display: none;
 }
 
 @media only screen and (min-width: 769px) and (max-width: 1024px) {
@@ -249,9 +219,9 @@ export default {
     align-items: flex-start;
   }
 
-  #ui-record,
-  #ui-review,
-  #ui-macro {
+  .ui-record,
+  .ui-review,
+  .ui-macro {
     width: 251px;
     height: 550px;
     border-radius: 35px;
@@ -267,14 +237,28 @@ export default {
     align-items: center;
   }
 
-  #ui-record,
-  #ui-review,
-  #ui-macro {
+  .ui-record,
+  .ui-review,
+  .ui-macro {
     width: 180px;
     height: 394px;
     border-radius: 25px;
     margin-left: 0;
     margin-right: 0;
+  }
+}
+
+@media (hover: none) and (pointer: coarse) {
+  video.ui-record,
+  video.ui-review,
+  video.ui-macro {
+    display: none;
+  }
+
+  img.ui-record,
+  img.ui-review,
+  img.ui-macro {
+    display: block;
   }
 }
 </style>
