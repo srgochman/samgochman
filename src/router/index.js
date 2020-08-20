@@ -3,6 +3,7 @@ import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
 import Juices from "../views/Juices.vue";
 import Phototaxis from "../views/Phototaxis.vue";
+import Miraj from "../views/Miraj.vue";
 import Multilingual from "../views/Multilingual.vue";
 import WIKN from "../views/WIKN.vue";
 import Anivision from "../views/Anivision.vue";
@@ -31,6 +32,14 @@ const router = new VueRouter({
       component: Home,
       meta: {
         title: "Sam Gochman"
+      }
+    },
+    {
+      path: "/miraj",
+      name: "Miraj",
+      component: Miraj,
+      meta: {
+        title: "Miraj | Sam Gochman"
       }
     },
     {

@@ -41,31 +41,6 @@
   ],
   "projects": [
     {
-      "title": "Miraj",
-      "img": "miraj/miraj_space.png",
-      "type": "product",
-      "link": "https://miraj.sosolimited.com/",
-      "description": "Bringing voice-controlled digital art to an accessible platform",
-      "tags": [
-        {
-          "color": "var(--blue)",
-          "backgroundColor": "var(--blue-transparent)",
-          "words": [
-            "installation"
-          ]
-        },
-        {
-          "color": "var(--green)",
-          "backgroundColor": "var(--green-transparent)",
-          "words": [
-            "Electron",
-            "app optimization"
-          ]
-        }
-      ],
-      "locked": false
-    },
-    {
       "title": "Multilingual",
       "img": "multilingual/pw_08a_patch.jpg",
       "type": "study",
@@ -97,6 +72,31 @@
         }
       ],
       "locked": true
+    },
+    {
+      "title": "Miraj",
+      "img": "miraj/miraj_space.jpg",
+      "type": "study",
+      "link": "/miraj",
+      "description": "Bringing voice-controlled digital art to an accessible platform",
+      "tags": [
+        {
+          "color": "var(--blue)",
+          "backgroundColor": "var(--blue-transparent)",
+          "words": [
+            "installation"
+          ]
+        },
+        {
+          "color": "var(--green)",
+          "backgroundColor": "var(--green-transparent)",
+          "words": [
+            "Electron",
+            "app optimization"
+          ]
+        }
+      ],
+      "locked": false
     },
     {
       "title": "Phototaxis",
