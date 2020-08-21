@@ -14,8 +14,8 @@
       "keywords": [
         "information"
       ],
-      "color": "var(--purple)",
-      "backgroundColor": "var(--purple-transparent)",
+      "color": "var(--green)",
+      "backgroundColor": "var(--green-transparent)",
       "delay": 0
     },
     {
@@ -34,8 +34,8 @@
         "interactive",
         "tech"
       ],
-      "color": "var(--green)",
-      "backgroundColor": "var(--green-transparent)",
+      "color": "var(--purple)",
+      "backgroundColor": "var(--purple-transparent)",
       "delay": 0.5
     }
   ],
@@ -48,8 +48,8 @@
       "description": "Transforming linguistic data into interactive art that celebrates a community",
       "tags": [
         {
-          "color": "var(--purple)",
-          "backgroundColor": "var(--purple-transparent)",
+          "color": "var(--green)",
+          "backgroundColor": "var(--green-transparent)",
           "words": [
             "domain research",
             "data modeling"
@@ -64,8 +64,8 @@
           ]
         },
         {
-          "color": "var(--green)",
-          "backgroundColor": "var(--green-transparent)",
+          "color": "var(--purple)",
+          "backgroundColor": "var(--purple-transparent)",
           "words": [
             "Electron"
           ]
@@ -88,8 +88,8 @@
           ]
         },
         {
-          "color": "var(--green)",
-          "backgroundColor": "var(--green-transparent)",
+          "color": "var(--purple)",
+          "backgroundColor": "var(--purple-transparent)",
           "words": [
             "Electron",
             "app optimization"
@@ -106,8 +106,8 @@
       "description": "Merging digital and physical spaces to experience a raw interaction with light",
       "tags": [
         {
-          "color": "var(--purple)",
-          "backgroundColor": "var(--purple-transparent)",
+          "color": "var(--green)",
+          "backgroundColor": "var(--green-transparent)",
           "words": [
             "data viz"
           ]
@@ -122,8 +122,8 @@
           ]
         },
         {
-          "color": "var(--green)",
-          "backgroundColor": "var(--green-transparent)",
+          "color": "var(--purple)",
+          "backgroundColor": "var(--purple-transparent)",
           "words": [
             "Arduino",
             "Python",
@@ -141,8 +141,8 @@
       "description": "Transforming personal stories into generative artwork to help communities listen",
       "tags": [
         {
-          "color": "var(--purple)",
-          "backgroundColor": "var(--purple-transparent)",
+          "color": "var(--green)",
+          "backgroundColor": "var(--green-transparent)",
           "words": [
             "data analysis"
           ]
@@ -155,8 +155,8 @@
           ]
         },
         {
-          "color": "var(--green)",
-          "backgroundColor": "var(--green-transparent)",
+          "color": "var(--purple)",
+          "backgroundColor": "var(--purple-transparent)",
           "words": [
             "Web Audio",
             "Google Speech-to-Text",
@@ -174,8 +174,8 @@
       "description": "Refocusing technology on human connection",
       "tags": [
         {
-          "color": "var(--purple)",
-          "backgroundColor": "var(--purple-transparent)",
+          "color": "var(--green)",
+          "backgroundColor": "var(--green-transparent)",
           "words": [
             "UX research"
           ]
@@ -188,8 +188,8 @@
           ]
         },
         {
-          "color": "var(--green)",
-          "backgroundColor": "var(--green-transparent)",
+          "color": "var(--purple)",
+          "backgroundColor": "var(--purple-transparent)",
           "words": [
             "Tone.js",
             "WebRTC",
@@ -207,8 +207,8 @@
       "description": "Helping students intuit complex concepts through the eyes of animals",
       "tags": [
         {
-          "color": "var(--purple)",
-          "backgroundColor": "var(--purple-transparent)",
+          "color": "var(--green)",
+          "backgroundColor": "var(--green-transparent)",
           "words": [
             "UX research",
             "curriculum design",

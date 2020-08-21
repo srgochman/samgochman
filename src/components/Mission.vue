@@ -99,11 +99,11 @@ export default {
     mix-blend-mode: screen;
     background: linear-gradient(
       120deg,
-      var(--green) calc(var(--scroll, 0) * 100% - 25%),
+      var(--purple) calc(var(--scroll, 0) * 100% - 25%),
       var(--blue) calc(var(--scroll, 0) * 100%),
-      var(--purple) calc(var(--scroll, 0) * 100% + 50%),
+      var(--green) calc(var(--scroll, 0) * 100% + 50%),
       var(--blue) calc(var(--scroll, 0) * 100% + 100%),
-      var(--green) calc(var(--scroll, 0) * 100% + 150%)
+      var(--purple) calc(var(--scroll, 0) * 100% + 150%)
     );
   }
 }

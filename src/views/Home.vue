@@ -33,7 +33,6 @@
           />
         </a>
         and would love to
-        <!-- <span style="white-space: nowrap"> -->
         <a
           id="connect"
           href="mailto:srgochman@gmail.com"
@@ -43,7 +42,8 @@
             height="3"
             class="underline"
             src="../assets/drawn/line2_green.svg"/></a
-        >! Here's my full
+        >!
+        <!-- ! Here's my full
         <a
           id="resume"
           href="/SGochman_Fathom_resume.pdf"
@@ -54,8 +54,7 @@
             class="underline"
             src="../assets/drawn/line4_green.svg"
           /> </a
-        >.
-        <!-- </span> -->
+        >. -->
       </h3>
     </div>
 
