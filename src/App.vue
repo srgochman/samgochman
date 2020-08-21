@@ -37,10 +37,10 @@ export default {
 }
 
 ::selection {
-  background: var(--purple-semi-transparent);
+  background: var(--green-semi-transparent);
 }
 ::-moz-selection {
-  background: var(--purple-semi-transparent);
+  background: var(--green-semi-transparent);
 }
 
 html {

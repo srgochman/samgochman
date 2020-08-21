@@ -15,7 +15,11 @@
       </h3>
       <br />
       <h3 id="contact">
-        <img height="11" id="asterisk" src="../assets/drawn/asterisk.svg" />
+        <img
+          height="11"
+          id="asterisk"
+          src="../assets/drawn/asterisk_green.svg"
+        />
         I'm looking for new
         <a
           id="work"
@@ -25,7 +29,7 @@
           >work<img
             height="3"
             class="underline"
-            src="../assets/drawn/line1_purple.svg"
+            src="../assets/drawn/line1_green.svg"
           />
         </a>
         and would love to
@@ -38,7 +42,7 @@
           >connect<img
             height="3"
             class="underline"
-            src="../assets/drawn/line2_purple.svg"/></a
+            src="../assets/drawn/line2_green.svg"/></a
         >! Here's my full
         <a
           id="resume"
@@ -48,7 +52,7 @@
           >resume<img
             height="3"
             class="underline"
-            src="../assets/drawn/line4_purple.svg"
+            src="../assets/drawn/line4_green.svg"
           /> </a
         >.
         <!-- </span> -->
@@ -173,7 +177,7 @@ export default {
     $(".experience-item a").hover(function() {
       $(this)
         .find(".arrow")
-        .toggleClass("purple-arrow");
+        .toggleClass("green-arrow");
     });
 
     const homeController = new ScrollMagic.Controller();
@@ -319,14 +323,14 @@ canvas {
   transition: fill 0.2s ease-in-out;
 }
 
-.purple-arrow {
-  fill: var(--purple) !important;
+.green-arrow {
+  fill: var(--green) !important;
   // opacity: 1 !important;
   transition: fill 0.2s ease-in-out;
 }
 
-.purple-lock {
-  fill: var(--purple) !important;
+.green-lock {
+  fill: var(--green) !important;
   transition: fill 0.2s ease-in-out;
 }
 

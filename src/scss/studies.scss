@@ -69,7 +69,7 @@ img {
 }
 
 img.img-bg {
-  max-height: 500px;
+  max-height: 700px;
 }
 
 
@@ -223,11 +223,11 @@ img.img-bg {
   }
   
   .banner {
-    height: 50vh;
+    height: 60vh;
   }
 
   .banner-text {
-    top: 25vh;
+    top: 30vh;
     width: 100%;
     // padding: 0 7vw;
 
@@ -243,7 +243,7 @@ img.img-bg {
   }
 
   .body::before {
-    top: 50vh;
+    top: 60vh;
   }
 
   .section {
@@ -274,12 +274,12 @@ img.img-bg {
   }
   
   .banner {
-    height: 50vh;
+    height: 70vh;
   }
 
   .banner-text {
     width: 85%;
-    top: 25vh;
+    top: 35vh;
 
     h2 {
       font-size: calc(min(6vw, 2.3em));
@@ -288,7 +288,7 @@ img.img-bg {
   }
 
   .body::before {
-    top: 50vh;
+    top: 70vh;
   }
 
   .caption {
