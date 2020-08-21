@@ -43,7 +43,7 @@
             class="underline"
             src="../assets/drawn/line2_green.svg"/></a
         >!
-        <!-- ! Here's my full
+        <!-- ! Here's a full
         <a
           id="resume"
           href="/SGochman_Fathom_resume.pdf"

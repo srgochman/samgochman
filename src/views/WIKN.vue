@@ -30,7 +30,7 @@
           </p>
         </div>
       </div>
-      <div class="section writing ui appear reverse">
+      <div class="section ui appear reverse">
         <div class="caption one-third-width">
           <h2>Capturing a Story</h2>
           <p>
@@ -51,7 +51,7 @@
           src="/photos/WIKN/WIKN_patch_recording.jpg"
         />
       </div>
-      <div class="section writing ui appear">
+      <div class="section ui appear">
         <div class="caption one-third-width">
           <h2>Audio Visualization</h2>
           <p>
@@ -69,7 +69,7 @@
           src="/photos/WIKN/WIKN_patch_review.jpg"
         />
       </div>
-      <div class="section writing ui appear reverse">
+      <div class="section ui appear reverse">
         <!-- <div class="one-third-width"></div> -->
         <div class="caption one-third-width">
           <h2>Community Exploration</h2>
@@ -87,7 +87,7 @@
           src="/photos/WIKN/macro_scroll.jpg"
         />
       </div>
-      <div class="section writing appear">
+      <div class="section appear across">
         <div class="caption one-third-width">
           <h2>Translations</h2>
           <p>
@@ -98,10 +98,14 @@
             voice recordings onto a set of visual parameters in p5.js.
           </p>
         </div>
-        <img class="one-third-width" src="/photos/WIKN/doodle.jpg" />
-        <img class="one-third-width" src="/photos/WIKN/brushes.png" />
+        <div class="img-container one-third-width">
+          <img src="/photos/WIKN/doodle.jpg" />
+        </div>
+        <div class="img-container one-third-width">
+          <img src="/photos/WIKN/brushes.png" />
+        </div>
       </div>
-      <div class="section writing appear reverse">
+      <div class="section appear reverse">
         <div class="caption one-third-width">
           <h2>Public Visibility</h2>
           <p>
@@ -111,11 +115,9 @@
             community.
           </p>
         </div>
-        <img
-          id="print"
-          class="two-thirds-width img-bg"
-          src="/photos/WIKN/WIKN_mural_crop_landscape.png"
-        />
+        <div class="img-container two-thirds-width">
+          <img id="print" src="/photos/WIKN/WIKN_mural_crop_landscape.png" />
+        </div>
       </div>
     </div>
   </div>
@@ -214,7 +216,6 @@ img.ui-macro {
 
 @media only screen and (min-width: 769px) and (max-width: 1024px) {
   .ui {
-    // justify-content: flex-start;
     flex-direction: column;
     align-items: flex-start;
   }
@@ -232,9 +233,8 @@ img.ui-macro {
 
 @media only screen and (max-width: 768px) {
   .ui {
-    // justify-content: flex-start;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
   }
 
   .ui-record,
@@ -245,6 +245,13 @@ img.ui-macro {
     border-radius: 25px;
     margin-left: 0;
     margin-right: 0;
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  .ui {
+    flex-direction: column;
+    align-items: center;
   }
 }
 

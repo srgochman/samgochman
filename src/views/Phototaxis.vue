@@ -34,7 +34,7 @@
           <p>2 Architects, Designer, Computing Consultant</p>
         </div>
       </div>
-      <div class="section writing appear stacked">
+      <div class="section appear stacked">
         <div class="caption two-thirds-width">
           <h2>Experience Design</h2>
           <p>
@@ -46,13 +46,11 @@
             exploration from all angles.
           </p>
         </div>
-        <img
-          id="exposure"
-          class="full-width img-bg"
-          src="/photos/phototaxis/exposure.jpg"
-        />
+        <div class="img-container full-width">
+          <img id="exposure" src="/photos/phototaxis/exposure.jpg" />
+        </div>
       </div>
-      <div class="section writing appear reverse">
+      <div class="section appear reverse">
         <div class="caption one-third-width">
           <h2>Interaction Development</h2>
           <p>
@@ -62,12 +60,11 @@
             relationship between light level and proximity.
           </p>
         </div>
-        <img
-          class="two-thirds-width img-bg"
-          src="/photos/phototaxis/prototype.jpg"
-        />
+        <div class="img-container two-thirds-width">
+          <img src="/photos/phototaxis/prototype.jpg" />
+        </div>
       </div>
-      <div class="section writing appear">
+      <div class="section appear">
         <div class="caption one-third-width">
           <h2>Installation</h2>
           <p>
@@ -77,13 +74,11 @@
             affected brightness and logged data throughout the exhibition.
           </p>
         </div>
-        <img
-          id="diagram"
-          class="two-thirds-width"
-          src="/photos/phototaxis/exploded.png"
-        />
+        <div class="img-container two-thirds-width">
+          <img id="diagram" src="/photos/phototaxis/exploded.png" />
+        </div>
       </div>
-      <div class="section writing appear reverse">
+      <div class="section appear reverse">
         <div class="caption one-third-width">
           <h2>Reflection</h2>
           <p>
@@ -95,11 +90,9 @@
             became a platform for collaboration and play.
           </p>
         </div>
-        <img
-          id="graph"
-          class="two-thirds-width"
-          src="/photos/phototaxis/graph.png"
-        />
+        <div class="img-container two-thirds-width">
+          <img id="graph" src="/photos/phototaxis/graph.png" />
+        </div>
       </div>
     </div>
   </div>

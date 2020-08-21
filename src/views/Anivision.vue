@@ -31,10 +31,10 @@
         </div>
       </div>
       <!-- <div id="vid-section" class="section appear"></div> -->
-      <div id="vid-section" class="section writing appear reverse">
+      <div class="section appear reverse">
         <div class="caption one-third-width">
-          <h2 class="">Immersive Education</h2>
-          <p class="">
+          <h2>Immersive Education</h2>
+          <p>
             Emerging technologies like virtual reality create new opportunities
             to both overcome mental fatigue<a
               href="https://www.researchgate.net/publication/323121980_Cognitive_Fatigue_and_the_Wellbeing_and_Academic_Attainment_of_University_Students#read"
@@ -54,19 +54,17 @@
         </video>
       </div>
       <div class="section across appear">
-        <img
-          class="two-thirds-width img-bg"
-          src="/photos/anivision/VINS_student.jpg"
-        />
-        <img
-          class="one-third-width img-bg"
-          src="/photos/anivision/VINS_class.jpg"
-        />
+        <div class="img-container two-thirds-width">
+          <img src="/photos/anivision/VINS_student.jpg" />
+        </div>
+        <div class="img-container one-third-width">
+          <img src="/photos/anivision/VINS_class.jpg" />
+        </div>
       </div>
-      <div class="section writing appear stacked">
-        <div class="caption">
-          <h2 class="two-thirds-width">Environments Design</h2>
-          <p class="two-thirds-width">
+      <div class="section appear stacked">
+        <div class="caption two-thirds-width">
+          <h2>Environments Design</h2>
+          <p>
             Using animals with extreme adaptations like the honey bee lets
             students toggle between visual systems while exploring different
             habitats. Keeping in mind real ecology, we designed environments
@@ -77,16 +75,16 @@
         </div>
         <div class="across">
           <img
-            class="one-third-width img-bg"
-            src="/photos/anivision/honeybee.jpg"
+            class="img-bg two-thirds-width"
+            src="/photos/anivision/beeComparison.jpg"
           />
           <img
-            class="two-thirds-width img-bg"
-            src="/photos/anivision/beeComparison.jpg"
+            class="img-bg one-third-width"
+            src="/photos/anivision/honeybee.jpg"
           />
         </div>
       </div>
-      <div id="results" class="section writing appear reverse">
+      <div id="results" class="section appear reverse">
         <!-- <div class="spacer one-third-width"></div> -->
         <div class="caption two-thirds-width">
           <h2>Enhanced Learning</h2>
@@ -113,10 +111,13 @@
           href="https://evolution-outreach.biomedcentral.com/articles/10.1186/s12052-019-0101-6"
           target="_blank"
           rel="noopener"
-          ><img id="paper" src="/photos/anivision/published.png"
-        /></a>
+        >
+          <div class="img-container full-width">
+            <img id="paper" src="/photos/anivision/published.png" />
+          </div>
+        </a>
       </div>
-      <div class="section writing appear">
+      <div class="section appear">
         <div class="caption one-third-width">
           <h2>Communication</h2>
           <p>
@@ -126,11 +127,9 @@
             educators.
           </p>
         </div>
-        <img
-          id="leakey"
-          class="two-thirds-width img-bg"
-          src="/photos/anivision/leakey.jpg"
-        />
+        <div class="img-container two-thirds-width">
+          <img id="leakey" src="/photos/anivision/leakey.jpg" />
+        </div>
       </div>
     </div>
   </div>
