@@ -42,7 +42,7 @@
           />
         </video>
       </div>
-      <div class="section writing appear reverse across">
+      <div class="section appear reverse across">
         <div class="caption one-third-width">
           <h2>Concept Development</h2>
           <p>
@@ -64,7 +64,7 @@
           src="/photos/multilingual/globe.jpg"
         />
       </div>
-      <div class="section writing appear stacked">
+      <div class="section appear stacked">
         <div class="caption two-thirds-width">
           <h2>Data Modeling</h2>
           <p>
@@ -97,7 +97,7 @@
           />
         </div>
       </div>
-      <div class="section writing appear reverse">
+      <div class="section appear reverse">
         <div class="caption one-third-width">
           <h2>User Interaction</h2>
           <p>
@@ -107,11 +107,13 @@
             focus instead on the visualization itself.
           </p>
         </div>
-        <img
-          id="keyboard"
-          class="two-thirds-width"
-          src="/photos/multilingual/keyboard_cropped.png"
-        />
+        <div class="img-container two-thirds-width">
+          <img id="keyboard" src="/photos/multilingual/keyboard_cropped.png" />
+        </div>
+        <!-- <div
+          class="two-thirds-width test"
+          style="background-image: url('/photos/multilingual/keyboard_cropped.png')"
+        ></div> -->
       </div>
     </div>
   </div>

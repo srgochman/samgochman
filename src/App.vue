@@ -102,9 +102,9 @@ body {
     margin-top: 10px;
     padding-left: calc(min(7vw, 40px));
 
-    &:hover {
-      fill: var(--green);
-    }
+    // &:hover {
+    //   fill: var(--green);
+    // }
   }
 
   #name-drawn {

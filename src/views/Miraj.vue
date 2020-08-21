@@ -48,7 +48,7 @@
         </video>
         <p>Video from Sosolimited's Together Apart intitiative.</p>
       </div>
-      <div class="section writing appear reverse two-thirds-width">
+      <div class="section appear reverse two-thirds-width">
         <div class="caption half-width">
           <h2>Installation</h2>
           <p>
@@ -57,7 +57,9 @@
             including a kiosk that clients and other visitors frequently use.
           </p>
         </div>
-        <img class="half-width" src="/photos/miraj/installation.jpg" />
+        <div class="img-container half-width">
+          <img src="/photos/miraj/installation.jpg" />
+        </div>
       </div>
     </div>
   </div>
@@ -113,7 +115,8 @@ export default {
 }
 
 .underline {
-  transform: scaleY(1.7);
+  object-fit: unset;
+  // transform: scaleY(1.7);
   bottom: -2px;
 }
 
