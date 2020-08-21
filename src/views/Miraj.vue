@@ -25,7 +25,7 @@
             >Check it out<img
               height="3"
               class="underline"
-              src="../assets/drawn/line3_purple.svg"
+              src="../assets/drawn/line3_green.svg"
             />
           </a>
           for yourself!

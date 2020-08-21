@@ -100,28 +100,27 @@ export default {
           projectContainer.addEventListener("mouseover", function() {
             if (instance.isActive) {
               // text below (narrow screens)
-              instance.projectTitle.style.color = "var(--purple)";
-              instance.arrow.classList.add("purple-arrow");
-              if (instance.locked) instance.lock.classList.add("purple-lock");
+              instance.projectTitle.style.color = "var(--green)";
+              instance.arrow.classList.add("green-arrow");
+              if (instance.locked) instance.lock.classList.add("green-lock");
 
               // ProjectText (wide screens)
-              $(".project-text a").css("color", "var(--purple)");
-              $(".project-text .arrow").addClass("purple-arrow");
-              $(".project-text .lock").addClass("purple-lock");
+              $(".project-text a").css("color", "var(--green)");
+              $(".project-text .arrow").addClass("green-arrow");
+              $(".project-text .lock").addClass("green-lock");
             }
           });
           projectContainer.addEventListener("mouseout", function() {
             if (instance.isActive) {
               // text below (narrow screens)
               instance.projectTitle.style.color = "black";
-              instance.arrow.classList.remove("purple-arrow");
-              if (instance.locked)
-                instance.lock.classList.remove("purple-lock");
+              instance.arrow.classList.remove("green-arrow");
+              if (instance.locked) instance.lock.classList.remove("green-lock");
 
               // ProjectText (wide screens)
               $(".project-text a").css("color", "black");
-              $(".project-text .arrow").removeClass("purple-arrow");
-              $(".project-text .lock").removeClass("purple-lock");
+              $(".project-text .arrow").removeClass("green-arrow");
+              $(".project-text .lock").removeClass("green-lock");
             }
           });
 
@@ -184,8 +183,8 @@ export default {
       // text below (narrow screens)
       this.projectTextBelow.classList.add("dull");
       this.projectTitle.style.color = "black";
-      this.arrow.classList.remove("purple-arrow");
-      if (this.locked) this.lock.classList.remove("purple-lock");
+      this.arrow.classList.remove("green-arrow");
+      if (this.locked) this.lock.classList.remove("green-lock");
 
       this.isActive = false;
     }

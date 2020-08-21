@@ -84,14 +84,14 @@ export default {
   },
   methods: {
     hoverOn() {
-      $(".project-text a").css("color", "var(--purple)");
-      $(".project-text .arrow").addClass("purple-arrow");
-      $(".project-text .lock").addClass("purple-lock");
+      $(".project-text a").css("color", "var(--green)");
+      $(".project-text .arrow").addClass("green-arrow");
+      $(".project-text .lock").addClass("green-lock");
     },
     hoverOff() {
       $(".project-text a").css("color", "black");
-      $(".project-text .arrow").removeClass("purple-arrow");
-      $(".project-text .lock").removeClass("purple-lock");
+      $(".project-text .arrow").removeClass("green-arrow");
+      $(".project-text .lock").removeClass("green-lock");
     }
   },
   beforeDestroy() {

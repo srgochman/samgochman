@@ -2,7 +2,13 @@
   <div id="app">
     <div id="nav">
       <router-link to="/" class="sam-gochman">
-        <div id="name-drawn"></div>
+        <!-- <div id="name-drawn"></div> -->
+        <svg width="158" height="22">
+          <use
+            id="name-drawn"
+            href="../src/assets/drawn/name_drawn.svg#Layer_2"
+          ></use>
+        </svg>
         <!-- <div>Sam Gochman</div> -->
       </router-link>
     </div>
@@ -37,10 +43,10 @@ export default {
 }
 
 ::selection {
-  background: var(--purple-semi-transparent);
+  background: var(--green-semi-transparent);
 }
 ::-moz-selection {
-  background: var(--purple-semi-transparent);
+  background: var(--green-semi-transparent);
 }
 
 html {
@@ -88,21 +94,25 @@ body {
   z-index: 100;
 
   .sam-gochman {
-    height: min-content;
-    text-transform: uppercase;
-    font-size: 24px;
-    font-weight: 700;
-    color: black;
+    // height: min-content;
+    // text-transform: uppercase;
+    // font-size: 24px;
+    // font-weight: 700;
+    // color: black;
     margin-top: 10px;
     padding-left: calc(min(7vw, 40px));
+
+    &:hover {
+      fill: var(--green);
+    }
   }
 
   #name-drawn {
-    width: 154px;
-    height: 22px;
-    background-image: url("./assets/drawn/name_drawn.svg");
+    // width: 154px;
+    // height: 22px;
+    // background-image: url("./assets/drawn/name_drawn.svg");
     background-repeat: no-repeat;
-    transform: scaleY(0.9);
+    // transform: scaleY(0.9);
   }
 }
 

@@ -116,8 +116,8 @@ textarea:-webkit-autofill:focus,
 select:-webkit-autofill,
 select:-webkit-autofill:hover,
 select:-webkit-autofill:focus {
-  box-shadow: 0 0 0px 1000px var(--purple-transparent) inset;
-  -webkit-box-shadow: 0 0 0px 1000px var(--purple-transparent) inset;
+  box-shadow: 0 0 0px 1000px var(--green-transparent) inset;
+  -webkit-box-shadow: 0 0 0px 1000px var(--green-transparent) inset;
 }
 
 #message {
@@ -132,7 +132,7 @@ button {
   height: 3em;
   // width: 100%;
   // padding: 6px 11px 6px 9px;
-  background-color: var(--purple);
+  background-color: var(--green);
   color: white;
   border: none;
   border-radius: 2px;
@@ -143,7 +143,7 @@ button {
   transition: var(--hover);
 
   &:hover {
-    background-color: var(--purple-semi-transparent);
+    background-color: var(--green-semi-transparent);
     transition: var(--hover);
   }
 }
