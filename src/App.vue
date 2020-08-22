@@ -3,7 +3,7 @@
     <div id="nav">
       <router-link to="/" class="sam-gochman">
         <!-- <div id="name-drawn"></div> -->
-        <svg id="name-drawn" width="158" height="22">
+        <svg id="name-drawn" width="158" height="22" @click="scrollTop">
           <use href="../src/assets/drawn/name_drawn.svg#Layer_2"></use>
         </svg>
         <!-- <svg id="initials" width="26" height="22">
@@ -12,7 +12,7 @@
         <!-- <svg id="initials" width="38" height="37">
           <use href="../src/assets/drawn/initials_green.svg#Layer_2"></use>
         </svg> -->
-        <svg id="initials" width="39" height="40">
+        <svg id="initials" width="39" height="40" @click="scrollTop">
           <use href="../src/assets/drawn/initials_green2.svg#Layer_2"></use>
         </svg>
         <!-- <div>Sam Gochman</div> -->
@@ -34,6 +34,14 @@ export default {
   },
   mounted() {
     this.$router.app.$emit("transitionScroll");
+  },
+  methods: {
+    scrollTop() {
+      if (this.$router.history.current.name === "Sam Gochman") {
+        window.scrollTo(0, 0);
+        console.log("scrolled");
+      }
+    }
   }
 };
 </script>
