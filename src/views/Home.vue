@@ -1,8 +1,8 @@
 <template>
   <div class="body">
-    <button @click="clearPass" style="margin-top: 10vh; z-index: 10000">
+    <!-- <button @click="clearPass" style="margin-top: 10vh; z-index: 10000">
       Clear passCorrect
-    </button>
+    </button> -->
     <div id="particles-js"></div>
     <div id="mission" class="section">
       <Mission></Mission>
@@ -478,7 +478,7 @@ canvas {
 @media only screen and (max-width: 425px) {
   #mission,
   #particles-js {
-    height: 70vh;
+    height: calc(150px + 31vh);
   }
 
   #mission-description {

@@ -79,6 +79,8 @@ export default {
   font-size: calc(min(7.4vw, 6em));
   font-weight: 700;
   line-height: 1.3em;
+  position: relative;
+  padding-left: 1px;
 
   // color: var(--purple);
   background: white; // masks background gradient
@@ -87,7 +89,7 @@ export default {
   &::before {
     content: "";
     display: block;
-    width: calc(100% - 4px);
+    width: calc(100% - 3px);
     height: 40vw;
     // height: calc(min(40vw, 466px));
     max-height: 490px;
@@ -95,7 +97,7 @@ export default {
     top: 3px;
     right: 0;
     bottom: 0;
-    left: 2px;
+    left: 1px;
     mix-blend-mode: screen;
     background: linear-gradient(
       120deg,
@@ -157,11 +159,20 @@ export default {
   #mission-container {
     font-size: 9vw;
     height: 60vw;
-    margin-top: 40vh;
+    margin-top: calc(25px + 13vh);
+    transform: translateY(0%);
 
     &::before {
-      height: 56vw;
+      height: 58vw;
     }
+  }
+}
+
+@media only screen and (orientation: landscape) and (max-device-width: 820px) {
+  #mission-container {
+    height: 42vw;
+    margin-top: calc(20px + 5vh);
+    transform: translateY(0%);
   }
 }
 
@@ -172,9 +183,9 @@ export default {
   }
 }
 
-@media only screen and (max-width: 1024px) and (max-height: 426px) {
-  #mission-container {
-    margin-top: calc(50vh + 75px);
-  }
-}
+// @media only screen and (max-width: 1024px) and (max-height: 426px) {
+//   #mission-container {
+//     margin-top: calc(50vh + 75px);
+//   }
+// }
 </style>

@@ -95,7 +95,7 @@ input {
   background: none;
   outline: inherit;
   // border: solid 1px gray;
-  // border-radius: 2px;
+  border-radius: 0px;
   border: none;
   border-bottom: solid 1px gray;
   color: inherit;
@@ -155,6 +155,14 @@ button {
   #message,
   button {
     width: 250px;
+  }
+}
+
+@media (hover: none) and (pointer: coarse) {
+  #container {
+    margin-top: 14vh;
+    transform: translateY(0%);
+    font-family: "Avenir";
   }
 }
 </style>
