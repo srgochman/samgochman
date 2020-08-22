@@ -40,7 +40,15 @@
             voice as an expressive and widely accessible medium.
           </p>
         </div>
-        <video class="ui-record one-third-width" muted autoplay loop>
+        <video
+          class="ui-record one-third-width"
+          muted
+          autoplay
+          loop
+          playsinline
+          preload="none"
+          poster="/photos/WIKN/WIKN_patch_recording.jpg"
+        >
           <source
             src="/photos/WIKN/WIKN_patch_recording.mp4"
             type="video/mp4"
@@ -61,7 +69,15 @@
             words, to help translate voice into art.
           </p>
         </div>
-        <video class="ui-review one-third-width" muted autoplay loop>
+        <video
+          class="ui-review one-third-width"
+          muted
+          autoplay
+          loop
+          playsinline
+          preload="none"
+          poster="/photos/WIKN/WIKN_patch_review.jpg"
+        >
           <source src="/photos/WIKN/WIKN_patch_review.mp4" type="video/mp4" />
         </video>
         <img
@@ -79,7 +95,15 @@
             voices in their neighborhood or organization.
           </p>
         </div>
-        <video class="ui-macro one-third-width" muted autoplay loop>
+        <video
+          class="ui-macro one-third-width"
+          muted
+          autoplay
+          loop
+          playsinline
+          preload="none"
+          poster="/photos/WIKN/macro_scroll.jpg"
+        >
           <source src="/photos/WIKN/macro_scroll.mp4" type="video/mp4" />
         </video>
         <img

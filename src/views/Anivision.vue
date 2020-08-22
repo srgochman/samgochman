@@ -49,7 +49,12 @@
             students appreciate classroom concepts through intuition.
           </p>
         </div>
-        <video class="two-thirds-width" controls>
+        <video
+          class="two-thirds-width"
+          controls
+          preload="none"
+          poster="/photos/anivision/anivision_poster.jpg"
+        >
           <source src="/photos/anivision/anivision.mp4" type="video/mp4" />
         </video>
       </div>

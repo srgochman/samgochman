@@ -33,7 +33,7 @@
         <video
           class="full-width"
           controls
-          preload="metadata"
+          preload="none"
           poster="/photos/multilingual/pw_08a_patch.jpg"
         >
           <source

@@ -41,7 +41,7 @@
         <video
           class="full-width"
           controls
-          preload="metadata"
+          preload="none"
           poster="/photos/miraj/miraj_poster.jpg"
         >
           <source src="/photos/miraj/miraj.mp4" type="video/mp4" />
