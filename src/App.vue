@@ -3,11 +3,17 @@
     <div id="nav">
       <router-link to="/" class="sam-gochman">
         <!-- <div id="name-drawn"></div> -->
-        <svg width="158" height="22">
-          <use
-            id="name-drawn"
-            href="../src/assets/drawn/name_drawn.svg#Layer_2"
-          ></use>
+        <svg id="name-drawn" width="158" height="22">
+          <use href="../src/assets/drawn/name_drawn.svg#Layer_2"></use>
+        </svg>
+        <!-- <svg id="initials" width="26" height="22">
+          <use href="../src/assets/drawn/initials.svg#Layer_2"></use>
+        </svg> -->
+        <!-- <svg id="initials" width="38" height="37">
+          <use href="../src/assets/drawn/initials_green.svg#Layer_2"></use>
+        </svg> -->
+        <svg id="initials" width="39" height="40">
+          <use href="../src/assets/drawn/initials_green2.svg#Layer_2"></use>
         </svg>
         <!-- <div>Sam Gochman</div> -->
       </router-link>
@@ -100,20 +106,25 @@ body {
     // font-weight: 700;
     // color: black;
     margin-top: 10px;
-    padding-left: calc(min(7vw, 40px));
+    margin-left: calc(min(7vw, 30px));
+    // padding-left: calc(min(7vw, 30px));
 
     // &:hover {
     //   fill: var(--green);
     // }
   }
 
-  #name-drawn {
-    // width: 154px;
-    // height: 22px;
-    // background-image: url("./assets/drawn/name_drawn.svg");
-    background-repeat: no-repeat;
-    // transform: scaleY(0.9);
-  }
+  // #name-drawn {
+  //   // width: 154px;
+  //   // height: 22px;
+  //   // background-image: url("./assets/drawn/name_drawn.svg");
+  //   background-repeat: no-repeat;
+  //   // transform: scaleY(0.9);
+  // }
+}
+
+#initials {
+  display: none;
 }
 
 // page content
@@ -167,15 +178,23 @@ body {
 }
 
 @media only screen and (max-width: 1900px) {
-  #nav {
-    position: absolute;
-    overflow: hidden;
-  }
+  // #nav {
+  //   position: absolute;
+  //   overflow: hidden;
+  // }
 }
 
 @media only screen and (max-width: 1024px) {
   .section {
     margin-bottom: 150px;
+  }
+
+  #name-drawn {
+    display: none;
+  }
+
+  #initials {
+    display: block;
   }
 }
 </style>
