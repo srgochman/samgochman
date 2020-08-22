@@ -74,31 +74,6 @@
       "locked": true
     },
     {
-      "title": "Miraj",
-      "img": "miraj/miraj_space.jpg",
-      "type": "study",
-      "link": "/miraj",
-      "description": "Bringing voice-controlled digital art to an accessible platform",
-      "tags": [
-        {
-          "color": "var(--blue)",
-          "backgroundColor": "var(--blue-transparent)",
-          "words": [
-            "installation"
-          ]
-        },
-        {
-          "color": "var(--purple)",
-          "backgroundColor": "var(--purple-transparent)",
-          "words": [
-            "Electron",
-            "app optimization"
-          ]
-        }
-      ],
-      "locked": false
-    },
-    {
       "title": "Phototaxis",
       "img": "phototaxis/phototaxis_silhouette.png",
       "type": "study",
@@ -128,6 +103,31 @@
             "Arduino",
             "Python",
             "fabrication"
+          ]
+        }
+      ],
+      "locked": false
+    },
+    {
+      "title": "Miraj",
+      "img": "miraj/miraj_space.jpg",
+      "type": "study",
+      "link": "/miraj",
+      "description": "Bringing voice-controlled digital art to an accessible platform",
+      "tags": [
+        {
+          "color": "var(--blue)",
+          "backgroundColor": "var(--blue-transparent)",
+          "words": [
+            "installation"
+          ]
+        },
+        {
+          "color": "var(--purple)",
+          "backgroundColor": "var(--purple-transparent)",
+          "words": [
+            "Electron",
+            "app optimization"
           ]
         }
       ],

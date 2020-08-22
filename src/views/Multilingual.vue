@@ -37,7 +37,7 @@
           poster="/photos/multilingual/pw_08a_patch.jpg"
         >
           <source
-            src="/photos/multilingual/2 Animation-Sequence_edit_trimmed.mp4"
+            src="/photos/multilingual/2_Animation-Sequence_edit_trimmed.mp4"
             type="video/mp4"
           />
         </video>
@@ -48,7 +48,7 @@
           <p>
             I thought a lot about the client's goal of telling a story about
             inclusivity and connection. I worked with the designer and creative
-            director to iterate from a concept of emotion to an artwork that
+            director to progress from a concept of emotion to an artwork that
             enhances the museum whether or not the installation is actively in
             use.
           </p>
