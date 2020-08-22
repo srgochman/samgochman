@@ -2,8 +2,15 @@
   <div class="study-page">
     <div class="banner img-bg"></div>
     <div class="banner">
-      <video muted autoplay loop>
-        <source src="/photos/phototaxis/Phototaxis.mp4" type="video/mp4" />
+      <video
+        muted
+        autoplay
+        loop
+        playsinline
+        preload="none"
+        poster="/photos/phototaxis/phototaxis_silhouette.png"
+      >
+        <source src="/photos/phototaxis/Phototaxis_cut.mp4" type="video/mp4" />
       </video>
     </div>
     <div class="body">
