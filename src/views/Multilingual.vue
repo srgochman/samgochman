@@ -17,10 +17,10 @@
           experience that lets a user track themself in the context of a
           connected community.
           <br /><br />
-          In addition to developing the interface for user interaction, I got to
-          brainstorm the concept with the team. I also handled the available
-          language data to ground the initial design in academic research and
-          realistic patterns of the population.
+          In addition to building the interface for user interaction, I
+          developed the initial concept with the team and handled the language
+          data to ground the design in academic research and realistic patterns
+          of the population.
         </h3>
         <div class="contributions-container one-third-width">
           <p class="contributions">Contributions</p>
