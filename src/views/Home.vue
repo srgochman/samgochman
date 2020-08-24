@@ -233,8 +233,8 @@ canvas {
 }
 
 #mission-description {
-  // width: 33%;
-  width: 907px;
+  width: 64%;
+  // width: 907px;
   // max-width: calc(max(500px, 30%));
   // margin-bottom: 200px;
   // font-size: 2em;
@@ -250,7 +250,7 @@ canvas {
 
 #asterisk {
   position: absolute;
-  top: 13px;
+  top: 10px;
   left: -25px;
 }
 

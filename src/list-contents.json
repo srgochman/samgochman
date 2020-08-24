@@ -1,9 +1,9 @@
 {
   "missions": [
     "talks shop with coders, artists, and scientists.",
-    "turns voices into kaleidoscopes.",
     "builds for and with sensory experiences.",
-    "transforms information into conversation.",
+    "turns voices into kaleidoscopes.",
+    "translates information into conversation.",
     "makes circuits expressive.",
     "sees through the eyes of tarsiers and honeybees.",
     "makes over landmarks."
@@ -29,7 +29,7 @@
       "delay": 0.25
     },
     {
-      "description": "I build with interactive tech using digital and physical tools.",
+      "description": "I build with interactive tech and digital and physical tools.",
       "keywords": [
         "interactive",
         "tech"
