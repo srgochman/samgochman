@@ -57,8 +57,8 @@
           <img id="exposure" src="/photos/phototaxis/exposure.jpg" />
         </div>
       </div>
-      <div class="section appear reverse">
-        <div class="caption one-third-width">
+      <div class="section appear stacked">
+        <div class="caption two-thirds-width">
           <h2>Interaction Development</h2>
           <p>
             To let the user and environment respond to each other, I prototyped
@@ -67,8 +67,14 @@
             relationship between light level and proximity.
           </p>
         </div>
-        <div class="img-container two-thirds-width">
-          <img src="/photos/phototaxis/prototype.jpg" />
+        <div id="interaction" class="across">
+          <div class="img-container two-thirds-width">
+            <img src="/photos/phototaxis/prototype.jpg" />
+          </div>
+          <img
+            class="one-third-width img-bg"
+            src="/photos/phototaxis/sketches.jpg"
+          />
         </div>
       </div>
       <div class="section appear">
@@ -100,6 +106,13 @@
         <div class="img-container two-thirds-width">
           <img id="graph" src="/photos/phototaxis/graph.png" />
         </div>
+      </div>
+      <div class="section appear across">
+        <img class="one-third-width img-bg" src="/photos/phototaxis/jump.jpg" />
+        <img
+          class="two-thirds-width img-bg"
+          src="/photos/phototaxis/christian.jpg"
+        />
       </div>
     </div>
   </div>
@@ -158,6 +171,10 @@ video {
   background-image: url("/photos/phototaxis/phototaxis_silhouette.png");
   object-fit: cover;
   display: none;
+}
+
+#interaction {
+  justify-content: space-between;
 }
 
 @media (hover: none) and (pointer: coarse) {
