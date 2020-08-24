@@ -21,7 +21,12 @@ export default {
   name: "Authentication",
   data() {
     return {
-      requiredPassword: ["testing", "localprojects"],
+      requiredPassword: [
+        "privatework",
+        "opensesame",
+        "localprojects",
+        "potion"
+      ],
       submittedPassword: "",
       message: " "
     };

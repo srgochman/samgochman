@@ -42,11 +42,10 @@
             height="3"
             class="underline"
             src="../assets/drawn/line2_green.svg"/></a
-        >!
-        <!-- ! Here's a full
+        >! Here's a full
         <a
           id="resume"
-          href="/SGochman_Fathom_resume.pdf"
+          href="/SGochman_resume.pdf"
           target="_blank"
           rel="noopener"
           >resume<img
@@ -54,7 +53,7 @@
             class="underline"
             src="../assets/drawn/line4_green.svg"
           /> </a
-        >. -->
+        >.
       </h3>
     </div>
 

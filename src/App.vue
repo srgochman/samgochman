@@ -9,11 +9,11 @@
         <!-- <svg id="initials" width="26" height="22">
           <use href="../src/assets/drawn/initials.svg#Layer_2"></use>
         </svg> -->
-        <!-- <svg id="initials" width="38" height="37">
-          <use href="../src/assets/drawn/initials_green.svg#Layer_2"></use>
-        </svg> -->
-        <svg id="initials" width="39" height="40" @click="scrollTop">
+        <!-- <svg id="initials" width="39" height="40" @click="scrollTop">
           <use href="../src/assets/drawn/initials_green2.svg#Layer_2"></use>
+        </svg> -->
+        <svg id="initials" width="48" height="39" @click="scrollTop">
+          <use href="../src/assets/drawn/initials_green.svg#Layer_2"></use>
         </svg>
         <!-- <div>Sam Gochman</div> -->
       </router-link>
