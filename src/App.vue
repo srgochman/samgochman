@@ -80,7 +80,7 @@ body {
   flex-direction: row;
   justify-content: center;
   margin: 0;
-  padding: 0 7vw; // left/right padding for narrow window
+  padding: 0 8vw; // left/right padding for narrow window
   overflow-x: hidden;
   overflow-y: hidden;
 }
@@ -185,12 +185,12 @@ body {
   opacity: 0;
 }
 
-@media only screen and (max-width: 1900px) {
-  // #nav {
-  //   position: absolute;
-  //   overflow: hidden;
-  // }
-}
+// @media only screen and (min-width: 1024px) and (max-width: 1900px) {
+//   #nav {
+//     position: absolute;
+//     overflow: hidden;
+//   }
+// }
 
 @media only screen and (max-width: 1024px) {
   .section {

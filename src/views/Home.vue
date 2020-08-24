@@ -337,11 +337,11 @@ canvas {
   margin: 0 0 70px 0;
 }
 
-#skills-drawn {
-  // width: 150px;
-  background-image: url("../assets/drawn/skills_drawn.svg");
-  background-repeat: no-repeat;
-}
+// #skills-drawn {
+//   // width: 150px;
+//   background-image: url("../assets/drawn/skills_drawn.svg");
+//   background-repeat: no-repeat;
+// }
 
 #skills-container {
   display: flex;
@@ -350,11 +350,11 @@ canvas {
   // justify-content: space-between;
 }
 
-#work-drawn {
-  // width: 150px;
-  background-image: url("../assets/drawn/work_drawn.svg");
-  background-repeat: no-repeat;
-}
+// #work-drawn {
+//   // width: 150px;
+//   background-image: url("../assets/drawn/work_drawn.svg");
+//   background-repeat: no-repeat;
+// }
 
 #projects-container {
   display: flex;
@@ -368,11 +368,11 @@ canvas {
   // overflow: scroll;
 }
 
-#experience-drawn {
-  // width: 115px;
-  background-image: url("../assets/drawn/experience_drawn.svg");
-  background-repeat: no-repeat;
-}
+// #experience-drawn {
+//   // width: 115px;
+//   background-image: url("../assets/drawn/experience_drawn.svg");
+//   background-repeat: no-repeat;
+// }
 
 .experience-item {
   margin-bottom: 40px;
