@@ -88,7 +88,7 @@ export default {
 .skill-container {
   width: 63%;
   // min-width: 200px;
-  margin-bottom: 50px;
+  margin-bottom: 40px;
   // opacity: 0;
 }
 
