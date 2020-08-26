@@ -1,6 +1,6 @@
 <template>
   <div id="lcj" class="section">
-    <h1>Latest Creative Juices</h1>
+    <!-- <h1>Latest Creative Juices</h1> -->
     <Juices></Juices>
   </div>
 </template>
@@ -21,5 +21,4 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-</style>
+<style lang="scss" scoped></style>
