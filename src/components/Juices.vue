@@ -1,18 +1,18 @@
 <template>
   <div id="juices-grid-container">
-    <div class="image-container" v-for="(item, index) in items" :key="index">
+    <div
+      class="image-container"
+      v-for="(item, index) in items"
+      :key="index"
+      :data-index-number="index"
+    >
       <img
         v-if="item.mediaType == 'img'"
-        :src="item.link"
+        :data-url="item.link"
         :style="
           `object-fit: ${item.doesContain !== undefined ? 'contain' : 'cover'}`
         "
       />
-      <!-- <div
-        class="img"
-        v-if="item.mediaType == 'img'"
-        :style="{ 'background-image': 'url(' + item.link + ')' }"
-      ></div> -->
       <video
         v-if="item.mediaType == 'video'"
         ref="vid"
@@ -21,24 +21,17 @@
         disablepictureinpicture
         controlslist="nodownload nofullscreen"
         preload="none"
-        :poster="item.poster"
+        :data-url="item.poster"
         :style="
           `object-fit: ${item.doesContain !== undefined ? 'contain' : 'cover'}`
         "
         onclick="this.paused ? this.play() : this.pause();"
       >
-        <source :src="item.link" type="video/mp4" />
+        <source :data-url="item.link" type="video/mp4" />
       </video>
-      <!-- <button v-if="item.mediaType == 'video'">play</button> -->
-      <!-- <img
-        v-if="item.mediaType == 'video'"
-        height="10"
-        class="play"
-        src="../assets/play.svg"
-      /> -->
       <svg
         v-if="item.mediaType == 'video'"
-        class="play"
+        class="play hidden"
         width="288"
         height="320"
       >
@@ -53,6 +46,8 @@ export default {
   name: "Juices",
   data() {
     return {
+      chunkSize: 4,
+      loadedItems: 0,
       items: [
         {
           link: "/photos/juices/astronauts.jpg",
@@ -155,23 +150,99 @@ export default {
   mounted() {
     $("video").prop("volume", 0.5);
 
-    // let appWidth = $("#app").width();
-    // let imageLength =
-    //   (appWidth - 2 * Math.max(window.innerWidth * 0.015, 20)) / 3;
-    // $(".image-container").width(imageLength);
-    // $(".image-container").height(imageLength);
     const vid = $("video")[0];
-    // vid.controls = false;
     $("button").click(function() {
-      // $("video").hover(function() {
       if (vid.paused || vid.ended) {
         vid.play();
       } else {
         vid.pause();
       }
     });
+
+    this.loadNextChunk(this.chunkSize);
+    this.loadNextChunk(this.chunkSize);
   },
-  methods: {}
+  methods: {
+    loadNextChunk(chunkSize) {
+      const vm = this;
+      const loadedChunkItems = vm.loadedItems;
+      // loop through each image-container in chunk
+      for (let i = loadedChunkItems; i < loadedChunkItems + chunkSize; i++) {
+        // $(".image-container").each(function() {
+        console.log(
+          "checking item",
+          $(".image-container")[i].dataset.indexNumber
+        );
+        // move up to next chunk
+        // if ($(".image-container")[i].dataset.indexNumber < vm.loadedItems) {
+        //   // console.log("redundant");
+        //   // return false;
+        //   console.log("skipping");
+        //   return;
+        // }
+
+        let curItem = $(".image-container")[i].children[0];
+        // if item is an image:
+        if (curItem.nodeName === "IMG") {
+          // load image
+          curItem.src = curItem.dataset.url;
+        } else if (curItem.nodeName === "VIDEO") {
+          curItem.poster = curItem.dataset.url; // video's poster
+          curItem.children[0].src = curItem.children[0].dataset.url; // video's source
+          $(".image-container")[i].children[1].classList.remove("hidden"); // play icon
+        }
+        vm.loadedItems++;
+        console.log(vm.loadedItems + " items loaded");
+        // breaks loop if item is not in current chunk:
+        // if (vm.loadedItems >= chunkSize) {
+        //   break;
+        // }
+        // return vm.loadedItems < chunkSize;
+      }
+    }
+    // loadItems() {
+    //   const vm = this;
+    //   // $(".image-container").each(function() {
+    //   //   console.log(this.dataset.indexNumber);
+    //   $(".image-container>img").each(function() {
+    //     console.log("checking image", this.dataset.indexNumber);
+    //     if (
+    //       this.dataset.indexNumber <
+    //       Math.floor(vm.loadedItems / vm.chunkSize) * vm.chunkSize +
+    //         vm.chunkSize
+    //     ) {
+    //       // console.log(this.dataset.indexNumber);
+    //       this.src = this.dataset.url; // load image
+    //       vm.loadedItems++;
+    //       console.log("loaded image, loadedItems:", vm.loadedItems);
+    //     }
+    //   });
+    //   $(".image-container>video").each(function() {
+    //     if (
+    //       this.dataset.indexNumber <
+    //       Math.floor(vm.loadedItems / vm.chunkSize) * vm.chunkSize +
+    //         vm.chunkSize
+    //     ) {
+    //       // console.log(this.dataset.indexNumber);
+    //       this.poster = this.dataset.url; // load image
+    //       // this.loadedItems++;
+    //     }
+    //   });
+    //   $(".image-container>video>source").each(function() {
+    //     if (
+    //       this.dataset.indexNumber <
+    //       Math.floor(vm.loadedItems / vm.chunkSize) * vm.chunkSize +
+    //         vm.chunkSize
+    //     ) {
+    //       // console.log(this.dataset.indexNumber);
+    //       this.src = this.dataset.url; // load image
+    //       vm.loadedItems++;
+    //       console.log(vm.loadedItems);
+    //     }
+    //   });
+    //   // });
+    // }
+  }
 };
 </script>
 
@@ -237,29 +308,6 @@ export default {
     }
   }
 }
-
-// video::-webkit-media-controls-play-button {
-//   background: blue;
-// }
-// video::-webkit-media-controls-fullscreen-button,
-// video::-webkit-media-controls-timeline,
-// video::-webkit-media-controls-current-time-display,
-// video::-webkit-media-controls-time-remaining-display {
-//   display: none;
-//   -webkit-appearance: none;
-//   background-color: transparent;
-// }
-// video::-webkit-media-controls {
-//   position: absolute;
-//   bottom: 0;
-// }
-// video::-webkit-media-controls-panel {
-//   background-image: linear-gradient(
-//     transparent 45%,
-//     rgba(0, 0, 0, 0.411)
-//   ) !important;
-//   // filter: brightness(0.4);
-// }
 
 @media only screen and (max-width: 425px) {
   #juices-grid-container {

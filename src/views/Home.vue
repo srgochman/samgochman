@@ -375,68 +375,8 @@ canvas {
     transform-origin: center;
     transform: scale(3);
     position: relative;
-    // & use {
-    //   mix-blend-mode: screen;
-    // }
-    // &::before {
-    //   content: "";
-    //   display: block;
-    //   width: 100%;
-    //   height: 100%;
-    //   // height: calc(min(40vw, 466px));
-    //   max-height: 490px;
-    //   position: absolute;
-    //   top: 3px;
-    //   right: 0;
-    //   bottom: 0;
-    //   left: 1px;
-    //   mix-blend-mode: screen;
-    //   background: linear-gradient(
-    //     120deg,
-    //     var(--purple) calc(var(--scroll, 0) * 100% - 25%),
-    //     var(--blue) calc(var(--scroll, 0) * 100%),
-    //     var(--green) calc(var(--scroll, 0) * 100% + 50%),
-    //     var(--blue) calc(var(--scroll, 0) * 100% + 100%),
-    //     var(--purple) calc(var(--scroll, 0) * 100% + 150%)
-    //   );
-    // }
   }
-
-  // #juices-arrow {
-  //   position: relative;
-  //   width: 100%;
-  //   height: 150%;
-  //   background: white;
-  //   &::before {
-  //     content: "";
-  //     display: block;
-  //     width: 100%;
-  //     height: 100%;
-  //     // height: calc(min(40vw, 466px));
-  //     max-height: 490px;
-  //     position: absolute;
-  //     top: 3px;
-  //     right: 0;
-  //     bottom: 0;
-  //     left: 1px;
-  //     mix-blend-mode: screen;
-  //     background: linear-gradient(
-  //       120deg,
-  //       var(--purple) calc(var(--scroll, 0) * 100% - 25%),
-  //       var(--blue) calc(var(--scroll, 0) * 100%),
-  //       var(--green) calc(var(--scroll, 0) * 100% + 50%),
-  //       var(--blue) calc(var(--scroll, 0) * 100% + 100%),
-  //       var(--purple) calc(var(--scroll, 0) * 100% + 150%)
-  //     );
-  //   }
-  // }
 }
-
-// #juices-arrow {
-//   background-size: cover;
-//   // fill: green;
-//   transition: fill 0.2s ease-in-out;
-// }
 
 #juices-arrow-container {
   width: 100%;
