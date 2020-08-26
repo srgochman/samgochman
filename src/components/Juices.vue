@@ -1,5 +1,5 @@
 <template>
-  <div id="grid-container">
+  <div id="juices-grid-container">
     <div class="image-container" v-for="(item, index) in items" :key="index">
       <img
         v-if="item.mediaType == 'img'"
@@ -154,11 +154,6 @@ export default {
   },
   mounted() {
     $("video").prop("volume", 0.5);
-    // const videoItem = this.$refs.vid;
-    // videoItem.addEventListener("mouseover", function() {
-    //   // videoItem.play();
-    //   console.log("play");
-    // });
 
     // let appWidth = $("#app").width();
     // let imageLength =
@@ -176,19 +171,12 @@ export default {
       }
     });
   },
-  methods: {
-    // playVid() {
-    //   console.log(videoItem);
-    // },
-    // pauseVid() {
-    //   currentTime = ;
-    // }
-  }
+  methods: {}
 };
 </script>
 
 <style lang="scss" scoped>
-#grid-container {
+#juices-grid-container {
   display: grid;
   // grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   grid-template-columns: repeat(3, 1fr);
@@ -196,26 +184,10 @@ export default {
   // grid-gap: 1.5rem;
   grid-gap: calc(max(1.5vw, 20px));
 
-  // &::before {
-  //   content: "";
-  //   width: 0;
-  //   padding-bottom: 100%;
-  //   grid-row: 1 / 1;
-  //   grid-column: 1 / 1;
-  // }
-
-  // & > *:first-child {
-  //   grid-row: 1 / 1;
-  //   grid-column: 1 / 1;
-  // }
-
   .image-container {
     background-color: white;
     display: grid;
     place-items: center;
-    // border: black solid 1px;
-    // width: 300px;
-    // height: 300px;
     // width: calc(1440px / 3 - 3 * max(1.5vw, 20px));
     // height: calc(1440px / 3 - 3 * max(1.5vw, 20px));
     position: relative;
@@ -269,31 +241,28 @@ export default {
 // video::-webkit-media-controls-play-button {
 //   background: blue;
 // }
-
-video::-webkit-media-controls-fullscreen-button,
-video::-webkit-media-controls-timeline,
-video::-webkit-media-controls-current-time-display,
-video::-webkit-media-controls-time-remaining-display {
-  display: none;
-  -webkit-appearance: none;
-  background-color: transparent;
-}
-
+// video::-webkit-media-controls-fullscreen-button,
+// video::-webkit-media-controls-timeline,
+// video::-webkit-media-controls-current-time-display,
+// video::-webkit-media-controls-time-remaining-display {
+//   display: none;
+//   -webkit-appearance: none;
+//   background-color: transparent;
+// }
 // video::-webkit-media-controls {
 //   position: absolute;
 //   bottom: 0;
 // }
-
-video::-webkit-media-controls-panel {
-  background-image: linear-gradient(
-    transparent 45%,
-    rgba(0, 0, 0, 0.411)
-  ) !important;
-  // filter: brightness(0.4);
-}
+// video::-webkit-media-controls-panel {
+//   background-image: linear-gradient(
+//     transparent 45%,
+//     rgba(0, 0, 0, 0.411)
+//   ) !important;
+//   // filter: brightness(0.4);
+// }
 
 @media only screen and (max-width: 425px) {
-  #grid-container {
+  #juices-grid-container {
     grid-template-columns: 1fr;
     grid-gap: 2rem;
   }
