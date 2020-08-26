@@ -135,6 +135,12 @@ export default {
           poster: "/photos/juices/glow_rings.jpg"
         },
         {
+          link: "/photos/juices/keyboard.mp4",
+          mediaType: "video",
+          poster: "/photos/juices/keyboard.jpg",
+          doesContain: true
+        },
+        {
           link: "/photos/juices/turns.jpg",
           mediaType: "img"
         },
@@ -142,12 +148,6 @@ export default {
           link: "/photos/juices/dotted_shapes.mp4",
           mediaType: "video",
           poster: "/photos/juices/dotted_shapes.jpg"
-        },
-        {
-          link: "/photos/juices/keyboard.mp4",
-          mediaType: "video",
-          poster: "/photos/juices/keyboard.jpg",
-          doesContain: true
         }
       ]
     };

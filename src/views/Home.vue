@@ -132,6 +132,11 @@
     <!-- </div> -->
     <div id="juices" class="section appear">
       <h1>Latest Creative Juices</h1>
+      <p>
+        An archive of prototypes, experiments, and side projects that keep my
+        juices flowing. I use tools like Processing, TouchDesigner, Photoshop,
+        hammers, and x-acto blades.
+      </p>
       <Juices></Juices>
     </div>
   </div>
@@ -197,13 +202,6 @@ export default {
       scene.reverse(false); // prevent sections from disappearing on scrollback
       scene.setClassToggle(this, "visible").addTo(homeController);
     });
-
-    // document.addEventListener("scroll", function() {
-    //   const root = document.documentElement;
-    //   let arrowTop = $("#juices-arrow-container").offset().top;
-    //   let z = window.scrollY - arrowTop;
-    //   root.style.setProperty("--scrollArrow", z);
-    // });
   },
   methods: {
     clearPass() {
@@ -282,41 +280,9 @@ canvas {
 
 .underline-hover {
   left: 0px;
-  // width: 0;
-  // width: calc(100% - 1px);
-  // transform: scaleX(0);
   visibility: hidden;
   opacity: 0;
 }
-
-// .underline {
-//   text-decoration: solid underline var(--purple);
-//   text-underline-position: under;
-//   text-decoration-thickness: 5px;
-//   border-bottom: solid var(--purple) 2px;
-//   color: var(--purple);
-//   font-weight: 700;
-// }
-
-// .underline::before {
-//   content: "";
-//   position: absolute;
-//   width: calc(100% - 1px);
-//   // width: 20px;
-//   height: 3px;
-//   bottom: 0;
-//   left: 1px;
-//   background-color: var(--purple);
-//   visibility: visible;
-//   transition: var(--hover);
-// }
-
-// .underline:hover::before {
-//   visibility: hidden;
-//   width: 0;
-//   // width: calc(100% - 1px);
-//   left: 1px;
-// }
 
 .arrow {
   background-size: cover;
@@ -479,13 +445,14 @@ canvas {
   background: white;
   display: flex;
   justify-content: center;
-  margin-bottom: 350px;
+  margin-bottom: 300px;
+  transform: scale(0.8);
 
   &::before {
     content: "";
     display: block;
-    width: 200px;
-    height: 200px;
+    width: 95%;
+    height: 95%;
     position: absolute;
     top: 50%;
     // right: 0;
@@ -504,6 +471,11 @@ canvas {
   img {
     padding: 20px;
   }
+}
+
+#juices p {
+  width: 66%;
+  margin-bottom: 30px;
 }
 
 @media only screen and (min-width: 426px) and (max-width: 1024px) {
@@ -536,6 +508,16 @@ canvas {
 
   .experience-item {
     margin-bottom: 50px;
+  }
+
+  #juices-arrow-container {
+    transform: scale(0.5);
+    margin-bottom: 150px;
+  }
+
+  #juices p {
+    width: 100%;
+    margin-bottom: 20px;
   }
 }
 
@@ -579,7 +561,13 @@ canvas {
   }
 
   #juices-arrow-container {
+    transform: scale(0.5);
     margin-bottom: 150px;
+  }
+
+  #juices p {
+    width: 100%;
+    margin-bottom: 20px;
   }
 }
 
