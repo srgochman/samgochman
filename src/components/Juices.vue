@@ -42,8 +42,6 @@
 </template>
 
 <script>
-//  && item.ready == true
-
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger.js";
 gsap.registerPlugin(ScrollTrigger);
@@ -165,7 +163,7 @@ export default {
             const trig = gsap.timeline({
               scrollTrigger: {
                 trigger: this,
-                start: "top 83%",
+                start: "top 90%",
                 // markers: true,
                 once: true,
                 onEnter: () => {
@@ -208,15 +206,15 @@ export default {
   },
   beforeDestroy() {
     // PROBABLY SHOULD BE AN ARRAY OF TRIGGERS THAT GETS KILLED EACH
-    // if (this.$router.history.current.name === "Sam Gochman") {
-    console.log(this.$router.history.current.name);
-    // console.log("kill");
-    this.triggers.forEach(function(trig) {
-      console.log(trig);
-      trig.kill();
-    });
-    // this.trig.kill();
-    // }
+    if (this.$router.history.current.name === "Sam Gochman") {
+      // console.log(this.$router.history.current.name);
+      // console.log("kill");
+      this.triggers.forEach(function(trig) {
+        // console.log(trig);
+        trig.kill();
+      });
+      // this.trig.kill();
+    }
   }
 };
 </script>

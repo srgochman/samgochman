@@ -15,7 +15,6 @@
         <svg id="initials" width="48" height="39" @click="scrollTop">
           <use href="../src/assets/drawn/initials_green.svg#Layer_2"></use>
         </svg>
-        <!-- <div>Sam Gochman</div> -->
       </router-link>
     </div>
     <transition name="pages" @after-leave="$root.$emit('transitionScroll')">

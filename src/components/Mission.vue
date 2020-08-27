@@ -25,18 +25,6 @@ export default {
       windowActive: true
     };
   },
-  methods: {
-    scrollPos() {
-      const root = document.documentElement;
-      if (window.scrollY <= innerHeight) {
-        let y = (window.scrollY / innerHeight) * 1.5;
-        root.style.setProperty("--scroll", y);
-      }
-      let arrowTop = $("#juices-arrow-container").offset().top;
-      let z = (window.scrollY - arrowTop + innerHeight / 2) / 100;
-      root.style.setProperty("--scrollArrow", z);
-    }
-  },
   mounted() {
     // detect if window is in focus for pausing ending cycling
     const vm = this;
@@ -54,12 +42,9 @@ export default {
         this.idx = (this.idx + 1) % this.endings.length;
       }
     }, 4500);
-
-    document.addEventListener("scroll", this.scrollPos);
   },
   beforeDestroy() {
     clearInterval(this.advanceInt);
-    document.removeEventListener("scroll", this.scrollPos);
   }
 };
 </script>

@@ -59,7 +59,6 @@
 
     <div id="skills" class="section appear">
       <h1>Skills</h1>
-      <!-- <div id="skills-drawn" class="section-heading"></div> -->
       <div id="skills-container">
         <Skill
           v-for="skill in skills"
@@ -76,7 +75,6 @@
 
     <div id="projects" class="section appear">
       <h1>Selected Work</h1>
-      <!-- <div id="work-drawn" class="section-heading"></div> -->
       <div id="projects-container">
         <div id="project-images-container">
           <ProjectImage
@@ -99,7 +97,6 @@
 
     <div id="experience" class="section appear">
       <h1>Experience</h1>
-      <!-- <div id="experience-drawn" class="section-heading"></div> -->
       <div
         class="experience-item"
         v-for="experience in experiences"
@@ -119,17 +116,9 @@
       </div>
     </div>
 
-    <!-- <div id="juices-arrow-section"> -->
     <div id="juices-arrow-container">
-      <!-- <svg width="18" height="46">
-          <use
-            id="juices-arrow"
-            href="../assets/drawn/juices_arrow.svg#Layer_2"
-          ></use>
-        </svg> -->
       <img src="../assets/drawn/juices_arrow.png" />
     </div>
-    <!-- </div> -->
     <div id="juices" class="section appear">
       <h1>Latest Creative Juices</h1>
       <p>
@@ -150,6 +139,8 @@ import ProjectText from "../components/ProjectText.vue";
 import Juices from "../components/Juices.vue";
 import contents from "../list-contents.json";
 import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger.js";
+gsap.registerPlugin(ScrollTrigger);
 import ScrollMagic from "scrollmagic";
 import "particles.js/particles";
 const particlesJS = window.particlesJS;
@@ -160,7 +151,9 @@ export default {
     return {
       skills: contents["skills"],
       projects: contents["projects"],
-      experiences: contents["experiences"]
+      experiences: contents["experiences"],
+      missionTrig: null,
+      arrowTrig: null
     };
   },
   mounted() {
@@ -202,11 +195,76 @@ export default {
       scene.reverse(false); // prevent sections from disappearing on scrollback
       scene.setClassToggle(this, "visible").addTo(homeController);
     });
+
+    this.$router.app.$root.$once("transitionScroll", () => {
+      this.$router.app.$nextTick(() => {
+        if (this.$router.history.current.name === "Sam Gochman") {
+          // mission scroll tracking
+          this.missionTrig = gsap.timeline({
+            scrollTrigger: {
+              trigger: "#mission",
+              start: "top top",
+              // markers: true,
+              onEnter: () => {
+                document.addEventListener("scroll", this.missionScroll);
+              },
+              onEnterBack: () => {
+                document.addEventListener("scroll", this.missionScroll);
+              },
+              onLeave: () => {
+                document.removeEventListener("scroll", this.missionScroll);
+              },
+              onLeaveBack: () => {
+                document.removeEventListener("scroll", this.missionScroll);
+              }
+            }
+          });
+
+          // juices arrow scroll tracking
+          this.arrowTrig = gsap.timeline({
+            scrollTrigger: {
+              trigger: "#juices-arrow-container",
+              start: "top bottom",
+              // markers: true,
+              onEnter: () => {
+                document.addEventListener("scroll", this.arrowScroll);
+              },
+              onEnterBack: () => {
+                document.addEventListener("scroll", this.arrowScroll);
+              },
+              onLeave: () => {
+                document.removeEventListener("scroll", this.arrowScroll);
+              },
+              onLeaveBack: () => {
+                document.removeEventListener("scroll", this.arrowScroll);
+              }
+            }
+          });
+        }
+      });
+    });
   },
   methods: {
     clearPass() {
       localStorage.setItem("passCorrect", false);
+    },
+    missionScroll() {
+      const root = document.documentElement;
+      let y = (window.scrollY / innerHeight) * 1.5;
+      root.style.setProperty("--scroll", y);
+    },
+    arrowScroll() {
+      const root = document.documentElement;
+      let arrowTop = $("#juices-arrow-container").offset().top;
+      let y = (window.scrollY - arrowTop + innerHeight / 2) / 100;
+      root.style.setProperty("--scroll", y);
     }
+  },
+  beforeDestroy() {
+    document.removeEventListener("scroll", this.missionScroll);
+    this.missionTrig.kill();
+    document.removeEventListener("scroll", this.arrowScroll);
+    this.arrowTrig.kill();
   },
   components: {
     Mission,
@@ -402,9 +460,9 @@ canvas {
     mix-blend-mode: screen;
     background: linear-gradient(
       120deg,
-      var(--purple) calc(var(--scrollArrow, 0) * 100% - 200%),
-      var(--blue) calc(var(--scrollArrow, 0) * 100%),
-      var(--green) calc(var(--scrollArrow, 0) * 100% + 200%)
+      var(--purple) calc(var(--scroll, 0) * 100% - 300%),
+      var(--blue) calc(var(--scroll, 0) * 100%),
+      var(--green) calc(var(--scroll, 0) * 100% + 300%)
     );
   }
 
