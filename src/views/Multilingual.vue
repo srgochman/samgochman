@@ -53,49 +53,58 @@
             use.
           </p>
         </div>
-        <img
+        <!-- <img
           id="mind-map"
           class="one-third-width img-bg"
           src="/photos/multilingual/mind_map.jpg"
-        />
-        <img
+        /> -->
+        <div class="img-container one-third-width">
+          <img id="mind-map" src="/photos/multilingual/mind_map.jpg" />
+        </div>
+        <!-- <img
           id="globe"
           class="one-third-width img-bg"
-          src="/photos/multilingual/globe.jpg"
-        />
+          src="/photos/multilingual/globe_short.jpg"
+        /> -->
+        <div class="img-container one-third-width">
+          <img id="globe" src="/photos/multilingual/globe_short.jpg" />
+        </div>
       </div>
-      <div class="section appear stacked">
+      <div id="data-images" class="section appear stacked">
         <div class="caption two-thirds-width">
           <h2>Data Modeling</h2>
-          <p>
-            I used a database of over 6,000 languages and dialects to capture
-            the diversity of visitors for the visualization. Diving into
-            historical linguistics and meeting with a specialist helped me
-            iterate a data model that balanced informational richness with
-            aesthetic clarity. Across the landscape of linguistic relatedness,
-            color represents a visitor’s language and size shows its rarity,
-            letting the museum celebrate underrepresented groups.
-          </p>
         </div>
-        <div id="data-images" class="across">
-          <img
-            id="data-cloud"
-            class="one-third-width img-bg"
-            src="/photos/multilingual/data_cloud.png"
-          />
-          <div class="arrow"></div>
-          <img
-            id="map"
-            class="one-third-width img-bg"
-            src="/photos/multilingual/map.png"
-          />
-          <div class="arrow"></div>
-          <img
-            id="field"
-            class="one-third-width img-bg"
-            src="/photos/multilingual/field.jpg"
-          />
-        </div>
+        <p class="one-third-width">
+          I started with a database of over 6,000 languages and dialects to
+          capture the diversity of visitors for the visualization.
+        </p>
+        <img
+          id="data-cloud"
+          class="one-third-width img-bg"
+          src="/photos/multilingual/data_cloud.png"
+        />
+        <!-- <div class="arrow"></div> -->
+        <p class="one-third-width">
+          Then diving into historical linguistics and meeting with a specialist
+          helped me iterate a data model that balanced informational richness
+          with aesthetic clarity.
+        </p>
+        <img
+          id="map"
+          class="one-third-width img-bg"
+          src="/photos/multilingual/map.png"
+        />
+        <!-- <div class="arrow"></div> -->
+        <p class="one-third-width">
+          Across the landscape of linguistic relatedness, color represents a
+          visitor’s language and size shows its rarity, letting the museum
+          celebrate underrepresented groups.
+        </p>
+        <img
+          id="field"
+          class="one-third-width img-bg"
+          src="/photos/multilingual/field.jpg"
+        />
       </div>
       <div class="section appear reverse">
         <div class="caption one-third-width">
@@ -174,8 +183,15 @@ export default {
 }
 
 #data-images {
-  justify-content: space-between;
-  align-items: center;
+  // justify-content: space-between;
+  // align-items: center;
+  p {
+    grid-row: 3;
+  }
+
+  img {
+    grid-row: 2;
+  }
 }
 
 .arrow {
