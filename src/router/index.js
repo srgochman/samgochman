@@ -1,7 +1,6 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
-import TestView from "../views/TestView.vue";
 import Phototaxis from "../views/Phototaxis.vue";
 import Miraj from "../views/Miraj.vue";
 import Multilingual from "../views/Multilingual.vue";
@@ -72,14 +71,6 @@ const router = new VueRouter({
       component: Anivision,
       meta: {
         title: "Anivision | Sam Gochman"
-      }
-    },
-    {
-      path: "/juices",
-      name: "Latest Creative Juices",
-      component: TestView,
-      meta: {
-        title: "Latest Creative Juices | Sam Gochman"
       }
     },
     {

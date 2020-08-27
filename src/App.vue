@@ -63,6 +63,28 @@ export default {
   background: var(--green-semi-transparent);
 }
 
+// /* width */
+// ::-webkit-scrollbar {
+//   width: 15px;
+//   // padding: 3px;
+// }
+// /* Track */
+// ::-webkit-scrollbar-track {
+//   // box-shadow: inset 0 0 5px grey;
+//   // border-radius: 10px;
+//   // background: blue;
+//   // box-shadow: transparent;
+// }
+// /* Handle */
+// ::-webkit-scrollbar-thumb {
+//   background: rgba(0, 0, 0, 0.25);
+//   border-radius: 10px;
+//   border: solid 4px white;
+//   &:hover {
+//     background: gray;
+//   }
+// }
+
 html {
   width: 100vw;
   margin: 0;

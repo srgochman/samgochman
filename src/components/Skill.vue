@@ -39,8 +39,6 @@ export default {
 
     const { skill } = this.$refs;
 
-    // setTimeout(() => {
-    // this.$nextTick(function() {
     this.$router.app.$root.$once("transitionScroll", () => {
       this.$router.app.$nextTick(() => {
         if (this.$router.history.current.name === "Sam Gochman") {
@@ -63,8 +61,6 @@ export default {
         }
       });
     });
-    // });
-    // }, 300);
   },
   methods: {
     colorize(keyword) {

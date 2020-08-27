@@ -25,8 +25,20 @@ export default {
       windowActive: true
     };
   },
+  methods: {
+    scrollPos() {
+      const root = document.documentElement;
+      if (window.scrollY <= innerHeight) {
+        let y = (window.scrollY / innerHeight) * 1.5;
+        root.style.setProperty("--scroll", y);
+      }
+      let arrowTop = $("#juices-arrow-container").offset().top;
+      let z = (window.scrollY - arrowTop + innerHeight / 2) / 100;
+      root.style.setProperty("--scrollArrow", z);
+    }
+  },
   mounted() {
-    // detect if window is in focus
+    // detect if window is in focus for pausing ending cycling
     const vm = this;
     window.addEventListener("focus", function() {
       vm.windowActive = true;
@@ -43,23 +55,11 @@ export default {
       }
     }, 4500);
 
-    const root = document.documentElement;
-    // document.addEventListener("mousemove", evt => {
-    //   // check if mission is in viewport so vars arent updated unnecessarily
-    //   if (window.scrollY <= innerHeight) {
-    //     let x = (evt.clientX / innerWidth) * 2;
-    //     root.style.setProperty("--mouse-x", x);
-    //   }
-    // });
-    document.addEventListener("scroll", () => {
-      if (window.scrollY <= innerHeight) {
-        let z = (window.scrollY / innerHeight) * 1.5;
-        root.style.setProperty("--scroll", z);
-      }
-    });
+    document.addEventListener("scroll", this.scrollPos);
   },
   beforeDestroy() {
     clearInterval(this.advanceInt);
+    document.removeEventListener("scroll", this.scrollPos);
   }
 };
 </script>
