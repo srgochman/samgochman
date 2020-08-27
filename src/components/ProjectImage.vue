@@ -211,7 +211,7 @@ export default {
   // max-height:
   object-fit: cover;
   border-radius: 2px;
-  transition: opacity 300ms ease-out;
+  transition: opacity 200ms ease;
   transition-delay: 200ms;
 }
 
@@ -224,7 +224,7 @@ export default {
 
 .dull {
   opacity: 0.3;
-  transition: opacity 300ms ease-out;
+  transition: opacity 200ms ease;
   transition-delay: 200ms;
 }
 
@@ -251,6 +251,8 @@ export default {
 @media only screen and (max-width: 1024px) {
   .project-text-below {
     display: block;
+    transition: opacity 200ms ease;
+    transition-delay: 200ms;
 
     .project-title-container svg {
       margin-bottom: 2px;
@@ -258,7 +260,7 @@ export default {
   }
 
   .project-desc {
-    margin: 10px 0 80px 0;
+    margin: 10px 0 60px 0;
   }
 }
 </style>

@@ -205,8 +205,8 @@ video {
     justify-content: center;
   }
   .arrow {
-    transform: rotate(90deg);
-    transform-origin: center;
+    // transform: rotate(90deg);
+    // transform-origin: center;
     display: none;
   }
 

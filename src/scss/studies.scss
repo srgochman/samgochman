@@ -177,12 +177,6 @@ img.img-bg {
 
 
 // CONTENT
-
-// .section.writing>:nth-child(1) {
-//   // margin-bottom: calc(var(--main-width) * 0.05);
-//   margin-bottom: 72px;
-// }
-
 .caption {
   height: min-content;
   margin-bottom: 60px;
@@ -194,16 +188,12 @@ img.img-bg {
 
 @media only screen and (max-width: 1024px) {
   .reverse {
-    // :nth-child(1) {
-    //   order: 1;
-    // }
     :first-child {
       order: unset;
     }
   }
   
   .section, .info.section {
-    // margin-bottom: 150px;
     margin-bottom: calc(min(25vw, 150px));
   }
 
@@ -234,7 +224,12 @@ img.img-bg {
 
 @media only screen and (min-width: 426px) and (max-width: 1024px) {
   .one-third-width, .half-width, .two-thirds-width {
-    width: 66%
+    width: 100%;
+
+    &.caption{ 
+      width: 100%;
+      max-width: 570px;
+    }
   }
   
   .banner {
@@ -247,13 +242,13 @@ img.img-bg {
     // padding: 0 7vw;
 
     h2 {
-      width: calc(min(80%, 500px));
+      width: calc(min(80%, 600px));
       font-size: calc(min(10vw, 2.3em));
       line-height: 1.4em;
     }
     
     p {
-      width: calc(min(80%, 500px));
+      width: calc(min(80%, 600px));
     }
   }
 
@@ -265,21 +260,8 @@ img.img-bg {
     margin-bottom: 150px;
   }
 
-  // .section.writing>:nth-child(1) {
-  //   // margin-bottom: calc(var(--main-width) * 0.05);
-  //   margin-bottom: 65px;
-  // }
-
   .caption {
     margin-bottom: 40px;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .info.section {
-    h3 {
-      width: 100%;
-    }
   }
 }
 

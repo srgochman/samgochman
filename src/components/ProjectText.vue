@@ -155,11 +155,11 @@ export default {
 
 // project-text vue transition
 .text-enter-active {
-  transition: opacity 200ms ease-out;
+  transition: opacity 200ms ease;
 }
 
 .text-leave-active {
-  transition: opacity 200ms ease-in;
+  transition: opacity 200ms ease;
 }
 
 .text-enter,
