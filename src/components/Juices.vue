@@ -31,7 +31,7 @@
       </video>
       <svg
         v-if="item.mediaType == 'video'"
-        class="play hidden"
+        class="play invisible"
         width="288"
         height="320"
       >
@@ -151,152 +151,71 @@ export default {
           poster: "/photos/juices/dotted_shapes.jpg"
         }
       ],
-      trig: null
+      triggers: []
     };
   },
   mounted() {
-    const vm = this;
-    $(".image-container").each(function() {
-      if (this.dataset.indexNumber % vm.chunkSize !== 0) return;
-      // vm.trig = gsap.timeline({
-      gsap.timeline({
-        scrollTrigger: {
-          trigger: this,
-          start: "top 83%",
-          // end: "bottom top",
-          once: true,
-          onEnter: () => {
-            // console.log("enter");
-            // vm.loadNextChunk(vm.chunkSize, vm);
-
-            // store number of loaded items at last chunk
-            const loadedChunkItems = vm.loadedItems;
-            // loop through each image-container in current chunk
-            // loop until shorter of: end of chunk or end of gallery
-            for (
-              let i = loadedChunkItems;
-              i <
-              Math.min(
-                loadedChunkItems + vm.chunkSize,
-                $(".image-container").length
-              );
-              i++
-            ) {
-              // break if i in for loop goes beyond length of items
-              // happens when there is a partial chunk leftover
-              // if (i >= $(".image-container").length) {
-              //   break;
-              // }
-              let curItem = $(".image-container")[i].children[0];
-              if (curItem.nodeName === "IMG") {
-                curItem.src = curItem.dataset.url; // load image
-              } else if (curItem.nodeName === "VIDEO") {
-                curItem.poster = curItem.dataset.url; // load video's poster
-                curItem.children[0].src = curItem.children[0].dataset.url; // load video's source
-                curItem.load();
-                $(".image-container")[i].children[1].classList.remove(
-                  "invisible"
-                ); // load play icon
+    this.$router.app.$root.$once("transitionScroll", () => {
+      this.$router.app.$nextTick(() => {
+        if (this.$router.history.current.name === "Sam Gochman") {
+          const vm = this;
+          $(".image-container").each(function() {
+            if (this.dataset.indexNumber % vm.chunkSize !== 0) return;
+            // vm.trig = gsap.timeline({
+            const trig = gsap.timeline({
+              scrollTrigger: {
+                trigger: this,
+                start: "top 83%",
+                // markers: true,
+                once: true,
+                onEnter: () => {
+                  // store number of loaded items at last chunk
+                  const loadedChunkItems = vm.loadedItems;
+                  // loop through each image-container in current chunk
+                  // loop until shorter of: end of chunk or end of gallery
+                  for (
+                    let i = loadedChunkItems;
+                    i <
+                    Math.min(
+                      loadedChunkItems + vm.chunkSize,
+                      $(".image-container").length
+                    );
+                    i++
+                  ) {
+                    let curItem = $(".image-container")[i].children[0];
+                    if (curItem.nodeName === "IMG") {
+                      curItem.src = curItem.dataset.url; // provide image
+                    } else if (curItem.nodeName === "VIDEO") {
+                      curItem.poster = curItem.dataset.url; // provide video's poster
+                      curItem.children[0].src = curItem.children[0].dataset.url; // provide video's source
+                      curItem.load();
+                      $(".image-container")[i].children[1].classList.remove(
+                        "invisible"
+                      ); // provide play icon
+                    }
+                    curItem.classList.remove("invisible");
+                    vm.loadedItems++;
+                  }
+                }
               }
-              curItem.classList.remove("invisible");
-              vm.loadedItems++;
-            }
-          },
-          markers: true
+            });
+            vm.triggers.push(trig);
+          });
         }
       });
-      // .from(this, {
-      //   autoAlpha: 0,
-      //   duration: 0.5,
-      //   ease: "power1.inOut"
-      // });
     });
-
     $("video").prop("volume", 0.5);
   },
-  methods: {
-    // loadNextChunk(chunkSize, vm) {
-    //   // const vm = this;
-    //   // store number of items loaded before this chunk
-    //   // used in loop to move up to skip past chunks
-    //   const loadedChunkItems = vm.loadedItems;
-    //   // loop through each image-container in current chunk
-    //   for (let i = loadedChunkItems; i < loadedChunkItems + chunkSize; i++) {
-    //     // console.log("checking item", $(".image-container")[i].dataset.indexNumber);
-    //     let curItem = $(".image-container")[i].children[0];
-    //     if (curItem.nodeName === "IMG") {
-    //       curItem.src = curItem.dataset.url; // load image
-    //     } else if (curItem.nodeName === "VIDEO") {
-    //       curItem.poster = curItem.dataset.url; // load video's poster
-    //       curItem.children[0].src = curItem.children[0].dataset.url; // load video's source
-    //       $(".image-container")[i].children[1].classList.remove("hidden"); // load play icon
-    //     }
-    //     vm.loadedItems++;
-    //   }
-    // }
-  },
-  // directives: {
-  //   lazyload: {
-  //     inserted: el => {
-  //       function loadImage() {
-  //         const imageElement = Array.from(el.children).find(
-  //           el => el.nodeName === "IMG"
-  //         );
-  //         const videoElement = Array.from(el.children).find(
-  //           el => el.nodeName === "VIDEO"
-  //         );
-  //         if (imageElement) {
-  //           imageElement.addEventListener("load", () => {
-  //             setTimeout(() => el.classList.add("loaded"), 200);
-  //           });
-  //           imageElement.addEventListener("error", () => console.log("error"));
-  //           imageElement.src = imageElement.dataset.url;
-  //         } else if (videoElement) {
-  //           console.log(videoElement.children[0].dataset.url);
-  //           videoElement.children[0].addEventListener("load", () => {
-  //             setTimeout(() => {
-  //               el.classList.add("loaded");
-  //               console.log("loaded");
-  //             }, 200);
-  //           });
-  //           videoElement.children[0].addEventListener("error", () =>
-  //             console.log("error")
-  //           );
-  //           videoElement.children[0].src = videoElement.children[0].dataset.url;
-  //           videoElement.load();
-  //           videoElement.poster = videoElement.dataset.url;
-  //         }
-  //       }
-
-  //       function handleIntersect(entries, observer) {
-  //         entries.forEach(entry => {
-  //           if (entry.isIntersecting) {
-  //             loadImage();
-  //             observer.unobserve(el);
-  //           }
-  //         });
-  //       }
-
-  //       function createObserver() {
-  //         const options = {
-  //           root: null,
-  //           threshold: "0.5"
-  //         };
-  //         const observer = new IntersectionObserver(handleIntersect, options);
-  //         observer.observe(el);
-  //       }
-  //       if (window["IntersectionObserver"]) {
-  //         createObserver();
-  //       } else {
-  //         loadImage();
-  //       }
-  //     }
-  //   }
-  // },
   beforeDestroy() {
     // PROBABLY SHOULD BE AN ARRAY OF TRIGGERS THAT GETS KILLED EACH
     // if (this.$router.history.current.name === "Sam Gochman") {
-    //   this.trig.kill();
+    console.log(this.$router.history.current.name);
+    // console.log("kill");
+    this.triggers.forEach(function(trig) {
+      console.log(trig);
+      trig.kill();
+    });
+    // this.trig.kill();
     // }
   }
 };
@@ -305,6 +224,11 @@ export default {
 <style lang="scss" scoped>
 .invisible {
   opacity: 0;
+}
+
+.play {
+  transition: opacity 200ms ease-in-out;
+  transition-delay: 350ms;
 }
 
 #juices-grid-container {
@@ -338,7 +262,7 @@ export default {
       width: 100%;
       height: 100%;
       transition: opacity 200ms ease-in-out;
-      transition-delay: 500ms;
+      transition-delay: 350ms;
 
       position: absolute; // fixes Safari issue of unconstrained height
       // max-width: 100%;
