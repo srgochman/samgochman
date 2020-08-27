@@ -8,6 +8,7 @@
     >
       <img
         v-if="item.mediaType == 'img'"
+        class="invisible"
         :data-url="item.link"
         :style="
           `object-fit: ${item.doesContain !== undefined ? 'contain' : 'cover'}`
@@ -15,11 +16,10 @@
       />
       <video
         v-if="item.mediaType == 'video'"
+        class="invisible"
         ref="vid"
         loop
         playsinline
-        disablepictureinpicture
-        controlslist="nodownload nofullscreen"
         preload="none"
         :data-url="item.poster"
         :style="
@@ -42,11 +42,17 @@
 </template>
 
 <script>
+//  && item.ready == true
+
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger.js";
+gsap.registerPlugin(ScrollTrigger);
+
 export default {
   name: "Juices",
   data() {
     return {
-      chunkSize: 4,
+      chunkSize: 3,
       loadedItems: 0,
       items: [
         {
@@ -144,109 +150,163 @@ export default {
           mediaType: "video",
           poster: "/photos/juices/dotted_shapes.jpg"
         }
-      ]
+      ],
+      trig: null
     };
   },
   mounted() {
-    $("video").prop("volume", 0.5);
+    const vm = this;
+    $(".image-container").each(function() {
+      if (this.dataset.indexNumber % vm.chunkSize !== 0) return;
+      // vm.trig = gsap.timeline({
+      gsap.timeline({
+        scrollTrigger: {
+          trigger: this,
+          start: "top 83%",
+          // end: "bottom top",
+          once: true,
+          onEnter: () => {
+            // console.log("enter");
+            // vm.loadNextChunk(vm.chunkSize, vm);
 
-    const vid = $("video")[0];
-    $("button").click(function() {
-      if (vid.paused || vid.ended) {
-        vid.play();
-      } else {
-        vid.pause();
-      }
+            // store number of loaded items at last chunk
+            const loadedChunkItems = vm.loadedItems;
+            // loop through each image-container in current chunk
+            // loop until shorter of: end of chunk or end of gallery
+            for (
+              let i = loadedChunkItems;
+              i <
+              Math.min(
+                loadedChunkItems + vm.chunkSize,
+                $(".image-container").length
+              );
+              i++
+            ) {
+              // break if i in for loop goes beyond length of items
+              // happens when there is a partial chunk leftover
+              // if (i >= $(".image-container").length) {
+              //   break;
+              // }
+              let curItem = $(".image-container")[i].children[0];
+              if (curItem.nodeName === "IMG") {
+                curItem.src = curItem.dataset.url; // load image
+              } else if (curItem.nodeName === "VIDEO") {
+                curItem.poster = curItem.dataset.url; // load video's poster
+                curItem.children[0].src = curItem.children[0].dataset.url; // load video's source
+                curItem.load();
+                $(".image-container")[i].children[1].classList.remove(
+                  "invisible"
+                ); // load play icon
+              }
+              curItem.classList.remove("invisible");
+              vm.loadedItems++;
+            }
+          },
+          markers: true
+        }
+      });
+      // .from(this, {
+      //   autoAlpha: 0,
+      //   duration: 0.5,
+      //   ease: "power1.inOut"
+      // });
     });
 
-    this.loadNextChunk(this.chunkSize);
-    this.loadNextChunk(this.chunkSize);
+    $("video").prop("volume", 0.5);
   },
   methods: {
-    loadNextChunk(chunkSize) {
-      const vm = this;
-      const loadedChunkItems = vm.loadedItems;
-      // loop through each image-container in chunk
-      for (let i = loadedChunkItems; i < loadedChunkItems + chunkSize; i++) {
-        // $(".image-container").each(function() {
-        console.log(
-          "checking item",
-          $(".image-container")[i].dataset.indexNumber
-        );
-        // move up to next chunk
-        // if ($(".image-container")[i].dataset.indexNumber < vm.loadedItems) {
-        //   // console.log("redundant");
-        //   // return false;
-        //   console.log("skipping");
-        //   return;
-        // }
+    // loadNextChunk(chunkSize, vm) {
+    //   // const vm = this;
+    //   // store number of items loaded before this chunk
+    //   // used in loop to move up to skip past chunks
+    //   const loadedChunkItems = vm.loadedItems;
+    //   // loop through each image-container in current chunk
+    //   for (let i = loadedChunkItems; i < loadedChunkItems + chunkSize; i++) {
+    //     // console.log("checking item", $(".image-container")[i].dataset.indexNumber);
+    //     let curItem = $(".image-container")[i].children[0];
+    //     if (curItem.nodeName === "IMG") {
+    //       curItem.src = curItem.dataset.url; // load image
+    //     } else if (curItem.nodeName === "VIDEO") {
+    //       curItem.poster = curItem.dataset.url; // load video's poster
+    //       curItem.children[0].src = curItem.children[0].dataset.url; // load video's source
+    //       $(".image-container")[i].children[1].classList.remove("hidden"); // load play icon
+    //     }
+    //     vm.loadedItems++;
+    //   }
+    // }
+  },
+  // directives: {
+  //   lazyload: {
+  //     inserted: el => {
+  //       function loadImage() {
+  //         const imageElement = Array.from(el.children).find(
+  //           el => el.nodeName === "IMG"
+  //         );
+  //         const videoElement = Array.from(el.children).find(
+  //           el => el.nodeName === "VIDEO"
+  //         );
+  //         if (imageElement) {
+  //           imageElement.addEventListener("load", () => {
+  //             setTimeout(() => el.classList.add("loaded"), 200);
+  //           });
+  //           imageElement.addEventListener("error", () => console.log("error"));
+  //           imageElement.src = imageElement.dataset.url;
+  //         } else if (videoElement) {
+  //           console.log(videoElement.children[0].dataset.url);
+  //           videoElement.children[0].addEventListener("load", () => {
+  //             setTimeout(() => {
+  //               el.classList.add("loaded");
+  //               console.log("loaded");
+  //             }, 200);
+  //           });
+  //           videoElement.children[0].addEventListener("error", () =>
+  //             console.log("error")
+  //           );
+  //           videoElement.children[0].src = videoElement.children[0].dataset.url;
+  //           videoElement.load();
+  //           videoElement.poster = videoElement.dataset.url;
+  //         }
+  //       }
 
-        let curItem = $(".image-container")[i].children[0];
-        // if item is an image:
-        if (curItem.nodeName === "IMG") {
-          // load image
-          curItem.src = curItem.dataset.url;
-        } else if (curItem.nodeName === "VIDEO") {
-          curItem.poster = curItem.dataset.url; // video's poster
-          curItem.children[0].src = curItem.children[0].dataset.url; // video's source
-          $(".image-container")[i].children[1].classList.remove("hidden"); // play icon
-        }
-        vm.loadedItems++;
-        console.log(vm.loadedItems + " items loaded");
-        // breaks loop if item is not in current chunk:
-        // if (vm.loadedItems >= chunkSize) {
-        //   break;
-        // }
-        // return vm.loadedItems < chunkSize;
-      }
-    }
-    // loadItems() {
-    //   const vm = this;
-    //   // $(".image-container").each(function() {
-    //   //   console.log(this.dataset.indexNumber);
-    //   $(".image-container>img").each(function() {
-    //     console.log("checking image", this.dataset.indexNumber);
-    //     if (
-    //       this.dataset.indexNumber <
-    //       Math.floor(vm.loadedItems / vm.chunkSize) * vm.chunkSize +
-    //         vm.chunkSize
-    //     ) {
-    //       // console.log(this.dataset.indexNumber);
-    //       this.src = this.dataset.url; // load image
-    //       vm.loadedItems++;
-    //       console.log("loaded image, loadedItems:", vm.loadedItems);
-    //     }
-    //   });
-    //   $(".image-container>video").each(function() {
-    //     if (
-    //       this.dataset.indexNumber <
-    //       Math.floor(vm.loadedItems / vm.chunkSize) * vm.chunkSize +
-    //         vm.chunkSize
-    //     ) {
-    //       // console.log(this.dataset.indexNumber);
-    //       this.poster = this.dataset.url; // load image
-    //       // this.loadedItems++;
-    //     }
-    //   });
-    //   $(".image-container>video>source").each(function() {
-    //     if (
-    //       this.dataset.indexNumber <
-    //       Math.floor(vm.loadedItems / vm.chunkSize) * vm.chunkSize +
-    //         vm.chunkSize
-    //     ) {
-    //       // console.log(this.dataset.indexNumber);
-    //       this.src = this.dataset.url; // load image
-    //       vm.loadedItems++;
-    //       console.log(vm.loadedItems);
-    //     }
-    //   });
-    //   // });
+  //       function handleIntersect(entries, observer) {
+  //         entries.forEach(entry => {
+  //           if (entry.isIntersecting) {
+  //             loadImage();
+  //             observer.unobserve(el);
+  //           }
+  //         });
+  //       }
+
+  //       function createObserver() {
+  //         const options = {
+  //           root: null,
+  //           threshold: "0.5"
+  //         };
+  //         const observer = new IntersectionObserver(handleIntersect, options);
+  //         observer.observe(el);
+  //       }
+  //       if (window["IntersectionObserver"]) {
+  //         createObserver();
+  //       } else {
+  //         loadImage();
+  //       }
+  //     }
+  //   }
+  // },
+  beforeDestroy() {
+    // PROBABLY SHOULD BE AN ARRAY OF TRIGGERS THAT GETS KILLED EACH
+    // if (this.$router.history.current.name === "Sam Gochman") {
+    //   this.trig.kill();
     // }
   }
 };
 </script>
 
 <style lang="scss" scoped>
+.invisible {
+  opacity: 0;
+}
+
 #juices-grid-container {
   display: grid;
   // grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -277,6 +337,8 @@ export default {
     video {
       width: 100%;
       height: 100%;
+      transition: opacity 200ms ease-in-out;
+      transition-delay: 500ms;
 
       position: absolute; // fixes Safari issue of unconstrained height
       // max-width: 100%;
