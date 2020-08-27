@@ -1,7 +1,6 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
-// import Juices from "../views/Juices.vue";
 import Phototaxis from "../views/Phototaxis.vue";
 import Miraj from "../views/Miraj.vue";
 import Multilingual from "../views/Multilingual.vue";
@@ -74,14 +73,6 @@ const router = new VueRouter({
         title: "Anivision | Sam Gochman"
       }
     },
-    // {
-    //   path: "/juices",
-    //   name: "Latest Creative Juices",
-    //   component: Juices,
-    //   meta: {
-    //     title: "Latest Creative Juices | Sam Gochman"
-    //   }
-    // },
     {
       path: "/authentication",
       name: "Authentication",
