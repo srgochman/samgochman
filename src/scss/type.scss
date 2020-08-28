@@ -22,7 +22,7 @@ h1 {
 
 /* large bold text */
 h2 {
-  font-size: 2.25em;
+  font-size: 2.25em; // 36px
   font-weight: 700;
   line-height: 1.5em;
   margin: 0 0 0px 0;
@@ -88,7 +88,14 @@ code {
     monospace;
 }
 
-@media only screen and (max-width: 1024px) {
+@media only screen and (min-width: 769px) and (max-width: 1250px) {
+  h2 {
+    font-size: 2.9vw;
+    line-height: 1.5em;
+  }
+}
+
+@media only screen and (max-width: 768px) {
   h1 {
     font-size: 0.9em;
     line-height: 1.5em;
@@ -96,7 +103,7 @@ code {
   }
   
   h2 {
-    font-size: 1.3em;
+    font-size: 1.3em; // 20.8px
     line-height: 1.5em;
   }
 

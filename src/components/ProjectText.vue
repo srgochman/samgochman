@@ -172,18 +172,19 @@ export default {
   opacity: 1;
 }
 
-@media only screen and (max-width: 1024px) {
+@media only screen and (max-width: 768px),
+  only screen and (orientation: landscape) and (max-width: 820px) {
   #text-bg {
     display: none;
   }
 
-  .project-text {
-    width: 100%;
-  }
+  // .project-text {
+  //   width: 100%;
+  // }
 
-  .project-text > * {
-    margin-bottom: 20px;
-  }
+  // .project-text > * {
+  //   margin-bottom: 20px;
+  // }
 
   .project-title-container {
     margin-top: 10px;
@@ -196,8 +197,8 @@ export default {
 }
 
 @media only screen and (min-width: 426px) and (max-width: 1024px) {
-  .project-text {
-    max-height: 40vh;
-  }
+  // .project-text {
+  //   max-height: 40vh;
+  // }
 }
 </style>

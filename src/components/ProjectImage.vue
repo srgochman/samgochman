@@ -204,11 +204,12 @@ export default {
 }
 
 .project-img {
-  margin-right: 4%;
+  // margin-right: 4%;
   width: 100%;
   height: 65vh;
   // height: 800px;
-  // max-height:
+  // max-height: 500px;
+  min-height: 300px;
   object-fit: cover;
   border-radius: 2px;
   transition: opacity 200ms ease;
@@ -228,16 +229,17 @@ export default {
   transition-delay: 200ms;
 }
 
-@media only screen and (max-width: 1024px) {
+@media only screen and (min-width: 426px) and (max-width: 768px),
+  only screen and (orientation: landscape) and (max-device-width: 820px) {
   .project-img {
-    margin: 0;
-    height: 40vh;
+    height: 60vh;
   }
 }
 
-@media only screen and (min-width: 426px) and (max-width: 1024px) {
+@media only screen and (max-width: 425px) {
   .project-img {
-    height: 60vh;
+    // margin: 0;
+    height: 40vh;
   }
 }
 </style>
@@ -248,19 +250,24 @@ export default {
   display: none;
 }
 
-@media only screen and (max-width: 1024px) {
+@media only screen and (max-width: 768px),
+  only screen and (orientation: landscape) and (max-width: 820px) {
   .project-text-below {
     display: block;
     transition: opacity 200ms ease;
     transition-delay: 200ms;
 
-    .project-title-container svg {
-      margin-bottom: 2px;
-    }
-  }
+    .project-title-container {
+      // margin-top: 10px;
 
-  .project-desc {
-    margin: 10px 0 60px 0;
+      svg {
+        margin-bottom: 2px;
+      }
+    }
+
+    .project-desc {
+      margin: 10px 0 60px 0;
+    }
   }
 }
 </style>

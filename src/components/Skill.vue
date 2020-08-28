@@ -104,7 +104,8 @@ export default {
 //   }
 // }
 
-@media only screen and (min-width: 426px) and (max-width: 1024px) {
+@media only screen and (min-width: 426px) and (max-width: 768px),
+  only screen and (orientation: landscape) and (max-width: 820px) {
   .skill-container {
     width: 100%;
     margin-bottom: 40px;
