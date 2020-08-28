@@ -122,10 +122,10 @@
             voice recordings onto a set of visual parameters in p5.js.
           </p>
         </div>
-        <div class="img-container one-third-width">
+        <div id="doodle" class="img-container one-third-width">
           <img src="/photos/WIKN/doodle.jpg" />
         </div>
-        <div class="img-container one-third-width">
+        <div id="brushes" class="img-container one-third-width">
           <img src="/photos/WIKN/brushes.png" />
         </div>
       </div>
@@ -239,26 +239,41 @@ img.ui-macro {
 }
 
 @media only screen and (min-width: 769px) and (max-width: 1024px) {
-  .ui {
-    flex-direction: column;
-    align-items: flex-start;
-  }
+  // .ui {
+  //   flex-direction: column;
+  //   align-items: flex-start;
+  // }
 
   .ui-record,
   .ui-review,
   .ui-macro {
-    width: 251px;
-    height: 550px;
-    border-radius: 35px;
+    // width: 251px;
+    // height: 550px;
+    // border-radius: 35px;
+    width: 200px;
+    height: 437.8px;
+    border-radius: 20px;
     margin-left: 0;
+    margin-right: calc(min(7vw, 60px));
+  }
+
+  .ui-review {
+    // margin-left: calc(min(7vw, calc(var(--main-width) * 0.05)));
+    margin-left: calc(min(7vw, 60px));
     margin-right: 0;
   }
 }
 
 @media only screen and (max-width: 768px) {
   .ui {
-    flex-direction: column;
+    // flex-direction: column;
+    justify-content: flex-start;
     align-items: flex-start;
+
+    .caption {
+      width: calc(50% - 2%);
+      margin-right: 5%;
+    }
   }
 
   .ui-record,
@@ -266,9 +281,16 @@ img.ui-macro {
   .ui-macro {
     width: 180px;
     height: 394px;
-    border-radius: 25px;
+    border-radius: 20px;
     margin-left: 0;
     margin-right: 0;
+  }
+}
+
+@media only screen and (min-width: 426px) and (max-width: 768px) {
+  #doodle,
+  #brushes {
+    width: calc(50% - 2%);
   }
 }
 
@@ -276,6 +298,10 @@ img.ui-macro {
   .ui {
     flex-direction: column;
     align-items: center;
+
+    .caption {
+      width: 100%;
+    }
   }
 }
 

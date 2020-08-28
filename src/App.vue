@@ -24,6 +24,8 @@
 </template>
 
 <script>
+import contents from "./list-contents.json";
+
 export default {
   name: "App",
   created() {
@@ -38,8 +40,15 @@ export default {
     scrollTop() {
       if (this.$router.history.current.name === "Sam Gochman") {
         window.scrollTo(0, 0);
-        console.log("scrolled");
       }
+      this.$store.commit("set_project_params", {
+        title: contents.projects[0].title,
+        description: contents.projects[0].description,
+        tags: contents.projects[0].tags,
+        link: contents.projects[0].link,
+        type: contents.projects[0].type,
+        locked: contents.projects[0].locked
+      });
     }
   }
 };
