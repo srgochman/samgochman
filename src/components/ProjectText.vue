@@ -172,6 +172,18 @@ export default {
   opacity: 1;
 }
 
+@media only screen and (min-width: 769px) and (max-width: 1250px) {
+  .project-text a {
+    .project-title-container {
+      margin-bottom: 2.4vw;
+    }
+
+    .project-desc {
+      margin-bottom: 2.9vw;
+    }
+  }
+}
+
 @media only screen and (max-width: 768px),
   only screen and (orientation: landscape) and (max-width: 820px) {
   #text-bg {

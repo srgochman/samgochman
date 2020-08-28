@@ -98,7 +98,7 @@ html {
   margin: 0;
   background-color: white;
   font-family: "Avenir", Helvetica, Arial, sans-serif;
-  font-size: 1rem; // 16px
+  font-size: 100%; // 16px
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   // scroll-behavior: smooth;

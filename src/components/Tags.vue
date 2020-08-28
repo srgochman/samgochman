@@ -49,7 +49,14 @@ export default {
   font-weight: 500; // 700
 }
 
-@media only screen and (max-width: 1024px) {
+@media only screen and (min-width: 769px) and (max-width: 1250px) {
+  .tag {
+    padding: 3px 7px 3px 6px;
+    font-size: 1.1vw;
+  }
+}
+
+@media only screen and (max-width: 768px) {
   .tag {
     padding: 3px 7px 3px 6px;
     font-size: 0.8em;
