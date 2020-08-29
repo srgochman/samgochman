@@ -12,6 +12,7 @@
 </template>
 
 <script>
+import { EventBus } from "../event-bus.js";
 import contents from "../list-contents.json";
 
 export default {
@@ -42,9 +43,20 @@ export default {
         this.idx = (this.idx + 1) % this.endings.length;
       }
     }, 4500);
+
+    EventBus.$on("destroy_triggers", this.leaveHome);
   },
-  beforeDestroy() {
-    clearInterval(this.advanceInt);
+  methods: {
+    leaveHome() {
+      clearInterval(this.advanceInt);
+      window.removeEventListener("focus", function() {
+        this.windowActive = true;
+      });
+      window.removeEventListener("blur", function() {
+        this.windowActive = false;
+      });
+      EventBus.$off("destroy_triggers", this.leaveHome);
+    }
   }
 };
 </script>
@@ -153,7 +165,7 @@ export default {
   }
 }
 
-@media only screen and (orientation: landscape) and (max-device-width: 820px) {
+@media only screen and (orientation: landscape) and (max-width: 820px) {
   #mission-container {
     height: 42vw;
     margin-top: calc(20px + 5vh);

@@ -9,6 +9,7 @@
 </template>
 
 <script>
+import { EventBus } from "../event-bus.js";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger.js";
 gsap.registerPlugin(ScrollTrigger);
@@ -30,8 +31,6 @@ export default {
     };
   },
   mounted() {
-    // ScrollTrigger.refresh();
-
     this.adjDescription = this.description;
     for (var i = 0; i < this.keywords.length; i++) {
       this.colorize(this.keywords[i]);
@@ -42,7 +41,6 @@ export default {
     this.$router.app.$root.$once("transitionScroll", () => {
       this.$router.app.$nextTick(() => {
         if (this.$router.history.current.name === "Sam Gochman") {
-          // console.log("on home page");
           this.tl = gsap
             .timeline({
               scrollTrigger: {
@@ -58,6 +56,7 @@ export default {
               ease: "power1.inOut",
               delay: this.delay
             });
+          EventBus.$on("destroy_triggers", this.killTriggers);
         }
       });
     });
@@ -70,11 +69,10 @@ export default {
         // `<span style="font-weight: 700"> ${keyword} </span>`
         `<span style="color: ${this.color}; font-weight: 400"> ${keyword} </span>`
       );
-    }
-  },
-  beforeDestroy() {
-    if (this.$router.history.current.name === "Sam Gochman") {
+    },
+    killTriggers() {
       this.tl.scrollTrigger.kill();
+      EventBus.$off("destroy_triggers", this.killTriggers);
     }
   }
 };
@@ -104,7 +102,8 @@ export default {
 //   }
 // }
 
-@media only screen and (min-width: 426px) and (max-width: 1024px) {
+@media only screen and (min-width: 426px) and (max-width: 768px),
+  only screen and (orientation: landscape) and (max-width: 820px) {
   .skill-container {
     width: 100%;
     margin-bottom: 40px;

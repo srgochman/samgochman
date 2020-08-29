@@ -201,14 +201,9 @@ video {
 // }
 
 @media only screen and (max-width: 1024px) {
-  .across {
-    justify-content: center;
-  }
-  .arrow {
-    transform: rotate(90deg);
-    transform-origin: center;
-    display: none;
-  }
+  // .across {
+  //   justify-content: center;
+  // }
 
   video {
     // margin-right: calc(var(--main-width) * 0.05);
@@ -217,9 +212,22 @@ video {
   }
 }
 
+@media only screen and (min-width: 426px) and (max-width: 768px) {
+  #mind-map,
+  #globe {
+    width: calc(50% - 2%);
+  }
+}
+
 @media only screen and (max-width: 425px) {
   video {
     height: 400px;
+  }
+
+  .arrow {
+    // transform: rotate(90deg);
+    // transform-origin: center;
+    display: none;
   }
 }
 </style>

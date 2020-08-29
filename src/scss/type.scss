@@ -22,7 +22,7 @@ h1 {
 
 /* large bold text */
 h2 {
-  font-size: 2.25em;
+  font-size: 2.25em; // 36px
   font-weight: 700;
   line-height: 1.5em;
   margin: 0 0 0px 0;
@@ -31,7 +31,7 @@ h2 {
 
 /* non-bold text */
 h3 {
-  font-size: 1.6em;
+  font-size: 1.6em; // 25.6px
   font-weight: 300;
   line-height: 1.7em;
   margin: 0 0 0px 0;
@@ -40,7 +40,7 @@ h3 {
 
 /* small text */
 p {
-  font-size: 1.2em;
+  font-size: 1.2em; // 19.2px
   font-weight: 200;
   line-height: 1.7em;
   margin: 0 0 0px 0;
@@ -88,7 +88,35 @@ code {
     monospace;
 }
 
-@media only screen and (max-width: 1024px) {
+// scale text in this range
+@media only screen and (min-width: 769px) and (max-width: 1250px) {
+  h1 {
+    font-size: 1.3vw;
+    line-height: 1.5em;
+    margin: 0 0 30px 0;
+  }
+  
+  h2 {
+    font-size: 2.9vw;
+    line-height: 1.5em;
+  }
+
+  h3 {
+    font-size: 2vw;
+    line-height: 1.5em;
+  }
+  
+  p {
+    font-size: 1.5vw;
+    line-height: 1.6em;
+  }
+
+  .contributions {
+    font-size: 1vw;
+  }
+}
+
+@media only screen and (max-width: 768px) {
   h1 {
     font-size: 0.9em;
     line-height: 1.5em;
@@ -96,7 +124,7 @@ code {
   }
   
   h2 {
-    font-size: 1.3em;
+    font-size: 1.3em; // 20.8px
     line-height: 1.5em;
   }
 
