@@ -151,9 +151,6 @@
 import Tags from "../components/Tags.vue";
 import contents from "../list-contents.json";
 import ScrollMagic from "scrollmagic";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger.js";
-gsap.registerPlugin(ScrollTrigger);
 
 export default {
   name: "WIKN",

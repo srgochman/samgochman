@@ -50,6 +50,7 @@
 </template>
 
 <script>
+import { EventBus } from "../event-bus.js";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger.js";
 gsap.registerPlugin(ScrollTrigger);
@@ -70,6 +71,7 @@ export default {
       isActive: false,
       trig: null,
 
+      projectContainer: null,
       projectImage: null,
       projectTextBelow: null,
       projectTitle: null,
@@ -87,8 +89,8 @@ export default {
     this.$router.app.$root.$once("transitionScroll", () => {
       this.$router.app.$nextTick(() => {
         if (this.$router.history.current.name === "Sam Gochman") {
-          const instance = this;
-          const projectContainer = this.$refs.projectContainer;
+          // const instance = this;
+          this.projectContainer = this.$refs.projectContainer;
           this.projectImage = this.$refs.projectImage;
 
           // following 4 are for text below image, only shown on narrow screens
@@ -97,38 +99,22 @@ export default {
           this.arrow = this.$refs.arrow;
           this.lock = this.$refs.lock;
 
-          projectContainer.addEventListener("mouseover", function() {
-            if (instance.isActive) {
-              // text below (narrow screens)
-              instance.projectTitle.style.color = "var(--green)";
-              instance.arrow.classList.add("green-arrow");
-              if (instance.locked) instance.lock.classList.add("green-lock");
+          this.projectContainer.addEventListener(
+            "mouseover",
+            this.hoverProject
+          );
+          this.projectContainer.addEventListener(
+            "mouseout",
+            this.unhoverProject
+          );
 
-              // ProjectText (wide screens)
-              $(".project-text a").css("color", "var(--green)");
-              $(".project-text .arrow").addClass("green-arrow");
-              $(".project-text .lock").addClass("green-lock");
-            }
-          });
-          projectContainer.addEventListener("mouseout", function() {
-            if (instance.isActive) {
-              // text below (narrow screens)
-              instance.projectTitle.style.color = "black";
-              instance.arrow.classList.remove("green-arrow");
-              if (instance.locked) instance.lock.classList.remove("green-lock");
-
-              // ProjectText (wide screens)
-              $(".project-text a").css("color", "black");
-              $(".project-text .arrow").removeClass("green-arrow");
-              $(".project-text .lock").removeClass("green-lock");
-            }
-          });
-
-          if (projectContainer == projectContainer.parentNode.firstChild)
+          if (
+            this.projectContainer == this.projectContainer.parentNode.firstChild
+          )
             this.projectImage.classList.remove("dull");
 
           this.trig = ScrollTrigger.create({
-            trigger: projectContainer,
+            trigger: this.projectContainer,
             start: "top-=15px 50%", // [trigger] [scroller] positions,
             end: "bottom+=15px 50%", // [trigger] [scroller] positions
             // markers: true,
@@ -140,17 +126,24 @@ export default {
             },
             onLeave: () => {
               // Don't fade out last project when scrolling past it
-              if (projectContainer !== projectContainer.parentNode.lastChild) {
+              if (
+                this.projectContainer !==
+                this.projectContainer.parentNode.lastChild
+              ) {
                 this.leave();
               }
             },
             onLeaveBack: () => {
               // Don't fade out first project when scrolling back past it
-              if (projectContainer !== projectContainer.parentNode.firstChild) {
+              if (
+                this.projectContainer !==
+                this.projectContainer.parentNode.firstChild
+              ) {
                 this.leave();
               }
             }
           });
+          EventBus.$on("destroy_triggers", this.killTriggers);
         }
       });
     });
@@ -187,11 +180,41 @@ export default {
       if (this.locked) this.lock.classList.remove("green-lock");
 
       this.isActive = false;
-    }
-  },
-  beforeDestroy() {
-    if (this.$router.history.current.name === "Sam Gochman") {
+    },
+    hoverProject() {
+      if (this.isActive) {
+        // text below (narrow screens)
+        this.projectTitle.style.color = "var(--green)";
+        this.arrow.classList.add("green-arrow");
+        if (this.locked) this.lock.classList.add("green-lock");
+
+        // ProjectText (wide screens)
+        $(".project-text a").css("color", "var(--green)");
+        $(".project-text .arrow").addClass("green-arrow");
+        $(".project-text .lock").addClass("green-lock");
+      }
+    },
+    unhoverProject() {
+      if (this.isActive) {
+        // text below (narrow screens)
+        this.projectTitle.style.color = "black";
+        this.arrow.classList.remove("green-arrow");
+        if (this.locked) this.lock.classList.remove("green-lock");
+
+        // ProjectText (wide screens)
+        $(".project-text a").css("color", "black");
+        $(".project-text .arrow").removeClass("green-arrow");
+        $(".project-text .lock").removeClass("green-lock");
+      }
+    },
+    killTriggers() {
       this.trig.kill();
+      EventBus.$off("destroy_triggers", this.killTriggers);
+      this.projectContainer.removeEventListener("mouseover", this.hoverProject);
+      this.projectContainer.removeEventListener(
+        "mouseout",
+        this.unhoverProject
+      );
     }
   }
 };

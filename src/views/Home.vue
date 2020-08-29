@@ -137,6 +137,7 @@
 </template>
 
 <script>
+import { EventBus } from "../event-bus.js";
 import Mission from "../components/Mission.vue";
 import Skill from "../components/Skill.vue";
 import ProjectImage from "../components/ProjectImage.vue";
@@ -265,11 +266,20 @@ export default {
       root.style.setProperty("--scroll", y);
     }
   },
-  beforeDestroy() {
+  beforeRouteLeave(to, from, next) {
+    // console.log(this.$router.history.current.name);
+    this.missionTrig.scrollTrigger.kill();
+    this.arrowTrig.scrollTrigger.kill();
     document.removeEventListener("scroll", this.missionScroll);
-    this.missionTrig.kill();
     document.removeEventListener("scroll", this.arrowScroll);
-    this.arrowTrig.kill();
+
+    // send signal via store to other components in Home
+    // to each destroy their own triggers via computed/watch
+    EventBus.$emit("destroy_triggers");
+
+    // move to next page
+    next();
+    // console.log("moved off of home");
   },
   components: {
     Mission,

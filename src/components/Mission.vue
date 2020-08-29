@@ -12,6 +12,7 @@
 </template>
 
 <script>
+import { EventBus } from "../event-bus.js";
 import contents from "../list-contents.json";
 
 export default {
@@ -42,9 +43,20 @@ export default {
         this.idx = (this.idx + 1) % this.endings.length;
       }
     }, 4500);
+
+    EventBus.$on("destroy_triggers", this.leaveHome);
   },
-  beforeDestroy() {
-    clearInterval(this.advanceInt);
+  methods: {
+    leaveHome() {
+      clearInterval(this.advanceInt);
+      window.removeEventListener("focus", function() {
+        this.windowActive = true;
+      });
+      window.removeEventListener("blur", function() {
+        this.windowActive = false;
+      });
+      EventBus.$off("destroy_triggers", this.leaveHome);
+    }
   }
 };
 </script>

@@ -50,6 +50,7 @@
 </template>
 
 <script>
+import { EventBus } from "../event-bus.js";
 import Tags from "./Tags.vue";
 import { mapState } from "vuex";
 import { gsap } from "gsap";
@@ -74,6 +75,7 @@ export default {
             // markers: true,
             pin: true
           });
+          EventBus.$on("destroy_triggers", this.killTriggers);
         }
       });
     });
@@ -92,11 +94,10 @@ export default {
       $(".project-text a").css("color", "black");
       $(".project-text .arrow").removeClass("green-arrow");
       $(".project-text .lock").removeClass("green-lock");
-    }
-  },
-  beforeDestroy() {
-    if (this.$router.history.current.name === "Sam Gochman") {
+    },
+    killTriggers() {
       this.trig.kill();
+      EventBus.$off("destroy_triggers", this.killTriggers);
     }
   },
   components: {
