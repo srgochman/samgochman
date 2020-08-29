@@ -167,7 +167,7 @@ export default {
               scrollTrigger: {
                 trigger: this,
                 start: "top 90%",
-                markers: true,
+                // markers: true,
                 once: true,
                 onEnter: () => {
                   // store number of loaded items at last chunk
