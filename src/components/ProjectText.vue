@@ -50,6 +50,7 @@
 </template>
 
 <script>
+import { EventBus } from "../event-bus.js";
 import Tags from "./Tags.vue";
 import { mapState } from "vuex";
 import { gsap } from "gsap";
@@ -74,6 +75,7 @@ export default {
             // markers: true,
             pin: true
           });
+          EventBus.$on("destroy_triggers", this.killTriggers);
         }
       });
     });
@@ -92,11 +94,10 @@ export default {
       $(".project-text a").css("color", "black");
       $(".project-text .arrow").removeClass("green-arrow");
       $(".project-text .lock").removeClass("green-lock");
-    }
-  },
-  beforeDestroy() {
-    if (this.$router.history.current.name === "Sam Gochman") {
+    },
+    killTriggers() {
       this.trig.kill();
+      EventBus.$off("destroy_triggers", this.killTriggers);
     }
   },
   components: {
@@ -155,11 +156,11 @@ export default {
 
 // project-text vue transition
 .text-enter-active {
-  transition: opacity 200ms ease-out;
+  transition: opacity 200ms ease;
 }
 
 .text-leave-active {
-  transition: opacity 200ms ease-in;
+  transition: opacity 200ms ease;
 }
 
 .text-enter,
@@ -172,18 +173,31 @@ export default {
   opacity: 1;
 }
 
-@media only screen and (max-width: 1024px) {
+@media only screen and (min-width: 769px) and (max-width: 1250px) {
+  .project-text a {
+    .project-title-container {
+      margin-bottom: 2.4vw;
+    }
+
+    .project-desc {
+      margin-bottom: 2.9vw;
+    }
+  }
+}
+
+@media only screen and (max-width: 768px),
+  only screen and (orientation: landscape) and (max-width: 820px) {
   #text-bg {
     display: none;
   }
 
-  .project-text {
-    width: 100%;
-  }
+  // .project-text {
+  //   width: 100%;
+  // }
 
-  .project-text > * {
-    margin-bottom: 20px;
-  }
+  // .project-text > * {
+  //   margin-bottom: 20px;
+  // }
 
   .project-title-container {
     margin-top: 10px;
@@ -196,8 +210,8 @@ export default {
 }
 
 @media only screen and (min-width: 426px) and (max-width: 1024px) {
-  .project-text {
-    max-height: 40vh;
-  }
+  // .project-text {
+  //   max-height: 40vh;
+  // }
 }
 </style>

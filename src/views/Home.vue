@@ -33,33 +33,37 @@
           />
         </a>
         and would love to
-        <a
-          id="connect"
-          href="mailto:srgochman@gmail.com"
-          target="_blank"
-          rel="noopener"
-          >connect<img
-            height="3"
-            class="underline"
-            src="../assets/drawn/line2_green.svg"/></a
-        >! Here's a full
-        <a
-          id="resume"
-          href="/SGochman_resume.pdf"
-          target="_blank"
-          rel="noopener"
-          >resume<img
-            height="3"
-            class="underline"
-            src="../assets/drawn/line4_green.svg"
-          /> </a
-        >.
+        <div style="display: inline-block">
+          <a
+            id="connect"
+            href="mailto:srgochman@gmail.com"
+            target="_blank"
+            rel="noopener"
+            >connect<img
+              height="3"
+              class="underline"
+              src="../assets/drawn/line2_green.svg"/></a
+          >!
+        </div>
+        Here's a full
+        <div style="display: inline-block">
+          <a
+            id="resume"
+            href="/SGochman_resume.pdf"
+            target="_blank"
+            rel="noopener"
+            >resume<img
+              height="3"
+              class="underline"
+              src="../assets/drawn/line4_green.svg"
+            /> </a
+          >.
+        </div>
       </h3>
     </div>
 
     <div id="skills" class="section appear">
       <h1>Skills</h1>
-      <!-- <div id="skills-drawn" class="section-heading"></div> -->
       <div id="skills-container">
         <Skill
           v-for="skill in skills"
@@ -76,7 +80,6 @@
 
     <div id="projects" class="section appear">
       <h1>Selected Work</h1>
-      <!-- <div id="work-drawn" class="section-heading"></div> -->
       <div id="projects-container">
         <div id="project-images-container">
           <ProjectImage
@@ -99,7 +102,6 @@
 
     <div id="experience" class="section appear">
       <h1>Experience</h1>
-      <!-- <div id="experience-drawn" class="section-heading"></div> -->
       <div
         class="experience-item"
         v-for="experience in experiences"
@@ -119,17 +121,9 @@
       </div>
     </div>
 
-    <!-- <div id="juices-arrow-section"> -->
     <div id="juices-arrow-container">
-      <!-- <svg width="18" height="46">
-          <use
-            id="juices-arrow"
-            href="../assets/drawn/juices_arrow.svg#Layer_2"
-          ></use>
-        </svg> -->
       <img src="../assets/drawn/juices_arrow.png" />
     </div>
-    <!-- </div> -->
     <div id="juices" class="section appear">
       <h1>Latest Creative Juices</h1>
       <p>
@@ -143,6 +137,7 @@
 </template>
 
 <script>
+import { EventBus } from "../event-bus.js";
 import Mission from "../components/Mission.vue";
 import Skill from "../components/Skill.vue";
 import ProjectImage from "../components/ProjectImage.vue";
@@ -150,6 +145,8 @@ import ProjectText from "../components/ProjectText.vue";
 import Juices from "../components/Juices.vue";
 import contents from "../list-contents.json";
 import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger.js";
+gsap.registerPlugin(ScrollTrigger);
 import ScrollMagic from "scrollmagic";
 import "particles.js/particles";
 const particlesJS = window.particlesJS;
@@ -160,7 +157,9 @@ export default {
     return {
       skills: contents["skills"],
       projects: contents["projects"],
-      experiences: contents["experiences"]
+      experiences: contents["experiences"],
+      missionTrig: null,
+      arrowTrig: null
     };
   },
   mounted() {
@@ -202,11 +201,85 @@ export default {
       scene.reverse(false); // prevent sections from disappearing on scrollback
       scene.setClassToggle(this, "visible").addTo(homeController);
     });
+
+    this.$router.app.$root.$once("transitionScroll", () => {
+      this.$router.app.$nextTick(() => {
+        if (this.$router.history.current.name === "Sam Gochman") {
+          // mission scroll tracking
+          this.missionTrig = gsap.timeline({
+            scrollTrigger: {
+              trigger: "#mission",
+              start: "top top",
+              // markers: true,
+              onEnter: () => {
+                document.addEventListener("scroll", this.missionScroll);
+              },
+              onEnterBack: () => {
+                document.addEventListener("scroll", this.missionScroll);
+              },
+              onLeave: () => {
+                document.removeEventListener("scroll", this.missionScroll);
+              },
+              onLeaveBack: () => {
+                document.removeEventListener("scroll", this.missionScroll);
+              }
+            }
+          });
+
+          // juices arrow scroll tracking
+          this.arrowTrig = gsap.timeline({
+            scrollTrigger: {
+              trigger: "#juices-arrow-container",
+              start: "top bottom",
+              // markers: true,
+              onEnter: () => {
+                document.addEventListener("scroll", this.arrowScroll);
+              },
+              onEnterBack: () => {
+                document.addEventListener("scroll", this.arrowScroll);
+              },
+              onLeave: () => {
+                document.removeEventListener("scroll", this.arrowScroll);
+              },
+              onLeaveBack: () => {
+                document.removeEventListener("scroll", this.arrowScroll);
+              }
+            }
+          });
+        }
+      });
+    });
   },
   methods: {
     clearPass() {
       localStorage.setItem("passCorrect", false);
+    },
+    missionScroll() {
+      const root = document.documentElement;
+      let y = (window.scrollY / innerHeight) * 1.5;
+      root.style.setProperty("--scroll", y);
+    },
+    arrowScroll() {
+      const root = document.documentElement;
+      let arrowTop = $("#juices-arrow-container").offset().top;
+      let y = (window.scrollY - arrowTop + innerHeight / 2) / 100;
+      root.style.setProperty("--scroll", y);
     }
+  },
+  beforeRouteLeave(to, from, next) {
+    // console.log(this.$router.history.current.name);
+    this.missionTrig.scrollTrigger.kill();
+    this.arrowTrig.scrollTrigger.kill();
+    document.removeEventListener("scroll", this.missionScroll);
+    document.removeEventListener("scroll", this.arrowScroll);
+
+    // send signal via store to other components in Home
+    // to each destroy their own triggers via computed/watch
+    EventBus.$emit("destroy_triggers");
+
+    // move to next page
+    next();
+    // console.log("moved off of home");
   },
   components: {
     Mission,
@@ -380,7 +453,7 @@ canvas {
 
 #juices-arrow-container {
   width: 100%;
-  height: 100%;
+  // height: 100%;
   position: relative;
   background: white;
   display: flex;
@@ -402,9 +475,9 @@ canvas {
     mix-blend-mode: screen;
     background: linear-gradient(
       120deg,
-      var(--purple) calc(var(--scrollArrow, 0) * 100% - 200%),
-      var(--blue) calc(var(--scrollArrow, 0) * 100%),
-      var(--green) calc(var(--scrollArrow, 0) * 100% + 200%)
+      var(--purple) calc(var(--scroll, 0) * 100% - 300%),
+      var(--blue) calc(var(--scroll, 0) * 100%),
+      var(--green) calc(var(--scroll, 0) * 100% + 300%)
     );
   }
 
@@ -418,12 +491,12 @@ canvas {
   margin-bottom: 30px;
 }
 
-@media only screen and (min-width: 426px) and (max-width: 1024px) {
-  #mission-description {
-    width: 100%;
-    // max-width: 100%;
-    margin-bottom: 120px;
-  }
+@media only screen and (max-width: 1024px) {
+  // #mission-description {
+  //   width: 100%;
+  //   // max-width: 100%;
+  //   margin-bottom: 120px;
+  // }
 
   #asterisk {
     transform: scale(0.8);
@@ -435,16 +508,15 @@ canvas {
     transform-origin: left;
     transform: scale(0.8);
     margin: 0 0 50px 0;
-    // opacity: 0.4;
   }
 
-  #projects-container {
-    flex-direction: column;
-  }
+  // #projects-container {
+  //   flex-direction: column;
+  // }
 
-  #project-images-container {
-    width: 100%;
-  }
+  // #project-images-container {
+  //   width: 100%;
+  // }
 
   .experience-item {
     margin-bottom: 50px;
@@ -461,31 +533,12 @@ canvas {
   }
 }
 
-@media only screen and (max-width: 425px) {
-  #mission,
-  #particles-js {
-    height: calc(150px + 31vh);
-  }
-
+@media only screen and (max-width: 768px),
+  only screen and (orientation: landscape) and (max-width: 820px) {
   #mission-description {
     width: 100%;
-  }
-
-  #asterisk {
-    transform: scale(0.8);
-    top: 6px;
-    left: -17px;
-  }
-
-  // .section:nth-last-child(-n + 2) {
-  //   margin-bottom: 0;
-  // }
-
-  .section-heading {
-    transform-origin: left;
-    transform: scale(0.8);
-    margin: 0 0 50px 0;
-    // opacity: 0.4;
+    // max-width: 100%;
+    margin-bottom: 120px;
   }
 
   #projects-container {
@@ -495,19 +548,16 @@ canvas {
   #project-images-container {
     width: 100%;
   }
+}
 
-  .experience-item {
-    margin-bottom: 50px;
+@media only screen and (max-width: 425px) {
+  #mission,
+  #particles-js {
+    height: calc(150px + 31vh);
   }
 
-  #juices-arrow-container {
-    transform: scale(0.5);
-    margin-bottom: 150px;
-  }
-
-  #juices p {
-    width: 100%;
-    margin-bottom: 20px;
+  #asterisk {
+    left: -17px;
   }
 }
 

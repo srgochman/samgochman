@@ -15,7 +15,6 @@
         <svg id="initials" width="48" height="39" @click="scrollTop">
           <use href="../src/assets/drawn/initials_green.svg#Layer_2"></use>
         </svg>
-        <!-- <div>Sam Gochman</div> -->
       </router-link>
     </div>
     <transition name="pages" @after-leave="$root.$emit('transitionScroll')">
@@ -25,6 +24,8 @@
 </template>
 
 <script>
+import contents from "./list-contents.json";
+
 export default {
   name: "App",
   created() {
@@ -39,8 +40,15 @@ export default {
     scrollTop() {
       if (this.$router.history.current.name === "Sam Gochman") {
         window.scrollTo(0, 0);
-        console.log("scrolled");
       }
+      this.$store.commit("set_project_params", {
+        title: contents.projects[0].title,
+        description: contents.projects[0].description,
+        tags: contents.projects[0].tags,
+        link: contents.projects[0].link,
+        type: contents.projects[0].type,
+        locked: contents.projects[0].locked
+      });
     }
   }
 };
@@ -90,7 +98,7 @@ html {
   margin: 0;
   background-color: white;
   font-family: "Avenir", Helvetica, Arial, sans-serif;
-  font-size: 1rem; // 16px
+  font-size: 100%; // 16px
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   // scroll-behavior: smooth;

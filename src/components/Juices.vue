@@ -42,8 +42,7 @@
 </template>
 
 <script>
-//  && item.ready == true
-
+import { EventBus } from "../event-bus.js";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger.js";
 gsap.registerPlugin(ScrollTrigger);
@@ -52,7 +51,7 @@ export default {
   name: "Juices",
   data() {
     return {
-      chunkSize: 3,
+      chunkSize: 6,
       loadedItems: 0,
       items: [
         {
@@ -159,29 +158,24 @@ export default {
       this.$router.app.$nextTick(() => {
         if (this.$router.history.current.name === "Sam Gochman") {
           const vm = this;
+          // console.log("start of mounted", this.triggers);
+          this.triggers = [];
           $(".image-container").each(function() {
             if (this.dataset.indexNumber % vm.chunkSize !== 0) return;
             // vm.trig = gsap.timeline({
             const trig = gsap.timeline({
               scrollTrigger: {
                 trigger: this,
-                start: "top 83%",
-                // markers: true,
+                start: "top 90%",
+                markers: true,
                 once: true,
                 onEnter: () => {
                   // store number of loaded items at last chunk
                   const loadedChunkItems = vm.loadedItems;
                   // loop through each image-container in current chunk
-                  // loop until shorter of: end of chunk or end of gallery
-                  for (
-                    let i = loadedChunkItems;
-                    i <
-                    Math.min(
-                      loadedChunkItems + vm.chunkSize,
-                      $(".image-container").length
-                    );
-                    i++
-                  ) {
+                  // until you reach either the end of chunk or the end of gallery
+                  // eslint-disable-next-line prettier/prettier
+                  for (let i = loadedChunkItems; i < Math.min(loadedChunkItems + vm.chunkSize, $(".image-container").length); i++) {
                     let curItem = $(".image-container")[i].children[0];
                     if (curItem.nodeName === "IMG") {
                       curItem.src = curItem.dataset.url; // provide image
@@ -200,23 +194,34 @@ export default {
               }
             });
             vm.triggers.push(trig);
+            // console.log("trigger created");
           });
+          // console.log("event listener set");
+          EventBus.$on("destroy_triggers", this.killTriggers);
         }
+        $("video").prop("volume", 0.5);
+        // console.log("end of mounted", this.triggers);
       });
     });
-    $("video").prop("volume", 0.5);
   },
-  beforeDestroy() {
-    // PROBABLY SHOULD BE AN ARRAY OF TRIGGERS THAT GETS KILLED EACH
-    // if (this.$router.history.current.name === "Sam Gochman") {
-    console.log(this.$router.history.current.name);
-    // console.log("kill");
-    this.triggers.forEach(function(trig) {
-      console.log(trig);
-      trig.kill();
-    });
-    // this.trig.kill();
-    // }
+  methods: {
+    killTriggers() {
+      this.triggers.forEach(trig => {
+        if (trig.scrollTrigger) {
+          trig.scrollTrigger.kill();
+        }
+      });
+      // this.triggers.forEach(trig => console.log(trig.scrollTrigger));
+      // for (let i = 0; i < this.triggers.length; i++) {
+      //   // console.log(this.triggers);
+      //   if (this.triggers[i].scrollTrigger) {
+      //     // console.log("killed trigger", i);
+      //     // console.log("timeline w trigger", this.triggers[i].scrollTrigger);
+      //     this.triggers[i].scrollTrigger.kill();
+      //   }
+      // }
+      EventBus.$off("destroy_triggers", this.killTriggers);
+    }
   }
 };
 </script>
@@ -236,7 +241,7 @@ export default {
   // grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   grid-template-columns: repeat(3, 1fr);
   // grid-auto-rows: 1fr;
-  // grid-gap: 1.5rem;
+  // grid-gap: 1.5em;
   grid-gap: calc(max(1.5vw, 20px));
 
   .image-container {
@@ -298,7 +303,7 @@ export default {
 @media only screen and (max-width: 425px) {
   #juices-grid-container {
     grid-template-columns: 1fr;
-    grid-gap: 2rem;
+    grid-gap: 2em;
   }
 }
 </style>

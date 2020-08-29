@@ -59,12 +59,20 @@
         </video>
       </div>
       <div class="section across appear">
-        <div class="img-container two-thirds-width">
+        <img
+          class="img-bg two-thirds-width"
+          src="/photos/anivision/VINS_student.jpg"
+        />
+        <img
+          class="img-bg one-third-width"
+          src="/photos/anivision/VINS_class.jpg"
+        />
+        <!-- <div class="img-container two-thirds-width">
           <img src="/photos/anivision/VINS_student.jpg" />
         </div>
         <div class="img-container one-third-width">
           <img src="/photos/anivision/VINS_class.jpg" />
-        </div>
+        </div> -->
       </div>
       <div class="section appear stacked">
         <div class="caption two-thirds-width">
@@ -132,6 +140,11 @@
             educators.
           </p>
         </div>
+        <!-- <img
+          id="leakey"
+          class="img-bg two-thirds-width"
+          src="/photos/anivision/leakey.jpg"
+        /> -->
         <div class="img-container two-thirds-width">
           <img id="leakey" src="/photos/anivision/leakey.jpg" />
         </div>
@@ -221,8 +234,8 @@ video {
     object-fit: unset;
   }
 
-  #leakey {
-    height: 200px;
-  }
+  // #leakey {
+  //   height: 200px;
+  // }
 }
 </style>

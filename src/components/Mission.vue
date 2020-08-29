@@ -12,6 +12,7 @@
 </template>
 
 <script>
+import { EventBus } from "../event-bus.js";
 import contents from "../list-contents.json";
 
 export default {
@@ -24,18 +25,6 @@ export default {
       showEndings: false,
       windowActive: true
     };
-  },
-  methods: {
-    scrollPos() {
-      const root = document.documentElement;
-      if (window.scrollY <= innerHeight) {
-        let y = (window.scrollY / innerHeight) * 1.5;
-        root.style.setProperty("--scroll", y);
-      }
-      let arrowTop = $("#juices-arrow-container").offset().top;
-      let z = (window.scrollY - arrowTop + innerHeight / 2) / 100;
-      root.style.setProperty("--scrollArrow", z);
-    }
   },
   mounted() {
     // detect if window is in focus for pausing ending cycling
@@ -55,11 +44,19 @@ export default {
       }
     }, 4500);
 
-    document.addEventListener("scroll", this.scrollPos);
+    EventBus.$on("destroy_triggers", this.leaveHome);
   },
-  beforeDestroy() {
-    clearInterval(this.advanceInt);
-    document.removeEventListener("scroll", this.scrollPos);
+  methods: {
+    leaveHome() {
+      clearInterval(this.advanceInt);
+      window.removeEventListener("focus", function() {
+        this.windowActive = true;
+      });
+      window.removeEventListener("blur", function() {
+        this.windowActive = false;
+      });
+      EventBus.$off("destroy_triggers", this.leaveHome);
+    }
   }
 };
 </script>
@@ -168,7 +165,7 @@ export default {
   }
 }
 
-@media only screen and (orientation: landscape) and (max-device-width: 820px) {
+@media only screen and (orientation: landscape) and (max-width: 820px) {
   #mission-container {
     height: 42vw;
     margin-top: calc(20px + 5vh);
