@@ -93,6 +93,7 @@
             :description="project.description"
             :tags="project.tags"
             :locked="project.locked"
+            :arrowType="project.arrowType"
           >
           </ProjectImage>
         </div>
@@ -111,12 +112,25 @@
         <p>
           <a :href="experience.link" target="_blank" rel="noopener">
             <span>{{ experience.firm }}</span>
-            <svg width="28px" height="8px">
+            <svg v-if="experience.arrowType == 2" width="28px" height="8px">
               <use
                 class="arrow"
                 href="../assets/drawn/arrow_drawn2.svg#Layer_2"
-              ></use></svg
-          ></a>
+              ></use>
+            </svg>
+            <svg v-if="experience.arrowType == 3" width="28px" height="8px">
+              <use
+                class="arrow"
+                href="../assets/drawn/arrow_drawn3.svg#Layer_2"
+              ></use>
+            </svg>
+            <svg v-if="experience.arrowType == 4" width="28px" height="8px">
+              <use
+                class="arrow"
+                href="../assets/drawn/arrow_drawn4.svg#Layer_2"
+              ></use>
+            </svg>
+          </a>
         </p>
       </div>
     </div>

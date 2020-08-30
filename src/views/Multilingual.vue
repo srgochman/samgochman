@@ -87,7 +87,7 @@
           <img
             id="map"
             class="one-third-width img-bg"
-            src="/photos/multilingual/map.png"
+            src="/photos/multilingual/map.jpg"
           />
           <div class="arrow"></div>
           <img
