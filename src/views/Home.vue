@@ -268,8 +268,8 @@ export default {
   },
   beforeRouteLeave(to, from, next) {
     // console.log(this.$router.history.current.name);
-    this.missionTrig.scrollTrigger.kill();
-    this.arrowTrig.scrollTrigger.kill();
+    if (this.missionTrig.scrollTrigger) this.missionTrig.scrollTrigger.kill();
+    if (this.arrowTrig.scrollTrigger) this.arrowTrig.scrollTrigger.kill();
     document.removeEventListener("scroll", this.missionScroll);
     document.removeEventListener("scroll", this.arrowScroll);
 

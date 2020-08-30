@@ -140,7 +140,9 @@ button {
   background-color: var(--green);
   color: white;
   border: none;
-  border-radius: 2px;
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
   font: inherit;
   font-weight: 600;
   cursor: pointer;

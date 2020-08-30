@@ -71,10 +71,12 @@
           <div class="img-container two-thirds-width">
             <img src="/photos/phototaxis/prototype.jpg" />
           </div>
-          <img
-            class="one-third-width img-bg"
-            src="/photos/phototaxis/sketches.jpg"
-          />
+          <div class="img-container one-third-width">
+            <img
+              src="/photos/phototaxis/sketches.jpg"
+              style="object-fit: cover; height: 100%;"
+            />
+          </div>
         </div>
       </div>
       <div class="section appear">

@@ -234,7 +234,9 @@ export default {
   // max-height: 500px;
   min-height: 300px;
   object-fit: cover;
-  border-radius: 2px;
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
   transition: opacity 200ms ease;
   transition-delay: 200ms;
 }

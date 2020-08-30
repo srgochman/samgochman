@@ -42,7 +42,9 @@ export default {
 
 .tag {
   margin: 0 10px 10px 0;
-  border-radius: 1px 2px 2px 1px;
+  border-radius: 0px 3px 3px 0px;
+  -webkit-border-radius: 0px 3px 3px 0px;
+  -moz-border-radius: 0px 3px 3px 0px;
   border-left: solid 3px;
   padding: 6px 11px 6px 9px;
   font-size: 0.875em;
@@ -51,7 +53,7 @@ export default {
 
 @media only screen and (min-width: 769px) and (max-width: 1250px) {
   .tag {
-    padding: 3px 7px 3px 6px;
+    padding: 5px 9px 5px 8px;
     font-size: 1.1vw;
   }
 }
