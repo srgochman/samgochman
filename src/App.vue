@@ -49,6 +49,7 @@ export default {
         type: contents.projects[0].type,
         locked: contents.projects[0].locked
       });
+      document.documentElement.style.setProperty("--scroll", 0);
     }
   }
 };
@@ -135,6 +136,7 @@ body {
   padding: 20px 0px;
   position: fixed;
   top: 0;
+  left: 0;
   z-index: 100;
 
   .sam-gochman {
