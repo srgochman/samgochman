@@ -101,12 +101,20 @@ export default {
         onEnter: () => {
           this.nameTL.to(".fade-out", { opacity: 0, duration: 0.3 });
           // this.nameTL.to(".fade-out", { display: "none", duration: 0 });
-          this.nameTL.to(".move", { x: -40, duration: 0.3 });
+          this.nameTL.to(".move", {
+            x: -40,
+            duration: 0.3,
+            ease: "power2.inOut"
+          });
           this.nameTL.to(".fade-in", { opacity: 1, duration: 0.3 });
         },
         onEnterBack: () => {
           this.nameTL.to(".fade-in", { opacity: 0, duration: 0.3 });
-          this.nameTL.to(".move", { x: 0, duration: 0.3 });
+          this.nameTL.to(".move", {
+            x: 0,
+            duration: 0.3,
+            ease: "power2.inOut"
+          });
           this.nameTL.to(".fade-out", { opacity: 1, duration: 0.3 });
         }
         // toggleActions: "play none reverse none"
