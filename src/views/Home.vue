@@ -567,7 +567,7 @@ canvas {
 @media only screen and (max-width: 425px) {
   #mission,
   #particles-js {
-    height: calc(150px + 31vh);
+    height: calc(175px + 31vh);
   }
 
   #asterisk {

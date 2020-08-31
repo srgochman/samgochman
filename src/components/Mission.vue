@@ -156,7 +156,7 @@ export default {
   #mission-container {
     font-size: 9vw;
     height: 60vw;
-    margin-top: calc(25px + 13vh);
+    margin-top: calc(50px + 13vh);
     transform: translateY(0%);
 
     &::before {
