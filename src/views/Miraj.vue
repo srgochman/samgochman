@@ -86,6 +86,8 @@ export default {
     $("#check").hover(function() {
       $("#check .underline").toggleClass("underline-hover");
     });
+
+    $("video").prop("volume", 0.5);
   },
   computed: {
     tagline() {

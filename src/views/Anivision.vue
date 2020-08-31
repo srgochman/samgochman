@@ -49,14 +49,19 @@
             students appreciate classroom concepts through intuition.
           </p>
         </div>
-        <video
-          class="two-thirds-width"
-          controls
-          preload="none"
-          poster="/photos/anivision/anivision_poster.jpg"
-        >
-          <source src="/photos/anivision/anivision.mp4" type="video/mp4" />
-        </video>
+        <div class="two-thirds-width">
+          <video
+            controls
+            preload="none"
+            poster="/photos/anivision/anivision_poster.jpg"
+          >
+            <source src="/photos/anivision/anivision.mp4" type="video/mp4" />
+          </video>
+          <p>
+            Users can see the benefits of large eyes in dark environments and of
+            UV sensitivity for targeting flowers.
+          </p>
+        </div>
       </div>
       <div class="section across appear">
         <img
@@ -182,6 +187,8 @@ export default {
       scene.reverse(false); // prevent sections from disappearing on scrollback
       scene.setClassToggle(this, "visible").addTo(sectionController);
     });
+
+    $("video").prop("volume", 0.5);
   },
   methods: {},
   components: { Tags }
@@ -203,6 +210,7 @@ video {
   // margin-right: calc(var(--main-width) * 0.05);
   height: 600px;
   object-fit: cover;
+  margin-bottom: 10px;
 }
 
 .across {

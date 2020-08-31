@@ -109,7 +109,7 @@ export default {
 
 #beginning {
   // masking makes it invisible; used for spacing
-  color: white !important;
+  color: transparent !important;
 
   // duplicate text as black on top
   &::before {

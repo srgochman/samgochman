@@ -79,7 +79,7 @@
     </div>
 
     <div id="projects" class="section appear">
-      <h1>Selected Work</h1>
+      <h1>Selected Projects</h1>
       <div id="projects-container">
         <div id="project-images-container">
           <ProjectImage
