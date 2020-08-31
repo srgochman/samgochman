@@ -12,7 +12,8 @@ export default new Vuex.Store({
     tags: contents["projects"][0].tags,
     link: contents["projects"][0].link,
     type: contents["projects"][0].type,
-    locked: contents["projects"][0].locked
+    locked: contents["projects"][0].locked,
+    arrowType: contents["projects"][0].arrowType
     // activeProject: ""
   },
   mutations: {
@@ -23,6 +24,7 @@ export default new Vuex.Store({
       state.link = params.link;
       state.type = params.type;
       state.locked = params.locked;
+      state.arrowType = params.arrowType;
       // state.activeProject = params.activeProject;
     }
   },

@@ -12,11 +12,40 @@
               href="../assets/unlocked.svg#Layer_1"
             ></use>
           </svg>
-          <svg class="arrow-svg" width="28px" height="8px">
+          <svg
+            v-if="arrowType == 2"
+            class="arrow-svg"
+            width="28px"
+            height="8px"
+          >
             <use
               class="arrow"
               ref="arrow"
               href="../assets/drawn/arrow_drawn2.svg#Layer_2"
+            ></use>
+          </svg>
+          <svg
+            v-if="arrowType == 3"
+            class="arrow-svg"
+            width="28px"
+            height="8px"
+          >
+            <use
+              class="arrow"
+              ref="arrow"
+              href="../assets/drawn/arrow_drawn3.svg#Layer_2"
+            ></use>
+          </svg>
+          <svg
+            v-if="arrowType == 4"
+            class="arrow-svg"
+            width="28px"
+            height="8px"
+          >
+            <use
+              class="arrow"
+              ref="arrow"
+              href="../assets/drawn/arrow_drawn4.svg#Layer_2"
             ></use>
           </svg>
         </div>
@@ -35,11 +64,40 @@
               href="../assets/unlocked.svg#Layer_1"
             ></use>
           </svg>
-          <svg class="arrow-svg" width="28px" height="8px">
+          <svg
+            v-if="arrowType == 2"
+            class="arrow-svg"
+            width="28px"
+            height="8px"
+          >
             <use
               class="arrow"
               ref="arrow"
               href="../assets/drawn/arrow_drawn2.svg#Layer_2"
+            ></use>
+          </svg>
+          <svg
+            v-if="arrowType == 3"
+            class="arrow-svg"
+            width="28px"
+            height="8px"
+          >
+            <use
+              class="arrow"
+              ref="arrow"
+              href="../assets/drawn/arrow_drawn3.svg#Layer_2"
+            ></use>
+          </svg>
+          <svg
+            v-if="arrowType == 4"
+            class="arrow-svg"
+            width="28px"
+            height="8px"
+          >
+            <use
+              class="arrow"
+              ref="arrow"
+              href="../assets/drawn/arrow_drawn4.svg#Layer_2"
             ></use>
           </svg>
         </div>
@@ -64,7 +122,8 @@ export default {
     tags: Array,
     link: String,
     type: String,
-    locked: Boolean
+    locked: Boolean,
+    arrowType: Number
   },
   data() {
     return {
@@ -157,7 +216,8 @@ export default {
         tags: this.tags,
         link: this.link,
         type: this.type,
-        locked: this.locked
+        locked: this.locked,
+        arrowType: this.arrowType
         // activeProject: this.title
       });
     },

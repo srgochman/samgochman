@@ -71,7 +71,8 @@
           ]
         }
       ],
-      "locked": true
+      "locked": true,
+      "arrowType": 2
     },
     {
       "title": "Phototaxis",
@@ -106,7 +107,8 @@
           ]
         }
       ],
-      "locked": false
+      "locked": false,
+      "arrowType": 3
     },
     {
       "title": "Miraj",
@@ -131,7 +133,8 @@
           ]
         }
       ],
-      "locked": false
+      "locked": false,
+      "arrowType": 4
     },
     {
       "title": "What I Know Now",
@@ -164,11 +167,12 @@
           ]
         }
       ],
-      "locked": true
+      "locked": true,
+      "arrowType": 2
     },
     {
       "title": "Together Apart",
-      "img": "TA/blendchat_eyes.png",
+      "img": "TA/blendchat_eyes.jpg",
       "type": "product",
       "link": "https://medium.com/sosolimited/4-design-principles-for-building-connection-through-digital-experiences-f365d6e9efd1",
       "description": "Refocusing technology on human connection",
@@ -197,7 +201,8 @@
           ]
         }
       ],
-      "locked": false
+      "locked": false,
+      "arrowType": 3
     },
     {
       "title": "Anivision",
@@ -224,29 +229,34 @@
           ]
         }
       ],
-      "locked": false
+      "locked": false,
+      "arrowType": 4
     }
   ],
   "experiences": [
     {
       "title": "Creative Technologist",
       "link": "https://www.sosolimited.com",
-      "firm": "Sosolimited"
+      "firm": "Sosolimited",
+      "arrowType": 2
     },
     {
       "title": "Research Fellow: Audiovisual Perception",
       "link": "https://www.eskewdumezripple.com",
-      "firm": "EskewDumezRipple"
+      "firm": "EskewDumezRipple",
+      "arrowType": 3
     },
     {
       "title": "Founder & Partner: Anivision",
       "link": "https://dali.dartmouth.edu",
-      "firm": "Digital Applied Learning and Innovation Lab @ Dartmouth College"
+      "firm": "Digital Applied Learning and Innovation Lab @ Dartmouth College",
+      "arrowType": 4
     },
     {
       "title": "Biophilic Design Intern",
       "link": "https://www.terrapinbrightgreen.com",
-      "firm": "Terrapin Bright Green"
+      "firm": "Terrapin Bright Green",
+      "arrowType": 2
     }
   ],
   "education": [

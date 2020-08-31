@@ -15,10 +15,37 @@
             <svg v-if="locked" width="7px" height="10px">
               <use class="lock" href="../assets/unlocked.svg#Layer_1"></use>
             </svg>
-            <svg width="28px" height="8px">
+            <svg
+              v-if="arrowType == 2"
+              class="arrow-svg"
+              width="28px"
+              height="8px"
+            >
               <use
                 class="arrow"
                 href="../assets/drawn/arrow_drawn2.svg#Layer_2"
+              ></use>
+            </svg>
+            <svg
+              v-if="arrowType == 3"
+              class="arrow-svg"
+              width="28px"
+              height="8px"
+            >
+              <use
+                class="arrow"
+                href="../assets/drawn/arrow_drawn3.svg#Layer_2"
+              ></use>
+            </svg>
+            <svg
+              v-if="arrowType == 4"
+              class="arrow-svg"
+              width="28px"
+              height="8px"
+            >
+              <use
+                class="arrow"
+                href="../assets/drawn/arrow_drawn4.svg#Layer_2"
               ></use>
             </svg>
           </div>
@@ -33,10 +60,37 @@
             <svg v-if="locked" width="7px" height="10px">
               <use class="lock" href="../assets/unlocked.svg#Layer_1"></use>
             </svg>
-            <svg width="28px" height="8px">
+            <svg
+              v-if="arrowType == 2"
+              class="arrow-svg"
+              width="28px"
+              height="8px"
+            >
               <use
                 class="arrow"
                 href="../assets/drawn/arrow_drawn2.svg#Layer_2"
+              ></use>
+            </svg>
+            <svg
+              v-if="arrowType == 3"
+              class="arrow-svg"
+              width="28px"
+              height="8px"
+            >
+              <use
+                class="arrow"
+                href="../assets/drawn/arrow_drawn3.svg#Layer_2"
+              ></use>
+            </svg>
+            <svg
+              v-if="arrowType == 4"
+              class="arrow-svg"
+              width="28px"
+              height="8px"
+            >
+              <use
+                class="arrow"
+                href="../assets/drawn/arrow_drawn4.svg#Layer_2"
               ></use>
             </svg>
           </div>
@@ -82,7 +136,15 @@ export default {
   },
   computed: {
     // retrieve store values
-    ...mapState(["title", "description", "tags", "link", "type", "locked"])
+    ...mapState([
+      "title",
+      "description",
+      "tags",
+      "link",
+      "type",
+      "locked",
+      "arrowType"
+    ])
   },
   methods: {
     hoverOn() {
@@ -96,7 +158,7 @@ export default {
       $(".project-text .lock").removeClass("green-lock");
     },
     killTriggers() {
-      this.trig.kill();
+      // this.trig.kill();
       EventBus.$off("destroy_triggers", this.killTriggers);
     }
   },
