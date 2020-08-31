@@ -79,7 +79,7 @@
     </div>
 
     <div id="projects" class="section appear">
-      <h1>Selected Work</h1>
+      <h1>Selected Projects</h1>
       <div id="projects-container">
         <div id="project-images-container">
           <ProjectImage
@@ -567,7 +567,7 @@ canvas {
 @media only screen and (max-width: 425px) {
   #mission,
   #particles-js {
-    height: calc(150px + 31vh);
+    height: calc(175px + 31vh);
   }
 
   #asterisk {
