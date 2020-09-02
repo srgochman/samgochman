@@ -108,6 +108,11 @@
 </template>
 
 <script>
+// Image for projects in scrolling list
+// Also contains text below image for narrow screens
+// Props passed in from Home.vue
+// Project triggers send active project information to Store
+
 import { EventBus } from "../event-bus.js";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger.js";
@@ -208,7 +213,7 @@ export default {
     });
   },
   methods: {
-    // updates store values with this project's props
+    // update store values with this project's props
     updateParams() {
       this.$store.commit("set_project_params", {
         title: this.title,
@@ -221,6 +226,7 @@ export default {
         // activeProject: this.title
       });
     },
+    // show active project
     enter() {
       // image (all screens)
       this.projectImage.classList.remove("dull");
@@ -230,6 +236,7 @@ export default {
       this.isActive = true;
       this.updateParams();
     },
+    // dull inactive projects
     leave() {
       // image (all screens)
       this.projectImage.classList.add("dull");
@@ -241,6 +248,7 @@ export default {
 
       this.isActive = false;
     },
+    // highlight active project info on hover
     hoverProject() {
       if (this.isActive) {
         // text below (narrow screens)
@@ -254,6 +262,7 @@ export default {
         $(".project-text .lock").addClass("green-lock");
       }
     },
+    // remove highlights on active project info off of hover
     unhoverProject() {
       if (this.isActive) {
         // text below (narrow screens)

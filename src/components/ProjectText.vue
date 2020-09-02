@@ -104,6 +104,9 @@
 </template>
 
 <script>
+// Text component in scrolling project section based on current data in Store
+// Also controls dynamic text styling in ProjectImage.vue
+
 import { EventBus } from "../event-bus.js";
 import Tags from "./Tags.vue";
 import { mapState } from "vuex";
@@ -147,11 +150,13 @@ export default {
     ])
   },
   methods: {
+    // highlight project text on hover
     hoverOn() {
       $(".project-text a").css("color", "var(--green)");
       $(".project-text .arrow").addClass("green-arrow");
       $(".project-text .lock").addClass("green-lock");
     },
+    // remove highlight on project text off of hover
     hoverOff() {
       $(".project-text a").css("color", "black");
       $(".project-text .arrow").removeClass("green-arrow");

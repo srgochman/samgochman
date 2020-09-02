@@ -72,6 +72,8 @@
 </template>
 
 <script>
+// Main component housing all others
+
 import contents from "./list-contents.json";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger.js";

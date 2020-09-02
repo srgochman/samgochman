@@ -42,6 +42,8 @@
 </template>
 
 <script>
+// Grid gallery component for Latest Creative Juices
+
 import { EventBus } from "../event-bus.js";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger.js";
@@ -194,13 +196,10 @@ export default {
               }
             });
             vm.triggers.push(trig);
-            // console.log("trigger created");
           });
-          // console.log("event listener set");
           EventBus.$on("destroy_triggers", this.killTriggers);
         }
         $("video").prop("volume", 0.5);
-        // console.log("end of mounted", this.triggers);
       });
     });
   },
@@ -211,15 +210,6 @@ export default {
           trig.scrollTrigger.kill();
         }
       });
-      // this.triggers.forEach(trig => console.log(trig.scrollTrigger));
-      // for (let i = 0; i < this.triggers.length; i++) {
-      //   // console.log(this.triggers);
-      //   if (this.triggers[i].scrollTrigger) {
-      //     // console.log("killed trigger", i);
-      //     // console.log("timeline w trigger", this.triggers[i].scrollTrigger);
-      //     this.triggers[i].scrollTrigger.kill();
-      //   }
-      // }
       EventBus.$off("destroy_triggers", this.killTriggers);
     }
   }
