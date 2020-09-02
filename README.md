@@ -1,4 +1,4 @@
-![banner](public/banner.png)
+![banner](public/banner_initials.png)
 
 # Portfolio
 
