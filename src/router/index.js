@@ -30,7 +30,7 @@ const router = new VueRouter({
       name: "Sam Gochman",
       component: Home,
       meta: {
-        title: "Sam Gochman"
+        title: "Portfolio | Sam Gochman"
       }
     },
     {
