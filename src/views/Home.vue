@@ -11,7 +11,9 @@
       <h3>
         As a developer with roots in biological research and architectural
         design, I appreciate the complexity of people’s relationships with the
-        world — and that opens up huge creative opportunities.
+        world — and that’s helped me leverage technology to build captivating,
+        human-centered experiences for clients in tech, museums, education, and
+        entertainment.
       </h3>
       <br />
       <h3 id="contact">
