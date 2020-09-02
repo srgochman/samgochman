@@ -153,6 +153,8 @@
 </template>
 
 <script>
+// Homepage view housing Particles, Mission, Skill, ProjectImage, ProjectText, Tags, and Juices
+
 import { EventBus } from "../event-bus.js";
 import Mission from "../components/Mission.vue";
 import Skill from "../components/Skill.vue";

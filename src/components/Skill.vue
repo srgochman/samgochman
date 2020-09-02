@@ -9,6 +9,9 @@
 </template>
 
 <script>
+// Component for each instance in Skills section
+// Props passed from Home.vue
+
 import { EventBus } from "../event-bus.js";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger.js";

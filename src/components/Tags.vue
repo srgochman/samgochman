@@ -17,6 +17,9 @@
 </template>
 
 <script>
+// Tag component for each tag instance
+// Props passed in from ProjectText.vue
+
 export default {
   name: "Tags",
   props: {

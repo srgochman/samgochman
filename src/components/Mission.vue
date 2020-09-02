@@ -12,6 +12,8 @@
 </template>
 
 <script>
+// Large text cycling through mission statements
+
 import { EventBus } from "../event-bus.js";
 import contents from "../list-contents.json";
 
@@ -47,6 +49,7 @@ export default {
     EventBus.$on("destroy_triggers", this.leaveHome);
   },
   methods: {
+    // when Home is left, stop advancing Mission, stop listening for focus, and signal components to kill their triggers
     leaveHome() {
       clearInterval(this.advanceInt);
       window.removeEventListener("focus", function() {
