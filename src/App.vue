@@ -94,9 +94,9 @@ export default {
 
     this.nameTL = gsap.timeline({
       scrollTrigger: {
-        trigger: "#nav",
-        start: "top -20%",
-        end: "top -20%",
+        trigger: "#app",
+        start: "top top-=20%",
+        end: "top top-=20%",
         // markers: true,
         onEnter: () => {
           this.nameTL.to(".fade-out", { opacity: 0, duration: 0.3 });
