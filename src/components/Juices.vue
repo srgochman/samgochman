@@ -25,17 +25,26 @@
         :style="
           `object-fit: ${item.doesContain !== undefined ? 'contain' : 'cover'}`
         "
-        onclick="this.paused ? this.play() : this.pause();"
+        @click="togglePlay"
       >
         <source :data-url="item.link" type="video/mp4" />
       </video>
       <svg
         v-if="item.mediaType == 'video'"
-        class="play invisible"
+        class="delay-show"
+        style="opacity: 0"
         width="288"
         height="320"
       >
         <use href="../assets/play.svg#Layer_2"></use>
+      </svg>
+      <svg
+        v-if="item.mediaType == 'video'"
+        class="delay-show invisible"
+        width="246"
+        height="320"
+      >
+        <use href="../assets/pause.svg#Layer_1"></use>
       </svg>
     </div>
   </div>
@@ -185,9 +194,12 @@ export default {
                       curItem.poster = curItem.dataset.url; // provide video's poster
                       curItem.children[0].src = curItem.children[0].dataset.url; // provide video's source
                       curItem.load();
-                      $(".image-container")[i].children[1].classList.remove(
-                        "invisible"
-                      ); // provide play icon
+                      setTimeout(() => {
+                        // show play icon when it's scrolled to
+                        $(".image-container")[
+                          i
+                        ].children[1].style.removeProperty("opacity");
+                      }, 350);
                     }
                     curItem.classList.remove("invisible");
                     vm.loadedItems++;
@@ -204,6 +216,16 @@ export default {
     });
   },
   methods: {
+    togglePlay(event) {
+      // play/pause video
+      event.target.paused ? event.target.play() : event.target.pause();
+
+      // toggle play and pause icons
+      let playIcon = event.target.parentNode.childNodes[2];
+      let pauseIcon = event.target.parentNode.childNodes[3];
+      playIcon.classList.toggle("invisible");
+      pauseIcon.classList.toggle("invisible");
+    },
     killTriggers() {
       this.triggers.forEach(trig => {
         if (trig.scrollTrigger) {
@@ -219,11 +241,13 @@ export default {
 <style lang="scss" scoped>
 .invisible {
   opacity: 0;
+  transition: opacity 200ms ease-in-out;
 }
 
-.play {
+.delay-show {
+  // opacity: 1;
   transition: opacity 200ms ease-in-out;
-  transition-delay: 350ms;
+  // transition-delay: 350ms;
 }
 
 #juices-grid-container {
@@ -280,7 +304,7 @@ export default {
       }
     }
 
-    .play {
+    .delay-show {
       pointer-events: none;
       position: absolute;
       bottom: 15px;
