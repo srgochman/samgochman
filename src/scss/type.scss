@@ -23,7 +23,6 @@ h2 {
   font-weight: 700;
   line-height: 1.5em;
   margin: 0 0 0px 0;
-  /* display: inline; */
 }
 
 /* non-bold text */
@@ -32,7 +31,6 @@ h3 {
   font-weight: 300;
   line-height: 1.7em;
   margin: 0 0 0px 0;
-  /* display: inline; */
 }
 
 /* small text */
@@ -41,27 +39,22 @@ p {
   font-weight: 200;
   line-height: 1.7em;
   margin: 0 0 0px 0;
-  // display: inline;
 }
 
 a {
   text-decoration: none;
-  // text-decoration: solid underline var(--purple);
-  // text-underline-position: under;
   transition: var(--hover); // off hover
   color: black;
   position: relative;
-}
+  
+  &:hover {
+    color: var(--green) !important;
+    transition: var(--hover);
+  }
 
-a:hover {
-  color: var(--green) !important;
-  // font-weight: 600 !important;
-  // opacity: 0.4;
-  transition: var(--hover);
-}
-
-a:focus {
-  outline: none;
+  &:focus {
+    outline: none;
+  }
 }
 
 sup {
@@ -85,7 +78,7 @@ code {
     monospace;
 }
 
-// scale text in this range
+// scale text by viewport width when in this range
 @media only screen and (min-width: 769px) and (max-width: 1250px) {
   h1 {
     font-size: 1.3vw;
