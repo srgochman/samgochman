@@ -231,6 +231,16 @@
       ],
       "locked": false,
       "arrowType": 4
+    },
+    {
+      "title": "Coming Soon!",
+      "img": "jelly1000.jpg",
+      "type": "none",
+      "link": "/",
+      "description": "Generative music powered by machine learning and marine life",
+      "tags": [],
+      "locked": false,
+      "arrowType": 0
     }
   ],
   "experiences": [
