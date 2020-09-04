@@ -54,7 +54,12 @@
           <Tags :words="tags"></Tags>
         </router-link>
         <!-- opens new window for external links -->
-        <a v-if="type !== 'study'" :href="link" target="_blank" rel="noopener">
+        <a
+          v-else-if="type === 'product'"
+          :href="link"
+          target="_blank"
+          rel="noopener"
+        >
           <div class="project-title-container">
             <p class="project-title">{{ title }}</p>
             <svg v-if="locked" width="7px" height="10px">
@@ -98,6 +103,13 @@
           <p class="contributions">Contributions</p>
           <Tags :words="tags"></Tags>
         </a>
+        <!-- no link for other projects -->
+        <div v-else>
+          <div class="project-title-container">
+            <p class="project-title">{{ title }}</p>
+          </div>
+          <h2 class="project-desc">{{ description }}</h2>
+        </div>
       </div>
     </transition>
   </div>
@@ -182,19 +194,19 @@ export default {
   top: 0;
   left: 0;
 
-  a {
-    .project-title-container {
-      margin-bottom: 30px;
-    }
-
-    .project-desc {
-      margin-bottom: 36px;
-    }
-
-    .tags-container {
-      margin-bottom: 0;
-    }
+  // a {
+  .project-title-container {
+    margin-bottom: 30px;
   }
+
+  .project-desc {
+    margin-bottom: 36px;
+  }
+
+  .tags-container {
+    margin-bottom: 0;
+  }
+  // }
 }
 
 .project-title-container {
@@ -236,15 +248,15 @@ export default {
 }
 
 @media only screen and (min-width: 769px) and (max-width: 1250px) {
-  .project-text a {
-    .project-title-container {
-      margin-bottom: 2.4vw;
-    }
-
-    .project-desc {
-      margin-bottom: 2.9vw;
-    }
+  // .project-text a {
+  .project-title-container {
+    margin-bottom: 2.4vw;
   }
+
+  .project-desc {
+    margin-bottom: 2.9vw;
+  }
+  // }
 }
 
 @media only screen and (max-width: 768px),

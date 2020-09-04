@@ -1,5 +1,6 @@
 <template>
   <div class="project-container" ref="projectContainer">
+    <!-- router-link keeps user on same window for case studies -->
     <router-link v-if="type === 'study'" :to="link">
       <img class="project-img dull" :src="image" ref="projectImage" />
       <div class="project-text-below" ref="projectTextBelow">
@@ -52,7 +53,13 @@
         <h2 class="project-desc">{{ description }}</h2>
       </div>
     </router-link>
-    <a v-else :href="link" target="_blank" rel="noopener">
+    <!-- opens new window for external links -->
+    <a
+      v-else-if="type === 'product'"
+      :href="link"
+      target="_blank"
+      rel="noopener"
+    >
       <img class="project-img dull" :src="image" ref="projectImage" />
       <div class="project-text-below" ref="projectTextBelow">
         <div class="project-title-container">
@@ -104,6 +111,16 @@
         <h2 class="project-desc">{{ description }}</h2>
       </div>
     </a>
+    <!-- no link for other projects -->
+    <div v-else>
+      <img class="project-img dull" :src="image" ref="projectImage" />
+      <div class="project-text-below" ref="projectTextBelow">
+        <div class="project-title-container">
+          <p class="project-title" ref="projectTitle">{{ title }}</p>
+        </div>
+        <h2 class="project-desc">{{ description }}</h2>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -236,7 +253,7 @@ export default {
       // text below (narrow screens)
       this.projectTextBelow.classList.add("dull");
       this.projectTitle.style.color = "black";
-      this.arrow.classList.remove("green-arrow");
+      if (this.arrow) this.arrow.classList.remove("green-arrow");
       if (this.locked) this.lock.classList.remove("green-lock");
 
       this.isActive = false;
@@ -245,7 +262,7 @@ export default {
       if (this.isActive) {
         // text below (narrow screens)
         this.projectTitle.style.color = "var(--green)";
-        this.arrow.classList.add("green-arrow");
+        if (this.arrow) this.arrow.classList.add("green-arrow");
         if (this.locked) this.lock.classList.add("green-lock");
 
         // ProjectText (wide screens)
@@ -258,7 +275,7 @@ export default {
       if (this.isActive) {
         // text below (narrow screens)
         this.projectTitle.style.color = "black";
-        this.arrow.classList.remove("green-arrow");
+        if (this.arrow) this.arrow.classList.remove("green-arrow");
         if (this.locked) this.lock.classList.remove("green-lock");
 
         // ProjectText (wide screens)

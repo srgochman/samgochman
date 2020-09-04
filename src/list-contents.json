@@ -233,14 +233,14 @@
       "arrowType": 4
     },
     {
-      "title": "GlubStep",
-      "img": "anivision/anivision_calltolead_flipped.jpg",
+      "title": "Coming Soon!",
+      "img": "jelly2000.jpg",
       "type": "none",
       "link": "/",
       "description": "Generative music powered by machine learning and marine life",
       "tags": [],
       "locked": false,
-      "arrowType": 2
+      "arrowType": 0
     }
   ],
   "experiences": [
