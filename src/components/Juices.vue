@@ -66,18 +66,6 @@ export default {
       loadedItems: 0,
       items: [
         {
-          link: "/photos/juices/astronauts.jpg",
-          mediaType: "img"
-        },
-        {
-          link: "/photos/juices/stars.jpg",
-          mediaType: "img"
-        },
-        {
-          link: "/photos/juices/exposure_half_crop.jpg",
-          mediaType: "img"
-        },
-        {
           link: "/photos/juices/particle_tame.mp4",
           mediaType: "video",
           poster: "/photos/juices/particle_tame.jpg"
@@ -91,6 +79,31 @@ export default {
           link: "/photos/juices/rounded_rectangle.mp4",
           mediaType: "video",
           poster: "/photos/juices/rounded_rectangle.jpg"
+        },
+        {
+          link: "/photos/juices/astronauts.jpg",
+          mediaType: "img"
+        },
+        {
+          link: "/photos/juices/stars.jpg",
+          mediaType: "img"
+        },
+        {
+          link: "/photos/juices/exposure_half_crop.jpg",
+          mediaType: "img"
+        },
+        {
+          link: "/photos/juices/SN_profile.jpg",
+          mediaType: "img"
+        },
+        {
+          link: "/photos/juices/SN_axon.jpg",
+          mediaType: "img",
+          doesContain: true
+        },
+        {
+          link: "/photos/juices/SN_using.jpg",
+          mediaType: "img"
         },
         {
           link: "/photos/juices/IMG_0741.jpg",
@@ -118,6 +131,18 @@ export default {
           link: "/photos/juices/spokes.mp4",
           mediaType: "video",
           poster: "/photos/juices/spokes.jpg"
+        },
+        {
+          link: "/photos/juices/parking_whole.jpg",
+          mediaType: "img"
+        },
+        {
+          link: "/photos/juices/parking_split.jpg",
+          mediaType: "img"
+        },
+        {
+          link: "/photos/juices/parking_writing.jpg",
+          mediaType: "img"
         },
         {
           link: "/photos/juices/IMG_0168.jpg",
