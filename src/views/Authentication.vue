@@ -25,7 +25,11 @@ export default {
         "privatework",
         "opensesame",
         "localprojects",
-        "potion"
+        "potion",
+        "lvthn",
+        "tellart",
+        "esi",
+        "buck"
       ],
       submittedPassword: "",
       message: " "
