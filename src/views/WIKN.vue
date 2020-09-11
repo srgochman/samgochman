@@ -86,7 +86,6 @@
         />
       </div>
       <div class="section ui appear reverse">
-        <!-- <div class="one-third-width"></div> -->
         <div class="caption one-third-width">
           <h2>Community Exploration</h2>
           <p>
@@ -206,7 +205,6 @@ export default {
 
 .ui {
   justify-content: center;
-  // margin-bottom: 0;
 }
 
 .ui-record,
@@ -216,15 +214,11 @@ export default {
   width: 270px;
   height: 590px;
   border-radius: 40px;
-  // transform: scale(0.7);
-  // transform-origin: top center;
   box-shadow: 0 15px 25px rgba(0, 0, 0, 0.25);
-  // margin-right: calc(min(7vw, calc(var(--main-width) * 0.05)));
   margin-right: calc(min(7vw, 72px));
 }
 
 .ui-review {
-  // margin-left: calc(min(7vw, calc(var(--main-width) * 0.05)));
   margin-left: calc(min(7vw, 72px));
   margin-right: 0;
 }
@@ -244,9 +238,6 @@ img.ui-macro {
   .ui-record,
   .ui-review,
   .ui-macro {
-    // width: 251px;
-    // height: 550px;
-    // border-radius: 35px;
     width: 200px;
     height: 437.8px;
     border-radius: 20px;
@@ -255,7 +246,6 @@ img.ui-macro {
   }
 
   .ui-review {
-    // margin-left: calc(min(7vw, calc(var(--main-width) * 0.05)));
     margin-left: calc(min(7vw, 60px));
     margin-right: 0;
   }

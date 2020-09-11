@@ -110,10 +110,6 @@
         <div class="img-container two-thirds-width">
           <img id="keyboard" src="/photos/multilingual/keyboard_cropped.png" />
         </div>
-        <!-- <div
-          class="two-thirds-width test"
-          style="background-image: url('/photos/multilingual/keyboard_cropped.png')"
-        ></div> -->
       </div>
     </div>
   </div>
@@ -187,26 +183,12 @@ export default {
 }
 
 video {
-  // margin-right: calc(var(--main-width) * 0.05);
   height: 800px;
   object-fit: cover;
 }
 
-// #mind-map {
-//   background-image: url("/photos/multilingual/mind_map.jpg");
-// }
-
-// #globe {
-//   background-image: url("/photos/multilingual/globe.jpg");
-// }
-
 @media only screen and (max-width: 1024px) {
-  // .across {
-  //   justify-content: center;
-  // }
-
   video {
-    // margin-right: calc(var(--main-width) * 0.05);
     height: 500px;
     object-fit: cover;
   }
@@ -221,7 +203,7 @@ video {
 
 @media only screen and (max-width: 425px) {
   video {
-    height: 400px;
+    height: 300px;
   }
 
   .arrow {

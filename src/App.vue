@@ -231,6 +231,7 @@ body {
   align-items: flex-start; // left-aligns content
   width: 100%;
   // max-width: var(--main-width);
+  background: white;
 }
 
 .section {

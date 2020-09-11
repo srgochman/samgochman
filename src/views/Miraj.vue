@@ -130,7 +130,6 @@ video {
 
 @media only screen and (max-width: 1024px) {
   video {
-    // margin-right: calc(var(--main-width) * 0.05);
     height: 500px;
     object-fit: cover;
   }
@@ -138,7 +137,7 @@ video {
 
 @media only screen and (max-width: 425px) {
   video {
-    height: 400px;
+    height: 300px;
   }
 }
 </style>
