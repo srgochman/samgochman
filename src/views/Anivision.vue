@@ -30,7 +30,6 @@
           <p>DALI Designers and Developers, Dartmouth Anthropology Professor</p>
         </div>
       </div>
-      <!-- <div id="vid-section" class="section appear"></div> -->
       <div class="section appear reverse">
         <div class="caption one-third-width">
           <h2>Immersive Education</h2>
@@ -72,12 +71,6 @@
           class="img-bg one-third-width"
           src="/photos/anivision/VINS_class.jpg"
         />
-        <!-- <div class="img-container two-thirds-width">
-          <img src="/photos/anivision/VINS_student.jpg" />
-        </div>
-        <div class="img-container one-third-width">
-          <img src="/photos/anivision/VINS_class.jpg" />
-        </div> -->
       </div>
       <div class="section appear stacked">
         <div class="caption two-thirds-width">
@@ -103,7 +96,6 @@
         </div>
       </div>
       <div id="results" class="section appear reverse">
-        <!-- <div class="spacer one-third-width"></div> -->
         <div class="caption two-thirds-width">
           <h2>Enhanced Learning</h2>
           <p>
@@ -145,11 +137,6 @@
             educators.
           </p>
         </div>
-        <!-- <img
-          id="leakey"
-          class="img-bg two-thirds-width"
-          src="/photos/anivision/leakey.jpg"
-        /> -->
         <div class="img-container two-thirds-width">
           <img id="leakey" src="/photos/anivision/leakey.jpg" />
         </div>
@@ -207,7 +194,6 @@ export default {
 }
 
 video {
-  // margin-right: calc(var(--main-width) * 0.05);
   height: 600px;
   object-fit: cover;
   margin-bottom: 10px;
@@ -215,16 +201,10 @@ video {
 
 .across {
   justify-content: space-between;
-  // align-items: center;
 
   a {
     height: 100%;
   }
-
-  // img {
-  //   height: 100%;
-  //   object-fit: cover;
-  // }
 }
 
 #paper {
@@ -241,9 +221,5 @@ video {
     height: unset;
     object-fit: unset;
   }
-
-  // #leakey {
-  //   height: 200px;
-  // }
 }
 </style>
