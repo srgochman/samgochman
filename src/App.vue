@@ -197,17 +197,17 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  width: 100%;
+  // keep nav width aligned with app width
+  width: calc(min(100%, calc(100vw - 2 * 8vw)));
+  max-width: var(--main-width);
   padding: 20px 0px;
   position: fixed;
   top: 0;
-  left: 0;
+  // left: 0;
   z-index: 100;
 
   .sam-gochman {
     margin-top: 10px;
-    margin-left: calc(min(7vw, 50px));
-    // padding-left: calc(min(7vw, 30px));
     position: relative;
   }
 
@@ -215,7 +215,7 @@ body {
     transform-origin: top left;
     transform: scale(1.5);
     position: absolute;
-    left: -8px;
+    left: -14px;
   }
 }
 
@@ -298,6 +298,18 @@ body {
 @media only screen and (max-width: 425px) {
   #nav #name-drawn {
     transform: scale(1.1);
+  }
+}
+
+// keep nav on left for wide screens
+@media only screen and (min-width: 2160px) {
+  #nav {
+    width: 100vw;
+    max-width: unset;
+
+    .sam-gochman {
+      margin-left: 50px;
+    }
   }
 }
 </style>
