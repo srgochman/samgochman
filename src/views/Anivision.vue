@@ -6,7 +6,7 @@
         <h3>Anivision</h3>
         <h2>{{ tagline }}</h2>
         <p>2017 – Present</p>
-        <p>DALI Lab @ Dartmouth College</p>
+        <!-- <p>DALI Lab @ Dartmouth College</p> -->
       </div>
       <div class="info section">
         <h3 class="two-thirds-width">
@@ -24,8 +24,14 @@
           capabilities in every iteration.
         </h3>
         <div class="contributions-container one-third-width">
-          <p class="contributions">Contributions</p>
+          <p class="contributions">My Contributions</p>
           <Tags :words="tags" />
+          <p class="contributions">Project Ownership</p>
+          <p>
+            <a href="https://dali.dartmouth.edu" target="_blank" rel="noopener"
+              >DALI Lab</a
+            >, Sam Gochman
+          </p>
           <p class="contributions">Teammates</p>
           <p>DALI Designers and Developers, Dartmouth Anthropology Professor</p>
         </div>

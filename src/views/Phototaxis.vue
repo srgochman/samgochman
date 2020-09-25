@@ -18,7 +18,7 @@
         <h3>Phototaxis</h3>
         <h2>{{ tagline }}</h2>
         <p>2019</p>
-        <p>EskewDumezRipple</p>
+        <!-- <p>EskewDumezRipple</p> -->
       </div>
       <div class="info section">
         <h3 class="two-thirds-width">
@@ -35,8 +35,10 @@
           construction.
         </h3>
         <div class="contributions-container one-third-width">
-          <p class="contributions">Contributions</p>
+          <p class="contributions">My Contributions</p>
           <Tags :words="tags" />
+          <p class="contributions">Project Ownership</p>
+          <p>EskewDumezRipple, Sam Gochman</p>
           <p class="contributions">Teammates</p>
           <p>2 Architects, Designer, Computing Consultant</p>
         </div>

@@ -64,6 +64,7 @@ sup {
 
 .contributions {
   margin-bottom: 10px;
+  margin-top: 35px;
   height: min-content;
   color: black !important;
   font-weight: 700;
@@ -71,6 +72,10 @@ sup {
   text-transform: uppercase;
   // font-size: 1rem;
   // text-transform: none;
+
+  &:first-child {
+    margin-top: 0px;
+  }
 }
 
 code {
