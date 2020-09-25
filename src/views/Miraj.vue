@@ -6,7 +6,7 @@
         <h3>Miraj</h3>
         <h2>{{ tagline }}</h2>
         <p>2020</p>
-        <p>Sosolimited</p>
+        <!-- <p>Sosolimited</p> -->
       </div>
       <div class="info section">
         <h3 class="two-thirds-width">
@@ -31,8 +31,10 @@
           for yourself!
         </h3>
         <div class="contributions-container one-third-width">
-          <p class="contributions">Contributions</p>
+          <p class="contributions">My Contributions</p>
           <Tags :words="tags" />
+          <p class="contributions">Project Ownership</p>
+          <p>Sosolimited LLC</p>
           <p class="contributions">Teammates</p>
           <p>Back-End Developer, Front-End Developer</p>
         </div>

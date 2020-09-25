@@ -6,12 +6,12 @@
         <h3>What I Know Now</h3>
         <h2>{{ tagline }}</h2>
         <p>In Progress</p>
-        <p>Sosolimited</p>
+        <!-- <p>Sosolimited</p> -->
       </div>
       <div class="info section">
         <h3 class="two-thirds-width">
           The challenges of 2020 showed us that we need to come together with
-          empathetic ears and eyes. This project lets anyone record their own
+          empathetic ears and eyes. This piece lets anyone record their own
           personal experience and emotions and watch their voice paint a unique
           signature that adds to a large-scale, community-wide generative
           collage.
@@ -21,8 +21,10 @@
           development and audio handling.
         </h3>
         <div class="contributions-container one-third-width">
-          <p class="contributions">Contributions</p>
+          <p class="contributions">My Contributions</p>
           <Tags :words="tags" />
+          <p class="contributions">Project Ownership</p>
+          <p>Sosolimited LLC</p>
           <p class="contributions">Teammates</p>
           <p>
             Creative Director, 2 UI/UX Designers, 2 Creative Coders, UX

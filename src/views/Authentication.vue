@@ -1,13 +1,12 @@
 <template>
   <div id="container">
     <label for="password">
-      <!-- <h2>Enter password to see project.</h2> -->
-      <h2>This project needs a password to view.</h2>
+      <!-- <h2>This project needs a password to view.</h2> -->
       <input
         id="password"
         type="text"
         name="password"
-        placeholder="Password"
+        placeholder="Enter password"
         v-model="submittedPassword"
       />
     </label>
