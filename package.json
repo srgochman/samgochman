@@ -14,9 +14,9 @@
     "gsap": "^3.5.1",
     "jquery": "^3.5.1",
     "node-forge": "^0.10.0",
-    "p5": "^1.1.9",
     "particles.js": "^2.0.0",
     "scrollmagic": "^2.0.7",
+    "selfsigned": "^1.10.8",
     "vue": "^2.6.12",
     "vue-router": "^3.4.3",
     "vuex": "^3.4.0"
