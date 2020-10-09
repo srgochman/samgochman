@@ -66,7 +66,7 @@
           <h2>Audio Visualization</h2>
           <p>
             The story is played back while a unique shareable signature is
-            generated in real-time. I used audio parameters like pitch and
+            generated in real-time. I used audio parameters like frequency and
             volume, as well as semantic parameters like number and emotion of
             words, to help translate voice into art.
           </p>
