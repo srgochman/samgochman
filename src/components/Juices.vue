@@ -66,6 +66,22 @@ export default {
       loadedItems: 0,
       items: [
         {
+          link: "/photos/juices/twist.mp4",
+          mediaType: "video",
+          poster: "/photos/juices/twist.jpg"
+        },
+        {
+          link: "/photos/juices/frequency_lines.mp4",
+          mediaType: "video",
+          poster: "/photos/juices/frequency_lines.jpg"
+        },
+        {
+          link: "/photos/juices/leap_particles.mp4",
+          mediaType: "video",
+          poster: "/photos/juices/leap_particles.jpg",
+          doesContain: true
+        },
+        {
           link: "/photos/juices/particle_tame.mp4",
           mediaType: "video",
           poster: "/photos/juices/particle_tame.jpg"
