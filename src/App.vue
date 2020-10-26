@@ -159,6 +159,7 @@ export default {
   background: var(--green-semi-transparent);
 }
 
+/* -------------- SETUP & LAYOUT --------------*/
 html {
   width: 100vw;
   margin: 0;
@@ -244,6 +245,7 @@ body {
   }
 }
 
+/* -------------- VISIBILITY --------------*/
 .hidden {
   display: none;
 }
