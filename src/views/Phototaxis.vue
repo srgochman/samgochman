@@ -24,23 +24,28 @@
         <h3 class="two-thirds-width">
           People rarely get the opportunity to have a dialogue with light. As an
           artistic culmination of my research fellowship in audiovisual
-          perception, I created a space for interaction, experimentation, and
-          play. The responsive installation allowed people to experience
-          firsthand the feedback loop between light, environments, and behavior.
+          perception, I created a temporary exhibition space for interaction,
+          experimentation, and play. The responsive installation allowed people
+          to experience firsthand the feedback loop between light, environments,
+          and behavior.
           <br /><br />
           I initiated and led the project, working on perceptual research,
-          architectural and experience design, digital development, fabrication,
-          and later visualization of the experience. Along the way, I recruited
-          others in and out of the studio for feedback and help with
-          construction.
+          architectural and experience design, prototyping and digital
+          development, fabrication, and later visualization of the experience.
+          Along the way, I recruited others in and out of the studio for
+          feedback and help with construction.
         </h3>
         <div class="contributions-container one-third-width">
-          <p class="contributions">My Contributions</p>
+          <p class="contributions">My Role</p>
           <Tags :words="tags" />
           <p class="contributions">Project Ownership</p>
           <p>EskewDumezRipple, Sam Gochman</p>
           <p class="contributions">Teammates</p>
-          <p>2 Architects, Designer, Computing Consultant</p>
+          <p>
+            Architects: Ian O'Cain, Javier Marcano <br />
+            Designer: Marion Forbes <br />
+            Computing Consultant: Scott Brookes
+          </p>
         </div>
       </div>
       <div class="section appear stacked">
@@ -85,8 +90,11 @@
         <div class="caption one-third-width">
           <h2>Installation</h2>
           <p>
-            With the help of my teammates, I designed and fabricated a structure
-            that could mediate the intersection of digital and physical spaces.
+            I designed and built a structure that could mediate the intersection
+            of digital and physical spaces. My teammates provided invaluable
+            feedback on the concept and structural integrity, as well as extra
+            hands during fabrication. We used tools like a CNC mill and 3D
+            printers to make custom components for holding sensors and bulbs.
             Semitransparent veils diffused the light while the microcontroller
             affected brightness and logged data throughout the exhibition.
           </p>
@@ -97,14 +105,16 @@
       </div>
       <div class="section appear reverse">
         <div class="caption one-third-width">
-          <h2>Reflection</h2>
+          <h2>Analysis & Visualization</h2>
           <p>
-            Although people spent more time at the extremes of distance and
-            brightness, the more telling insights didn’t come from quantitative
-            data. While I observed the experiment, participants observed each
-            other, which led them to experiment on their own. People probed,
-            meandered, and even cartwheeled and choreographed. The installation
-            became a platform for collaboration and play.
+            I used the data log to map behavior to the dropoff of light.
+            Although people did tend to spend more time at the front and back
+            where where brightness was at its extremes, the more telling
+            insights come from quantitative data. While I observed the
+            experiment, participants observed each other, which led them to
+            experiment on their own. People meandered, probed, and even
+            cartwheeled and choreographed. The installation became a platform
+            for collaboration and play.
           </p>
         </div>
         <div class="img-container two-thirds-width">

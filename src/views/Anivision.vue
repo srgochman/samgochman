@@ -16,15 +16,16 @@
           design to create a platform that lets students appreciate topics like
           evolution through a first-hand experience of extreme adaptations in
           the animal kingdom. <br /><br />
-          As the founder and now advisor of the project, I've worked closely
-          with several groups of students at Dartmouth’s design lab to guide
-          strategy and design decisions that propel the learning goals.
-          Partnering with professors and local high schools and museums has also
-          helped get the VR platform into real classrooms and pushed its
-          capabilities in every iteration.
+          As the Founder and now Advisor of the project, I've worked closely
+          with several groups of talented students at Dartmouth’s design lab to
+          guide strategy and design decisions that propel the learning goals.
+          Partnering with professors, schools, and museums has also helped get
+          the VR platform into real classrooms and pushed its capabilities in
+          every iteration. I now lead a steering committee with stakeholders to
+          guide the project as it expands.
         </h3>
         <div class="contributions-container one-third-width">
-          <p class="contributions">My Contributions</p>
+          <p class="contributions">My Role</p>
           <Tags :words="tags" />
           <p class="contributions">Project Ownership</p>
           <p>
@@ -33,7 +34,10 @@
             >, Sam Gochman
           </p>
           <p class="contributions">Teammates</p>
-          <p>DALI Designers and Developers, Dartmouth Anthropology Professor</p>
+          <p>
+            DALI Designers and Developers <br />
+            Dr. Nathaniel J Dominy
+          </p>
         </div>
       </div>
       <div class="section appear reverse">
@@ -57,6 +61,7 @@
         <div class="two-thirds-width">
           <video
             controls
+            controlsList="nodownload"
             preload="none"
             poster="/photos/anivision/anivision_poster.jpg"
           >
@@ -84,10 +89,11 @@
           <p>
             Using animals with extreme adaptations like the honey bee lets
             students toggle between visual systems while exploring different
-            habitats. Keeping in mind real ecology, we designed environments
-            that encourage self-motivated learning. Users can see how different
-            eyes either help or hinder the animal’s behavior like seeing a
-            flower’s ultraviolet markings that signal where to find nectar.
+            habitats. We used a foundation of scientific literature to design
+            environments that encourage self-motivated learning. Users can see
+            how different eyes either help or hinder the animal’s behavior like
+            seeing a flower’s ultraviolet markings that signal where to find
+            nectar.
           </p>
         </div>
         <div class="across">
@@ -105,7 +111,7 @@
         <div class="caption two-thirds-width">
           <h2>Enhanced Learning</h2>
           <p>
-            Throughout development, we’ve tested the platform with students from
+            Throughout development, we tested the platform with students from
             middle school through college. With more formal testing, we
             published in an open access educational journal to communicate how
             this immersive system can improve the learning experience.
@@ -135,7 +141,7 @@
       </div>
       <div class="section appear">
         <div class="caption one-third-width">
-          <h2>Communication</h2>
+          <h2>Presentation</h2>
           <p>
             Beyond publication, we made the platform open source to maximize
             access. I've presented on campus, at a national conference, and at a
