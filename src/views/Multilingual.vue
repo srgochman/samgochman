@@ -10,31 +10,36 @@
       </div>
       <div class="info section">
         <h3 class="two-thirds-width">
-          Developed for Planet Word, a museum of language in Washington, DC,
-          Multilingual will give an expected 100,000 visitors per year a chance
-          to appreciate the diversity of languages spoken by other visitors
-          through time. Each contribution to the visualization is a unique
-          experience that lets a user track themself in the context of a
+          Developed for Planet Word, a museum of language in Washington, DC, and
+          deployed in October 2020, Multilingual will give an expected 100,000
+          visitors per year a chance to appreciate the diversity of languages
+          spoken by other visitors through time. Each contribution to the
+          visualization is a unique experience that lets a user track themself
           connected community.
           <br /><br />
           In addition to building the interface for user interaction, I
           developed the initial concept with the team and handled the language
           data to ground the design in academic research and realistic patterns
-          of the population.
+          of the world population.
         </h3>
         <div class="contributions-container one-third-width">
-          <p class="contributions">My Contributions</p>
+          <p class="contributions">My Role</p>
           <Tags :words="tags" />
           <p class="contributions">Project Ownership</p>
           <p>Sosolimited LLC</p>
           <p class="contributions">Teammates</p>
-          <p>Creative Director, UI Designer, 3D Developer</p>
+          <p>
+            Creative Director: Eric Gunther <br />
+            UI Designer: Vidhi Trivedi<br />
+            3D Developer: Henrique Périgo
+          </p>
         </div>
       </div>
       <div class="section appear">
         <video
           class="full-width"
           controls
+          controlsList="nodownload"
           preload="none"
           poster="/photos/multilingual/pw_08a_patch.jpg"
         >
@@ -48,11 +53,11 @@
         <div class="caption one-third-width">
           <h2>Concept Development</h2>
           <p>
-            I thought a lot about the client's goal of telling a story about
-            inclusivity and connection. I worked with the designer and creative
-            director to progress from a concept of emotion to an artwork that
-            enhances the museum whether or not the installation is actively in
-            use.
+            At the start of the project, I thought a lot about the client's goal
+            of telling a story about inclusivity and connection. I worked with
+            the designer and creative director to progress from an emotional
+            concept to an artwork that enhances the museum whether or not the
+            installation is actively in use.
           </p>
         </div>
         <img
@@ -101,12 +106,12 @@
       </div>
       <div class="section appear reverse">
         <div class="caption one-third-width">
-          <h2>User Interaction</h2>
+          <h2>Interaction Development</h2>
           <p>
             A goal of high turnover meant that user input had to be fast, yet
-            inclusive and accurate. I developed a touch interface that hooks
-            into the database to quickly narrow down searches, letting visitors
-            focus instead on the visualization itself.
+            inclusive and precise. I developed a touch interface via an Electron
+            app that hooks into the database to quickly narrow down searches. This
+            lets visitors focus instead on the visualization itself, which is an openFrameworks app that communicates with the keyboard for a seamless experience.
           </p>
         </div>
         <div class="img-container two-thirds-width">

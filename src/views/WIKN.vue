@@ -5,7 +5,7 @@
       <div class="banner-text">
         <h3>What I Know Now</h3>
         <h2>{{ tagline }}</h2>
-        <p>In Progress</p>
+        <p>2020, In Progress</p>
         <!-- <p>Sosolimited</p> -->
       </div>
       <div class="info section">
@@ -16,25 +16,28 @@
           signature that adds to a large-scale, community-wide generative
           collage.
           <br /><br />
-          In this team-led project, I had the opportunity to influence project
-          direction and take charge of whole parts of the system like UI
-          development and audio handling.
+          As the UI Developer on this team-led project, I influenced project
+          direction and took charge of whole sections of the codebase pertaining
+          to the interface and audio handling.
         </h3>
         <div class="contributions-container one-third-width">
-          <p class="contributions">My Contributions</p>
+          <p class="contributions">My Role</p>
           <Tags :words="tags" />
           <p class="contributions">Project Ownership</p>
           <p>Sosolimited LLC</p>
           <p class="contributions">Teammates</p>
           <p>
-            Creative Director, 2 UI/UX Designers, 2 Creative Coders, UX
-            Developer, Backend Developer
+            Creative Director: Eric Gunther <br />
+            UI/UX Designers: Deb Levison, Vidhi Trivedi <br />
+            Creative Coders: Henrique Périgo, Dalma Földesi <br />
+            UX Developer: Jon Corbett <br />
+            Backend Developer: Wes Thomas
           </p>
         </div>
       </div>
       <div class="section ui appear reverse">
         <div class="caption one-third-width">
-          <h2>Capturing a Story</h2>
+          <h2>Story Capture</h2>
           <p>
             I developed the front-end experience and internal mechanics that
             visualize, record, and transcribe a user's voice as they respond to
@@ -67,7 +70,7 @@
           <p>
             The story is played back while a unique shareable signature is
             generated in real-time. I used audio parameters like frequency and
-            volume, as well as semantic parameters like number and emotion of
+            volume, as well as semantic parameters like the emotional content of
             words, to help translate voice into art.
           </p>
         </div>

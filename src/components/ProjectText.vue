@@ -50,7 +50,7 @@
             </svg>
           </div>
           <h2 class="project-desc">{{ description }}</h2>
-          <p class="contributions">Contributions</p>
+          <p class="contributions">My Role</p>
           <Tags :words="tags"></Tags>
         </router-link>
         <!-- opens new window for external links -->
@@ -100,7 +100,7 @@
             </svg>
           </div>
           <h2 class="project-desc">{{ description }}</h2>
-          <p class="contributions">Contributions</p>
+          <p class="contributions">My Role</p>
           <Tags :words="tags"></Tags>
         </a>
         <!-- no link for other projects -->
@@ -109,6 +109,8 @@
             <p class="project-title">{{ title }}</p>
           </div>
           <h2 class="project-desc">{{ description }}</h2>
+          <p class="contributions">My Role</p>
+          <Tags :words="tags"></Tags>
         </div>
       </div>
     </transition>

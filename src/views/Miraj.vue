@@ -13,50 +13,53 @@
           Back in 2016, Sosolimited made an app that transformed a user's spoken
           word into an entrancing collage in real time. Originally developed for
           Apple TV, it was time for an upgrade to a more widely-used platform.
-          While bringing the experience to the web, I also focused on enhancing
-          visuals, testing and optimizing performance, and deploying with
+          While transforming the experience into a web app, I also focused on
+          enhancing visuals, testing and optimizing performance, and deploying
           Electron for installation.
           <br /><br />
           <a
-            id="check"
+            id="launch"
             href="https://miraj.sosolimited.com/"
             target="_blank"
             rel="noopener"
-            >Check it out<img
-              height="3"
-              class="underline"
-              src="../assets/drawn/line3_green.svg"
-            />
+            >Launch Miraj
           </a>
-          for yourself!
         </h3>
         <div class="contributions-container one-third-width">
-          <p class="contributions">My Contributions</p>
+          <p class="contributions">My Role</p>
           <Tags :words="tags" />
           <p class="contributions">Project Ownership</p>
           <p>Sosolimited LLC</p>
           <p class="contributions">Teammates</p>
-          <p>Back-End Developer, Front-End Developer</p>
+          <p>
+            Back-End Developer: Wes Thomas <br />
+            Motion Developer: Jon Corbett
+          </p>
         </div>
       </div>
       <div class="section appear">
         <video
           class="full-width"
           controls
+          controlsList="nodownload"
           preload="none"
           poster="/photos/miraj/miraj_poster.jpg"
         >
           <source src="/photos/miraj/miraj.mp4" type="video/mp4" />
         </video>
-        <p>Video from Sosolimited's Together Apart intitiative.</p>
+        <p class="two-thirds-width">
+          Video from Sosolimited's Together Apart intitiative. Spoken words are
+          transcribed and then images are pulled from a search engine, segmented
+          using openCV, and displayed dynamically in real-time.
+        </p>
       </div>
       <div class="section appear reverse two-thirds-width">
         <div class="caption half-width">
           <h2>Installation</h2>
           <p>
-            As a trial for potential future projects, I packaged the web
-            experience as an app and installed it on screens around our office,
-            including a kiosk that clients and other visitors frequently use.
+            As a trial for future projects, I packaged the web experience as an
+            app and installed it on screens around our office, including a kiosk
+            that clients and other visitors frequently use.
           </p>
         </div>
         <div class="img-container half-width">
@@ -83,10 +86,6 @@ export default {
       });
       scene.reverse(false); // prevent sections from disappearing on scrollback
       scene.setClassToggle(this, "visible").addTo(sectionController);
-    });
-
-    $("#check").hover(function() {
-      $("#check .underline").toggleClass("underline-hover");
     });
 
     $("video").prop("volume", 0.5);
@@ -118,10 +117,25 @@ export default {
   background-color: rgba(0, 0, 0, 0.5);
 }
 
-.underline {
-  object-fit: unset;
-  // transform: scaleY(1.7);
-  bottom: -2px;
+#launch {
+  padding: 1rem 2.5rem;
+  background-color: var(--green);
+  color: white;
+  border: none;
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+  outline: none;
+  transition: var(--hover);
+
+  &:hover {
+    background-color: var(--green-semi-transparent);
+    color: white !important;
+    transition: var(--hover);
+  }
 }
 
 video {
