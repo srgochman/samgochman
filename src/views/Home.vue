@@ -16,7 +16,7 @@
         entertainment.
       </h3>
       <br />
-      <h3 id="contact">
+      <h3 id="new-work">
         <img
           height="11"
           id="asterisk"
@@ -36,11 +36,7 @@
         </a>
         and would love to
         <div style="display: inline-block">
-          <a
-            id="connect"
-            href="mailto:srgochman@gmail.com"
-            target="_blank"
-            rel="noopener"
+          <a id="connect" href="#contact"
             >connect<img
               height="3"
               class="underline"
@@ -137,6 +133,11 @@
       </div>
     </div>
 
+    <div id="contact" class="section appear">
+      <h1>Contact</h1>
+      <Email />
+    </div>
+
     <div id="juices-arrow-container">
       <img src="../assets/drawn/juices_arrow.png" />
     </div>
@@ -161,6 +162,7 @@ import Skill from "../components/Skill.vue";
 import ProjectImage from "../components/ProjectImage.vue";
 import ProjectText from "../components/ProjectText.vue";
 import Juices from "../components/Juices.vue";
+import Email from "../components/Email.vue";
 import contents from "../list-contents.json";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger.js";
@@ -304,7 +306,8 @@ export default {
     Skill,
     ProjectImage,
     ProjectText,
-    Juices
+    Juices,
+    Email
   }
 };
 </script>
@@ -347,7 +350,7 @@ canvas {
   }
 }
 
-#contact {
+#new-work {
   position: relative;
 }
 

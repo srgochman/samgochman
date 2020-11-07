@@ -137,7 +137,7 @@ select:-webkit-autofill:focus {
 }
 
 button {
-  height: 3em;
+  height: 3rem;
   // width: 100%;
   // padding: 6px 11px 6px 9px;
   background-color: var(--green);
