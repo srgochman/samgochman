@@ -57,23 +57,50 @@ export default {
     // console.log(inputs);
     const vm = this;
     inputs.forEach(function(input) {
-      function checkValidity() {
+      function checkValidity(options) {
+        const insertError = options.insertError;
+        const parent = input.parentNode;
+        const error =
+          // parent.querySelector(".validation-error") ||
+          document.createElement("div");
+
         const message = input.validity.valid
           ? null
           : vm.getCustomMessage(input.type, input.validity, vm.customMessages);
         input.setCustomValidity(message || "");
+
+        if (!input.validity.valid && message) {
+          error.classList.add("validation-error");
+          error.style.color = "red";
+          error.textContent = message;
+
+          if (insertError) {
+            parent.insertBefore(error, input);
+            parent.classList.add("has-validation-error");
+          }
+        } else {
+          parent.classList.remove("has-validation-error");
+          error.remove();
+        }
       }
 
-      // Add a css class on submit when the input is invalid.
-      input.addEventListener("invalid", function() {
+      input.addEventListener("invalid", function(e) {
+        // prevent showing the default display
+        e.preventDefault();
+
+        checkValidity({ insertError: true });
+
+        // Add a css class on submit when the input is invalid.
         input.classList.add("invalid");
-        checkValidity();
       });
 
-      // Remove the class when the input becomes valid.
-      // 'input' will fire each time the user types
       input.addEventListener("input", function() {
-        checkValidity();
+        // We can only update the error or hide it on input.
+        // Otherwise it will show when typing.
+        checkValidity({ insertError: false });
+
+        // Remove the class when the input becomes valid.
+        // 'input' will fire each time the user types
         if (input.validity.valid) {
           input.classList.remove("invalid");
         }
@@ -144,6 +171,10 @@ export default {
     border: 2px solid red;
     border-radius: 3px;
   }
+
+  // .validation-error {
+  //   color: red;
+  // }
 }
 
 .pageclip-form {
