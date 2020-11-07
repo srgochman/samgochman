@@ -38,75 +38,62 @@
 </template>
 
 <script>
-// import ValidForm from "@pageclip/valid-form";
-
-// const emailRegExp = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-
 export default {
   name: "Email",
   props: {},
   data() {
     return {
-      // formElement: null,
-      // emailElement: null,
-      // messageElement: null
+      customMessages: {
+        valueMissing: "Make sure this isn't blank!", // `required` attr
+        emailMissing: "Make sure your email address isn't blank!", // `required` attr
+        textareaMissing: "Make sure your message isn't blank!", // `required` attr
+        emailMismatch: "Make sure you typed your email address correctly!", // Invalid email
+        patternMismatch: "Custom pattern mismatch" // `pattern` attr
+      }
     };
   },
   mounted() {
     var inputs = document.querySelectorAll("input, textarea");
     // console.log(inputs);
+    const vm = this;
     inputs.forEach(function(input) {
+      function checkValidity() {
+        const message = input.validity.valid
+          ? null
+          : vm.getCustomMessage(input.type, input.validity, vm.customMessages);
+        input.setCustomValidity(message || "");
+      }
+
       // Add a css class on submit when the input is invalid.
       input.addEventListener("invalid", function() {
         input.classList.add("invalid");
+        checkValidity();
       });
 
       // Remove the class when the input becomes valid.
       // 'input' will fire each time the user types
       input.addEventListener("input", function() {
+        checkValidity();
         if (input.validity.valid) {
           input.classList.remove("invalid");
         }
       });
     });
-
-    // this.formElement = document.querySelector("form");
-    // this.emailElement = document.querySelector("input[type='email']");
-    // this.messageElement = document.querySelector("textarea");
-    // console.log("form:", this.$refs.form);
-    // forms.forEach(function (form) {
-    //   ValidForm(form, {errorPlacement: 'after'})
-    // })
-    // ValidForm(this.$refs.form, {
-    //   invalidClass: "form-input_invalid",
-    //   errorPlacement: "after",
-    //   customMessages: {
-    //     valueMissing: "Enter something, plz",
-    //     patternMismatch: "Just give me a's and b's",
-    //     rangeOverflow: "Number too low!",
-    //     rangeUnderflow: "Number too high!",
-    //     stepMismatch: "Step doesn't fit into my notches!",
-    //     tooLong: "Text is too long",
-    //     tooShort: "Text is too short",
-    //     typeMismatch: "Hey, this isn't the correct type",
-    //     badInput: "Something bad happened",
-    //     // Special mismatches for different input types: `${type}Mismatch`
-    //     emailMismatch: "Hey, this isn't an email",
-    //     urlMismatch: "Not a URL :(",
-    //     numberMismatch: "Nope, not a number!"
-    //   }
-    // });
   },
   methods: {
-    test(e) {
-      console.log(e.target);
+    getCustomMessage(type, validity) {
+      if (validity.valueMissing) {
+        return this.customMessages[`${type}Missing`];
+      } else if (validity.typeMismatch) {
+        return this.customMessages[`${type}Mismatch`];
+      } else {
+        for (const invalidKey in this.customMessages) {
+          if (validity[invalidKey]) {
+            return this.customMessages[invalidKey];
+          }
+        }
+      }
     }
-    // validEmail() {
-    //   ValidForm(this.$refs.email, { errorPlacement: "after" });
-    // },
-    // validMessage() {
-    //   ValidForm(this.$refs.message, { errorPlacement: "after" });
-    // }
   }
 };
 </script>
