@@ -40,7 +40,7 @@
       value="Send"
       @click="handleSubmit"
     /> -->
-    <button type="submit" class="button button_cta pageclip-form__submit">
+    <button type="submit" class="pageclip-form__submit">
       <span>Send</span>
     </button>
 
@@ -73,6 +73,11 @@ export default {
   },
   mounted() {
     // this.$refs.submit.disabled = true;
+
+    Pageclip.form(this.$refs.form, {
+      successTemplate: "<span>TESTING!</span>"
+    });
+
     const inputs = document.querySelectorAll("input[type='email'], textarea");
     const vm = this;
 
