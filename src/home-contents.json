@@ -75,6 +75,39 @@
       "arrowType": 2
     },
     {
+      "title": "Multilingual",
+      "img": "multilingual/pw_08a_patch.jpg",
+      "type": "study",
+      "link": "/multilingual",
+      "description": "Visualizing linguistic data to celebrate the diversity of a museum's visitors",
+      "tags": [
+        {
+          "color": "var(--green)",
+          "backgroundColor": "var(--green-transparent)",
+          "words": [
+            "domain research",
+            "data modeling"
+          ]
+        },
+        {
+          "color": "var(--blue)",
+          "backgroundColor": "var(--blue-transparent)",
+          "words": [
+            "concept development"
+          ]
+        },
+        {
+          "color": "var(--purple)",
+          "backgroundColor": "var(--purple-transparent)",
+          "words": [
+            "Electron development"
+          ]
+        }
+      ],
+      "locked": false,
+      "arrowType": 2
+    },
+    {
       "title": "Phototaxis",
       "img": "phototaxis/phototaxis_silhouette.png",
       "type": "study",
@@ -135,39 +168,6 @@
       ],
       "locked": false,
       "arrowType": 4
-    },
-    {
-      "title": "Multilingual",
-      "img": "multilingual/pw_08a_patch.jpg",
-      "type": "study",
-      "link": "/multilingual",
-      "description": "Visualizing linguistic data to celebrate diversity within a community",
-      "tags": [
-        {
-          "color": "var(--green)",
-          "backgroundColor": "var(--green-transparent)",
-          "words": [
-            "domain research",
-            "data modeling"
-          ]
-        },
-        {
-          "color": "var(--blue)",
-          "backgroundColor": "var(--blue-transparent)",
-          "words": [
-            "concept development"
-          ]
-        },
-        {
-          "color": "var(--purple)",
-          "backgroundColor": "var(--purple-transparent)",
-          "words": [
-            "Electron development"
-          ]
-        }
-      ],
-      "locked": false,
-      "arrowType": 2
     },
     {
       "title": "Together Apart",

@@ -109,11 +109,11 @@
           <h2>Interaction Development</h2>
           <p>
             A goal of high turnover meant that user input had to be fast, yet
-            inclusive and precise. I developed a touch interface via an Electron
-            app that hooks into the database to quickly narrow down searches.
-            This lets visitors focus instead on the visualization itself, which
-            is an openFrameworks app that communicates with the keyboard for a
-            seamless experience.
+            inclusive and precise. I developed a touch interface as an Electron
+            app that hooks into the expansive database to quickly narrow down
+            searches. This lets visitors focus instead on the visualization
+            itself, which is an openFrameworks app that communicates with the
+            keyboard for a seamless experience.
           </p>
         </div>
         <div class="img-container two-thirds-width">

@@ -5,15 +5,55 @@
     "poster": "/photos/juices/twist.jpg"
   },
   {
-    "link": "/photos/juices/frequency_lines.mp4",
+    "link": "/photos/juices/spectrum2.jpg",
+    "mediaType": "img"
+  },
+  {
+    "link": "/photos/juices/spectrum3.jpg",
+    "mediaType": "img"
+  },
+  {
+    "link": "/photos/juices/watercolor.mp4",
     "mediaType": "video",
-    "poster": "/photos/juices/frequency_lines.jpg"
+    "poster": "/photos/juices/watercolor1.jpg"
+  },
+  {
+    "link": "/photos/juices/watercolor4.jpg",
+    "mediaType": "img"
+  },
+  {
+    "link": "/photos/juices/watercolor5.jpg",
+    "mediaType": "img"
+  },
+  {
+    "link": "/photos/juices/waves.mp4",
+    "mediaType": "video",
+    "poster": "/photos/juices/waves1.jpg"
+  },
+  {
+    "link": "/photos/juices/waves2.jpg",
+    "mediaType": "img"
+  },
+  {
+    "link": "/photos/juices/waves3.jpg",
+    "mediaType": "img"
+  },
+  {
+    "link": "/photos/juices/leap_liquid.mp4",
+    "mediaType": "video",
+    "poster": "/photos/juices/leap_liquid.jpg",
+    "doesContain": true
   },
   {
     "link": "/photos/juices/leap_particles.mp4",
     "mediaType": "video",
     "poster": "/photos/juices/leap_particles.jpg",
     "doesContain": true
+  },
+  {
+    "link": "/photos/juices/frequency_lines.mp4",
+    "mediaType": "video",
+    "poster": "/photos/juices/frequency_lines.jpg"
   },
   {
     "link": "/photos/juices/particle_tame.mp4",
@@ -26,9 +66,9 @@
     "poster": "/photos/juices/blob_tame.jpg"
   },
   {
-    "link": "/photos/juices/rounded_rectangle.mp4",
+    "link": "/photos/juices/audio_wheel_short.mp4",
     "mediaType": "video",
-    "poster": "/photos/juices/rounded_rectangle.jpg"
+    "poster": "/photos/juices/audio_wheel.jpg"
   },
   {
     "link": "/photos/juices/astronauts.jpg",
@@ -68,6 +108,18 @@
     "mediaType": "img"
   },
   {
+    "link": "/photos/juices/IMG_0168.jpg",
+    "mediaType": "img"
+  },
+  {
+    "link": "/photos/juices/IMG_9951.jpg",
+    "mediaType": "img"
+  },
+  {
+    "link": "/photos/juices/IMG_9965.jpg",
+    "mediaType": "img"
+  },
+  {
     "link": "/photos/juices/portrait_dots.mp4",
     "mediaType": "video",
     "poster": "/photos/juices/portrait_dots.jpg"
@@ -95,25 +147,14 @@
     "mediaType": "img"
   },
   {
-    "link": "/photos/juices/IMG_0168.jpg",
-    "mediaType": "img"
-  },
-  {
-    "link": "/photos/juices/IMG_9951.jpg",
-    "mediaType": "img"
-  },
-  {
-    "link": "/photos/juices/IMG_9965.jpg",
-    "mediaType": "img"
-  },
-  {
     "link": "/photos/juices/galaxies.mp4",
     "mediaType": "video",
     "poster": "/photos/juices/galaxies.jpg"
   },
   {
-    "link": "/photos/juices/blur_dots.jpg",
-    "mediaType": "img"
+    "link": "/photos/juices/rounded_rectangle.mp4",
+    "mediaType": "video",
+    "poster": "/photos/juices/rounded_rectangle.jpg"
   },
   {
     "link": "/photos/juices/glow_rings.mp4",
