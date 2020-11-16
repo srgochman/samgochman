@@ -477,7 +477,7 @@ canvas {
   display: flex;
   justify-content: center;
   margin-bottom: 300px;
-  transform: scale(0.8);
+  transform: scale(0.7);
 
   &::before {
     content: "";
