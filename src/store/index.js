@@ -1,6 +1,6 @@
 import Vue from "vue";
 import Vuex from "vuex";
-import contents from "../list-contents.json";
+import contents from "../home-contents.json";
 
 Vue.use(Vuex);
 

@@ -53,6 +53,7 @@
 <script>
 // Grid gallery component for Latest Creative Juices
 
+import itemsInfo from "../juices-contents.json";
 import { EventBus } from "../event-bus.js";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger.js";
@@ -64,144 +65,7 @@ export default {
     return {
       chunkSize: 6,
       loadedItems: 0,
-      items: [
-        {
-          link: "/photos/juices/twist.mp4",
-          mediaType: "video",
-          poster: "/photos/juices/twist.jpg"
-        },
-        {
-          link: "/photos/juices/frequency_lines.mp4",
-          mediaType: "video",
-          poster: "/photos/juices/frequency_lines.jpg"
-        },
-        {
-          link: "/photos/juices/leap_particles.mp4",
-          mediaType: "video",
-          poster: "/photos/juices/leap_particles.jpg",
-          doesContain: true
-        },
-        {
-          link: "/photos/juices/particle_tame.mp4",
-          mediaType: "video",
-          poster: "/photos/juices/particle_tame.jpg"
-        },
-        {
-          link: "/photos/juices/blob_tame.mp4",
-          mediaType: "video",
-          poster: "/photos/juices/blob_tame.jpg"
-        },
-        {
-          link: "/photos/juices/rounded_rectangle.mp4",
-          mediaType: "video",
-          poster: "/photos/juices/rounded_rectangle.jpg"
-        },
-        {
-          link: "/photos/juices/astronauts.jpg",
-          mediaType: "img"
-        },
-        {
-          link: "/photos/juices/stars.jpg",
-          mediaType: "img"
-        },
-        {
-          link: "/photos/juices/exposure_half_crop.jpg",
-          mediaType: "img"
-        },
-        {
-          link: "/photos/juices/SN_profile.jpg",
-          mediaType: "img"
-        },
-        {
-          link: "/photos/juices/SN_axon.jpg",
-          mediaType: "img",
-          doesContain: true
-        },
-        {
-          link: "/photos/juices/SN_using.jpg",
-          mediaType: "img"
-        },
-        {
-          link: "/photos/juices/IMG_0741.jpg",
-          mediaType: "img"
-        },
-        {
-          link: "/photos/juices/IMG_0730.jpg",
-          mediaType: "img"
-        },
-        {
-          link: "/photos/juices/IMG_0766.jpg",
-          mediaType: "img"
-        },
-        {
-          link: "/photos/juices/portrait_dots.mp4",
-          mediaType: "video",
-          poster: "/photos/juices/portrait_dots.jpg"
-        },
-        {
-          link: "/photos/juices/grid_fabric.mp4",
-          mediaType: "video",
-          poster: "/photos/juices/grid_fabric.jpg"
-        },
-        {
-          link: "/photos/juices/spokes.mp4",
-          mediaType: "video",
-          poster: "/photos/juices/spokes.jpg"
-        },
-        {
-          link: "/photos/juices/parking_whole.jpg",
-          mediaType: "img"
-        },
-        {
-          link: "/photos/juices/parking_split.jpg",
-          mediaType: "img"
-        },
-        {
-          link: "/photos/juices/parking_writing.jpg",
-          mediaType: "img"
-        },
-        {
-          link: "/photos/juices/IMG_0168.jpg",
-          mediaType: "img"
-        },
-        {
-          link: "/photos/juices/IMG_9951.jpg",
-          mediaType: "img"
-        },
-        {
-          link: "/photos/juices/IMG_9965.jpg",
-          mediaType: "img"
-        },
-        {
-          link: "/photos/juices/galaxies.mp4",
-          mediaType: "video",
-          poster: "/photos/juices/galaxies.jpg"
-        },
-        {
-          link: "/photos/juices/blur_dots.jpg",
-          mediaType: "img"
-        },
-        {
-          link: "/photos/juices/glow_rings.mp4",
-          mediaType: "video",
-          poster: "/photos/juices/glow_rings.jpg"
-        },
-        {
-          link: "/photos/juices/keyboard.mp4",
-          mediaType: "video",
-          poster: "/photos/juices/keyboard.jpg",
-          doesContain: true
-        },
-        {
-          link: "/photos/juices/turns.jpg",
-          mediaType: "img"
-        },
-        {
-          link: "/photos/juices/dotted_shapes.mp4",
-          mediaType: "video",
-          poster: "/photos/juices/dotted_shapes.jpg"
-        }
-      ],
+      items: itemsInfo,
       triggers: []
     };
   },
