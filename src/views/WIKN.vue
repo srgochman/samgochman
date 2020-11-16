@@ -25,12 +25,13 @@
           <Tags :words="tags" />
           <p class="contributions">Project Ownership</p>
           <p>Sosolimited LLC</p>
-          <p class="contributions">Teammates</p>
+          <p class="contributions">Team</p>
           <p>
             Creative Director: Eric Gunther <br />
             UI/UX Designers: Deb Levison, Vidhi Trivedi <br />
-            Creative Coders: Henrique Périgo, Dalma Földesi <br />
+            UI Developer: Me <br />
             UX Developer: Jon Corbett <br />
+            Creative Coders: Henrique Périgo, Dalma Földesi <br />
             Backend Developer: Wes Thomas
           </p>
         </div>
@@ -153,7 +154,7 @@
 
 <script>
 import Tags from "../components/Tags.vue";
-import contents from "../list-contents.json";
+import contents from "../home-contents.json";
 import ScrollMagic from "scrollmagic";
 
 export default {

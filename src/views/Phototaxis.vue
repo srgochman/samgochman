@@ -134,7 +134,7 @@
 
 <script>
 import Tags from "../components/Tags.vue";
-import contents from "../list-contents.json";
+import contents from "../home-contents.json";
 import ScrollMagic from "scrollmagic";
 
 export default {

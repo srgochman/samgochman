@@ -41,18 +41,17 @@
   ],
   "projects": [
     {
-      "title": "Multilingual",
-      "img": "multilingual/pw_08a_patch.jpg",
+      "title": "What I Know Now",
+      "img": "WIKN/WIKN_mural.jpg",
       "type": "study",
-      "link": "/multilingual",
-      "description": "Translating linguistic data into interactive art that celebrates a community",
+      "link": "/WIKN",
+      "description": "Transforming personal stories into generative artwork to help communities listen",
       "tags": [
         {
           "color": "var(--green)",
           "backgroundColor": "var(--green-transparent)",
           "words": [
-            "domain research",
-            "data modeling"
+            "data analysis"
           ]
         },
         {
@@ -66,11 +65,13 @@
           "color": "var(--purple)",
           "backgroundColor": "var(--purple-transparent)",
           "words": [
-            "Electron development"
+            "Web Audio",
+            "Google Speech-to-Text",
+            "Vue.js"
           ]
         }
       ],
-      "locked": false,
+      "locked": true,
       "arrowType": 2
     },
     {
@@ -136,17 +137,18 @@
       "arrowType": 4
     },
     {
-      "title": "What I Know Now",
-      "img": "WIKN/WIKN_mural.jpg",
+      "title": "Multilingual",
+      "img": "multilingual/pw_08a_patch.jpg",
       "type": "study",
-      "link": "/WIKN",
-      "description": "Transforming personal stories into generative artwork to help communities listen",
+      "link": "/multilingual",
+      "description": "Visualizing linguistic data to celebrate diversity within a community",
       "tags": [
         {
           "color": "var(--green)",
           "backgroundColor": "var(--green-transparent)",
           "words": [
-            "data analysis"
+            "domain research",
+            "data modeling"
           ]
         },
         {
@@ -160,13 +162,11 @@
           "color": "var(--purple)",
           "backgroundColor": "var(--purple-transparent)",
           "words": [
-            "Web Audio",
-            "Google Speech-to-Text",
-            "Vue.js"
+            "Electron development"
           ]
         }
       ],
-      "locked": true,
+      "locked": false,
       "arrowType": 2
     },
     {

@@ -161,7 +161,7 @@ import Skill from "../components/Skill.vue";
 import ProjectImage from "../components/ProjectImage.vue";
 import ProjectText from "../components/ProjectText.vue";
 import Juices from "../components/Juices.vue";
-import contents from "../list-contents.json";
+import contents from "../home-contents.json";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger.js";
 gsap.registerPlugin(ScrollTrigger);

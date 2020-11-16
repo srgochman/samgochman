@@ -72,11 +72,11 @@
 
 <script>
 import Tags from "../components/Tags.vue";
-import contents from "../list-contents.json";
+import contents from "../home-contents.json";
 import ScrollMagic from "scrollmagic";
 
 export default {
-  name: "Multilingual",
+  name: "Miraj",
   mounted() {
     const sectionController = new ScrollMagic.Controller();
     $(".section.appear").each(function() {

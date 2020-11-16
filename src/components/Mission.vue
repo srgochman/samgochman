@@ -15,7 +15,7 @@
 // Large text cycling through mission statements
 
 import { EventBus } from "../event-bus.js";
-import contents from "../list-contents.json";
+import contents from "../home-contents.json";
 
 export default {
   name: "Mission",
