@@ -131,15 +131,15 @@ import ScrollMagic from "scrollmagic";
 
 export default {
   name: "Multilingual",
-  beforeRouteEnter(to, from, next) {
-    // set targetRoute in localStorage to this path name
-    localStorage.setItem("targetRoute", "Multilingual");
+  // beforeRouteEnter(to, from, next) {
+  //   // set targetRoute in localStorage to this path name
+  //   localStorage.setItem("targetRoute", "Multilingual");
 
-    // go to authentication page unless password has already been entered
-    localStorage.getItem("passCorrect") == "true"
-      ? next()
-      : next({ name: "Authentication" });
-  },
+  //   // go to authentication page unless password has already been entered
+  //   localStorage.getItem("passCorrect") == "true"
+  //     ? next()
+  //     : next({ name: "Authentication" });
+  // },
   mounted() {
     const sectionController = new ScrollMagic.Controller();
     $(".section.appear").each(function() {
