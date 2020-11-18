@@ -22,8 +22,8 @@
           id="asterisk"
           src="../assets/drawn/asterisk_green.svg"
         />
-        I'm looking for new
-        <a
+        I'm looking for new work and would love to connect!
+        <!-- <a
           id="work"
           href="https://www.linkedin.com/in/samuelrgochman/"
           target="_blank"
@@ -60,7 +60,7 @@
               src="../assets/drawn/line4_green.svg"
             /> </a
           >.
-        </div>
+        </div> -->
       </h3>
     </div>
 
