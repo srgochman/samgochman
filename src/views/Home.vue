@@ -484,7 +484,7 @@ canvas {
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin-top: 25px;
+  margin-top: 20px;
 
   & > * {
     margin-right: 30px;
