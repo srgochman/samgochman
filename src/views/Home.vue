@@ -22,8 +22,8 @@
           id="asterisk"
           src="../assets/drawn/asterisk_green.svg"
         />
-        I'm looking for new
-        <a
+        I'm looking for new work and would love to connect!
+        <!-- <a
           id="work"
           href="https://www.linkedin.com/in/samuelrgochman/"
           target="_blank"
@@ -60,6 +60,135 @@
               src="../assets/drawn/line4_green.svg"
             /> </a
           >.
+        </div> -->
+        <div id="links">
+          <a
+            href="mailto:srgochman@gmail.com"
+            title="email"
+            target="_blank"
+            rel="noopener"
+          >
+            <svg
+              id="email-icon"
+              class="logo"
+              xmlns="http://www.w3.org/2000/svg"
+              width="20px"
+              viewBox="0 0 495.4 330.9"
+            >
+              <svg:style type="text/css">
+                .st0 {
+                  fill: none;
+                  stroke: #ffffff;
+                  stroke-width: 27;
+                  stroke-linecap: round;
+                  stroke-linejoin: round;
+                  stroke-miterlimit: 10;
+                }
+              </svg:style>
+              <path
+                d="M444.9,330.9H51.8c-20.8,0-37.6-16.9-37.6-37.6V37.6C14.1,16.9,31,0,51.8,0h393.1c20.8,0,37.6,16.9,37.6,37.6v255.6
+	C482.6,314.1,465.7,330.9,444.9,330.9z"
+              />
+              <polyline
+                class="st0"
+                points="14.1,70.1 248.3,223.5 482.6,70.1 "
+              />
+            </svg>
+          </a>
+          <a
+            href="https://www.linkedin.com/in/samuelrgochman/"
+            title="LinkedIn"
+            target="_blank"
+            rel="noopener"
+          >
+            <svg
+              id="linkedin-icon"
+              class="logo"
+              xmlns="http://www.w3.org/2000/svg"
+              width="20px"
+              viewBox="0 0 468.5 452"
+            >
+              <path
+                d="M266.1,171.2c11.3-7.8,21.7-16.2,33.1-22.8c21.4-12.2,44.8-16.2,69.3-14.7c23.7,1.4,45.4,8.4,64,23.6
+		c16.7,13.6,28.1,31,34.5,51.5c1.4,4.3,1.4,9.2,1.4,13.8c0.1,73.5,0.1,147,0.1,220.6c0,7.6-1.2,8.8-8.7,8.8c-29,0-58,0-87,0
+		c-7.2,0-8.4-1.3-8.4-8.5c0-57.2,0.1-114.4-0.1-171.5c0-8.9-0.9-18-2.6-26.8c-3.1-16.2-13.4-25.5-29.5-28.5
+		c-10.6-2-21.1-2.6-31.6,0.9c-21.2,7-34.5,25.1-34.5,47.4c0,59.2,0,118.4,0,177.5c0,8.4-1.1,9.5-9.4,9.5c-28.7,0-57.3,0-86,0
+		c-7.4,0-8.6-1-8.6-8.3c0-99.2,0-198.4,0-297.6c0-6.9,1.3-8.1,8.2-8.1c29.2,0,58.3,0,87.5,0c6.9,0,8.3,1.5,8.3,8.6
+		C266.1,155,266.1,163.5,266.1,171.2z"
+              />
+              <path
+                d="M104,295.1c0,49.3,0,98.7,0,148c0,7.7-1.1,8.8-9,8.9c-28.8,0-57.7,0-86.5,0c-7.1,0-8.5-1.3-8.5-8.4c0-99,0-198,0-297
+		c0-7.2,1.3-8.6,8.4-8.6c29,0,58,0,86.9,0c7.6,0,8.7,1.1,8.7,8.6C104,196.1,104,245.6,104,295.1z"
+              />
+              <path
+                d="M0,52.1C0,23.1,23,0.1,52,0c28.7-0.1,52,23,52.1,51.4c0,29.4-22.9,52.6-52,52.5C23,103.9,0,81,0,52.1z"
+              />
+            </svg>
+          </a>
+          <a
+            href="/SGochman_resume.pdf"
+            title="full resume"
+            target="_blank"
+            rel="noopener"
+          >
+            <svg
+              id="resume-icon"
+              class="logo"
+              xmlns="http://www.w3.org/2000/svg"
+              height="20px"
+              viewBox="0 0 349.3 452"
+            >
+              <svg:style type="text/css">
+                .st0 {
+                  fill: none;
+                  stroke: #ffffff;
+                  stroke-width: 28.2545;
+                  stroke-linecap: round;
+                  stroke-linejoin: round;
+                  stroke-miterlimit: 10;
+                }
+              </svg:style>
+              <path
+                d="M314.2,452H35.1C15.7,452,0,436.3,0,416.9V35.1C0,15.7,15.7,0,35.1,0h279.2c19.4,0,35.1,15.7,35.1,35.1v381.9
+	C349.3,436.3,333.6,452,314.2,452z"
+              />
+              <line class="st0" x1="87.5" y1="118.3" x2="203.7" y2="118.3" />
+              <line class="st0" x1="87.5" y1="226" x2="261.8" y2="226" />
+              <line class="st0" x1="87.5" y1="333.7" x2="261.8" y2="333.7" />
+            </svg>
+          </a>
+          <a
+            href="https://www.instagram.com/srgoch/"
+            title="Instagram"
+            target="_blank"
+            rel="noopener"
+          >
+            <svg
+              id="insta-icon"
+              class="logo"
+              xmlns="http://www.w3.org/2000/svg"
+              width="20px"
+              viewBox="0 0 298.5 300"
+            >
+              <path
+                d="M202.4,300c-35.2,0-70.4,0-105.7,0c-4.3-0.4-8.5-0.8-12.8-1.1c-46.7-2.3-76.7-30.2-82.2-76.7C1,215.9,0.6,209.4,0,203
+	c0-35.3,0-70.7,0-106c0.4-4.3,0.8-8.5,1.1-12.8C3.3,37.3,31.2,7.3,77.5,1.7C83.9,1,90.3,0.6,96.7,0c35.2,0,70.4,0,105.7,0
+	c4.1,0.4,8.2,0.8,12.3,1c21,1.4,40.5,6.8,56.6,21.4C289.4,39,297.3,60.3,297.8,84c0.8,44,1.1,88,0,131.9
+	c-1.2,46.8-29.9,76.8-76.1,82.3C215.2,299,208.8,299.4,202.4,300z"
+              />
+              <path
+                fill="white"
+                d="M226.3,150.1c0,42.8-34.3,77-77.1,76.9c-42.3-0.1-76.4-34.5-76.4-77.1c0-42.8,34.3-77,77.1-76.9
+	C192.2,73,226.3,107.5,226.3,150.1z M149.5,100c-27.3,0-49.8,22.5-49.8,49.9c0,27.4,22.3,50,49.6,50.1c27.6,0.1,50.1-22.5,50.1-50.1
+	C199.3,122.4,176.9,100,149.5,100z"
+              />
+              <path
+                fill="white"
+                d="M247.3,69.9c0,10.1-8.1,18.1-18.1,18.1c-9.8-0.1-17.7-8-17.9-17.8c-0.1-10,7.8-18.2,17.9-18.3
+	C239.3,51.9,247.3,59.8,247.3,69.9z"
+              />
+            </svg>
+          </a>
         </div>
       </h3>
     </div>
@@ -349,6 +478,27 @@ canvas {
 
 #contact {
   position: relative;
+}
+
+#links {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 20px;
+
+  & > * {
+    margin-right: 30px;
+  }
+}
+
+.logo {
+  fill: black;
+  transition: var(--hover);
+
+  &:hover {
+    fill: var(--green);
+    transition: var(--hover);
+  }
 }
 
 #asterisk {
