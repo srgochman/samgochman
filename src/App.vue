@@ -195,16 +195,18 @@ body {
 }
 
 #nav {
+  margin-left: 40px;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-between;
-  // keep nav width aligned with app width
-  width: calc(min(100%, calc(100vw - 2 * 8vw)));
-  max-width: var(--main-width);
-  padding: 20px 0px;
+  // width: calc(min(100%, calc(100vw - 2 * 8vw)));
+  // max-width: var(--main-width);
+  width: min-content;
+  height: calc(min(100%, calc(100vh - 2 * 25px)));
+  padding: 25px 0px;
   position: fixed;
   top: 0;
-  // left: 0;
+  left: 0;
   z-index: 100;
 
   .sam-gochman {
@@ -218,11 +220,27 @@ body {
     position: absolute;
     left: -14px;
   }
-}
 
-// #initials {
-//   display: none;
-// }
+  // #links {
+  //   display: flex;
+  //   flex-direction: column;
+  //   align-items: center;
+
+  //   & > * {
+  //     margin-top: 25px;
+  //   }
+  // }
+
+  // .logo {
+  //   fill: black;
+  //   transition: var(--hover);
+
+  //   &:hover {
+  //     fill: var(--green);
+  //     transition: var(--hover);
+  //   }
+  // }
+}
 
 // page content
 .body {
@@ -284,10 +302,6 @@ body {
 // }
 
 @media only screen and (max-width: 1024px) {
-  .section {
-    margin-bottom: 150px;
-  }
-
   #nav #name-drawn {
     transform: scale(1);
   }
@@ -295,6 +309,10 @@ body {
   // #initials {
   //   display: block;
   // }
+
+  .section {
+    margin-bottom: 150px;
+  }
 }
 
 @media only screen and (max-width: 425px) {
@@ -305,13 +323,13 @@ body {
 
 // keep nav on left for wide screens
 @media only screen and (min-width: 2160px) {
-  #nav {
-    width: 100vw;
-    max-width: unset;
+  // #nav {
+  //   width: 100vw;
+  //   max-width: unset;
 
-    .sam-gochman {
-      margin-left: 50px;
-    }
-  }
+  //   .sam-gochman {
+  //     margin-left: 50px;
+  //   }
+  // }
 }
 </style>
