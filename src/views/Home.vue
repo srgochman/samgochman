@@ -481,16 +481,16 @@ canvas {
 }
 
 #links {
-  position: fixed;
-  bottom: 20px;
-  left: 40px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  & > * {
+    position: unset;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
     margin-top: 20px;
+
+    & > * {
+      margin-right: 30px;
+    }
   }
-}
 
 .logo {
   fill: black;
@@ -677,27 +677,7 @@ canvas {
     transform: scale(0.8);
     margin: 0 0 50px 0;
   }
-
-  #links {
-    position: unset;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    margin-top: 20px;
-
-    & > * {
-      margin-right: 30px;
-    }
-  }
-
-  // #projects-container {
-  //   flex-direction: column;
-  // }
-
-  // #project-images-container {
-  //   width: 100%;
-  // }
-
+  
   .experience-item {
     margin-bottom: 50px;
   }
