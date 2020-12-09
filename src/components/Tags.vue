@@ -45,9 +45,9 @@ export default {
 
 .tag {
   margin: 0 10px 10px 0;
-  border-radius: 0px 3px 3px 0px;
-  -webkit-border-radius: 0px 3px 3px 0px;
-  -moz-border-radius: 0px 3px 3px 0px;
+  // border-radius: 0px 3px 3px 0px;
+  // -webkit-border-radius: 0px 3px 3px 0px;
+  // -moz-border-radius: 0px 3px 3px 0px;
   border-left: solid 3px;
   padding: 6px 11px 6px 9px;
   font-size: 0.875em;

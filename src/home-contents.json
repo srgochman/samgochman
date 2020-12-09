@@ -2,11 +2,11 @@
   "missions": [
     "talks shop with coders, artists, and scientists.",
     "builds for and with sensory experiences.",
-    "turns voices into kaleidoscopes.",
-    "translates information into conversation.",
+    "reimagines digital and physical interactions.",
     "makes circuits expressive.",
-    "sees through the eyes of tarsiers and honeybees.",
-    "makes over landmarks."
+    "translates information into conversation.",
+    "turns voices into kaleidoscopes.",
+    "sees through the eyes of tarsiers and honeybees."
   ],
   "skills": [
     {
@@ -19,7 +19,7 @@
       "delay": 0
     },
     {
-      "description": "I design interfaces and environments that balance function and exploration.",
+      "description": "I design interfaces and environments that balance efficiency and exploration.",
       "keywords": [
         "interfaces",
         "environments"
@@ -29,7 +29,7 @@
       "delay": 0.25
     },
     {
-      "description": "I build with interactive tech across digital and physical platforms.",
+      "description": "I build with interactive tech straddling the digital and physical.",
       "keywords": [
         "interactive",
         "tech"
@@ -276,12 +276,6 @@
       "link": "https://dali.dartmouth.edu",
       "firm": "Digital Applied Learning and Innovation Lab @ Dartmouth College",
       "arrowType": 4
-    },
-    {
-      "title": "Biophilic Design Intern",
-      "link": "https://www.terrapinbrightgreen.com",
-      "firm": "Terrapin Bright Green",
-      "arrowType": 2
     }
   ],
   "education": [

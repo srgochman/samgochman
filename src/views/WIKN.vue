@@ -138,10 +138,9 @@
         <div class="caption one-third-width">
           <h2>Public Visibility</h2>
           <p>
-            In the future, partners can sponsor a physical version of the mural.
-            Anyone could then approach the print, scan a QR code, and browse
-            across the artwork to hear the experiences of those in the
-            community.
+            Future partners can sponsor a physical version of the mural, letting
+            anyone scan a QR code and browse across the artwork to see and hear
+            the experiences of their community members.
           </p>
         </div>
         <div class="img-container two-thirds-width">

@@ -23,44 +23,6 @@
           src="../assets/drawn/asterisk_green.svg"
         />
         I'm looking for new work and would love to connect!
-        <!-- <a
-          id="work"
-          href="https://www.linkedin.com/in/samuelrgochman/"
-          target="_blank"
-          rel="noopener"
-          >work<img
-            height="3"
-            class="underline"
-            src="../assets/drawn/line1_green.svg"
-          />
-        </a>
-        and would love to
-        <div style="display: inline-block">
-          <a
-            id="connect"
-            href="mailto:srgochman@gmail.com"
-            target="_blank"
-            rel="noopener"
-            >connect<img
-              height="3"
-              class="underline"
-              src="../assets/drawn/line2_green.svg"/></a
-          >!
-        </div>
-        Here's a full
-        <div style="display: inline-block">
-          <a
-            id="resume"
-            href="/SGochman_resume.pdf"
-            target="_blank"
-            rel="noopener"
-            >resume<img
-              height="3"
-              class="underline"
-              src="../assets/drawn/line4_green.svg"
-            /> </a
-          >.
-        </div> -->
         <div id="links">
           <a
             href="mailto:srgochman@gmail.com"
@@ -72,7 +34,7 @@
               id="email-icon"
               class="logo"
               xmlns="http://www.w3.org/2000/svg"
-              width="20px"
+              height="16px"
               viewBox="0 0 495.4 330.9"
             >
               <svg:style type="text/css">
@@ -105,7 +67,7 @@
               id="linkedin-icon"
               class="logo"
               xmlns="http://www.w3.org/2000/svg"
-              width="20px"
+              height="20px"
               viewBox="0 0 468.5 452"
             >
               <path
@@ -167,7 +129,7 @@
               id="insta-icon"
               class="logo"
               xmlns="http://www.w3.org/2000/svg"
-              width="20px"
+              height="20px"
               viewBox="0 0 298.5 300"
             >
               <path
@@ -484,10 +446,10 @@ canvas {
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin-top: 20px;
+  margin-top: 25px;
 
   & > * {
-    margin-right: 30px;
+    margin-right: 40px;
   }
 }
 
@@ -534,17 +496,17 @@ canvas {
   transition: fill 0.2s ease-in-out;
 }
 
+.green-arrow {
+  fill: var(--green) !important;
+  // opacity: 1 !important;
+  transition: fill 0.2s ease-in-out;
+}
+
 .lock {
   background-size: cover;
   transform-origin: top left;
   transform: scale(0.1);
   fill: black;
-  transition: fill 0.2s ease-in-out;
-}
-
-.green-arrow {
-  fill: var(--green) !important;
-  // opacity: 1 !important;
   transition: fill 0.2s ease-in-out;
 }
 
@@ -660,12 +622,6 @@ canvas {
 }
 
 @media only screen and (max-width: 1024px) {
-  // #mission-description {
-  //   width: 100%;
-  //   // max-width: 100%;
-  //   margin-bottom: 120px;
-  // }
-
   #asterisk {
     transform: scale(0.8);
     top: 6px;
@@ -677,14 +633,6 @@ canvas {
     transform: scale(0.8);
     margin: 0 0 50px 0;
   }
-
-  // #projects-container {
-  //   flex-direction: column;
-  // }
-
-  // #project-images-container {
-  //   width: 100%;
-  // }
 
   .experience-item {
     margin-bottom: 50px;

@@ -26,13 +26,13 @@
           artistic culmination of my research fellowship in audiovisual
           perception, I created a temporary exhibition space for interaction,
           experimentation, and play. The responsive installation allowed people
-          to experience firsthand the feedback loop between light, environments,
-          and behavior.
+          to have a firsthand experience of the feedback loop between light,
+          environments, and behavior.
           <br /><br />
           I initiated and led the project, working on perceptual research,
           architectural and experience design, prototyping and digital
           development, fabrication, and later visualization of the experience.
-          Along the way, I recruited others in and out of the studio for
+          Along the way, I recruited others in and out of the studio for design
           feedback and help with construction.
         </h3>
         <div class="contributions-container one-third-width">
@@ -107,14 +107,15 @@
         <div class="caption one-third-width">
           <h2>Analysis & Visualization</h2>
           <p>
-            I used the data log to map behavior to the dropoff of light.
-            Although people did tend to spend more time at the front and back
-            where where brightness was at its extremes, the more telling
-            insights come from quantitative data. While I observed the
-            experiment, participants observed each other, which led them to
-            experiment on their own. People meandered, probed, and even
-            cartwheeled and choreographed. The installation became a platform
-            for collaboration and play.
+            I used the datalog to map behavior to the dropoff of light. Although
+            people did tend to spend more time at the front and back where where
+            brightness was at its extremes, the more telling insights came from
+            qualitative data. Instead of approaching the installation linearly,
+            people meandered, probed, and even cartwheeled and choreographed.
+            The installation became a platform for experimentation,
+            collaboration, and play. This taught me an important lesson: rather
+            than designing a monolithic experience, design an opportunity for a
+            spectrum of experiences.
           </p>
         </div>
         <div class="img-container two-thirds-width">
