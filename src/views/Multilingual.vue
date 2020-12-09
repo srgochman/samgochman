@@ -15,7 +15,7 @@
           visitors per year a chance to appreciate the diversity of languages
           spoken by other visitors through time. Each contribution to the
           visualization is a unique experience that lets a user track themself
-          connected community.
+          within a connected community.
           <br /><br />
           In addition to building the interface for user interaction, I
           developed the initial concept with the team and handled the language
@@ -55,9 +55,11 @@
           <p>
             At the start of the project, I thought a lot about the client's goal
             of telling a story about inclusivity and connection. I worked with
-            the designer and creative director to progress from an emotional
-            concept to an artwork that enhances the museum whether or not the
-            installation is actively in use.
+            the designer and creative director to progress from a concept based
+            in emotion to an artwork that enhances the museum whether or not the
+            installation is actively in use. We constantly challenged ourselves
+            to leverage the diversity of the content to create unique
+            visualizations for each visitor.
           </p>
         </div>
         <img
@@ -78,10 +80,10 @@
             I used a database of over 6,000 languages and dialects to capture
             the diversity of visitors for the visualization. Diving into
             historical linguistics and meeting with a specialist helped me
-            iterate a data model that balanced informational richness with
+            iterate a data model tp balance informational richness with
             aesthetic clarity. Across the landscape of linguistic relatedness,
-            color represents a visitor’s language and size shows its rarity,
-            letting the museum celebrate underrepresented groups.
+            we represented a visitor’s language with color and its rarity with
+            size to celebrate underrepresented groups.
           </p>
         </div>
         <div id="data-images" class="across">
@@ -112,8 +114,8 @@
             inclusive and precise. I developed a touch interface as an Electron
             app that hooks into the expansive database to quickly narrow down
             searches. This lets visitors focus instead on the visualization
-            itself, which is an openFrameworks app that communicates with the
-            keyboard for a seamless experience.
+            itself, which is an openFrameworks app that seamlessly communicates
+            with the keyboard.
           </p>
         </div>
         <div class="img-container two-thirds-width">

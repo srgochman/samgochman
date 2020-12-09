@@ -187,9 +187,9 @@ export default {
       height: 100%;
       transition: opacity 200ms ease-in-out;
       transition-delay: 350ms;
-      border-radius: 3px;
-      -webkit-border-radius: 3px;
-      -moz-border-radius: 3px;
+      // border-radius: 3px;
+      // -webkit-border-radius: 3px;
+      // -moz-border-radius: 3px;
 
       position: absolute; // fixes Safari issue of unconstrained height
       // max-width: 100%;

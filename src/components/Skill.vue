@@ -93,9 +93,9 @@ export default {
   // width: 63%;
   // width: 80%;
   padding: 25px 35px;
-  border-radius: 0px 5px 5px 0px;
-  -webkit-border-radius: 0px 5px 5px 0px;
-  -moz-border-radius: 0px 5px 5px 0px;
+  // border-radius: 0px 5px 5px 0px;
+  // -webkit-border-radius: 0px 5px 5px 0px;
+  // -moz-border-radius: 0px 5px 5px 0px;
   border-left: solid 6px;
   // font-weight: 200;
   // font-size: 2em;
