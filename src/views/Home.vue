@@ -456,7 +456,6 @@ canvas {
 .logo {
   fill: black;
   transition: var(--hover);
-
   &:hover {
     fill: var(--green);
     transition: var(--hover);
