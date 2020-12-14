@@ -11,7 +11,7 @@
       />
     </label>
     <span id="message">{{ message }}</span>
-    <button id="button" type="button" @click="login">Next</button>
+    <button id="enter" type="button" @click="login">Enter</button>
   </div>
 </template>
 
@@ -28,7 +28,9 @@ export default {
         "lvthn",
         "tellart",
         "esi",
-        "buck"
+        "buck",
+        "gensler",
+        "mediamonks"
       ],
       submittedPassword: "",
       message: " "
@@ -60,7 +62,7 @@ export default {
     $("#password").on("keyup", function(event) {
       if (event.keyCode === 13) {
         event.preventDefault();
-        $("#button").click();
+        $("#enter").click();
       }
     });
     $("#password").focus();

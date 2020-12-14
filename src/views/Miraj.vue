@@ -17,13 +17,13 @@
           enhancing visuals, testing and optimizing performance, and deploying
           Electron for installation.
           <br /><br />
-          <a
-            id="launch"
+          <!-- <a
+            class="cta-button"
             href="https://miraj.sosolimited.com/"
             target="_blank"
             rel="noopener"
             >Launch Miraj
-          </a>
+          </a> -->
         </h3>
         <div class="contributions-container one-third-width">
           <p class="contributions">My Role</p>
@@ -115,27 +115,6 @@ export default {
 
 .banner::before {
   background-color: rgba(0, 0, 0, 0.5);
-}
-
-#launch {
-  padding: 1rem 2.5rem;
-  background-color: var(--green);
-  color: white;
-  border: none;
-  border-radius: 3px;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  font-size: 1.2rem;
-  font-weight: 600;
-  cursor: pointer;
-  outline: none;
-  transition: var(--hover);
-
-  &:hover {
-    background-color: var(--green-semi-transparent);
-    color: white !important;
-    transition: var(--hover);
-  }
 }
 
 video {
