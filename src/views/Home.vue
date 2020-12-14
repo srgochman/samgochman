@@ -34,7 +34,7 @@
               id="email-icon"
               class="logo"
               xmlns="http://www.w3.org/2000/svg"
-              height="16px"
+              height="15px"
               viewBox="0 0 495.4 330.9"
             >
               <svg:style type="text/css">
@@ -226,6 +226,15 @@
           </a>
         </p>
       </div>
+      <br />
+      <a
+        class="cta-button"
+        href="/SGochman_resume.pdf"
+        title="full resume"
+        target="_blank"
+        rel="noopener"
+        >Full resume</a
+      >
     </div>
 
     <div id="juices-arrow-container">

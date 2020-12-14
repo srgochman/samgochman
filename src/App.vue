@@ -263,6 +263,27 @@ body {
   }
 }
 
+.cta-button {
+  padding: 1rem 2.5rem;
+  background-color: var(--green);
+  color: white;
+  border: none;
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+  outline: none;
+  transition: var(--hover);
+
+  &:hover {
+    background-color: var(--green-semi-transparent);
+    color: white !important;
+    transition: var(--hover);
+  }
+}
+
 /* -------------- VISIBILITY --------------*/
 .hidden {
   display: none;
