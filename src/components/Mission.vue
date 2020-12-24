@@ -78,7 +78,7 @@ export default {
   // font-size: 6em;
   font-size: calc(min(7.4vw, 6em));
   font-weight: 700;
-  line-height: 1.3em;
+  // line-height: 1.3em;
   position: relative;
   padding-left: 1px;
 
