@@ -1,13 +1,13 @@
 <template>
-  <div class="body">
+  <div class="page-body">
     <!-- <button @click="clearPass" style="margin-top: 10vh; z-index: 10000">
       Clear passCorrect
     </button> -->
     <div id="particles-js"></div>
-    <div id="mission" class="section">
+    <div class="section section--mission-comp">
       <Mission></Mission>
     </div>
-    <div id="mission-description" class="section appear">
+    <div class="section section--mission-description appear">
       <h3>
         As a developer with roots in biological research and architectural
         design, I appreciate the complexity of people’s relationships with the
@@ -16,14 +16,14 @@
         entertainment.
       </h3>
       <br />
-      <h3 id="contact">
-        <img
+      <h3 class="mission__contact">
+        <!-- <img
           height="11"
-          id="asterisk"
+          class="mission__asterisk"
           src="../assets/drawn/asterisk_green.svg"
-        />
-        I'm looking for new work and would love to connect!
-        <div id="links">
+        /> -->
+        <em>I'm looking for new work and would love to connect!</em>
+        <div class="mission__links">
           <a
             href="mailto:srgochman@gmail.com"
             title="email"
@@ -31,8 +31,7 @@
             rel="noopener"
           >
             <svg
-              id="email-icon"
-              class="logo"
+              class="mission__logo"
               xmlns="http://www.w3.org/2000/svg"
               height="15px"
               viewBox="0 0 495.4 330.9"
@@ -64,8 +63,7 @@
             rel="noopener"
           >
             <svg
-              id="linkedin-icon"
-              class="logo"
+              class="mission__logo"
               xmlns="http://www.w3.org/2000/svg"
               height="20px"
               viewBox="0 0 468.5 452"
@@ -94,8 +92,7 @@
             rel="noopener"
           >
             <svg
-              id="resume-icon"
-              class="logo"
+              class="mission__logo"
               xmlns="http://www.w3.org/2000/svg"
               height="20px"
               viewBox="0 0 349.3 452"
@@ -126,8 +123,7 @@
             rel="noopener"
           >
             <svg
-              id="insta-icon"
-              class="logo"
+              class="mission__logo"
               xmlns="http://www.w3.org/2000/svg"
               height="20px"
               viewBox="0 0 298.5 300"
@@ -155,9 +151,9 @@
       </h3>
     </div>
 
-    <div id="skills" class="section appear">
+    <div class="section section--skills appear">
       <h1>Skills</h1>
-      <div id="skills-container">
+      <div class="stacked">
         <Skill
           v-for="skill in skills"
           :key="skill.keywords[0]"
@@ -284,7 +280,7 @@ export default {
     particlesJS.load("particles-js", "particlesjs-config.json");
 
     // fade in mission section
-    gsap.timeline().from("#mission", {
+    gsap.timeline().from(".section--mission-comp", {
       autoAlpha: 0,
       duration: 0.8,
       ease: "power1.inOut",
@@ -326,7 +322,7 @@ export default {
           // mission scroll tracking
           this.missionTrig = gsap.timeline({
             scrollTrigger: {
-              trigger: "#mission",
+              trigger: ".section--mission-comp",
               start: "top top",
               // markers: true,
               onEnter: () => {
@@ -429,53 +425,23 @@ canvas {
   z-index: 1;
 }
 
-#mission {
+.section--mission-comp {
   position: relative;
   height: 100vh;
   margin-bottom: 50px;
 }
 
-#mission-description {
+.section--mission-description {
   width: 64%;
   // width: 907px;
   // max-width: calc(max(500px, 30%));
-  // margin-bottom: 200px;
-  // font-size: 2em;
-
-  p {
-    margin-bottom: 30px;
-  }
 }
 
-#contact {
-  position: relative;
-}
-
-#links {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  margin-top: 25px;
-
-  & > * {
-    margin-right: 40px;
-  }
-}
-
-.logo {
-  fill: black;
-  transition: var(--hover);
-  &:hover {
-    fill: var(--green);
-    transition: var(--hover);
-  }
-}
-
-#asterisk {
-  position: absolute;
-  top: 10px;
-  left: -25px;
-}
+// .mission__asterisk {
+//   position: absolute;
+//   top: 10px;
+//   left: -25px;
+// }
 
 .underline {
   // content: "";
@@ -493,6 +459,30 @@ canvas {
   left: 0px;
   visibility: hidden;
   opacity: 0;
+}
+
+.mission__contact {
+  position: relative;
+}
+
+.mission__links {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 25px;
+
+  & > * {
+    margin-right: 40px;
+  }
+}
+
+.mission__logo {
+  fill: black;
+  transition: var(--hover);
+  &:hover {
+    fill: var(--green);
+    transition: var(--hover);
+  }
 }
 
 .arrow {
@@ -526,13 +516,6 @@ canvas {
 .section-heading {
   height: 13px;
   margin: 0 0 70px 0;
-}
-
-#skills-container {
-  display: flex;
-  flex-direction: column;
-  // flex-wrap: wrap;
-  // justify-content: space-between;
 }
 
 #projects-container {
@@ -630,11 +613,11 @@ canvas {
 }
 
 @media only screen and (max-width: 1024px) {
-  #asterisk {
-    transform: scale(0.8);
-    top: 6px;
-    left: -22px;
-  }
+  // .mission__asterisk {
+  //   transform: scale(0.8);
+  //   top: 6px;
+  //   left: -22px;
+  // }
 
   .section-heading {
     transform-origin: left;
@@ -659,7 +642,7 @@ canvas {
 
 @media only screen and (max-width: 768px),
   only screen and (orientation: landscape) and (max-width: 820px) {
-  #mission-description {
+  .section--mission-description {
     width: 100%;
     // max-width: 100%;
     margin-bottom: 120px;
@@ -675,18 +658,18 @@ canvas {
 }
 
 @media only screen and (max-width: 425px) {
-  #mission,
+  .section--mission-comp,
   #particles-js {
     height: calc(175px + 31vh);
   }
 
-  #asterisk {
-    left: -17px;
-  }
+  // .mission__asterisk {
+  //   left: -17px;
+  // }
 }
 
 @media only screen and (min-height: 1100px) {
-  #mission,
+  .section--mission-comp,
   #particles-js {
     height: 70vh;
   }

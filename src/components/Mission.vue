@@ -1,9 +1,16 @@
 <template>
-  <div id="mission-container">
-    <div id="mission-statement">
-      <span id="beginning">I’m a creative technologist who </span>
+  <div class="mission__container">
+    <div class="mission__statement">
+      <span class="mission__statement--beginning"
+        >I’m a creative technologist who
+      </span>
       <transition name="fade" mode="out-in">
-        <span v-if="showEndings" ref="ending" class="ending" :key="idx">
+        <span
+          v-if="showEndings"
+          ref="ending"
+          class="mission__statement--ending"
+          :key="idx"
+        >
           {{ endings[idx] }}
         </span>
       </transition>
@@ -65,7 +72,7 @@ export default {
 </script>
 
 <style lang="scss">
-#mission-container {
+.mission__container {
   display: flex;
   flex-flow: row wrap;
   // justify-content: space-between;
@@ -110,20 +117,7 @@ export default {
   }
 }
 
-#beginning {
-  // masking makes it invisible; used for spacing
-  color: transparent !important;
-
-  // duplicate text as black on top
-  &::before {
-    color: black;
-    content: "I'm a creative technologist who";
-    position: absolute;
-    max-width: 1200px;
-  }
-}
-
-#mission-statement {
+.mission__statement {
   width: 100%;
   max-width: 1200px;
   // max-width: 678px;
@@ -134,6 +128,19 @@ export default {
   // flex-grow: 2;
   // flex-basis: 67%;
   // padding-right: 80px;
+}
+
+.mission__statement--beginning {
+  // masking makes it invisible; used for spacing
+  color: transparent !important;
+
+  // duplicate text as black on top
+  &::before {
+    color: black;
+    content: "I'm a creative technologist who";
+    position: absolute;
+    max-width: 1200px;
+  }
 }
 
 // ending transitions
@@ -156,7 +163,7 @@ export default {
 }
 
 @media only screen and (max-width: 425px) {
-  #mission-container {
+  .mission__container {
     font-size: 9vw;
     height: 60vw;
     margin-top: calc(50px + 13vh);
@@ -169,7 +176,7 @@ export default {
 }
 
 @media only screen and (orientation: landscape) and (max-width: 820px) {
-  #mission-container {
+  .mission__container {
     height: 42vw;
     margin-top: calc(20px + 5vh);
     transform: translateY(0%);
@@ -178,13 +185,13 @@ export default {
 
 // extra tall screens
 @media only screen and (min-height: 1100px) {
-  #mission-container {
+  .mission__container {
     margin-top: 40vh;
   }
 }
 
 // @media only screen and (max-width: 1024px) and (max-height: 426px) {
-//   #mission-container {
+//   .mission__container {
 //     margin-top: calc(50vh + 75px);
 //   }
 // }

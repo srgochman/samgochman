@@ -1,12 +1,9 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/" class="sam-gochman">
-        <!-- <svg id="name-drawn" width="158" height="22" @click="scrollTop">
-          <use href="../src/assets/drawn/name_drawn.svg#Layer_2"></use>
-        </svg> -->
+    <div class="nav">
+      <router-link to="/" class="nav__route-home">
         <svg
-          id="name-drawn"
+          class="nav__fullname-drawn"
           @click="scrollTop"
           width="167"
           height="39"
@@ -60,9 +57,6 @@
             />
           </g>
         </svg>
-        <!-- <svg id="initials" width="48" height="39" @click="scrollTop">
-          <use href="../src/assets/drawn/initials_green.svg#Layer_2"></use>
-        </svg> -->
       </router-link>
     </div>
     <transition name="pages" @after-leave="$root.$emit('transitionScroll')">
@@ -194,7 +188,7 @@ body {
   color: black;
 }
 
-#nav {
+.nav {
   margin-left: 40px;
   display: flex;
   flex-direction: column;
@@ -208,42 +202,22 @@ body {
   top: 0;
   left: 0;
   z-index: 100;
+}
 
-  .sam-gochman {
-    margin-top: 10px;
-    position: relative;
-  }
+.nav__route-home {
+  margin-top: 10px;
+  position: relative;
+}
 
-  #name-drawn {
-    transform-origin: top left;
-    transform: scale(1.5);
-    position: absolute;
-    left: -14px;
-  }
-
-  // #links {
-  //   display: flex;
-  //   flex-direction: column;
-  //   align-items: center;
-
-  //   & > * {
-  //     margin-top: 25px;
-  //   }
-  // }
-
-  // .logo {
-  //   fill: black;
-  //   transition: var(--hover);
-
-  //   &:hover {
-  //     fill: var(--green);
-  //     transition: var(--hover);
-  //   }
-  // }
+.nav__fullname-drawn {
+  transform-origin: top left;
+  transform: scale(1.5);
+  position: absolute;
+  left: -14px;
 }
 
 // page content
-.body {
+.page-body {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -261,6 +235,16 @@ body {
   &:last-child {
     margin-bottom: 7vh !important;
   }
+}
+
+.across {
+  display: flex;
+  flex-direction: row;
+}
+
+.stacked {
+  display: flex;
+  flex-direction: column;
 }
 
 .cta-button {
@@ -315,21 +299,10 @@ body {
   opacity: 0;
 }
 
-// @media only screen and (min-width: 1024px) and (max-width: 1900px) {
-//   #nav {
-//     position: absolute;
-//     overflow: hidden;
-//   }
-// }
-
 @media only screen and (max-width: 1024px) {
-  #nav #name-drawn {
+  .nav__fullname-drawn {
     transform: scale(1);
   }
-
-  // #initials {
-  //   display: block;
-  // }
 
   .section {
     margin-bottom: 150px;
@@ -337,20 +310,20 @@ body {
 }
 
 @media only screen and (max-width: 425px) {
-  #nav #name-drawn {
+  .nav__fullname-drawn {
     transform: scale(1.1);
   }
 }
 
 // keep nav on left for wide screens
-@media only screen and (min-width: 2160px) {
-  // #nav {
-  //   width: 100vw;
-  //   max-width: unset;
+// @media only screen and (min-width: 2160px) {
+//   .nav {
+//     width: 100vw;
+//     max-width: unset;
 
-  //   .sam-gochman {
-  //     margin-left: 50px;
-  //   }
-  // }
-}
+//     .nav__route-home {
+//       margin-left: 50px;
+//     }
+//   }
+// }
 </style>
