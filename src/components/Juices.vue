@@ -1,7 +1,7 @@
 <template>
-  <div id="juices-grid-container">
+  <div class="juices__grid-container">
     <div
-      class="image-container"
+      class="juices__image-container"
       v-for="(item, index) in items"
       :key="index"
       :data-index-number="index"
@@ -76,7 +76,7 @@ export default {
           const vm = this;
           // console.log("start of mounted", this.triggers);
           this.triggers = [];
-          $(".image-container").each(function() {
+          $(".juices__image-container").each(function() {
             if (this.dataset.indexNumber % vm.chunkSize !== 0) return;
             // vm.trig = gsap.timeline({
             const trig = gsap.timeline({
@@ -91,8 +91,8 @@ export default {
                   // loop through each image-container in current chunk
                   // until you reach either the end of chunk or the end of gallery
                   // eslint-disable-next-line prettier/prettier
-                  for (let i = loadedChunkItems; i < Math.min(loadedChunkItems + vm.chunkSize, $(".image-container").length); i++) {
-                    let curItem = $(".image-container")[i].children[0];
+                  for (let i = loadedChunkItems; i < Math.min(loadedChunkItems + vm.chunkSize, $(".juices__image-container").length); i++) {
+                    let curItem = $(".juices__image-container")[i].children[0];
                     if (curItem.nodeName === "IMG") {
                       curItem.src = curItem.dataset.url; // provide image
                     } else if (curItem.nodeName === "VIDEO") {
@@ -101,7 +101,7 @@ export default {
                       curItem.load();
                       setTimeout(() => {
                         // show play icon when it's scrolled to
-                        $(".image-container")[
+                        $(".juices__image-container")[
                           i
                         ].children[1].style.removeProperty("opacity");
                       }, 350);
@@ -155,75 +155,75 @@ export default {
   // transition-delay: 350ms;
 }
 
-#juices-grid-container {
+.juices__grid-container {
   display: grid;
   // grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   grid-template-columns: repeat(3, 1fr);
   // grid-auto-rows: 1fr;
   // grid-gap: 1.5em;
   grid-gap: calc(max(1.5vw, 20px));
+}
 
-  .image-container {
-    background-color: white;
-    display: grid;
-    place-items: center;
-    // width: calc(1440px / 3 - 3 * max(1.5vw, 20px));
-    // height: calc(1440px / 3 - 3 * max(1.5vw, 20px));
-    position: relative;
+.juices__image-container {
+  background-color: white;
+  display: grid;
+  place-items: center;
+  // width: calc(1440px / 3 - 3 * max(1.5vw, 20px));
+  // height: calc(1440px / 3 - 3 * max(1.5vw, 20px));
+  position: relative;
 
-    // for aspect ratio
-    &::before {
-      content: "";
-      display: block;
-      width: 0;
-      height: 0;
-      padding-bottom: 100%;
-      grid-area: 1 / 1 / 2 / 2;
-    }
+  // for aspect ratio
+  &::before {
+    content: "";
+    display: block;
+    width: 0;
+    height: 0;
+    padding-bottom: 100%;
+    grid-area: 1 / 1 / 2 / 2;
+  }
 
-    img,
-    video {
-      width: 100%;
-      height: 100%;
-      transition: opacity 200ms ease-in-out;
-      transition-delay: 350ms;
-      // border-radius: 3px;
-      // -webkit-border-radius: 3px;
-      // -moz-border-radius: 3px;
+  img,
+  video {
+    width: 100%;
+    height: 100%;
+    transition: opacity 200ms ease-in-out;
+    transition-delay: 350ms;
+    // border-radius: 3px;
+    // -webkit-border-radius: 3px;
+    // -moz-border-radius: 3px;
 
-      position: absolute; // fixes Safari issue of unconstrained height
-      // max-width: 100%;
-      // top: 0;
-      // bottom: 0;
-      // right: 0;
-      // left: 0;
-      // margin: auto;
+    position: absolute; // fixes Safari issue of unconstrained height
+    // max-width: 100%;
+    // top: 0;
+    // bottom: 0;
+    // right: 0;
+    // left: 0;
+    // margin: auto;
 
-      // background-size: cover;
-      object-fit: cover;
-      object-position: center;
-      grid-area: 1 / 1 / 2 / 2;
+    // background-size: cover;
+    object-fit: cover;
+    object-position: center;
+    grid-area: 1 / 1 / 2 / 2;
 
-      &:focus {
-        outline: none;
-      }
-    }
-
-    .delay-show {
-      pointer-events: none;
-      position: absolute;
-      bottom: 15px;
-      left: 15px;
-      transform: scale(0.04);
-      transform-origin: left bottom;
-      filter: drop-shadow(0 0 150px rgba(0, 0, 0, 0.8));
-      // opacity: 0.7;
+    &:focus {
+      outline: none;
     }
   }
 }
 
+.delay-show {
+  pointer-events: none;
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+  transform: scale(0.04);
+  transform-origin: left bottom;
+  filter: drop-shadow(0 0 150px rgba(0, 0, 0, 0.8));
+  // opacity: 0.7;
+}
+
 @media only screen and (max-width: 425px) {
-  #juices-grid-container {
+  .juices__grid-container {
     grid-template-columns: 1fr;
     grid-gap: 2em;
   }

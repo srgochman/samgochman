@@ -190,10 +190,10 @@
       </div>
     </div>
 
-    <div id="experience" class="section appear">
+    <div class="section section--experience appear">
       <h1>Experience</h1>
       <div
-        class="experience-item"
+        class="experience__item"
         v-for="experience in experiences"
         :key="experience.title"
       >
@@ -233,10 +233,10 @@
       >
     </div>
 
-    <div id="juices-arrow-container">
+    <div class="juices__arrow-container">
       <img src="../assets/drawn/juices_arrow.png" />
     </div>
-    <div id="juices" class="section appear">
+    <div class="section section--juices appear">
       <h1>Latest Creative Juices</h1>
       <p>
         An archive of prototypes, experiments, and side projects that keep my
@@ -288,18 +288,18 @@ export default {
     });
 
     // animate hover for underlines in mission description
-    $("#work").hover(function() {
-      $("#work .underline").toggleClass("underline-hover");
-    });
-    $("#connect").hover(function() {
-      $("#connect .underline").toggleClass("underline-hover");
-    });
-    $("#resume").hover(function() {
-      $("#resume .underline").toggleClass("underline-hover");
-    });
+    // $("#work").hover(function() {
+    //   $("#work .underline").toggleClass("underline-hover");
+    // });
+    // $("#connect").hover(function() {
+    //   $("#connect .underline").toggleClass("underline-hover");
+    // });
+    // $("#resume").hover(function() {
+    //   $("#resume .underline").toggleClass("underline-hover");
+    // });
 
     // animate hover for arrows in experience
-    $(".experience-item a").hover(function() {
+    $(".experience__item a").hover(function() {
       $(this)
         .find(".arrow")
         .toggleClass("green-arrow");
@@ -343,7 +343,7 @@ export default {
           // juices arrow scroll tracking
           this.arrowTrig = gsap.timeline({
             scrollTrigger: {
-              trigger: "#juices-arrow-container",
+              trigger: ".juices__arrow-container",
               start: "top bottom",
               // markers: true,
               onEnter: () => {
@@ -375,7 +375,7 @@ export default {
     },
     arrowScroll() {
       const root = document.documentElement;
-      let arrowTop = $("#juices-arrow-container").offset().top;
+      let arrowTop = $(".juices__arrow-container").offset().top;
       let y = (window.scrollY - arrowTop + innerHeight / 2) / 100;
       root.style.setProperty("--scroll", y);
     }
@@ -443,23 +443,23 @@ canvas {
 //   left: -25px;
 // }
 
-.underline {
-  // content: "";
-  position: absolute;
-  bottom: 0px;
-  left: 0px;
-  width: 100%;
-  transform: scaleY(1.2);
-  opacity: 1;
-  visibility: visible;
-  transition: var(--hover);
-}
+// .underline {
+//   // content: "";
+//   position: absolute;
+//   bottom: 0px;
+//   left: 0px;
+//   width: 100%;
+//   transform: scaleY(1.2);
+//   opacity: 1;
+//   visibility: visible;
+//   transition: var(--hover);
+// }
 
-.underline-hover {
-  left: 0px;
-  visibility: hidden;
-  opacity: 0;
-}
+// .underline-hover {
+//   left: 0px;
+//   visibility: hidden;
+//   opacity: 0;
+// }
 
 .mission__contact {
   position: relative;
@@ -513,10 +513,10 @@ canvas {
   transition: fill 0.2s ease-in-out;
 }
 
-.section-heading {
-  height: 13px;
-  margin: 0 0 70px 0;
-}
+// .section-heading {
+//   height: 13px;
+//   margin: 0 0 70px 0;
+// }
 
 #projects-container {
   display: flex;
@@ -530,7 +530,7 @@ canvas {
   // overflow: scroll;
 }
 
-.experience-item {
+.experience__item {
   margin-bottom: 40px;
 
   &:last-child {
@@ -559,20 +559,20 @@ canvas {
   }
 }
 
-#juices-arrow-section {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  margin-bottom: 400px;
+// #juices-arrow-section {
+//   width: 100%;
+//   display: flex;
+//   justify-content: center;
+//   margin-bottom: 400px;
 
-  & svg {
-    transform-origin: center;
-    transform: scale(3);
-    position: relative;
-  }
-}
+//   & svg {
+//     transform-origin: center;
+//     transform: scale(3);
+//     position: relative;
+//   }
+// }
 
-#juices-arrow-container {
+.juices__arrow-container {
   width: 100%;
   // height: 100%;
   position: relative;
@@ -607,7 +607,7 @@ canvas {
   }
 }
 
-#juices p {
+.section--juices p {
   width: 66%;
   margin-bottom: 30px;
 }
@@ -619,22 +619,22 @@ canvas {
   //   left: -22px;
   // }
 
-  .section-heading {
-    transform-origin: left;
-    transform: scale(0.8);
-    margin: 0 0 50px 0;
-  }
+  // .section-heading {
+  //   transform-origin: left;
+  //   transform: scale(0.8);
+  //   margin: 0 0 50px 0;
+  // }
 
-  .experience-item {
+  .experience__item {
     margin-bottom: 50px;
   }
 
-  #juices-arrow-container {
+  .juices__arrow-container {
     transform: scale(0.5);
     margin-bottom: 150px;
   }
 
-  #juices p {
+  .section--juices p {
     width: 100%;
     margin-bottom: 20px;
   }
