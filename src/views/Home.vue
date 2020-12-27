@@ -167,10 +167,10 @@
       </div>
     </div>
 
-    <div id="projects" class="section appear">
+    <div class="section section--projects appear">
       <h1>Selected Projects</h1>
-      <div id="projects-container">
-        <div id="project-images-container">
+      <div class="projects-list__container">
+        <div class="projects-list__images-container">
           <ProjectImage
             v-for="project in projects"
             ref="project"
@@ -302,7 +302,7 @@ export default {
     $(".experience__item a").hover(function() {
       $(this)
         .find(".arrow")
-        .toggleClass("green-arrow");
+        .toggleClass("arrow--green");
     });
 
     const homeController = new ScrollMagic.Controller();
@@ -485,46 +485,18 @@ canvas {
   }
 }
 
-.arrow {
-  background-size: cover;
-  transform-origin: top left;
-  transform: scale(0.15, 0.2);
-  fill: black;
-  // opacity: 0;
-  transition: fill 0.2s ease-in-out;
-}
-
-.green-arrow {
-  fill: var(--green) !important;
-  // opacity: 1 !important;
-  transition: fill 0.2s ease-in-out;
-}
-
-.lock {
-  background-size: cover;
-  transform-origin: top left;
-  transform: scale(0.1);
-  fill: black;
-  transition: fill 0.2s ease-in-out;
-}
-
-.green-lock {
-  fill: var(--green) !important;
-  transition: fill 0.2s ease-in-out;
-}
-
 // .section-heading {
 //   height: 13px;
 //   margin: 0 0 70px 0;
 // }
 
-#projects-container {
+.projects-list__container {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
 
-#project-images-container {
+.projects-list__images-container {
   width: 63%;
   // height: 500px;
   // overflow: scroll;
@@ -612,6 +584,34 @@ canvas {
   margin-bottom: 30px;
 }
 
+.arrow {
+  background-size: cover;
+  transform-origin: top left;
+  transform: scale(0.15, 0.2);
+  fill: black;
+  // opacity: 0;
+  transition: fill 0.2s ease-in-out;
+}
+
+.arrow--green {
+  fill: var(--green) !important;
+  // opacity: 1 !important;
+  transition: fill 0.2s ease-in-out;
+}
+
+.lock {
+  background-size: cover;
+  transform-origin: top left;
+  transform: scale(0.1);
+  fill: black;
+  transition: fill 0.2s ease-in-out;
+}
+
+.lock--green {
+  fill: var(--green) !important;
+  transition: fill 0.2s ease-in-out;
+}
+
 @media only screen and (max-width: 1024px) {
   // .mission__asterisk {
   //   transform: scale(0.8);
@@ -648,11 +648,11 @@ canvas {
     margin-bottom: 120px;
   }
 
-  #projects-container {
+  .projects-list__container {
     flex-direction: column;
   }
 
-  #project-images-container {
+  .projects-list__images-container {
     width: 100%;
   }
 }

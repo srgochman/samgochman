@@ -1,48 +1,33 @@
 <template>
-  <div class="project-container" ref="projectContainer">
+  <div class="project__container" ref="projectContainer">
     <!-- router-link keeps user on same window for case studies -->
     <router-link v-if="type === 'study'" :to="link">
-      <img class="project-img dull" :src="image" ref="projectImage" />
-      <div class="project-text-below" ref="projectTextBelow">
-        <div class="project-title-container">
-          <p class="project-title" ref="projectTitle">{{ title }}</p>
-          <svg class="lock-svg" v-if="locked" width="7px" height="10px">
+      <img class="project__image dull" :src="image" ref="projectImage" />
+      <div class="project__text-below" ref="projectTextBelow">
+        <div class="project__title-container">
+          <p class="project__title" ref="projectTitle">{{ title }}</p>
+          <svg v-if="locked" width="7px" height="10px">
             <use
               ref="lock"
               class="lock"
               href="../assets/unlocked.svg#Layer_1"
             ></use>
           </svg>
-          <svg
-            v-if="arrowType == 2"
-            class="arrow-svg"
-            width="28px"
-            height="8px"
-          >
+          <svg v-if="arrowType == 2" width="28px" height="8px">
             <use
               class="arrow"
               ref="arrow"
               href="../assets/drawn/arrow_drawn2.svg#Layer_2"
             ></use>
           </svg>
-          <svg
-            v-if="arrowType == 3"
-            class="arrow-svg"
-            width="28px"
-            height="8px"
-          >
+          <svg v-if="arrowType == 3" width="28px" height="8px">
             <use
               class="arrow"
               ref="arrow"
               href="../assets/drawn/arrow_drawn3.svg#Layer_2"
             ></use>
           </svg>
-          <svg
-            v-if="arrowType == 4"
-            class="arrow-svg"
-            width="28px"
-            height="8px"
-          >
+          <svg v-if="arrowType == 4" width="28px" height="8px">
             <use
               class="arrow"
               ref="arrow"
@@ -50,7 +35,7 @@
             ></use>
           </svg>
         </div>
-        <h2 class="project-desc">{{ description }}</h2>
+        <h2 class="project__description">{{ description }}</h2>
       </div>
     </router-link>
     <!-- opens new window for external links -->
@@ -60,47 +45,32 @@
       target="_blank"
       rel="noopener"
     >
-      <img class="project-img dull" :src="image" ref="projectImage" />
-      <div class="project-text-below" ref="projectTextBelow">
-        <div class="project-title-container">
-          <p class="project-title" ref="projectTitle">{{ title }}</p>
-          <svg class="lock-svg" v-if="locked" width="7px" height="10px">
+      <img class="project__image dull" :src="image" ref="projectImage" />
+      <div class="project__text-below" ref="projectTextBelow">
+        <div class="project__title-container">
+          <p class="project__title" ref="projectTitle">{{ title }}</p>
+          <svg v-if="locked" width="7px" height="10px">
             <use
               ref="lock"
               class="lock"
               href="../assets/unlocked.svg#Layer_1"
             ></use>
           </svg>
-          <svg
-            v-if="arrowType == 2"
-            class="arrow-svg"
-            width="28px"
-            height="8px"
-          >
+          <svg v-if="arrowType == 2" width="28px" height="8px">
             <use
               class="arrow"
               ref="arrow"
               href="../assets/drawn/arrow_drawn2.svg#Layer_2"
             ></use>
           </svg>
-          <svg
-            v-if="arrowType == 3"
-            class="arrow-svg"
-            width="28px"
-            height="8px"
-          >
+          <svg v-if="arrowType == 3" width="28px" height="8px">
             <use
               class="arrow"
               ref="arrow"
               href="../assets/drawn/arrow_drawn3.svg#Layer_2"
             ></use>
           </svg>
-          <svg
-            v-if="arrowType == 4"
-            class="arrow-svg"
-            width="28px"
-            height="8px"
-          >
+          <svg v-if="arrowType == 4" width="28px" height="8px">
             <use
               class="arrow"
               ref="arrow"
@@ -108,17 +78,17 @@
             ></use>
           </svg>
         </div>
-        <h2 class="project-desc">{{ description }}</h2>
+        <h2 class="project__description">{{ description }}</h2>
       </div>
     </a>
     <!-- no link for other projects -->
     <div v-else>
-      <img class="project-img dull" :src="image" ref="projectImage" />
-      <div class="project-text-below" ref="projectTextBelow">
-        <div class="project-title-container">
-          <p class="project-title" ref="projectTitle">{{ title }}</p>
+      <img class="project__image dull" :src="image" ref="projectImage" />
+      <div class="project__text-below" ref="projectTextBelow">
+        <div class="project__title-container">
+          <p class="project__title" ref="projectTitle">{{ title }}</p>
         </div>
-        <h2 class="project-desc">{{ description }}</h2>
+        <h2 class="project__description">{{ description }}</h2>
       </div>
     </div>
   </div>
@@ -260,8 +230,8 @@ export default {
       // text below (narrow screens)
       this.projectTextBelow.classList.add("dull");
       this.projectTitle.style.color = "black";
-      if (this.arrow) this.arrow.classList.remove("green-arrow");
-      if (this.locked) this.lock.classList.remove("green-lock");
+      if (this.arrow) this.arrow.classList.remove("arrow--green");
+      if (this.locked) this.lock.classList.remove("lock--green");
 
       this.isActive = false;
     },
@@ -270,13 +240,13 @@ export default {
       if (this.isActive) {
         // text below (narrow screens)
         this.projectTitle.style.color = "var(--green)";
-        if (this.arrow) this.arrow.classList.add("green-arrow");
-        if (this.locked) this.lock.classList.add("green-lock");
+        if (this.arrow) this.arrow.classList.add("arrow--green");
+        if (this.locked) this.lock.classList.add("lock--green");
 
         // ProjectText (wide screens)
-        $(".project-text a").css("color", "var(--green)");
-        $(".project-text .arrow").addClass("green-arrow");
-        $(".project-text .lock").addClass("green-lock");
+        $(".project__text a").css("color", "var(--green)");
+        $(".project__text .arrow").addClass("arrow--green");
+        $(".project__text .lock").addClass("lock--green");
       }
     },
     // remove highlights on active project info off of hover
@@ -284,13 +254,13 @@ export default {
       if (this.isActive) {
         // text below (narrow screens)
         this.projectTitle.style.color = "black";
-        if (this.arrow) this.arrow.classList.remove("green-arrow");
-        if (this.locked) this.lock.classList.remove("green-lock");
+        if (this.arrow) this.arrow.classList.remove("arrow--green");
+        if (this.locked) this.lock.classList.remove("lock--green");
 
         // ProjectText (wide screens)
-        $(".project-text a").css("color", "black");
-        $(".project-text .arrow").removeClass("green-arrow");
-        $(".project-text .lock").removeClass("green-lock");
+        $(".project__text a").css("color", "black");
+        $(".project__text .arrow").removeClass("arrow--green");
+        $(".project__text .lock").removeClass("lock--green");
       }
     },
     killTriggers() {
@@ -307,12 +277,12 @@ export default {
 </script>
 
 <style lang="scss">
-.project-container {
+.project__container {
   margin-bottom: 30px;
   width: 100%;
 }
 
-.project-img {
+.project__image {
   // margin-right: 4%;
   width: 100%;
   height: 65vh;
@@ -327,8 +297,8 @@ export default {
   transition-delay: 200ms;
 }
 
-.project-text-below {
-  .project-title {
+.project__text-below {
+  .project__title {
     color: black;
     transition: var(--hover);
   }
@@ -342,13 +312,13 @@ export default {
 
 @media only screen and (min-width: 426px) and (max-width: 768px),
   only screen and (orientation: landscape) and (max-device-width: 820px) {
-  .project-img {
+  .project__image {
     height: 60vh;
   }
 }
 
 @media only screen and (max-width: 425px) {
-  .project-img {
+  .project__image {
     // margin: 0;
     height: 40vh;
   }
@@ -357,18 +327,18 @@ export default {
 
 <style lang="scss" scoped>
 // hide duplicated below-text on wide screens
-.project-text-below {
+.project__text-below {
   display: none;
 }
 
 @media only screen and (max-width: 768px),
   only screen and (orientation: landscape) and (max-width: 820px) {
-  .project-text-below {
+  .project__text-below {
     display: block;
     transition: opacity 200ms ease;
     transition-delay: 200ms;
 
-    .project-title-container {
+    .project__title-container {
       // margin-top: 10px;
 
       svg {
@@ -376,7 +346,7 @@ export default {
       }
     }
 
-    .project-desc {
+    .project__description {
       margin: 10px 0 60px 0;
     }
   }
