@@ -1,6 +1,6 @@
 <template>
   <div class="study-page">
-    <div class="banner img-bg"></div>
+    <div class="banner section__background-image"></div>
     <div class="banner">
       <video
         muted
@@ -13,14 +13,14 @@
         <source src="/photos/phototaxis/Phototaxis_cut.mp4" type="video/mp4" />
       </video>
     </div>
-    <div class="body">
-      <div class="banner-text">
+    <div class="page-body">
+      <div class="page-body__banner-text">
         <h3>Phototaxis</h3>
         <h2>{{ tagline }}</h2>
         <p>2019</p>
         <!-- <p>EskewDumezRipple</p> -->
       </div>
-      <div class="info section">
+      <div class="page-body__info section">
         <h3 class="two-thirds-width">
           People rarely get the opportunity to have a dialogue with light. As an
           artistic culmination of my research fellowship in audiovisual
@@ -35,12 +35,12 @@
           Along the way, I recruited others in and out of the studio for design
           feedback and help with construction.
         </h3>
-        <div class="contributions-container one-third-width">
-          <p class="contributions">My Role</p>
+        <div class="contributions one-third-width">
+          <p class="info-caps">My Role</p>
           <Tags :words="tags" />
-          <p class="contributions">Project Ownership</p>
+          <p class="info-caps">Project Ownership</p>
           <p>EskewDumezRipple, Sam Gochman</p>
-          <p class="contributions">Teammates</p>
+          <p class="info-caps">Teammates</p>
           <p>
             Architects: Ian O'Cain, Javier Marcano <br />
             Designer: Marion Forbes <br />
@@ -48,8 +48,8 @@
           </p>
         </div>
       </div>
-      <div class="section appear stacked">
-        <div class="caption two-thirds-width">
+      <div class="section section--stacked appear">
+        <div class="section__description two-thirds-width">
           <h2>Experience Design</h2>
           <p>
             Almost all organisms move in response to light. Part exhibition,
@@ -60,12 +60,12 @@
             exploration from all angles.
           </p>
         </div>
-        <div class="img-container full-width">
+        <div class="section__image-container full-width">
           <img id="exposure" src="/photos/phototaxis/exposure.jpg" />
         </div>
       </div>
-      <div class="section appear stacked">
-        <div class="caption two-thirds-width">
+      <div class="section appear section--stacked">
+        <div class="section__description two-thirds-width">
           <h2>Interaction Development</h2>
           <p>
             To let the user and environment respond to each other, I prototyped
@@ -74,11 +74,11 @@
             relationship between light level and proximity.
           </p>
         </div>
-        <div id="interaction" class="across">
-          <div class="img-container two-thirds-width">
+        <div id="interaction" class="section--across">
+          <div class="section__image-container two-thirds-width">
             <img src="/photos/phototaxis/prototype.jpg" />
           </div>
-          <div class="img-container one-third-width">
+          <div class="section__image-container one-third-width">
             <img
               src="/photos/phototaxis/sketches.jpg"
               style="object-fit: cover; height: 100%;"
@@ -87,7 +87,7 @@
         </div>
       </div>
       <div class="section appear">
-        <div class="caption one-third-width">
+        <div class="section__description one-third-width">
           <h2>Installation</h2>
           <p>
             I designed and built a structure that could mediate the intersection
@@ -99,12 +99,12 @@
             affected brightness and logged data throughout the exhibition.
           </p>
         </div>
-        <div class="img-container two-thirds-width">
+        <div class="section__image-container two-thirds-width">
           <img id="diagram" src="/photos/phototaxis/exploded.png" />
         </div>
       </div>
-      <div class="section appear reverse">
-        <div class="caption one-third-width">
+      <div class="section reverse appear">
+        <div class="section__description one-third-width">
           <h2>Analysis & Visualization</h2>
           <p>
             I used the datalog to map behavior to the dropoff of light. Although
@@ -118,14 +118,17 @@
             spectrum of experiences.
           </p>
         </div>
-        <div class="img-container two-thirds-width">
+        <div class="section__image-container two-thirds-width">
           <img id="graph" src="/photos/phototaxis/graph.png" />
         </div>
       </div>
-      <div class="section appear across">
-        <img class="one-third-width img-bg" src="/photos/phototaxis/jump.jpg" />
+      <div class="section section--across appear">
         <img
-          class="two-thirds-width img-bg"
+          class="section__background-image one-third-width"
+          src="/photos/phototaxis/jump.jpg"
+        />
+        <img
+          class="section__background-image two-thirds-width"
           src="/photos/phototaxis/christian.jpg"
         />
       </div>
@@ -181,7 +184,7 @@ video {
   object-fit: cover;
 }
 
-.banner.img-bg {
+.banner.section__background-image {
   background-image: url("/photos/phototaxis/phototaxis_silhouette.png");
   object-fit: cover;
   display: none;
@@ -196,7 +199,7 @@ video {
     display: none;
   }
 
-  .banner.img-bg {
+  .banner.section__background-image {
     display: block;
   }
 

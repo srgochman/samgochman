@@ -1,12 +1,29 @@
 [
   {
+    "link": "/photos/juices/blobs5.mp4",
+    "mediaType": "video",
+    "poster": "/photos/juices/blobs5.jpg"
+  },
+  {
+    "link": "/photos/juices/blobs7.mp4",
+    "mediaType": "video",
+    "poster": "/photos/juices/blobs7.jpg"
+  },
+  {
+    "link": "/photos/juices/blobs1.mp4",
+    "mediaType": "video",
+    "poster": "/photos/juices/blobs1.jpg"
+  },
+  {
+    "link": "/photos/juices/recognition.mp4",
+    "mediaType": "video",
+    "poster": "/photos/juices/recognition.jpg",
+    "doesContain": true
+  },
+  {
     "link": "/photos/juices/twist.mp4",
     "mediaType": "video",
     "poster": "/photos/juices/twist.jpg"
-  },
-  {
-    "link": "/photos/juices/spectrum2.jpg",
-    "mediaType": "img"
   },
   {
     "link": "/photos/juices/spectrum3.jpg",
@@ -18,11 +35,11 @@
     "poster": "/photos/juices/watercolor.jpg"
   },
   {
-    "link": "/photos/juices/watercolor4.jpg",
+    "link": "/photos/juices/watercolor3.jpg",
     "mediaType": "img"
   },
   {
-    "link": "/photos/juices/watercolor5.jpg",
+    "link": "/photos/juices/watercolor2.jpg",
     "mediaType": "img"
   },
   {

@@ -1,6 +1,6 @@
 <template>
-  <div class="tags-container">
-    <div class="tag-category" v-for="category in words" :key="category.color">
+  <div class="tags__container">
+    <div class="tags__category" v-for="category in words" :key="category.color">
       <div
         class="tag"
         v-for="word in category.words"
@@ -29,7 +29,7 @@ export default {
 </script>
 
 <style lang="scss">
-.tags-container {
+.tags__container {
   display: flex;
   flex-direction: column;
   // flex-wrap: wrap;
@@ -37,7 +37,7 @@ export default {
   margin: 0 0 35px 0;
 }
 
-.tag-category {
+.tags__category {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;

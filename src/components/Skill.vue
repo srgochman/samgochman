@@ -1,7 +1,7 @@
 <template>
-  <div class="skill-container" ref="skill">
+  <div class="skill" ref="skill">
     <h3
-      class="skill-description"
+      class="skill__description"
       v-html="adjDescription"
       :style="{ borderColor: color, backgroundColor: backgroundColor }"
     ></h3>
@@ -47,7 +47,7 @@ export default {
           this.tl = gsap
             .timeline({
               scrollTrigger: {
-                trigger: "#skills-container",
+                trigger: ".section--skills",
                 start: "top 83%",
                 end: "bottom top"
                 // markers: true
@@ -68,8 +68,6 @@ export default {
     colorize(keyword) {
       this.adjDescription = this.adjDescription.replace(
         keyword,
-        // `<span style="color: ${this.color}"> ${keyword} </span>`
-        // `<span style="font-weight: 700"> ${keyword} </span>`
         `<span style="color: ${this.color}; font-weight: 400"> ${keyword} </span>`
       );
     },
@@ -82,51 +80,40 @@ export default {
 </script>
 
 <style lang="scss">
-.skill-container {
+.skill {
   width: 63%;
   // min-width: 200px;
   margin-bottom: 40px;
   // opacity: 0;
 }
 
-.skill-description {
-  // width: 63%;
-  // width: 80%;
+.skill__description {
   padding: 25px 35px;
   // border-radius: 0px 5px 5px 0px;
   // -webkit-border-radius: 0px 5px 5px 0px;
   // -moz-border-radius: 0px 5px 5px 0px;
   border-left: solid 6px;
-  // font-weight: 200;
-  // font-size: 2em;
 }
-
-// @media only screen and (min-width: 1025px) {
-//   .skill-description {
-//     font-size: 2em;
-//   }
-// }
 
 @media only screen and (min-width: 426px) and (max-width: 768px),
   only screen and (orientation: landscape) and (max-width: 820px) {
-  .skill-container {
+  .skill {
     width: 100%;
     margin-bottom: 40px;
   }
 
-  .skill-description {
+  .skill__description {
     padding: 20px 30px;
   }
 }
 
 @media only screen and (max-width: 425px) {
-  .skill-container {
+  .skill {
     width: 100%;
     margin-bottom: 30px;
   }
 
-  .skill-description {
-    // width: 100%;
+  .skill__description {
     border-left: solid 5px;
     padding: 15px 25px;
   }

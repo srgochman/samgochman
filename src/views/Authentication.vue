@@ -1,17 +1,19 @@
 <template>
-  <div id="container">
+  <div class="authentication__container">
     <label for="password">
       <!-- <h2>This project needs a password to view.</h2> -->
       <input
-        id="password"
+        class="authentication__password"
         type="text"
         name="password"
         placeholder="Enter password"
         v-model="submittedPassword"
       />
     </label>
-    <span id="message">{{ message }}</span>
-    <button id="enter" type="button" @click="login">Enter</button>
+    <span class="authentication__message">{{ message }}</span>
+    <button class="authentication__enter" type="button" @click="login">
+      Enter
+    </button>
   </div>
 </template>
 
@@ -59,19 +61,19 @@ export default {
   },
   mounted() {
     // can submit with enter key
-    $("#password").on("keyup", function(event) {
+    $(".authentication__password").on("keyup", function(event) {
       if (event.keyCode === 13) {
         event.preventDefault();
-        $("#enter").click();
+        $(".authentication__enter").click();
       }
     });
-    $("#password").focus();
+    $(".authentication__password").focus();
   }
 };
 </script>
 
 <style lang="scss" scoped>
-#container {
+.authentication__container {
   // width: 350px;
   // width: 300px;
   display: flex;
@@ -95,7 +97,7 @@ label {
 label,
 input,
 .underline,
-#message,
+.authentication__message,
 button {
   width: 350px;
 }
@@ -130,9 +132,9 @@ select:-webkit-autofill:focus {
   -webkit-box-shadow: 0 0 0px 1000px var(--green-transparent) inset;
 }
 
-#message {
+.authentication__message {
   height: 1.8em;
-  color: gray;
+  color: red;
   font-size: 1em;
   font-weight: 200;
   margin-bottom: 10px;
@@ -164,14 +166,14 @@ button {
   label,
   input,
   .underline,
-  #message,
+  .authentication__message,
   button {
     width: 250px;
   }
 }
 
 @media (hover: none) and (pointer: coarse) {
-  #container {
+  .authentication__container {
     margin-top: 14vh;
     transform: translateY(0%);
     font-family: "Avenir";
