@@ -237,12 +237,12 @@ body {
   }
 }
 
-.across {
+.section--across {
   display: flex;
   flex-direction: row;
 }
 
-.stacked {
+.section--stacked {
   display: flex;
   flex-direction: column;
 }

@@ -33,7 +33,7 @@
             <svg
               class="mission__logo"
               xmlns="http://www.w3.org/2000/svg"
-              height="15px"
+              height="14px"
               viewBox="0 0 495.4 330.9"
             >
               <svg:style type="text/css">
@@ -65,7 +65,7 @@
             <svg
               class="mission__logo"
               xmlns="http://www.w3.org/2000/svg"
-              height="20px"
+              height="17px"
               viewBox="0 0 468.5 452"
             >
               <path
@@ -94,7 +94,7 @@
             <svg
               class="mission__logo"
               xmlns="http://www.w3.org/2000/svg"
-              height="20px"
+              height="17px"
               viewBox="0 0 349.3 452"
             >
               <svg:style type="text/css">
@@ -125,7 +125,7 @@
             <svg
               class="mission__logo"
               xmlns="http://www.w3.org/2000/svg"
-              height="20px"
+              height="17px"
               viewBox="0 0 298.5 300"
             >
               <path
@@ -153,7 +153,7 @@
 
     <div class="section section--skills appear">
       <h1>Skills</h1>
-      <div class="stacked">
+      <div class="section--stacked">
         <Skill
           v-for="skill in skills"
           :key="skill.keywords[0]"
@@ -469,10 +469,10 @@ canvas {
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin-top: 25px;
+  margin-top: 20px;
 
   & > * {
-    margin-right: 40px;
+    margin-right: 20px;
   }
 }
 

@@ -1,14 +1,14 @@
 <template>
   <div class="study-page">
-    <div class="banner img-bg"></div>
-    <div class="body">
-      <div class="banner-text">
+    <div class="banner section__background-image"></div>
+    <div class="page-body">
+      <div class="page-body__banner-text">
         <h3>Multilingual</h3>
         <h2>{{ tagline }}</h2>
         <p>2020</p>
         <!-- <p>Sosolimited</p> -->
       </div>
-      <div class="info section">
+      <div class="page-body__info section">
         <h3 class="two-thirds-width">
           Developed for Planet Word, a museum of language in Washington, DC, and
           deployed in October 2020, Multilingual will give an expected 100,000
@@ -22,12 +22,12 @@
           data to ground the design in academic research and realistic patterns
           of the world population.
         </h3>
-        <div class="contributions-container one-third-width">
-          <p class="contributions">My Role</p>
+        <div class="contributions one-third-width">
+          <p class="info-caps">My Role</p>
           <Tags :words="tags" />
-          <p class="contributions">Project Ownership</p>
+          <p class="info-caps">Project Ownership</p>
           <p>Sosolimited LLC</p>
-          <p class="contributions">Teammates</p>
+          <p class="info-caps">Teammates</p>
           <p>
             Creative Director: Eric Gunther <br />
             UI Designer: Vidhi Trivedi<br />
@@ -49,8 +49,8 @@
           />
         </video>
       </div>
-      <div class="section appear reverse across">
-        <div class="caption one-third-width">
+      <div class="section appear reverse section--across">
+        <div class="section__description one-third-width">
           <h2>Concept Development</h2>
           <p>
             At the start of the project, I thought a lot about the client's goal
@@ -64,17 +64,17 @@
         </div>
         <img
           id="mind-map"
-          class="one-third-width img-bg"
+          class="one-third-width section__background-image"
           src="/photos/multilingual/mind_map.jpg"
         />
         <img
           id="globe"
-          class="one-third-width img-bg"
+          class="one-third-width section__background-image"
           src="/photos/multilingual/globe.jpg"
         />
       </div>
-      <div class="section appear stacked">
-        <div class="caption two-thirds-width">
+      <div class="section appear section--stacked">
+        <div class="section__description two-thirds-width">
           <h2>Data Modeling</h2>
           <p>
             I used a database of over 6,000 languages and dialects to capture
@@ -86,28 +86,28 @@
             size to celebrate underrepresented groups.
           </p>
         </div>
-        <div id="data-images" class="across">
+        <div id="data-images" class="section--across">
           <img
             id="data-cloud"
-            class="one-third-width img-bg"
+            class="one-third-width section__background-image"
             src="/photos/multilingual/data_cloud.png"
           />
           <div class="arrow"></div>
           <img
             id="map"
-            class="one-third-width img-bg"
+            class="one-third-width section__background-image"
             src="/photos/multilingual/map.jpg"
           />
           <div class="arrow"></div>
           <img
             id="field"
-            class="one-third-width img-bg"
+            class="one-third-width section__background-image"
             src="/photos/multilingual/field.jpg"
           />
         </div>
       </div>
       <div class="section appear reverse">
-        <div class="caption one-third-width">
+        <div class="section__description one-third-width">
           <h2>Interaction Development</h2>
           <p>
             A goal of high turnover meant that user input had to be fast, yet
@@ -118,7 +118,7 @@
             with the keyboard.
           </p>
         </div>
-        <div class="img-container two-thirds-width">
+        <div class="section__image-container two-thirds-width">
           <img id="keyboard" src="/photos/multilingual/keyboard_cropped.png" />
         </div>
       </div>
