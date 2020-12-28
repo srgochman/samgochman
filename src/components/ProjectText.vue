@@ -180,7 +180,7 @@ export default {
     margin-bottom: 36px;
   }
 
-  .tags-container {
+  .tags__container {
     margin-bottom: 0;
   }
   // }
