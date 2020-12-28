@@ -1,14 +1,14 @@
 <template>
   <div class="study-page">
-    <div class="banner img-bg"></div>
-    <div class="body">
-      <div class="banner-text">
+    <div class="banner section__background-image"></div>
+    <div class="page-body">
+      <div class="page-body__banner-text">
         <h3>Miraj</h3>
         <h2>{{ tagline }}</h2>
         <p>2020</p>
         <!-- <p>Sosolimited</p> -->
       </div>
-      <div class="info section">
+      <div class="page-body__info section">
         <h3 class="two-thirds-width">
           Back in 2016, Sosolimited made an app that transformed a user's spoken
           word into an entrancing collage in real time. Originally developed for
@@ -25,12 +25,12 @@
             >Launch Miraj
           </a> -->
         </h3>
-        <div class="contributions-container one-third-width">
-          <p class="contributions">My Role</p>
+        <div class="contributions one-third-width">
+          <p class="info-caps">My Role</p>
           <Tags :words="tags" />
-          <p class="contributions">Project Ownership</p>
+          <p class="info-caps">Project Ownership</p>
           <p>Sosolimited LLC</p>
-          <p class="contributions">Teammates</p>
+          <p class="info-caps">Teammates</p>
           <p>
             Back-End Developer: Wes Thomas <br />
             Motion Developer: Jon Corbett
@@ -53,8 +53,8 @@
           using openCV, and displayed dynamically in real-time.
         </p>
       </div>
-      <div class="section appear reverse two-thirds-width">
-        <div class="caption half-width">
+      <div class="section two-thirds-width reverse appear">
+        <div class="section__description half-width">
           <h2>Installation</h2>
           <p>
             As a trial for future projects, I packaged the web experience as an
@@ -62,7 +62,7 @@
             that clients and other visitors frequently use.
           </p>
         </div>
-        <div class="img-container half-width">
+        <div class="section__image-container half-width">
           <img src="/photos/miraj/installation.jpg" />
         </div>
       </div>

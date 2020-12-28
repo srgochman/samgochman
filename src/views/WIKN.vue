@@ -1,14 +1,14 @@
 <template>
   <div class="study-page">
-    <div class="banner img-bg"></div>
-    <div class="body">
-      <div class="banner-text">
+    <div class="banner section__background-image"></div>
+    <div class="page-body">
+      <div class="page-body__banner-text">
         <h3>What I Know Now</h3>
         <h2>{{ tagline }}</h2>
         <p>2020, In Progress</p>
         <!-- <p>Sosolimited</p> -->
       </div>
-      <div class="info section">
+      <div class="page-body__info section">
         <h3 class="two-thirds-width">
           The challenges of 2020 showed us that we need to come together with
           empathetic ears and eyes. This piece lets anyone record their own
@@ -20,24 +20,23 @@
           direction and took charge of whole sections of the codebase pertaining
           to the interface and audio handling.
         </h3>
-        <div class="contributions-container one-third-width">
-          <p class="contributions">My Role</p>
+        <div class="contributions one-third-width">
+          <p class="info-caps">My Role</p>
           <Tags :words="tags" />
-          <p class="contributions">Project Ownership</p>
+          <p class="info-caps">Project Ownership</p>
           <p>Sosolimited LLC</p>
-          <p class="contributions">Team</p>
+          <p class="info-caps">Team</p>
           <p>
             Creative Director: Eric Gunther <br />
             UI/UX Designers: Deb Levison, Vidhi Trivedi <br />
-            UI Developer: Me <br />
-            UX Developer: Jon Corbett <br />
+            UI/UX Developers: Me, Jon Corbett <br />
             Creative Coders: Henrique Périgo, Dalma Földesi <br />
             Backend Developer: Wes Thomas
           </p>
         </div>
       </div>
-      <div class="section ui appear reverse">
-        <div class="caption one-third-width">
+      <div class="section ui reverse appear">
+        <div class="section__description one-third-width">
           <h2>Story Capture</h2>
           <p>
             I developed the front-end experience and internal mechanics that
@@ -66,7 +65,7 @@
         />
       </div>
       <div class="section ui appear">
-        <div class="caption one-third-width">
+        <div class="section__description one-third-width">
           <h2>Audio Visualization</h2>
           <p>
             The story is played back while a unique shareable signature is
@@ -91,8 +90,8 @@
           src="/photos/WIKN/WIKN_patch_review.jpg"
         />
       </div>
-      <div class="section ui appear reverse">
-        <div class="caption one-third-width">
+      <div class="section ui reverse appear">
+        <div class="section__description one-third-width">
           <h2>Community Exploration</h2>
           <p>
             Once a user contributes their story, they can scan through a virtual
@@ -116,8 +115,8 @@
           src="/photos/WIKN/macro_scroll.jpg"
         />
       </div>
-      <div class="section appear across">
-        <div class="caption one-third-width">
+      <div class="section section--across appear">
+        <div class="section__description one-third-width">
           <h2>Translations</h2>
           <p>
             To really drive home the uniqueness of each person’s experience, we
@@ -127,15 +126,15 @@
             voice recordings onto a set of visual parameters in p5.js.
           </p>
         </div>
-        <div id="doodle" class="img-container one-third-width">
+        <div id="doodle" class="section__image-container one-third-width">
           <img src="/photos/WIKN/doodle.jpg" />
         </div>
-        <div id="brushes" class="img-container one-third-width">
+        <div id="brushes" class="section__image-container one-third-width">
           <img src="/photos/WIKN/brushes.png" />
         </div>
       </div>
-      <div class="section appear reverse">
-        <div class="caption one-third-width">
+      <div class="section reverse appear">
+        <div class="section__description one-third-width">
           <h2>Public Visibility</h2>
           <p>
             Future partners can sponsor a physical version of the mural, letting
@@ -143,7 +142,7 @@
             the experiences of their community members.
           </p>
         </div>
-        <div class="img-container two-thirds-width">
+        <div class="section__image-container two-thirds-width">
           <img id="print" src="/photos/WIKN/WIKN_mural_crop_landscape.png" />
         </div>
       </div>
@@ -262,7 +261,7 @@ img.ui-macro {
     justify-content: flex-start;
     align-items: flex-start;
 
-    .caption {
+    .section__description {
       width: calc(50% - 2%);
       margin-right: 5%;
     }
@@ -291,7 +290,7 @@ img.ui-macro {
     flex-direction: column;
     align-items: center;
 
-    .caption {
+    .section__description {
       width: 100%;
     }
   }

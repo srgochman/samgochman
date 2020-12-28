@@ -1,14 +1,14 @@
 <template>
   <div class="study-page">
-    <div class="banner img-bg"></div>
-    <div class="body">
-      <div class="banner-text">
+    <div class="banner section__background-image"></div>
+    <div class="page-body">
+      <div class="page-body__banner-text">
         <h3>Anivision</h3>
         <h2>{{ tagline }}</h2>
         <p>2017 – Present</p>
         <!-- <p>DALI Lab @ Dartmouth College</p> -->
       </div>
-      <div class="info section">
+      <div class="page-body__info section">
         <h3 class="two-thirds-width">
           What if instead of just reading about nocturnal primate vision, you
           could become a tarsier with enormous eyes in virtual reality? I merged
@@ -24,24 +24,24 @@
           every iteration. I now lead a steering committee with stakeholders to
           guide the project as it expands.
         </h3>
-        <div class="contributions-container one-third-width">
-          <p class="contributions">My Role</p>
+        <div class="contributions one-third-width">
+          <p class="info-caps">My Role</p>
           <Tags :words="tags" />
-          <p class="contributions">Project Ownership</p>
+          <p class="info-caps">Project Ownership</p>
           <p>
             <a href="https://dali.dartmouth.edu" target="_blank" rel="noopener"
               >DALI Lab</a
             >, Sam Gochman
           </p>
-          <p class="contributions">Teammates</p>
+          <p class="info-caps">Teammates</p>
           <p>
             DALI Designers and Developers <br />
             Dr. Nathaniel J Dominy
           </p>
         </div>
       </div>
-      <div class="section appear reverse">
-        <div class="caption one-third-width">
+      <div class="section reverse appear">
+        <div class="section__description one-third-width">
           <h2>Immersive Education</h2>
           <p>
             Emerging technologies like virtual reality create new opportunities
@@ -73,18 +73,18 @@
           </p>
         </div>
       </div>
-      <div class="section across appear">
+      <div class="section section--across appear">
         <img
-          class="img-bg two-thirds-width"
+          class="section__background-image two-thirds-width"
           src="/photos/anivision/VINS_student.jpg"
         />
         <img
-          class="img-bg one-third-width"
+          class="section__background-image one-third-width"
           src="/photos/anivision/VINS_class.jpg"
         />
       </div>
-      <div class="section appear stacked">
-        <div class="caption two-thirds-width">
+      <div class="section section--stacked appear">
+        <div class="section__description two-thirds-width">
           <h2>Environments Design</h2>
           <p>
             Using animals with extreme adaptations like the honey bee lets
@@ -96,19 +96,19 @@
             nectar.
           </p>
         </div>
-        <div class="across">
+        <div class="section--across full-width">
           <img
-            class="img-bg two-thirds-width"
+            class="section__background-image two-thirds-width"
             src="/photos/anivision/beeComparison.jpg"
           />
           <img
-            class="img-bg one-third-width"
+            class="section__background-image one-third-width"
             src="/photos/anivision/honeybee.jpg"
           />
         </div>
       </div>
-      <div id="results" class="section appear reverse">
-        <div class="caption two-thirds-width">
+      <div id="results" class="section reverse appear">
+        <div class="section__description two-thirds-width">
           <h2>Enhanced Learning</h2>
           <p>
             Throughout development, we tested the platform with students from
@@ -134,13 +134,13 @@
           target="_blank"
           rel="noopener"
         >
-          <div class="img-container full-width">
+          <div class="section__image-container full-width">
             <img id="paper" src="/photos/anivision/published.png" />
           </div>
         </a>
       </div>
       <div class="section appear">
-        <div class="caption one-third-width">
+        <div class="section__description one-third-width">
           <h2>Presentation</h2>
           <p>
             Beyond publication, we made the platform open source to maximize
@@ -149,7 +149,7 @@
             educators.
           </p>
         </div>
-        <div class="img-container two-thirds-width">
+        <div class="section__image-container two-thirds-width">
           <img id="leakey" src="/photos/anivision/leakey.jpg" />
         </div>
       </div>
@@ -211,7 +211,7 @@ video {
   margin-bottom: 10px;
 }
 
-.across {
+.section--across {
   justify-content: space-between;
 
   a {
@@ -229,7 +229,7 @@ video {
     height: 300px;
   }
 
-  .across img {
+  .section--across img {
     height: unset;
     object-fit: unset;
   }

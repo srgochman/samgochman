@@ -1,13 +1,13 @@
 <template>
-  <div class="body">
+  <div class="page-body">
     <!-- <button @click="clearPass" style="margin-top: 10vh; z-index: 10000">
       Clear passCorrect
     </button> -->
     <div id="particles-js"></div>
-    <div id="mission" class="section">
+    <div class="section section--mission-comp">
       <Mission></Mission>
     </div>
-    <div id="mission-description" class="section appear">
+    <div class="section section--mission-description appear">
       <h3>
         As a developer with roots in biological research and architectural
         design, I appreciate the complexity of people’s relationships with the
@@ -16,14 +16,14 @@
         entertainment.
       </h3>
       <br />
-      <h3 id="contact">
-        <img
+      <h3 class="mission__contact">
+        <!-- <img
           height="11"
-          id="asterisk"
+          class="mission__asterisk"
           src="../assets/drawn/asterisk_green.svg"
-        />
-        I'm looking for new work and would love to connect!
-        <div id="links">
+        /> -->
+        <em>I'm looking for new work and would love to connect!</em>
+        <div class="mission__links">
           <a
             href="mailto:srgochman@gmail.com"
             title="email"
@@ -31,10 +31,9 @@
             rel="noopener"
           >
             <svg
-              id="email-icon"
-              class="logo"
+              class="mission__logo"
               xmlns="http://www.w3.org/2000/svg"
-              height="15px"
+              height="14px"
               viewBox="0 0 495.4 330.9"
             >
               <svg:style type="text/css">
@@ -64,10 +63,9 @@
             rel="noopener"
           >
             <svg
-              id="linkedin-icon"
-              class="logo"
+              class="mission__logo"
               xmlns="http://www.w3.org/2000/svg"
-              height="20px"
+              height="17px"
               viewBox="0 0 468.5 452"
             >
               <path
@@ -94,10 +92,9 @@
             rel="noopener"
           >
             <svg
-              id="resume-icon"
-              class="logo"
+              class="mission__logo"
               xmlns="http://www.w3.org/2000/svg"
-              height="20px"
+              height="17px"
               viewBox="0 0 349.3 452"
             >
               <svg:style type="text/css">
@@ -126,10 +123,9 @@
             rel="noopener"
           >
             <svg
-              id="insta-icon"
-              class="logo"
+              class="mission__logo"
               xmlns="http://www.w3.org/2000/svg"
-              height="20px"
+              height="17px"
               viewBox="0 0 298.5 300"
             >
               <path
@@ -155,9 +151,9 @@
       </h3>
     </div>
 
-    <div id="skills" class="section appear">
+    <div class="section section--skills appear">
       <h1>Skills</h1>
-      <div id="skills-container">
+      <div class="section--stacked">
         <Skill
           v-for="skill in skills"
           :key="skill.keywords[0]"
@@ -171,10 +167,10 @@
       </div>
     </div>
 
-    <div id="projects" class="section appear">
+    <div class="section section--projects appear">
       <h1>Selected Projects</h1>
-      <div id="projects-container">
-        <div id="project-images-container">
+      <div class="projects-list__container">
+        <div class="projects-list__images-container">
           <ProjectImage
             v-for="project in projects"
             ref="project"
@@ -194,10 +190,10 @@
       </div>
     </div>
 
-    <div id="experience" class="section appear">
+    <div class="section section--experience appear">
       <h1>Experience</h1>
       <div
-        class="experience-item"
+        class="experience__item"
         v-for="experience in experiences"
         :key="experience.title"
       >
@@ -237,10 +233,10 @@
       >
     </div>
 
-    <div id="juices-arrow-container">
+    <div class="juices__arrow-container">
       <img src="../assets/drawn/juices_arrow.png" />
     </div>
-    <div id="juices" class="section appear">
+    <div class="section section--juices appear">
       <h1>Latest Creative Juices</h1>
       <p>
         An archive of prototypes, experiments, and side projects that keep my
@@ -284,7 +280,7 @@ export default {
     particlesJS.load("particles-js", "particlesjs-config.json");
 
     // fade in mission section
-    gsap.timeline().from("#mission", {
+    gsap.timeline().from(".section--mission-comp", {
       autoAlpha: 0,
       duration: 0.8,
       ease: "power1.inOut",
@@ -292,21 +288,21 @@ export default {
     });
 
     // animate hover for underlines in mission description
-    $("#work").hover(function() {
-      $("#work .underline").toggleClass("underline-hover");
-    });
-    $("#connect").hover(function() {
-      $("#connect .underline").toggleClass("underline-hover");
-    });
-    $("#resume").hover(function() {
-      $("#resume .underline").toggleClass("underline-hover");
-    });
+    // $("#work").hover(function() {
+    //   $("#work .underline").toggleClass("underline-hover");
+    // });
+    // $("#connect").hover(function() {
+    //   $("#connect .underline").toggleClass("underline-hover");
+    // });
+    // $("#resume").hover(function() {
+    //   $("#resume .underline").toggleClass("underline-hover");
+    // });
 
     // animate hover for arrows in experience
-    $(".experience-item a").hover(function() {
+    $(".experience__item a").hover(function() {
       $(this)
         .find(".arrow")
-        .toggleClass("green-arrow");
+        .toggleClass("arrow--green");
     });
 
     const homeController = new ScrollMagic.Controller();
@@ -326,7 +322,7 @@ export default {
           // mission scroll tracking
           this.missionTrig = gsap.timeline({
             scrollTrigger: {
-              trigger: "#mission",
+              trigger: ".section--mission-comp",
               start: "top top",
               // markers: true,
               onEnter: () => {
@@ -347,7 +343,7 @@ export default {
           // juices arrow scroll tracking
           this.arrowTrig = gsap.timeline({
             scrollTrigger: {
-              trigger: "#juices-arrow-container",
+              trigger: ".juices__arrow-container",
               start: "top bottom",
               // markers: true,
               onEnter: () => {
@@ -379,7 +375,7 @@ export default {
     },
     arrowScroll() {
       const root = document.documentElement;
-      let arrowTop = $("#juices-arrow-container").offset().top;
+      let arrowTop = $(".juices__arrow-container").offset().top;
       let y = (window.scrollY - arrowTop + innerHeight / 2) / 100;
       root.style.setProperty("--scroll", y);
     }
@@ -429,40 +425,58 @@ canvas {
   z-index: 1;
 }
 
-#mission {
+.section--mission-comp {
   position: relative;
   height: 100vh;
   margin-bottom: 50px;
 }
 
-#mission-description {
+.section--mission-description {
   width: 64%;
   // width: 907px;
   // max-width: calc(max(500px, 30%));
-  // margin-bottom: 200px;
-  // font-size: 2em;
-
-  p {
-    margin-bottom: 30px;
-  }
 }
 
-#contact {
+// .mission__asterisk {
+//   position: absolute;
+//   top: 10px;
+//   left: -25px;
+// }
+
+// .underline {
+//   // content: "";
+//   position: absolute;
+//   bottom: 0px;
+//   left: 0px;
+//   width: 100%;
+//   transform: scaleY(1.2);
+//   opacity: 1;
+//   visibility: visible;
+//   transition: var(--hover);
+// }
+
+// .underline-hover {
+//   left: 0px;
+//   visibility: hidden;
+//   opacity: 0;
+// }
+
+.mission__contact {
   position: relative;
 }
 
-#links {
+.mission__links {
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin-top: 25px;
+  margin-top: 20px;
 
   & > * {
-    margin-right: 40px;
+    margin-right: 20px;
   }
 }
 
-.logo {
+.mission__logo {
   fill: black;
   transition: var(--hover);
   &:hover {
@@ -471,83 +485,24 @@ canvas {
   }
 }
 
-#asterisk {
-  position: absolute;
-  top: 10px;
-  left: -25px;
-}
+// .section-heading {
+//   height: 13px;
+//   margin: 0 0 70px 0;
+// }
 
-.underline {
-  // content: "";
-  position: absolute;
-  bottom: 0px;
-  left: 0px;
-  width: 100%;
-  transform: scaleY(1.2);
-  opacity: 1;
-  visibility: visible;
-  transition: var(--hover);
-}
-
-.underline-hover {
-  left: 0px;
-  visibility: hidden;
-  opacity: 0;
-}
-
-.arrow {
-  background-size: cover;
-  transform-origin: top left;
-  transform: scale(0.15, 0.2);
-  fill: black;
-  // opacity: 0;
-  transition: fill 0.2s ease-in-out;
-}
-
-.green-arrow {
-  fill: var(--green) !important;
-  // opacity: 1 !important;
-  transition: fill 0.2s ease-in-out;
-}
-
-.lock {
-  background-size: cover;
-  transform-origin: top left;
-  transform: scale(0.1);
-  fill: black;
-  transition: fill 0.2s ease-in-out;
-}
-
-.green-lock {
-  fill: var(--green) !important;
-  transition: fill 0.2s ease-in-out;
-}
-
-.section-heading {
-  height: 13px;
-  margin: 0 0 70px 0;
-}
-
-#skills-container {
-  display: flex;
-  flex-direction: column;
-  // flex-wrap: wrap;
-  // justify-content: space-between;
-}
-
-#projects-container {
+.projects-list__container {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
 
-#project-images-container {
+.projects-list__images-container {
   width: 63%;
   // height: 500px;
   // overflow: scroll;
 }
 
-.experience-item {
+.experience__item {
   margin-bottom: 40px;
 
   &:last-child {
@@ -576,20 +531,20 @@ canvas {
   }
 }
 
-#juices-arrow-section {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  margin-bottom: 400px;
+// #juices-arrow-section {
+//   width: 100%;
+//   display: flex;
+//   justify-content: center;
+//   margin-bottom: 400px;
 
-  & svg {
-    transform-origin: center;
-    transform: scale(3);
-    position: relative;
-  }
-}
+//   & svg {
+//     transform-origin: center;
+//     transform: scale(3);
+//     position: relative;
+//   }
+// }
 
-#juices-arrow-container {
+.juices__arrow-container {
   width: 100%;
   // height: 100%;
   position: relative;
@@ -624,34 +579,62 @@ canvas {
   }
 }
 
-#juices p {
+.section--juices p {
   width: 66%;
   margin-bottom: 30px;
 }
 
+.arrow {
+  background-size: cover;
+  transform-origin: top left;
+  transform: scale(0.15, 0.2);
+  fill: black;
+  // opacity: 0;
+  transition: fill 0.2s ease-in-out;
+}
+
+.arrow--green {
+  fill: var(--green) !important;
+  // opacity: 1 !important;
+  transition: fill 0.2s ease-in-out;
+}
+
+.lock {
+  background-size: cover;
+  transform-origin: top left;
+  transform: scale(0.1);
+  fill: black;
+  transition: fill 0.2s ease-in-out;
+}
+
+.lock--green {
+  fill: var(--green) !important;
+  transition: fill 0.2s ease-in-out;
+}
+
 @media only screen and (max-width: 1024px) {
-  #asterisk {
-    transform: scale(0.8);
-    top: 6px;
-    left: -22px;
-  }
+  // .mission__asterisk {
+  //   transform: scale(0.8);
+  //   top: 6px;
+  //   left: -22px;
+  // }
 
-  .section-heading {
-    transform-origin: left;
-    transform: scale(0.8);
-    margin: 0 0 50px 0;
-  }
+  // .section-heading {
+  //   transform-origin: left;
+  //   transform: scale(0.8);
+  //   margin: 0 0 50px 0;
+  // }
 
-  .experience-item {
+  .experience__item {
     margin-bottom: 50px;
   }
 
-  #juices-arrow-container {
+  .juices__arrow-container {
     transform: scale(0.5);
     margin-bottom: 150px;
   }
 
-  #juices p {
+  .section--juices p {
     width: 100%;
     margin-bottom: 20px;
   }
@@ -659,34 +642,34 @@ canvas {
 
 @media only screen and (max-width: 768px),
   only screen and (orientation: landscape) and (max-width: 820px) {
-  #mission-description {
+  .section--mission-description {
     width: 100%;
     // max-width: 100%;
     margin-bottom: 120px;
   }
 
-  #projects-container {
+  .projects-list__container {
     flex-direction: column;
   }
 
-  #project-images-container {
+  .projects-list__images-container {
     width: 100%;
   }
 }
 
 @media only screen and (max-width: 425px) {
-  #mission,
+  .section--mission-comp,
   #particles-js {
     height: calc(175px + 31vh);
   }
 
-  #asterisk {
-    left: -17px;
-  }
+  // .mission__asterisk {
+  //   left: -17px;
+  // }
 }
 
 @media only screen and (min-height: 1100px) {
-  #mission,
+  .section--mission-comp,
   #particles-js {
     height: 70vh;
   }
