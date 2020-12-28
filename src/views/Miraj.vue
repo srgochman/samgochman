@@ -53,7 +53,7 @@
           using openCV, and displayed dynamically in real-time.
         </p>
       </div>
-      <div class="section appear reverse two-thirds-width">
+      <div class="section two-thirds-width reverse appear">
         <div class="section__description half-width">
           <h2>Installation</h2>
           <p>

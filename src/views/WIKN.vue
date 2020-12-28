@@ -35,7 +35,7 @@
           </p>
         </div>
       </div>
-      <div class="section ui appear reverse">
+      <div class="section ui reverse appear">
         <div class="section__description one-third-width">
           <h2>Story Capture</h2>
           <p>
@@ -90,7 +90,7 @@
           src="/photos/WIKN/WIKN_patch_review.jpg"
         />
       </div>
-      <div class="section ui appear reverse">
+      <div class="section ui reverse appear">
         <div class="section__description one-third-width">
           <h2>Community Exploration</h2>
           <p>
@@ -115,7 +115,7 @@
           src="/photos/WIKN/macro_scroll.jpg"
         />
       </div>
-      <div class="section appear section--across">
+      <div class="section section--across appear">
         <div class="section__description one-third-width">
           <h2>Translations</h2>
           <p>
@@ -133,7 +133,7 @@
           <img src="/photos/WIKN/brushes.png" />
         </div>
       </div>
-      <div class="section appear reverse">
+      <div class="section reverse appear">
         <div class="section__description one-third-width">
           <h2>Public Visibility</h2>
           <p>

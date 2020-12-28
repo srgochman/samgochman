@@ -48,7 +48,7 @@
           </p>
         </div>
       </div>
-      <div class="section appear section--stacked">
+      <div class="section section--stacked appear">
         <div class="section__description two-thirds-width">
           <h2>Experience Design</h2>
           <p>
@@ -103,7 +103,7 @@
           <img id="diagram" src="/photos/phototaxis/exploded.png" />
         </div>
       </div>
-      <div class="section appear reverse">
+      <div class="section reverse appear">
         <div class="section__description one-third-width">
           <h2>Analysis & Visualization</h2>
           <p>
@@ -122,13 +122,13 @@
           <img id="graph" src="/photos/phototaxis/graph.png" />
         </div>
       </div>
-      <div class="section appear section--across">
+      <div class="section section--across appear">
         <img
-          class="one-third-width section__background-image"
+          class="section__background-image one-third-width"
           src="/photos/phototaxis/jump.jpg"
         />
         <img
-          class="two-thirds-width section__background-image"
+          class="section__background-image two-thirds-width"
           src="/photos/phototaxis/christian.jpg"
         />
       </div>

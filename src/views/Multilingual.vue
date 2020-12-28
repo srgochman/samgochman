@@ -49,7 +49,7 @@
           />
         </video>
       </div>
-      <div class="section appear reverse section--across">
+      <div class="section section--across reverse appear">
         <div class="section__description one-third-width">
           <h2>Concept Development</h2>
           <p>
@@ -64,16 +64,16 @@
         </div>
         <img
           id="mind-map"
-          class="one-third-width section__background-image"
+          class="section__background-image one-third-width"
           src="/photos/multilingual/mind_map.jpg"
         />
         <img
           id="globe"
-          class="one-third-width section__background-image"
+          class="section__background-image one-third-width"
           src="/photos/multilingual/globe.jpg"
         />
       </div>
-      <div class="section appear section--stacked">
+      <div class="section section--stacked appear">
         <div class="section__description two-thirds-width">
           <h2>Data Modeling</h2>
           <p>
@@ -89,24 +89,24 @@
         <div id="data-images" class="section--across">
           <img
             id="data-cloud"
-            class="one-third-width section__background-image"
+            class="section__background-image one-third-width"
             src="/photos/multilingual/data_cloud.png"
           />
           <div class="arrow"></div>
           <img
             id="map"
-            class="one-third-width section__background-image"
+            class="section__background-image one-third-width"
             src="/photos/multilingual/map.jpg"
           />
           <div class="arrow"></div>
           <img
             id="field"
-            class="one-third-width section__background-image"
+            class="section__background-image one-third-width"
             src="/photos/multilingual/field.jpg"
           />
         </div>
       </div>
-      <div class="section appear reverse">
+      <div class="section reverse appear">
         <div class="section__description one-third-width">
           <h2>Interaction Development</h2>
           <p>

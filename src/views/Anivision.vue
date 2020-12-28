@@ -40,7 +40,7 @@
           </p>
         </div>
       </div>
-      <div class="section appear reverse">
+      <div class="section reverse appear">
         <div class="section__description one-third-width">
           <h2>Immersive Education</h2>
           <p>
@@ -83,7 +83,7 @@
           src="/photos/anivision/VINS_class.jpg"
         />
       </div>
-      <div class="section appear section--stacked">
+      <div class="section section--stacked appear">
         <div class="section__description two-thirds-width">
           <h2>Environments Design</h2>
           <p>
@@ -96,7 +96,7 @@
             nectar.
           </p>
         </div>
-        <div class="section--across">
+        <div class="section--across full-width">
           <img
             class="section__background-image two-thirds-width"
             src="/photos/anivision/beeComparison.jpg"
@@ -107,7 +107,7 @@
           />
         </div>
       </div>
-      <div id="results" class="section appear reverse">
+      <div id="results" class="section reverse appear">
         <div class="section__description two-thirds-width">
           <h2>Enhanced Learning</h2>
           <p>
