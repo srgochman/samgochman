@@ -626,7 +626,7 @@ canvas {
   // }
 
   .experience__item {
-    margin-bottom: 50px;
+    margin-bottom: 30px;
   }
 
   .juices__arrow-container {

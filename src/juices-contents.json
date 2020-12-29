@@ -1,8 +1,18 @@
 [
   {
-    "link": "/photos/juices/blobs5.mp4",
+    "link": "/photos/juices/new_years_particles.mp4",
     "mediaType": "video",
-    "poster": "/photos/juices/blobs5.jpg"
+    "poster": "/photos/juices/new_years_particles.jpg"
+  },
+  {
+    "link": "/photos/juices/new_years_neon.mp4",
+    "mediaType": "video",
+    "poster": "/photos/juices/new_years_neon.jpg"
+  },
+  {
+    "link": "/photos/juices/new_years_smoke.mp4",
+    "mediaType": "video",
+    "poster": "/photos/juices/new_years_smoke.jpg"
   },
   {
     "link": "/photos/juices/blobs7.mp4",
@@ -13,6 +23,11 @@
     "link": "/photos/juices/blobs1.mp4",
     "mediaType": "video",
     "poster": "/photos/juices/blobs1.jpg"
+  },
+  {
+    "link": "/photos/juices/blobs5.mp4",
+    "mediaType": "video",
+    "poster": "/photos/juices/blobs5.jpg"
   },
   {
     "link": "/photos/juices/recognition.mp4",
@@ -30,19 +45,6 @@
     "mediaType": "img"
   },
   {
-    "link": "/photos/juices/watercolor.mp4",
-    "mediaType": "video",
-    "poster": "/photos/juices/watercolor.jpg"
-  },
-  {
-    "link": "/photos/juices/watercolor3.jpg",
-    "mediaType": "img"
-  },
-  {
-    "link": "/photos/juices/watercolor2.jpg",
-    "mediaType": "img"
-  },
-  {
     "link": "/photos/juices/waves.mp4",
     "mediaType": "video",
     "poster": "/photos/juices/waves1.jpg"
@@ -54,6 +56,12 @@
   {
     "link": "/photos/juices/waves3.jpg",
     "mediaType": "img"
+  },
+  {
+    "link": "/photos/juices/kinect_liquid.mp4",
+    "mediaType": "video",
+    "poster": "/photos/juices/kinect_liquid.jpg",
+    "doesContain": true
   },
   {
     "link": "/photos/juices/leap_liquid.mp4",
@@ -68,9 +76,17 @@
     "doesContain": true
   },
   {
-    "link": "/photos/juices/frequency_lines.mp4",
+    "link": "/photos/juices/watercolor.mp4",
     "mediaType": "video",
-    "poster": "/photos/juices/frequency_lines.jpg"
+    "poster": "/photos/juices/watercolor.jpg"
+  },
+  {
+    "link": "/photos/juices/watercolor3.jpg",
+    "mediaType": "img"
+  },
+  {
+    "link": "/photos/juices/watercolor2.jpg",
+    "mediaType": "img"
   },
   {
     "link": "/photos/juices/particle_tame.mp4",
