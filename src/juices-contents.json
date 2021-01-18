@@ -1,5 +1,35 @@
 [
   {
+    "link": "/photos/juices/line_orb_blue.mp4",
+    "mediaType": "video",
+    "poster": "/photos/juices/line_orb_blue.jpg"
+  },
+  {
+    "link": "/photos/juices/line_orb_violet.mp4",
+    "mediaType": "video",
+    "poster": "/photos/juices/line_orb_violet.jpg"
+  },
+  {
+    "link": "/photos/juices/line_orb_orange.mp4",
+    "mediaType": "video",
+    "poster": "/photos/juices/line_orb_orange.jpg"
+  },
+  {
+    "link": "/photos/juices/line_sphere.mp4",
+    "mediaType": "video",
+    "poster": "/photos/juices/line_sphere.jpg"
+  },
+  {
+    "link": "/photos/juices/line_ring.mp4",
+    "mediaType": "video",
+    "poster": "/photos/juices/line_ring.jpg"
+  },
+  {
+    "link": "/photos/juices/line_triangle.mp4",
+    "mediaType": "video",
+    "poster": "/photos/juices/line_triangle.jpg"
+  },
+  {
     "link": "/photos/juices/new_years_particles.mp4",
     "mediaType": "video",
     "poster": "/photos/juices/new_years_particles.jpg"
@@ -178,21 +208,6 @@
   {
     "link": "/photos/juices/parking_writing.jpg",
     "mediaType": "img"
-  },
-  {
-    "link": "/photos/juices/galaxies.mp4",
-    "mediaType": "video",
-    "poster": "/photos/juices/galaxies.jpg"
-  },
-  {
-    "link": "/photos/juices/rounded_rectangle.mp4",
-    "mediaType": "video",
-    "poster": "/photos/juices/rounded_rectangle.jpg"
-  },
-  {
-    "link": "/photos/juices/glow_rings.mp4",
-    "mediaType": "video",
-    "poster": "/photos/juices/glow_rings.jpg"
   },
   {
     "link": "/photos/juices/keyboard.mp4",
