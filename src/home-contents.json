@@ -261,18 +261,28 @@
   "experiences": [
     {
       "title": "Creative Technologist",
+      "key": "ctgensler",
+      "link": "https://www.gensler.com/expertise/digital-experience-design",
+      "firm": "Gensler DXD",
+      "arrowType": 4
+    },
+    {
+      "title": "Creative Technologist",
+      "key": "ctsoso",
       "link": "https://www.sosolimited.com",
       "firm": "Sosolimited",
       "arrowType": 2
     },
     {
       "title": "Research Fellow: Audiovisual Perception",
+      "key": "edr",
       "link": "https://www.eskewdumezripple.com",
       "firm": "EskewDumezRipple Architects",
       "arrowType": 3
     },
     {
       "title": "Founder & Partner: Anivision",
+      "key": "dali",
       "link": "https://dali.dartmouth.edu",
       "firm": "Digital Applied Learning and Innovation Lab @ Dartmouth College",
       "arrowType": 4

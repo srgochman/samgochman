@@ -22,7 +22,7 @@
           class="mission__asterisk"
           src="../assets/drawn/asterisk_green.svg"
         /> -->
-        <em>I'm looking for new work and would love to connect!</em>
+        <!-- <em>I'm looking for new work and would love to connect!</em> -->
         <div class="mission__links">
           <a
             href="mailto:srgochman@gmail.com"
@@ -195,7 +195,7 @@
       <div
         class="experience__item"
         v-for="experience in experiences"
-        :key="experience.title"
+        :key="experience.key"
       >
         <h2>{{ experience.title }}</h2>
         <p>
@@ -469,7 +469,7 @@ canvas {
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin-top: 20px;
+  // margin-top: 20px;
 
   & > * {
     margin-right: 20px;
