@@ -9,11 +9,10 @@
     </div>
     <div class="section section--mission-description appear">
       <h3>
-        As a developer with roots in biological research and architectural
+        As a developer with roots in sensory ecology and architectural
         design, I appreciate the complexity of people’s relationships with the
-        world — and that’s helped me leverage technology to build captivating,
-        human-centered experiences for clients in tech, museums, education, and
-        entertainment.
+        world — and that’s helped me leverage technology to build captivating experiences for clients in tech, museums, education, and
+        entertainment. I'm currently a Creative Technologist on <a href="https://dxd.gensler.com/" target="_blank" rel="noopener"><u>Gensler's Digital Experience Design</u></a> team.
       </h3>
       <br />
       <h3 class="mission__contact">
