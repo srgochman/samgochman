@@ -23,7 +23,7 @@
           the VR platform into real classrooms and pushed its capabilities in
           every iteration. I now lead a steering committee with stakeholders to
           guide the project as it grows. <br /><br />
-          Thanks to funding from NSF Aware #1917002 Infusing Data Science into Undergraduate STEM Education.
+          Thanks to funding from NSF Award #1917002 Infusing Data Science into Undergraduate STEM Education.
         </h3>
         <div class="contributions one-third-width">
           <p class="info-caps">My Role</p>
